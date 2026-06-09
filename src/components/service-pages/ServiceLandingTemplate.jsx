@@ -20,6 +20,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const SITE_URL = 'https://ozony.tech';
+const DEFAULT_OG_IMAGE = '/images/ozony-og-preview.png';
 
 const ALL_SERVICE_LINKS = [
   { label: 'Business Wi-Fi Connecticut', to: '/business-wifi-connecticut' },
@@ -27,7 +28,7 @@ const ALL_SERVICE_LINKS = [
   { label: 'Firewall Setup Connecticut', to: '/firewall-setup-connecticut' },
   { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
   { label: 'IT Services Near Me', to: '/it-services-near-me' },
-  { label: 'IT Solutions', to: '/it-solutions' },
+  { label: 'IT Solutions', to: '/itsolutions' },
   { label: 'IT Support', to: '/it-support' },
   { label: 'IT Support Connecticut', to: '/it-support-connecticut' },
   { label: 'IT Support NJ', to: '/it-support-nj' },
@@ -89,21 +90,29 @@ const defaultFaqItems = [
   },
 ];
 
-const sectionClass =
-  'border-t border-white/5 px-4 py-20 md:px-6 lg:px-8';
+const sectionClass = 'border-t border-white/5 px-4 py-20 md:px-6 lg:px-8';
 
 const normalizePathname = (pathname) => {
   if (!pathname) return '/';
+
   if (pathname.length > 1 && pathname.endsWith('/')) {
     return pathname.slice(0, -1);
   }
+
   return pathname;
 };
 
 const absoluteUrl = (value) => {
   if (!value) return '';
-  if (value.startsWith('http://') || value.startsWith('https://')) return value;
-  if (value.startsWith('/')) return `${SITE_URL}${value}`;
+
+  if (value.startsWith('http://') || value.startsWith('https://')) {
+    return value;
+  }
+
+  if (value.startsWith('/')) {
+    return `${SITE_URL}${value}`;
+  }
+
   return `${SITE_URL}/${value}`;
 };
 
@@ -160,22 +169,42 @@ const ServiceLandingTemplate = ({
   midCtaDescription = 'Get a clean, reliable solution built for your business without unnecessary complexity or guesswork.',
   finalTitle = 'Ready to Improve Your Business Network?',
   finalDescription = 'Whether you need a fresh install, stronger Wi-Fi, or a cleaner setup for your business, Ozony Tech can help you move forward with confidence.',
-  ogImage = '/service_area_map.png',
-  twitterImage = '/service_area_map.png',
+  ogImage = DEFAULT_OG_IMAGE,
+  twitterImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
 }) => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
 
-  const normalizedPathname = normalizePathname(location.pathname);
-  const canonicalUrl = `${SITE_URL}${normalizedPathname}`;
-  const ogImageUrl = absoluteUrl(ogImage || heroImage);
-  const twitterImageUrl = absoluteUrl(twitterImage || ogImage || heroImage);
+  const normalizedPathname = useMemo(
+    () => normalizePathname(location.pathname),
+    [location.pathname]
+  );
 
-  const relatedServicesToRender =
-    relatedServices && relatedServices.length > 0
-      ? relatedServices
-      : ALL_SERVICE_LINKS.filter((service) => service.to !== normalizedPathname);
+  const canonicalUrl = useMemo(
+    () => absoluteUrl(normalizedPathname),
+    [normalizedPathname]
+  );
+
+  const ogImageUrl = useMemo(
+    () => absoluteUrl(ogImage || DEFAULT_OG_IMAGE),
+    [ogImage]
+  );
+
+  const twitterImageUrl = useMemo(
+    () => absoluteUrl(twitterImage || ogImage || DEFAULT_OG_IMAGE),
+    [twitterImage, ogImage]
+  );
+
+  const relatedServicesToRender = useMemo(() => {
+    if (relatedServices && relatedServices.length > 0) {
+      return relatedServices;
+    }
+
+    return ALL_SERVICE_LINKS.filter(
+      (service) => normalizePathname(service.to) !== normalizedPathname
+    );
+  }, [relatedServices, normalizedPathname]);
 
   const faqSchema = useMemo(
     () => ({
@@ -206,6 +235,7 @@ const ServiceLandingTemplate = ({
         url: SITE_URL,
         email: 'contact@ozony.tech',
         telephone: '+1-347-653-7655',
+        image: absoluteUrl(DEFAULT_OG_IMAGE),
       },
       areaServed: areasServed,
       url: canonicalUrl,
@@ -223,7 +253,7 @@ const ServiceLandingTemplate = ({
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: SITE_URL,
+          item: `${SITE_URL}/`,
         },
         {
           '@type': 'ListItem',
@@ -266,6 +296,7 @@ const ServiceLandingTemplate = ({
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
         />
+
         <link rel="canonical" href={canonicalUrl} />
 
         <meta property="og:title" content={pageTitle} />
@@ -274,6 +305,10 @@ const ServiceLandingTemplate = ({
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Ozony Tech" />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:secure_url" content={ogImageUrl} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={heroImageAlt} />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -284,9 +319,11 @@ const ServiceLandingTemplate = ({
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
+
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
+
         {faqItems.length > 0 && (
           <script type="application/ld+json">
             {JSON.stringify(faqSchema)}
@@ -398,6 +435,7 @@ const ServiceLandingTemplate = ({
               <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
                 {outcomes.map((item) => {
                   const Icon = item.icon;
+
                   return (
                     <div
                       key={item.title}
@@ -461,6 +499,7 @@ const ServiceLandingTemplate = ({
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </Button>
+
                   <Button
                     asChild
                     size="lg"
@@ -487,6 +526,7 @@ const ServiceLandingTemplate = ({
                 <div className="mt-10 grid gap-5 lg:grid-cols-3">
                   {idealFor.map((item) => {
                     const Icon = item.icon;
+
                     return (
                       <div
                         key={item.title}
@@ -506,7 +546,7 @@ const ServiceLandingTemplate = ({
 
             <section className={sectionClass}>
               <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_1fr]">
-                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur">
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                     Why Ozony Tech
                   </p>
@@ -522,7 +562,7 @@ const ServiceLandingTemplate = ({
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur">
+                <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                     FAQ
                   </p>
@@ -555,7 +595,8 @@ const ServiceLandingTemplate = ({
                       Explore More Solutions
                     </h2>
                     <p className="mt-5 text-lg leading-8 text-white/65">
-                      See other ways Ozony Tech can support your business with practical IT and network solutions.
+                      See other ways Ozony Tech can support your business with
+                      practical IT and network solutions.
                     </p>
                   </div>
 
@@ -600,6 +641,7 @@ const ServiceLandingTemplate = ({
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </Button>
+
                   <Button
                     asChild
                     size="lg"
