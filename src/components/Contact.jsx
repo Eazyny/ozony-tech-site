@@ -14,13 +14,14 @@ import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import DecodedText from '@/components/ui/decode-text';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdawpzqp';
+const CONTACT_ENDPOINT = 'https://ozony-lead-alerts.ozonye.workers.dev';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
     email: '',
+    phone: '',
     service: '',
     message: '',
   });
@@ -41,18 +42,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: {
-          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          source: 'Homepage Contact Section',
           name: formData.name,
           businessName: formData.businessName,
           email: formData.email,
+          phone: formData.phone,
           service: formData.service,
+          urgency: 'Website Contact',
           message: formData.message,
+          website: '',
         }),
       });
 
@@ -75,6 +79,7 @@ const Contact = () => {
         name: '',
         businessName: '',
         email: '',
+        phone: '',
         service: '',
         message: '',
       });
@@ -296,6 +301,24 @@ const Contact = () => {
                     required
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="mb-2 block font-medium text-white"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Best callback number"
                   />
                 </div>
 

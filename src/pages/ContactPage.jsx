@@ -19,7 +19,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { toast } from '@/components/ui/use-toast';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mdawpzqp';
+const CONTACT_ENDPOINT = 'https://ozony-lead-alerts.ozonye.workers.dev';
 
 const serviceOptions = [
   'Network Setup',
@@ -91,21 +91,21 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: {
-          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           source: 'Dedicated Contact Page',
           name: formData.name,
-          business: formData.business,
+          businessName: formData.business,
           email: formData.email,
           phone: formData.phone,
-          location: formData.location,
           service: formData.service,
-          message: formData.message,
+          urgency: 'Website Contact',
+          message: `Location: ${formData.location || 'Not provided'}\n\n${formData.message}`,
+          website: '',
         }),
       });
 
