@@ -23,7 +23,9 @@ const Contact = () => {
     email: '',
     phone: '',
     service: '',
+    urgency: '',
     message: '',
+    consentToContact: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,9 +33,19 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.urgency || !formData.message) {
       toast({
         title: 'Please fill in all required fields',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (!formData.consentToContact) {
+      toast({
+        title: 'Contact permission required',
+        description:
+          'Please confirm that Ozony Tech may contact you about your request.',
         variant: 'destructive',
       });
       return;
@@ -54,8 +66,9 @@ const Contact = () => {
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
-          urgency: 'Website Contact',
+          urgency: formData.urgency || 'Not specified',
           message: formData.message,
+          consentToContact: formData.consentToContact,
           website: '',
         }),
       });
@@ -65,6 +78,7 @@ const Contact = () => {
       if (!res.ok) {
         const msg =
           data?.errors?.[0]?.message ||
+          data?.error ||
           'Something went wrong sending your message. Please try again.';
         throw new Error(msg);
       }
@@ -81,7 +95,9 @@ const Contact = () => {
         email: '',
         phone: '',
         service: '',
+        urgency: '',
         message: '',
+        consentToContact: false,
       });
     } catch (err) {
       toast({
@@ -95,9 +111,11 @@ const Contact = () => {
   };
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
@@ -342,6 +360,38 @@ const Contact = () => {
 
                 <div>
                   <label
+                    htmlFor="urgency"
+                    className="mb-2 block font-medium text-white"
+                  >
+                    Urgency *
+                  </label>
+                  <select
+                    id="urgency"
+                    name="urgency"
+                    value={formData.urgency}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="" disabled>
+                      Select urgency
+                    </option>
+                    <option value="Planning / not urgent">
+                      Planning / not urgent
+                    </option>
+                    <option value="This week">This week</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="Emergency / business impacted">
+                      Emergency / business impacted
+                    </option>
+                  </select>
+                  <p className="mt-2 text-xs text-gray-500">
+                    This helps us prioritize urgent business-impacting issues.
+                  </p>
+                </div>
+
+                <div>
+                  <label
                     htmlFor="message"
                     className="mb-2 block font-medium text-white"
                   >
@@ -357,6 +407,28 @@ const Contact = () => {
                     className="w-full resize-none rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Tell me about your setup, the issue you’re having, or the kind of help you need."
                   />
+                </div>
+
+                <div className="rounded-lg border border-slate-700/70 bg-slate-900/40 p-4">
+                  <label
+                    htmlFor="consentToContact"
+                    className="flex cursor-pointer items-start gap-3"
+                  >
+                    <input
+                      type="checkbox"
+                      id="consentToContact"
+                      name="consentToContact"
+                      checked={formData.consentToContact}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 h-4 w-4 rounded border-slate-600 bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500"
+                    />
+                    <span className="text-sm leading-relaxed text-gray-300">
+                      I agree that Ozony Tech may contact me by phone, text, or
+                      email about my request. Calls may be recorded and
+                      summarized so the team can follow up accurately. *
+                    </span>
+                  </label>
                 </div>
               </div>
 
