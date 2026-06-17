@@ -458,11 +458,11 @@ const AILeadAgent = () => {
                   </h1>
 
                   <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">
-                    Most small businesses lose leads because they respond too slowly. Ozony Tech
-                    builds AI Lead Response Agents that instantly capture new inquiries,
-                    ask the right qualifying questions, alert your team, and prepare a
-                    clean follow-up summary so you can respond faster and win more
-                    opportunities.
+                    Most small businesses lose leads because they respond too slowly.
+                    Ozony Tech builds AI Lead Response Agents that instantly capture new
+                    inquiries, ask the right qualifying questions, alert your team, and
+                    prepare a clean follow-up summary so you can respond faster and win
+                    more opportunities.
                   </p>
 
                   <div className="mt-8 rounded-3xl border border-blue-300/15 bg-blue-500/10 p-6 backdrop-blur">
@@ -559,7 +559,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
               <div>
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -589,7 +589,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
               <div>
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -635,7 +635,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
               <div>
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -665,7 +665,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr]">
                 <div>
@@ -699,7 +699,7 @@ const AILeadAgent = () => {
 
           <section
             id="how-it-works"
-            className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8"
+            className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8"
           >
             <div className="mx-auto max-w-7xl">
               <div className="max-w-3xl">
@@ -755,7 +755,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
                 <div>
@@ -786,7 +786,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="max-w-3xl">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -818,7 +818,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-24 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
             <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
               <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                 Need Faster Lead Response?
@@ -844,7 +844,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
               <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
                 <Users className="mb-6 h-8 w-8 text-blue-300" />
@@ -895,7 +895,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
                 <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr]">
@@ -942,7 +942,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="max-w-3xl">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -974,7 +974,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
               <div>
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -1007,7 +1007,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-20 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="max-w-3xl">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -1048,7 +1048,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-24 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -1115,7 +1115,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-white/5 bg-[#08152b] px-4 py-24 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-24 md:px-6 lg:px-8">
             <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
               <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                 Ready to Stop Missing Leads?
