@@ -16,24 +16,43 @@ import ContactPage from '@/pages/ContactPage';
 
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const CertificationsPage = lazy(() => import('@/components/CertificationsPage'));
+const AILeadAgentPage = lazy(() => import('@/components/AILeadAgent'));
+
 const NetworkSetupNYC = lazy(() => import('@/pages/NetworkSetupNYC'));
 const BusinessWifiNYC = lazy(() => import('@/pages/BusinessWifiNYC'));
 const FirewallSetupNYC = lazy(() => import('@/pages/FirewallSetupNYC'));
 const ITSupportNYC = lazy(() => import('@/pages/ITSupportNYC'));
-const NetworkTroubleshootingNYC = lazy(() => import('@/pages/NetworkTroubleshootingNYC'));
-const SmallBusinessNetworkNYC = lazy(() => import('@/pages/SmallBusinessNetworkNYC'));
+const NetworkTroubleshootingNYC = lazy(() =>
+  import('@/pages/NetworkTroubleshootingNYC')
+);
+const SmallBusinessNetworkNYC = lazy(() =>
+  import('@/pages/SmallBusinessNetworkNYC')
+);
+
 const NetworkSetupNJ = lazy(() => import('@/pages/NetworkSetupNJ'));
 const ITSupportNJ = lazy(() => import('@/pages/ITSupportNJ'));
-const NetworkSetupConnecticut = lazy(() => import('@/pages/NetworkSetupConnecticut'));
-const ITSupportConnecticut = lazy(() => import('@/pages/ITSupportConnecticut'));
-const FirewallSetupConnecticut = lazy(() => import('@/pages/FirewallSetupConnecticut'));
-const BusinessWifiConnecticut = lazy(() => import('@/pages/BusinessWifiConnecticut'));
+
+const NetworkSetupConnecticut = lazy(() =>
+  import('@/pages/NetworkSetupConnecticut')
+);
+const ITSupportConnecticut = lazy(() =>
+  import('@/pages/ITSupportConnecticut')
+);
+const FirewallSetupConnecticut = lazy(() =>
+  import('@/pages/FirewallSetupConnecticut')
+);
+const BusinessWifiConnecticut = lazy(() =>
+  import('@/pages/BusinessWifiConnecticut')
+);
+
 const ITServicesNearMe = lazy(() => import('@/pages/ITServicesNearMe'));
-const NetworkServicesNearMe = lazy(() => import('@/pages/NetworkServicesNearMe'));
+const NetworkServicesNearMe = lazy(() =>
+  import('@/pages/NetworkServicesNearMe')
+);
 const ManagedITServices = lazy(() => import('@/pages/ManagedITServices'));
 const ITSupport = lazy(() => import('@/pages/ITSupport'));
-const NotFound = lazy(() => import('@/pages/not-found'));
 const ITSolutions = lazy(() => import('@/pages/ITSolutions'));
+const NotFound = lazy(() => import('@/pages/not-found'));
 
 const HomePage = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -227,12 +246,16 @@ function App() {
       <Suspense fallback={<RouteLoader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/certifications" element={<CertificationsPage />} />
+          <Route path="/ai-lead-agent" element={<AILeadAgentPage />} />
+
           <Route path="/network-setup-nyc" element={<NetworkSetupNYC />} />
           <Route path="/business-wifi-nyc" element={<BusinessWifiNYC />} />
           <Route path="/firewall-setup-nyc" element={<FirewallSetupNYC />} />
           <Route path="/it-support-nyc" element={<ITSupportNYC />} />
+
           <Route
             path="/network-troubleshooting-nyc"
             element={<NetworkTroubleshootingNYC />}
@@ -241,8 +264,10 @@ function App() {
             path="/small-business-network-nyc"
             element={<SmallBusinessNetworkNYC />}
           />
+
           <Route path="/network-setup-nj" element={<NetworkSetupNJ />} />
           <Route path="/it-support-nj" element={<ITSupportNJ />} />
+
           <Route
             path="/network-setup-connecticut"
             element={<NetworkSetupConnecticut />}
@@ -259,6 +284,7 @@ function App() {
             path="/business-wifi-connecticut"
             element={<BusinessWifiConnecticut />}
           />
+
           <Route path="/it-services-near-me" element={<ITServicesNearMe />} />
           <Route
             path="/network-services-near-me"
@@ -266,8 +292,12 @@ function App() {
           />
           <Route path="/managed-it-services" element={<ManagedITServices />} />
           <Route path="/it-support" element={<ITSupport />} />
+
           <Route path="/it-solutions" element={<ITSolutions />} />
+          <Route path="/itsolutions" element={<ITSolutions />} />
+
           <Route path="/contactpage" element={<ContactPage />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
