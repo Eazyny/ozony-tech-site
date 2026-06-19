@@ -15,6 +15,7 @@ import Footer from '@/components/Footer';
 import ContactPage from '@/pages/ContactPage';
 
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
+const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
 const CertificationsPage = lazy(() => import('@/components/CertificationsPage'));
 const AILeadAgentPage = lazy(() => import('@/components/AILeadAgent'));
 
@@ -250,7 +251,7 @@ function App() {
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/certifications" element={<CertificationsPage />} />
           <Route path="/ai-lead-agent" element={<AILeadAgentPage />} />
-
+          <Route path="/ai-agent-lead-capture" element={<AILeadCapture />} />
           <Route path="/network-setup-nyc" element={<NetworkSetupNYC />} />
           <Route path="/business-wifi-nyc" element={<BusinessWifiNYC />} />
           <Route path="/firewall-setup-nyc" element={<FirewallSetupNYC />} />

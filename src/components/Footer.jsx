@@ -22,9 +22,11 @@ const Footer = () => {
     { label: 'About', href: '#about' },
     { label: 'Contact', to: '/contactpage' },
     { label: 'Packages', to: '/packages' },
+    { label: 'AI Lead Agent', to: '/ai-lead-agent' },
   ];
 
   const servicePageLinks = [
+    { label: 'AI Lead Capture', to: '/ai-agent-lead-capture' },
     { label: 'Business Wi-Fi Connecticut', to: '/business-wifi-connecticut' },
     { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
     { label: 'Firewall Setup Connecticut', to: '/firewall-setup-connecticut' },
