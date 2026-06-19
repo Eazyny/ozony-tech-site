@@ -23,12 +23,13 @@ const SITE_URL = 'https://ozony.tech';
 const DEFAULT_OG_IMAGE = '/images/ozony-og-preview.png';
 
 const ALL_SERVICE_LINKS = [
+  { label: 'AI Lead Capture', to: '/ai-agent-lead-capture' },
   { label: 'Business Wi-Fi Connecticut', to: '/business-wifi-connecticut' },
   { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
   { label: 'Firewall Setup Connecticut', to: '/firewall-setup-connecticut' },
   { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
   { label: 'IT Services Near Me', to: '/it-services-near-me' },
-  { label: 'IT Solutions', to: '/itsolutions' },
+  { label: 'IT Solutions', to: '/it-solutions' },
   { label: 'IT Support', to: '/it-support' },
   { label: 'IT Support Connecticut', to: '/it-support-connecticut' },
   { label: 'IT Support NJ', to: '/it-support-nj' },

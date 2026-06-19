@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import DecodedText from '@/components/ui/decode-text';
 
 const CONTACT_PAGE_PATH = '/contactpage';
+
+const MotionLink = motion(Link);
 
 const Header = () => {
   const navigate = useNavigate();
@@ -15,14 +17,6 @@ const Header = () => {
 
   const isHomePage = location.pathname === '/';
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navItems = [
     { label: 'AI Lead Agent', to: '/ai-lead-agent' },
     { label: 'Services', href: '#services' },
@@ -31,51 +25,59 @@ const Header = () => {
     { label: 'Contact', to: CONTACT_PAGE_PATH },
   ];
 
-  const goToSection = (href) => {
-    setIsMobileMenuOpen(false);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    handleScroll();
 
-    if (isHomePage) {
-      const element = document.querySelector(href);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!isHomePage || !location.hash) return;
+
+    const timeoutId = window.setTimeout(() => {
+      const element = document.querySelector(location.hash);
+
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    }, 80);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isHomePage, location.hash]);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSectionClick = (event, href) => {
+    event.preventDefault();
+    closeMobileMenu();
+
+    if (isHomePage) {
+      scrollToSection(href);
       return;
     }
 
     navigate(`/${href}`);
   };
 
-  const goToPage = (path) => {
-    setIsMobileMenuOpen(false);
-    navigate(path);
-  };
-
-  const handleNavItemClick = (item) => {
-    if (item.to) {
-      goToPage(item.to);
-      return;
-    }
-
-    goToSection(item.href);
-  };
-
-  const handleBrandClick = () => {
-    setIsMobileMenuOpen(false);
+  const handleBrandClick = (event) => {
+    closeMobileMenu();
 
     if (isHomePage) {
+      event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
     }
-
-    navigate('/');
-  };
-
-  const goToPackages = () => {
-    goToPage('/packages');
-  };
-
-  const goToContact = () => {
-    goToPage(CONTACT_PAGE_PATH);
   };
 
   return (
@@ -101,10 +103,10 @@ const Header = () => {
         }}
       />
 
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-4" aria-label="Primary navigation">
         <div className="flex items-center justify-between gap-4">
-          <motion.button
-            type="button"
+          <MotionLink
+            to="/"
             onClick={handleBrandClick}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -118,47 +120,67 @@ const Header = () => {
               <span className="oz-logo" />
             </span>
             <span>Ozony Tech</span>
-          </motion.button>
+          </MotionLink>
 
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.label}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08 }}
-                onClick={() => handleNavItemClick(item)}
-                className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
-              >
-                <DecodedText speed={12}>{item.label}</DecodedText>
-              </motion.button>
-            ))}
+          <div className="hidden items-center gap-8 lg:flex">
+            {navItems.map((item, index) =>
+              item.to ? (
+                <MotionLink
+                  key={item.label}
+                  to={item.to}
+                  onClick={closeMobileMenu}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.08 }}
+                  className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
+                >
+                  <DecodedText speed={12}>{item.label}</DecodedText>
+                </MotionLink>
+              ) : (
+                <motion.a
+                  key={item.label}
+                  href={`/${item.href}`}
+                  onClick={(event) => handleSectionClick(event, item.href)}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.08 }}
+                  className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
+                >
+                  <DecodedText speed={12}>{item.label}</DecodedText>
+                </motion.a>
+              )
+            )}
 
-            <motion.button
+            <MotionLink
+              to="/packages"
+              onClick={closeMobileMenu}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.36 }}
-              onClick={goToPackages}
               className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
             >
               <DecodedText speed={12}>Packages</DecodedText>
-            </motion.button>
+            </MotionLink>
 
-            <motion.button
+            <MotionLink
+              to={CONTACT_PAGE_PATH}
+              onClick={closeMobileMenu}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              onClick={goToContact}
               className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:border-blue-300/50 hover:bg-blue-500/20 hover:shadow-lg hover:shadow-blue-500/20"
             >
               Request a Quote
-            </motion.button>
+            </MotionLink>
           </div>
 
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            type="button"
+            onClick={() => setIsMobileMenuOpen((current) => !current)}
             className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-primary-navigation"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -170,34 +192,49 @@ const Header = () => {
 
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-primary-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             className="mt-4 rounded-xl border border-white/10 bg-slate-900/60 p-3 backdrop-blur-md lg:hidden"
           >
             <div className="flex flex-col gap-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => handleNavItemClick(item)}
-                  className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-                >
-                  <DecodedText speed={12}>{item.label}</DecodedText>
-                </button>
-              ))}
+              {navItems.map((item) =>
+                item.to ? (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    onClick={closeMobileMenu}
+                    className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                  >
+                    <DecodedText speed={12}>{item.label}</DecodedText>
+                  </Link>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={`/${item.href}`}
+                    onClick={(event) => handleSectionClick(event, item.href)}
+                    className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                  >
+                    <DecodedText speed={12}>{item.label}</DecodedText>
+                  </a>
+                )
+              )}
 
-              <button
-                onClick={goToPackages}
+              <Link
+                to="/packages"
+                onClick={closeMobileMenu}
                 className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
               >
                 <DecodedText speed={12}>Packages</DecodedText>
-              </button>
+              </Link>
 
-              <button
-                onClick={goToContact}
-                className="mt-2 w-full rounded-lg border border-blue-400/30 bg-blue-500/10 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-500/20"
+              <Link
+                to={CONTACT_PAGE_PATH}
+                onClick={closeMobileMenu}
+                className="mt-2 w-full rounded-lg border border-blue-400/30 bg-blue-500/10 px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-500/20"
               >
                 Request a Quote
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

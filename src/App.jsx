@@ -295,7 +295,7 @@ function App() {
           <Route path="/it-support" element={<ITSupport />} />
 
           <Route path="/it-solutions" element={<ITSolutions />} />
-          <Route path="/itsolutions" element={<ITSolutions />} />
+          <Route path="/itsolutions" element={<Navigate to="/it-solutions" replace />} />
 
           <Route path="/contactpage" element={<ContactPage />} />
 
