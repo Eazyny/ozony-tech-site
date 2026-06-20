@@ -66,22 +66,67 @@ const Services = () => {
   return (
     <section id="services" className="bg-slate-800/30 px-4 py-20">
       <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            Services Built for Small Business Needs
-          </h2>
-          <p className="mx-auto max-w-3xl text-lg text-gray-400">
-            Ozony Tech provides practical IT and network help for the everyday needs
-            small businesses face, from connectivity and device setup to shared
-            access, security, and ongoing support.
-          </p>
-        </motion.div>
+        <div className="mb-14 grid items-center gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
+              Small Business IT Services
+            </p>
+
+            <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+              Services Built for Small Business Needs
+            </h2>
+
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-400">
+              Ozony Tech provides practical IT and network help for the everyday needs
+              small businesses face, from connectivity and device setup to shared
+              access, security, and ongoing support.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              {[
+                'Networking',
+                'Business Wi-Fi',
+                'Shared Access',
+                'Security',
+                'Troubleshooting',
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-slate-700/60 bg-slate-900/60 px-3 py-2 text-sm text-gray-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+            className="group relative"
+          >
+            <div className="absolute -inset-4 rounded-[2rem] bg-blue-500/10 opacity-60 blur-3xl transition-opacity duration-300 group-hover:opacity-90" />
+
+            <div className="relative overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/50 shadow-lg shadow-blue-500/10">
+              <img
+                src="/images/NetworkSetup.png"
+                width="1672"
+                height="941"
+                alt="Ozony Tech small business IT, networking, Wi-Fi, security, and support visual"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </motion.div>
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {serviceGroups.map((group, index) => {
@@ -92,7 +137,7 @@ const Services = () => {
                 key={group.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
                 <Link

@@ -20,7 +20,7 @@ const Header = () => {
   const navItems = [
     { label: 'AI Lead Agent', to: '/ai-lead-agent' },
     { label: 'Services', href: '#services' },
-    { label: 'Credentials', href: '#credentials' },
+    { label: 'Credentials', to: '/credentials' },
     { label: 'About', href: '#about' },
     { label: 'Contact', to: CONTACT_PAGE_PATH },
   ];

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Bot,
   Brain,
   Building2,
   CalendarCheck,
@@ -13,15 +12,12 @@ import {
   Headphones,
   Mail,
   MessageSquare,
-  Moon,
   Phone,
-  PhoneCall,
   Route,
   Send,
   ShieldCheck,
   Sparkles,
   Target,
-  Users,
   Wrench,
   Zap,
 } from 'lucide-react';
@@ -35,15 +31,18 @@ const SITE_URL = 'https://ozony.tech';
 const PAGE_URL = `${SITE_URL}/ai-lead-agent`;
 const OG_IMAGE = `${SITE_URL}/images/ozony-og-preview.png`;
 
+const AI_AGENT_HERO_IMAGE = '/images/AIAgent1.png';
+const AI_AGENT_WORKFLOW_IMAGE = '/images/AIAgent2.png';
+const AI_AGENT_CAPABILITIES_IMAGE = '/images/AIAgent3.png';
+
 const responseCapabilities = [
   'Respond to website form submissions',
-  'Support consent-aware phone, SMS, and email workflows',
   'Ask pre-approved qualifying questions',
   'Collect customer details and service context',
   'Route urgent leads to the right person',
   'Send instant alerts to your team',
   'Create clean internal lead summaries',
-  'Help prepare follow-up steps',
+  'Support phone, SMS, and email workflows when appropriate',
   'Keep valuable opportunities from sitting unanswered',
 ];
 
@@ -56,31 +55,26 @@ const qualificationQuestions = [
   'Do you need same-day service?',
 ];
 
-const workflowSteps = [
+const agentFeatures = [
   {
-    icon: Send,
-    title: 'A Lead Comes In',
-    text: 'A customer submits a form, requests a quote, calls, or reaches out through one of your connected channels.',
+    icon: Zap,
+    title: 'Instant Lead Capture',
+    text: 'Collect names, emails, phone numbers, service needs, locations, urgency, and custom details specific to your business.',
   },
   {
-    icon: Bot,
-    title: 'The AI Agent Responds',
-    text: 'The agent replies instantly using your approved messaging, business rules, and lead response workflow.',
-  },
-  {
-    icon: Target,
-    title: 'The Agent Qualifies the Lead',
-    text: 'It asks the right questions, gathers useful details, and determines how valuable or urgent the opportunity is.',
+    icon: Brain,
+    title: 'Smart Qualification',
+    text: 'Ask the questions your team normally asks before deciding how valuable, urgent, or ready a lead is.',
   },
   {
     icon: Headphones,
-    title: 'Your Team Gets Notified',
-    text: 'Lead details are sent through the channels your team actually checks, such as email, Discord, SMS, or another internal workflow.',
+    title: 'Team Alerts',
+    text: 'Send clean summaries to the channels your team actually checks, including email, Discord, SMS, or another internal workflow.',
   },
   {
-    icon: CalendarCheck,
-    title: 'You Follow Up Smarter',
-    text: 'Instead of starting from zero, your team already knows who they are, what they need, and how urgent it is.',
+    icon: Route,
+    title: 'Custom Business Logic',
+    text: 'Follow rules based on location, service type, urgency, pricing range, lead quality, or the next step your team wants taken.',
   },
 ];
 
@@ -97,49 +91,37 @@ const industries = [
   'Appointment-based businesses',
 ];
 
-const selfQualifiers = [
-  'Leads come in while your team is busy',
-  'Website form submissions sometimes get missed',
-  'After-hours requests wait until the next day',
-  'Your team asks the same intake questions repeatedly',
-  'You need better lead summaries before calling back',
-  'You want faster response without hiring a full-time receptionist',
-];
-
-const deliverables = [
-  'Custom lead intake flow',
-  'Approved response scripts',
-  'Qualifying questions',
-  'Website form integration',
-  'Internal team alerts',
-  'Email summaries',
-  'SMS or phone workflow options when appropriate',
-  'After-hours response logic',
-  'Lead routing rules',
-  'Testing and refinement after launch',
-];
-
 const useCases = [
   {
+    icon: Send,
     title: 'Website Form Response',
-    text: 'A customer fills out your website form and receives a fast approved response while your team gets a clean alert.',
+    text: 'A customer fills out your website form and gets a fast approved response while your team receives a clean lead alert.',
   },
   {
+    icon: Clock,
     title: 'After-Hours Intake',
-    text: 'The agent collects details overnight so your team starts the next day with qualified leads instead of cold form submissions.',
+    text: 'The agent collects important details overnight so your team starts the next day with qualified leads instead of cold form submissions.',
   },
   {
+    icon: Target,
     title: 'Service Request Qualification',
-    text: 'The agent asks key questions about the issue, location, urgency, and service needed before your team calls back.',
+    text: 'The agent asks about the issue, location, urgency, and service needed before your team follows up.',
   },
   {
-    title: 'Internal Lead Alerts',
-    text: 'Your team receives instant summaries through the channels they actually check, such as email, Discord, or SMS.',
-  },
-  {
+    icon: CalendarCheck,
     title: 'Follow-Up Preparation',
-    text: 'The system helps prepare the next step so your team can respond faster and more professionally.',
+    text: 'Your team gets the context needed to respond faster, prioritize the lead, and sound more prepared.',
   },
+];
+
+const buildProcess = [
+  'Map where your leads currently come from',
+  'Identify delays, missed alerts, and weak intake points',
+  'Create approved qualifying questions',
+  'Write approved response messaging',
+  'Connect alerts and delivery channels',
+  'Test the workflow before launch',
+  'Refine the system after real lead activity',
 ];
 
 const controlRules = [
@@ -148,60 +130,6 @@ const controlRules = [
   'When your team should be alerted',
   'Which leads need urgent attention',
   'Whether responses are automatic or human-reviewed',
-];
-
-const agentFeatures = [
-  {
-    icon: Zap,
-    title: 'Instant Lead Capture',
-    text: 'Collect names, emails, phone numbers, service needs, locations, urgency, and custom details specific to your business.',
-  },
-  {
-    icon: Brain,
-    title: 'Smart Qualification',
-    text: 'Ask the questions your team normally asks before deciding how valuable, urgent, or ready a lead is.',
-  },
-  {
-    icon: PhoneCall,
-    title: 'Phone, SMS, and Email Workflows',
-    text: 'The agent can support email, phone, and SMS workflows when appropriate, using approved messaging and consent-aware processes.',
-  },
-  {
-    icon: Headphones,
-    title: 'Team Alerts',
-    text: 'Get instant notifications when a lead comes in, including a clean summary of what the customer needs.',
-  },
-  {
-    icon: Moon,
-    title: 'After-Hours Coverage',
-    text: 'Your business can continue responding even when nobody is actively watching the inbox.',
-  },
-  {
-    icon: Route,
-    title: 'Custom Business Logic',
-    text: 'The agent can follow rules based on location, service type, urgency, pricing range, or lead quality.',
-  },
-];
-
-const businessBenefits = [
-  'Respond before competitors do',
-  'Reduce missed website leads',
-  'Capture better lead details',
-  'Improve after-hours coverage',
-  'Save time on repetitive intake questions',
-  'Prioritize urgent opportunities',
-  'Give your team cleaner information before follow-up',
-  'Create a more professional first impression',
-];
-
-const buildProcess = [
-  'Mapping where leads come from today',
-  'Identifying delays, missed alerts, and weak intake points',
-  'Creating approved qualifying questions',
-  'Writing approved agent responses',
-  'Connecting alerts and delivery channels',
-  'Testing the workflow before launch',
-  'Improving the system after real lead activity',
 ];
 
 const serviceOptions = [
@@ -286,6 +214,163 @@ const faqs = [
   },
 ];
 
+const smoothEase = [0.22, 1, 0.36, 1];
+
+const getRevealOffset = (direction) => {
+  const offsets = {
+    up: { x: 0, y: 34 },
+    down: { x: 0, y: -34 },
+    left: { x: 44, y: 0 },
+    right: { x: -44, y: 0 },
+    none: { x: 0, y: 0 },
+  };
+
+  return offsets[direction] || offsets.up;
+};
+
+const MotionReveal = ({
+  children,
+  className = '',
+  direction = 'up',
+  delay = 0,
+  amount = 0.22,
+}) => {
+  const offset = getRevealOffset(direction);
+
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: offset.x,
+        y: offset.y,
+        scale: direction === 'none' ? 1 : 0.985,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+      }}
+      viewport={{ once: true, amount }}
+      transition={{
+        duration: 0.72,
+        delay,
+        ease: smoothEase,
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const staggerItem = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+    scale: 0.985,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.62,
+      ease: smoothEase,
+    },
+  },
+};
+
+const slideLeftItem = {
+  hidden: {
+    opacity: 0,
+    x: 36,
+    scale: 0.985,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.62,
+      ease: smoothEase,
+    },
+  },
+};
+
+const AnimatedCard = ({
+  children,
+  className = '',
+  direction = 'up',
+  delay = 0,
+  hover = true,
+}) => {
+  const offset = getRevealOffset(direction);
+
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: offset.x,
+        y: offset.y,
+        scale: 0.985,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+      }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.65,
+        delay,
+        ease: smoothEase,
+      }}
+      whileHover={
+        hover
+          ? {
+              y: -5,
+              transition: { duration: 0.22, ease: smoothEase },
+            }
+          : undefined
+      }
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const SectionIntro = ({ eyebrow, title, description, className = '' }) => (
+  <MotionReveal
+    direction="up"
+    className={`mx-auto max-w-4xl text-center ${className}`}
+  >
+    <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
+      {eyebrow}
+    </p>
+    <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
+      {title}
+    </h2>
+    {description && (
+      <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
+        {description}
+      </p>
+    )}
+  </MotionReveal>
+);
+
 const PrimaryCtaButton = ({ to, children }) => (
   <motion.div
     whileHover={{ y: -2, scale: 1.015 }}
@@ -321,6 +406,37 @@ const SecondaryCtaButton = ({ to, children }) => (
   >
     <Link to={to}>{children}</Link>
   </Button>
+);
+
+const VisualImageCard = ({
+  src,
+  alt,
+  eager = false,
+  className = '',
+  imageClassName = '',
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 36, scale: 0.975 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    viewport={{ once: true, amount: 0.18 }}
+    transition={{ duration: 0.78, ease: smoothEase }}
+    className={`group relative ${className}`}
+  >
+    <div className="absolute -inset-4 rounded-[2rem] bg-blue-500/10 opacity-60 blur-3xl transition-opacity duration-300 group-hover:opacity-90" />
+
+    <div className="relative overflow-hidden rounded-[1.5rem] border border-slate-700/60 bg-slate-900/50 shadow-lg shadow-blue-500/10 transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
+      <img
+        src={src}
+        width="1672"
+        height="941"
+        alt={alt}
+        className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015] ${imageClassName}`}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding={eager ? 'sync' : 'async'}
+        fetchPriority={eager ? 'high' : 'auto'}
+      />
+    </div>
+  </motion.div>
 );
 
 const AILeadAgent = () => {
@@ -442,40 +558,39 @@ const AILeadAgent = () => {
             </div>
 
             <div className="relative z-10 px-4 pb-24 pt-32 md:px-6 lg:px-8">
-              <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.08fr_.92fr]">
+              <div className="mx-auto max-w-[92rem]">
                 <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, y: 24, scale: 0.985 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.7, ease: smoothEase }}
+                  className="mx-auto max-w-5xl text-center"
                 >
                   <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">
                     <Sparkles className="h-4 w-4" />
                     Premium AI Service
                   </div>
 
-                  <h1 className="max-w-5xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
+                  <h1 className="mx-auto max-w-5xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
                     Never Let a Hot Lead Go Cold Again
                   </h1>
 
-                  <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">
-                    Most small businesses lose leads because they respond too slowly.
-                    Ozony Tech builds AI Lead Response Agents that instantly capture new
-                    inquiries, ask the right qualifying questions, alert your team, and
-                    prepare a clean follow-up summary so you can respond faster and win
-                    more opportunities.
+                  <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">
+                    Ozony Tech builds AI Lead Response Agents that instantly capture
+                    new inquiries, ask the right qualifying questions, alert your team,
+                    and prepare a clean follow-up summary so you can respond faster.
                   </p>
 
-                  <div className="mt-8 rounded-3xl border border-blue-300/15 bg-blue-500/10 p-6 backdrop-blur">
+                  <div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-blue-300/15 bg-blue-500/10 p-6 text-center backdrop-blur">
                     <p className="text-lg font-semibold text-white">
                       This is not just a chatbot.
                     </p>
-                    <p className="mt-2 text-base leading-7 text-blue-100/80">
-                      This is a custom lead response workflow built around your business,
+                    <p className="mx-auto mt-2 max-w-2xl text-base leading-7 text-blue-100/80">
+                      It is a custom lead response workflow built around your business,
                       your services, and your follow-up process.
                     </p>
                   </div>
 
-                  <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                  <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
                     <PrimaryCtaButton to="/contactpage">
                       Book a Lead Response Consultation
                     </PrimaryCtaButton>
@@ -490,68 +605,49 @@ const AILeadAgent = () => {
                     </Button>
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    animate="show"
+                    className="mt-8 flex flex-wrap justify-center gap-3"
+                  >
                     {[
                       'Instant response',
                       'Lead qualification',
                       'After-hours coverage',
                       'Team alerts',
                     ].map((chip) => (
-                      <span
+                      <motion.span
                         key={chip}
+                        variants={staggerItem}
                         className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/75 backdrop-blur"
                       >
                         {chip}
-                      </span>
+                      </motion.span>
                     ))}
-                  </div>
+                  </motion.div>
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.55, delay: 0.08 }}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-[0_0_70px_rgba(37,99,235,0.16)] backdrop-blur-xl"
+                  initial={{ opacity: 0, y: 44, scale: 0.965 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.82, delay: 0.12, ease: smoothEase }}
+                  className="group relative mt-20 md:mt-24"
                 >
-                  <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/85 p-6 md:p-8">
-                    <div className="mb-6 flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/15">
-                        <Bot className="h-7 w-7 text-blue-300" />
-                      </div>
-                      <div>
-                        <p className="text-sm uppercase tracking-[0.2em] text-blue-300">
-                          AI Lead Agent
-                        </p>
-                        <h2 className="text-2xl font-semibold">
-                          Lead comes in. Agent responds.
-                        </h2>
-                      </div>
-                    </div>
+                  <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-80 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
-                    <div className="space-y-4">
-                      {[
-                        'Customer submits a form or request',
-                        'Agent responds instantly',
-                        'Agent asks approved questions',
-                        'Your team gets a clean alert',
-                      ].map((step, index) => (
-                        <div
-                          key={step}
-                          className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                        >
-                          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/15 text-sm font-bold text-blue-200">
-                            {index + 1}
-                          </div>
-                          <p className="text-sm font-medium text-white/85">{step}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-6 rounded-2xl border border-blue-300/20 bg-blue-500/10 p-5">
-                      <p className="text-sm leading-6 text-blue-100">
-                        Built for businesses that cannot afford to let hot leads sit
-                        unanswered while customers move on to competitors.
-                      </p>
+                  <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-2 shadow-[0_0_80px_rgba(37,99,235,0.22)] backdrop-blur-xl transition-all duration-300 group-hover:border-blue-400/35 group-hover:shadow-blue-500/25">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] bg-slate-950">
+                      <img
+                        src={AI_AGENT_HERO_IMAGE}
+                        width="1672"
+                        height="941"
+                        alt="AI Lead Response Agent dashboard showing lead capture, AI reply, lead qualification, and team alert workflow"
+                        className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+                        loading="eager"
+                        decoding="sync"
+                        fetchPriority="high"
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -560,473 +656,337 @@ const AILeadAgent = () => {
           </section>
 
           <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  What It Is
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  A custom automation system that responds the moment leads come in.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Every agent is designed around your service, your process, and the way
-                  your team works. It can respond, qualify, collect details, route leads,
-                  and alert your team before the opportunity goes cold.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {responseCapabilities.map((item) => (
-                  <div
-                    key={item}
-                    className="flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur"
-                  >
-                    <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                    <p className="text-sm leading-6 text-white/75">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  The Problem
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Slow follow-up costs money.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Most small businesses do not have a lead problem. They have a response
-                  problem. A potential customer reaches out, but nobody responds right
-                  away. Maybe the team is busy. Maybe the message gets buried. Maybe the
-                  lead comes in after hours.
-                </p>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  That delay creates friction. The customer starts looking somewhere else.
-                </p>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
-                <Clock className="mb-6 h-8 w-8 text-blue-300" />
-                <h3 className="text-3xl font-semibold">
-                  With an AI Lead Response Agent, your business can respond immediately,
-                  even when you are unavailable.
-                </h3>
-                <div className="mt-8 grid gap-4">
-                  {[
-                    'After-hours form submission',
-                    'Missed call or quote request',
-                    'Customer question from a lead page',
-                    'New inquiry that needs fast routing',
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                    >
-                      <Zap className="h-5 w-5 flex-none text-blue-300" />
-                      <span className="text-sm text-white/75">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.9fr_1.1fr]">
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  Who This Is For
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Built for businesses that cannot afford slow follow-up.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  This service is for businesses that receive leads through website forms,
-                  phone calls, emails, ads, referrals, or after-hours inquiries and need a
-                  faster way to respond.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {selfQualifiers.map((item) => (
-                  <div
-                    key={item}
-                    className="flex gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur"
-                  >
-                    <Target className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                    <p className="text-sm leading-6 text-white/75">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr]">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                    What Ozony Tech Builds
-                  </p>
-                  <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                    A real lead response workflow, not a generic bot widget.
-                  </h2>
-                  <p className="mt-5 text-lg leading-8 text-white/65">
-                    We design the system around where your leads come from, what your team
-                    needs to know, how urgent requests should be handled, and what happens
-                    after the first response.
-                  </p>
-                </div>
+              <SectionIntro
+                eyebrow="Problem + Solution"
+                title="Slow follow-up costs money. Fast response creates opportunity."
+                description="Most small businesses do not have a lead problem. They have a response problem. When someone reaches out and nobody responds quickly, that lead can move on to a competitor."
+              />
 
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {deliverables.map((item) => (
-                    <div
-                      key={item}
-                      className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"
-                    >
-                      <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                      <p className="text-sm leading-6 text-white/75">{item}</p>
-                    </div>
-                  ))}
+              <MotionReveal direction="up" delay={0.06}>
+                <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8">
+                  <div className="mx-auto max-w-3xl text-center">
+                    <Clock className="mx-auto mb-5 h-8 w-8 text-blue-300" />
+                    <h3 className="text-2xl font-semibold text-white">
+                      What the system can do
+                    </h3>
+                    <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-white/60">
+                      The agent responds immediately, collects useful context, and alerts
+                      your team while the customer is still interested.
+                    </p>
+                  </div>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                  >
+                    {responseCapabilities.map((item) => (
+                      <motion.div
+                        key={item}
+                        variants={slideLeftItem}
+                        className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
+                      >
+                        <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
+                        <p className="text-sm leading-6 text-white/75">{item}</p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </div>
-              </div>
+              </MotionReveal>
             </div>
           </section>
 
           <section
             id="how-it-works"
-            className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8"
+            className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8"
           >
             <div className="mx-auto max-w-7xl">
-              <div className="max-w-3xl">
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  How It Works
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  From cold form submission to active sales opportunity.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Instead of waiting for someone to manually review the request, the agent
-                  starts the intake process and prepares your team with useful context.
-                </p>
-              </div>
+              <SectionIntro
+                eyebrow="How It Works"
+                title="From cold form submission to active sales opportunity."
+                description="Instead of waiting for someone to manually review the request, the agent starts the intake process and prepares your team with useful context."
+              />
 
-              <div className="mt-10 grid gap-5 lg:grid-cols-5">
-                {workflowSteps.map((step, index) => {
-                  const Icon = step.icon;
+              <VisualImageCard
+                src={AI_AGENT_WORKFLOW_IMAGE}
+                alt="AI Lead Agent workflow showing a lead coming in, the agent responding, qualification, team notification, and smarter follow-up"
+                className="mt-10"
+              />
 
-                  return (
-                    <div
-                      key={step.title}
-                      className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur"
-                    >
-                      <div className="mb-6 flex items-center justify-between">
-                        <Icon className="h-6 w-6 text-blue-300" />
-                        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300/70">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-semibold">{step.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-white/65">{step.text}</p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-10 rounded-[2rem] border border-blue-300/15 bg-blue-500/10 p-8 backdrop-blur md:p-10">
-                <h3 className="text-2xl font-semibold">
-                  The agent can ask questions like:
-                </h3>
-                <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {qualificationQuestions.map((question) => (
-                    <div
-                      key={question}
-                      className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
-                    >
-                      <p className="text-sm leading-6 text-blue-100">{question}</p>
-                    </div>
-                  ))}
+              <MotionReveal direction="up" delay={0.05}>
+                <div className="mt-10 rounded-[2rem] border border-blue-300/15 bg-blue-500/10 p-8 text-center backdrop-blur md:p-10">
+                  <h3 className="text-2xl font-semibold">
+                    The agent can ask questions like:
+                  </h3>
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.24 }}
+                    className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+                  >
+                    {qualificationQuestions.map((question) => (
+                      <motion.div
+                        key={question}
+                        variants={staggerItem}
+                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
+                      >
+                        <p className="text-sm leading-6 text-blue-100">{question}</p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </div>
-              </div>
-            </div>
-          </section>
+              </MotionReveal>
 
-          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
-              <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
-                <div>
+              <MotionReveal direction="up" delay={0.05}>
+                <div className="mt-10 rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                    Built for Service Businesses
+                    Need Faster Lead Response?
                   </p>
-                  <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                    Ideal for businesses where fast response matters.
+                  <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
+                    Turn new inquiries into organized opportunities before they go cold.
                   </h2>
-                  <p className="mt-5 text-lg leading-8 text-white/65">
-                    If your business receives leads and needs to respond quickly, this
-                    system can help you capture more opportunities before they go cold.
+                  <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
+                    Ozony Tech can review your current lead process and map out where an AI
+                    Lead Response Agent would help.
                   </p>
-                </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {industries.map((industry) => (
-                    <div
-                      key={industry}
-                      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"
-                    >
-                      <Building2 className="h-5 w-5 flex-none text-blue-300" />
-                      <span className="text-sm text-white/75">{industry}</span>
-                    </div>
-                  ))}
+                  <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
+                    <PrimaryCtaButton to="/contactpage">
+                      Book a Lead Response Consultation
+                    </PrimaryCtaButton>
+
+                    <SecondaryCtaButton to="/contactpage">
+                      Find Out Where Leads Are Missed
+                    </SecondaryCtaButton>
+                  </div>
                 </div>
-              </div>
+              </MotionReveal>
             </div>
           </section>
 
           <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="max-w-3xl">
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  What the Agent Can Handle
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Built to support real intake, not just answer basic questions.
-                </h2>
-              </div>
+              <SectionIntro
+                eyebrow="What the Agent Can Handle"
+                title="Built to support real intake, not just answer basic questions."
+                description="The agent supports the parts of lead response that slow teams down: intake, qualification, routing, alerts, and follow-up preparation."
+              />
 
-              <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <VisualImageCard
+                src={AI_AGENT_CAPABILITIES_IMAGE}
+                alt="AI Lead Agent capabilities visual showing instant lead capture, smart qualification, team alerts, after-hours coverage, custom business logic, and follow-up support"
+                className="mt-10"
+              />
+
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.18 }}
+                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+              >
                 {agentFeatures.map((feature) => {
                   const Icon = feature.icon;
 
                   return (
-                    <div
+                    <motion.div
                       key={feature.title}
-                      className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition hover:border-blue-400/35 hover:bg-white/[0.07]"
+                      variants={staggerItem}
+                      whileHover={{
+                        y: -6,
+                        transition: { duration: 0.22, ease: smoothEase },
+                      }}
+                      className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
                     >
-                      <Icon className="mb-5 h-6 w-6 text-blue-300" />
+                      <Icon className="mx-auto mb-5 h-6 w-6 text-blue-300" />
                       <h3 className="text-2xl font-semibold">{feature.title}</h3>
                       <p className="mt-3 text-base leading-7 text-white/65">
                         {feature.text}
                       </p>
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
-              <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                Need Faster Lead Response?
-              </p>
-              <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
-                Turn new inquiries into organized opportunities before they go cold.
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
-                If leads are coming in through your website, ads, referrals, or after-hours
-                inquiries, Ozony Tech can build an AI Lead Response Agent that helps you
-                respond faster and follow up smarter.
-              </p>
-
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                <PrimaryCtaButton to="/contactpage">
-                  Book a Lead Response Consultation
-                </PrimaryCtaButton>
-
-                <SecondaryCtaButton to="/contactpage">
-                  Find Out Where Leads Are Missed
-                </SecondaryCtaButton>
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
-                <Users className="mb-6 h-8 w-8 text-blue-300" />
-                <h2 className="text-3xl font-semibold md:text-5xl">
-                  Why businesses need this.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  When someone reaches out to your business, they are usually ready to take
-                  action. The faster you respond, the better chance you have of winning the
-                  customer.
-                </p>
-
-                <div className="mt-8 grid gap-4">
-                  {businessBenefits.map((benefit) => (
-                    <div
-                      key={benefit}
-                      className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                    >
-                      <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                      <p className="text-sm leading-6 text-white/75">{benefit}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
-                <Wrench className="mb-6 h-8 w-8 text-blue-300" />
-                <h2 className="text-3xl font-semibold md:text-5xl">
-                  Custom built by Ozony Tech.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Ozony Tech does not install generic bots and walk away. We build the
-                  workflow around your actual business.
-                </p>
-
-                <div className="mt-8 grid gap-4">
-                  {buildProcess.map((item) => (
-                    <div
-                      key={item}
-                      className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
-                    >
-                      <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                      <p className="text-sm leading-6 text-white/75">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </motion.div>
             </div>
           </section>
 
           <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
-                <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr]">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                      Example Use Case
-                    </p>
-                    <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                      After-hours lead. Instant response. Clean summary.
-                    </h2>
-                    <p className="mt-5 text-lg leading-8 text-white/65">
-                      A customer visits your website after hours and submits a request for
-                      help. Instead of waiting until the next business day, your AI Lead
-                      Agent responds immediately.
-                    </p>
-                  </div>
+              <SectionIntro
+                eyebrow="Built for Service Businesses"
+                title="Ideal for businesses where fast response matters."
+                description="If your business receives leads through website forms, phone calls, ads, referrals, or after-hours inquiries, this system can help capture more opportunities before they go cold."
+              />
 
-                  <div className="space-y-4">
-                    {[
-                      'Agent asks what service they need.',
-                      'Agent asks how urgent the issue is.',
-                      'Agent collects location and contact details.',
-                      'Your team receives a clean alert with the full summary.',
-                      'You follow up already knowing what the customer needs.',
-                    ].map((item) => (
-                      <div
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.18 }}
+                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+              >
+                {useCases.map((useCase) => {
+                  const Icon = useCase.icon;
+
+                  return (
+                    <motion.div
+                      key={useCase.title}
+                      variants={staggerItem}
+                      whileHover={{
+                        y: -6,
+                        transition: { duration: 0.22, ease: smoothEase },
+                      }}
+                      className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
+                    >
+                      <Icon className="mx-auto mb-4 h-6 w-6 text-blue-300" />
+                      <h3 className="text-lg font-semibold text-white">
+                        {useCase.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-white/65">
+                        {useCase.text}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
+
+              <MotionReveal direction="up" delay={0.08}>
+                <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center backdrop-blur md:p-8">
+                  <Building2 className="mx-auto mb-6 h-8 w-8 text-blue-300" />
+                  <h3 className="text-2xl font-semibold text-white">
+                    Strong fit for:
+                  </h3>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
+                  >
+                    {industries.map((industry) => (
+                      <motion.div
+                        key={industry}
+                        variants={slideLeftItem}
+                        className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
+                      >
+                        <CheckCircle className="h-5 w-5 flex-none text-blue-300" />
+                        <span className="text-sm text-white/75">{industry}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+              </MotionReveal>
+            </div>
+          </section>
+
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+              <SectionIntro
+                eyebrow="Custom Built"
+                title="Mapped around your business, your team, and your lead process."
+                description="Ozony Tech does not install generic bots and walk away. The workflow is built around approved messaging, business rules, team alerts, and real follow-up needs."
+              />
+
+              <div className="mt-10 grid gap-8 lg:grid-cols-2">
+                <AnimatedCard
+                  direction="right"
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur md:p-10"
+                >
+                  <Wrench className="mx-auto mb-6 h-8 w-8 text-blue-300" />
+                  <h2 className="text-3xl font-semibold md:text-4xl">
+                    Custom built by Ozony Tech.
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
+                    We map the workflow around your current lead sources, delays, missed
+                    alerts, and intake process.
+                  </p>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.18 }}
+                    className="mt-8 grid gap-4"
+                  >
+                    {buildProcess.map((item) => (
+                      <motion.div
                         key={item}
-                        className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950/40 p-5"
+                        variants={staggerItem}
+                        className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left"
+                      >
+                        <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
+                        <p className="text-sm leading-6 text-white/75">{item}</p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatedCard>
+
+                <AnimatedCard
+                  direction="left"
+                  delay={0.08}
+                  className="rounded-[2rem] border border-blue-300/15 bg-blue-500/10 p-8 text-center backdrop-blur md:p-10"
+                >
+                  <ShieldCheck className="mx-auto mb-6 h-8 w-8 text-blue-300" />
+                  <h2 className="text-3xl font-semibold md:text-4xl">
+                    You stay in control.
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
+                    The goal is not to replace your team. The goal is to help your team
+                    respond faster with better information.
+                  </p>
+
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.18 }}
+                    className="mt-8 grid gap-4"
+                  >
+                    {controlRules.map((rule) => (
+                      <motion.div
+                        key={rule}
+                        variants={staggerItem}
+                        className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950/35 p-5 text-left"
                       >
                         <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                        <p className="text-sm leading-6 text-white/75">{item}</p>
-                      </div>
+                        <p className="text-sm leading-6 text-white/75">{rule}</p>
+                      </motion.div>
                     ))}
-                  </div>
-                </div>
-
-                <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/40 p-6">
-                  <p className="text-base leading-7 text-blue-100">
-                    That is the difference between a cold form submission and an active
-                    sales opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
-              <div className="max-w-3xl">
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  Common Use Cases
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Practical automations that protect your lead flow.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  The best lead agent is not flashy. It quietly removes delays, captures
-                  better context, and keeps your team informed.
-                </p>
-              </div>
-
-              <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-                {useCases.map((useCase, index) => (
-                  <div
-                    key={useCase.title}
-                    className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-blue-400/35 hover:bg-white/[0.07]"
-                  >
-                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300/70">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <h3 className="mt-4 text-xl font-semibold">{useCase.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-white/65">{useCase.text}</p>
-                  </div>
-                ))}
+                  </motion.div>
+                </AnimatedCard>
               </div>
             </div>
           </section>
 
           <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.85fr_1.15fr]">
-              <div>
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  You Stay in Control
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Approved messaging, approved questions, and clear business rules.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  The goal is not to replace your team. The goal is to help your team
-                  respond faster with better information, while keeping your business in
-                  control of the customer experience.
-                </p>
-              </div>
-
-              <div className="rounded-[2rem] border border-blue-300/15 bg-blue-500/10 p-8 backdrop-blur md:p-10">
-                <h3 className="text-2xl font-semibold">You decide:</h3>
-                <div className="mt-6 grid gap-4">
-                  {controlRules.map((rule) => (
-                    <div
-                      key={rule}
-                      className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950/35 p-5"
-                    >
-                      <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                      <p className="text-sm leading-6 text-white/75">{rule}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="max-w-3xl">
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  Premium Service Options
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Custom quoted based on your workflow.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Every AI Lead Agent is priced based on the complexity of your workflow,
-                  channels, automations, and integrations.
-                </p>
-              </div>
+              <SectionIntro
+                eyebrow="Premium Service Options"
+                title="Custom quoted based on your workflow."
+                description="Every AI Lead Agent is priced based on the complexity of your workflow, channels, automations, and integrations."
+              />
 
-              <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.16 }}
+                className="mt-10 grid gap-5 lg:grid-cols-3"
+              >
                 {serviceOptions.map((option) => (
-                  <div
+                  <motion.div
                     key={option.title}
-                    className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur transition hover:border-blue-400/35 hover:bg-white/[0.07]"
+                    variants={staggerItem}
+                    whileHover={{
+                      y: -7,
+                      transition: { duration: 0.22, ease: smoothEase },
+                    }}
+                    className="rounded-[2rem] border border-white/10 bg-white/5 p-7 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
                   >
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
                       {option.eyebrow}
@@ -1034,7 +994,7 @@ const AILeadAgent = () => {
                     <h3 className="mt-4 text-2xl font-semibold">{option.title}</h3>
                     <p className="mt-3 text-base leading-7 text-white/65">{option.text}</p>
 
-                    <div className="mt-6 space-y-3">
+                    <div className="mt-6 space-y-3 text-left">
                       {option.items.map((item) => (
                         <div key={item} className="flex gap-3">
                           <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
@@ -1042,34 +1002,34 @@ const AILeadAgent = () => {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-24 md:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
-              <div className="mx-auto max-w-3xl text-center">
-                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  FAQ
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-                  Questions businesses usually ask before building an AI lead agent.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-white/65">
-                  Clear answers before you book a consultation. Every workflow is custom,
-                  but these are the questions most business owners ask first.
-                </p>
-              </div>
+              <SectionIntro
+                eyebrow="FAQ"
+                title="Questions businesses usually ask before building an AI lead agent."
+                description="Clear answers before you book a consultation."
+              />
 
-              <div className="mt-12 grid items-start gap-5 lg:grid-cols-2">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.12 }}
+                className="mt-12 grid items-start gap-5 lg:grid-cols-2"
+              >
                 {faqs.map((faq, index) => {
                   const isActive = activeFaqIndex === index;
 
                   return (
-                    <div
+                    <motion.div
                       key={faq.question}
+                      variants={staggerItem}
                       className={`self-start rounded-[1.5rem] border p-6 shadow-[0_0_40px_rgba(37,99,235,0.05)] backdrop-blur transition-all duration-300 ${
                         isActive
                           ? 'border-blue-400/35 bg-white/[0.07]'
@@ -1102,57 +1062,65 @@ const AILeadAgent = () => {
                       </button>
 
                       {isActive && (
-                        <div className="mt-5 border-t border-white/10 pt-5">
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.28, ease: smoothEase }}
+                          className="mt-5 border-t border-white/10 pt-5"
+                        >
                           <p className="text-base leading-7 text-white/65">
                             {faq.answer}
                           </p>
-                        </div>
+                        </motion.div>
                       )}
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-24 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
-              <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                Ready to Stop Missing Leads?
-              </p>
-              <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
-                Your customers should not have to wait for your business to respond.
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
-                Ozony Tech can build an AI Lead Response Agent that captures new
-                opportunities, qualifies leads, and alerts your team instantly.
-              </p>
+          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
+            <MotionReveal direction="up">
+              <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
+                <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
+                  Ready to Stop Missing Leads?
+                </p>
+                <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
+                  Your customers should not have to wait for your business to respond.
+                </h2>
+                <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
+                  Ozony Tech can build an AI Lead Response Agent that captures new
+                  opportunities, qualifies leads, and alerts your team instantly.
+                </p>
 
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                <PrimaryCtaButton to="/contactpage">
-                  Book a Lead Response Consultation
-                </PrimaryCtaButton>
+                <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
+                  <PrimaryCtaButton to="/contactpage">
+                    Book a Lead Response Consultation
+                  </PrimaryCtaButton>
 
-                <SecondaryCtaButton to="/contactpage">
-                  Find Out Where Leads Are Missed
-                </SecondaryCtaButton>
+                  <SecondaryCtaButton to="/contactpage">
+                    Find Out Where Leads Are Missed
+                  </SecondaryCtaButton>
+                </div>
+
+                <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/55">
+                  <span className="inline-flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-blue-300" />
+                    contact@ozony.tech
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-blue-300" />
+                    (347) 653-7655
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <MessageSquare className="h-4 w-4 text-blue-300" />
+                    Custom workflow consultation
+                  </span>
+                </div>
               </div>
-
-              <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-white/55">
-                <span className="inline-flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-blue-300" />
-                  contact@ozony.tech
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-blue-300" />
-                  (347) 653-7655
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <MessageSquare className="h-4 w-4 text-blue-300" />
-                  Custom workflow consultation
-                </span>
-              </div>
-            </div>
+            </MotionReveal>
           </section>
         </main>
 

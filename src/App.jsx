@@ -1,13 +1,14 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
-import Credentials from '@/components/Credentials';
+import AILeadAgentTeaser from '@/components/AILeadAgentTeaser';
+import HowOzonyWorks from '@/components/HowOzonyWorks';
 import About from '@/components/About';
 import Faq from '@/components/Faq';
 import Contact from '@/components/Contact';
@@ -16,6 +17,7 @@ import ContactPage from '@/pages/ContactPage';
 
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
+const CredentialsPage = lazy(() => import('@/pages/CredentialsPage'));
 const CertificationsPage = lazy(() => import('@/components/CertificationsPage'));
 const AILeadAgentPage = lazy(() => import('@/components/AILeadAgent'));
 
@@ -79,7 +81,7 @@ const HomePage = () => {
         <title>Ozony Tech | IT &amp; Network Solutions for Small Businesses</title>
         <meta
           name="description"
-          content="Ozony Tech provides practical IT and network solutions for small businesses, including Wi-Fi setup, networking, device support, troubleshooting, and business IT services."
+          content="Ozony Tech provides practical IT and network solutions for small businesses, including Wi-Fi setup, networking, device support, troubleshooting, AI lead response automation, and business IT services."
         />
 
         <link rel="canonical" href="https://ozony.tech/" />
@@ -92,7 +94,7 @@ const HomePage = () => {
         />
         <meta
           property="og:description"
-          content="Practical IT, Wi-Fi, networking, and website solutions for small businesses in NYC, NJ, and CT."
+          content="Practical IT, Wi-Fi, networking, website, and AI lead response solutions for small businesses in NYC, NJ, and CT."
         />
         <meta
           property="og:image"
@@ -117,7 +119,7 @@ const HomePage = () => {
         />
         <meta
           name="twitter:description"
-          content="Practical IT, Wi-Fi, networking, and website solutions for small businesses in NYC, NJ, and CT."
+          content="Practical IT, Wi-Fi, networking, website, and AI lead response solutions for small businesses in NYC, NJ, and CT."
         />
         <meta
           name="twitter:image"
@@ -141,6 +143,7 @@ const HomePage = () => {
               'Firewall Setup',
               'Managed IT Services',
               'Website Services',
+              'AI Lead Response Automation',
             ],
             sameAs: [
               'https://x.com/ozonytech',
@@ -157,7 +160,8 @@ const HomePage = () => {
         <main>
           <Hero />
           <Services />
-          <Credentials />
+          <AILeadAgentTeaser />
+          <HowOzonyWorks />
           <About />
           <Faq />
           <Contact />
@@ -249,9 +253,16 @@ function App() {
           <Route path="/" element={<HomePage />} />
 
           <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/credentials" element={<CredentialsPage />} />
           <Route path="/certifications" element={<CertificationsPage />} />
+
           <Route path="/ai-lead-agent" element={<AILeadAgentPage />} />
           <Route path="/ai-agent-lead-capture" element={<AILeadCapture />} />
+          <Route
+            path="/ai-lead-capture"
+            element={<Navigate to="/ai-agent-lead-capture" replace />}
+          />
+
           <Route path="/network-setup-nyc" element={<NetworkSetupNYC />} />
           <Route path="/business-wifi-nyc" element={<BusinessWifiNYC />} />
           <Route path="/firewall-setup-nyc" element={<FirewallSetupNYC />} />
@@ -295,7 +306,10 @@ function App() {
           <Route path="/it-support" element={<ITSupport />} />
 
           <Route path="/it-solutions" element={<ITSolutions />} />
-          <Route path="/itsolutions" element={<Navigate to="/it-solutions" replace />} />
+          <Route
+            path="/itsolutions"
+            element={<Navigate to="/it-solutions" replace />}
+          />
 
           <Route path="/contactpage" element={<ContactPage />} />
 

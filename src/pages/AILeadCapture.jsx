@@ -160,7 +160,7 @@ const AILeadCapture = () => {
       ]}
       relatedServices={[
         { label: 'Premium AI Lead Agent', to: '/ai-lead-agent' },
-        { label: 'IT Solutions', to: '/itsolutions' },
+        { label: 'IT Solutions', to: '/it-solutions' },
         { label: 'Managed IT Services', to: '/managed-it-services' },
         { label: 'IT Support', to: '/it-support' },
         { label: 'Network Setup NYC', to: '/network-setup-nyc' },
