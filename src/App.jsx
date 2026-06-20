@@ -161,8 +161,8 @@ const HomePage = () => {
           <Hero />
           <Services />
           <AILeadAgentTeaser />
-          <HowOzonyWorks />
           <About />
+          <HowOzonyWorks />
           <Faq />
           <Contact />
         </main>
