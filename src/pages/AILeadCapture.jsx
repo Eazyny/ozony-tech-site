@@ -20,6 +20,7 @@ const AILeadCapture = () => {
     <ServiceLandingTemplate
       pageTitle="AI Agent Lead Capture Service | Ozony Tech"
       pageDescription="Ozony Tech builds AI agent lead capture systems for small businesses that need faster response, lead qualification, customer intake, and automated team alerts."
+      canonicalPath="/ai-lead-agent"
       eyebrow="OZONY TECH · AI LEAD CAPTURE SERVICE"
       title="AI Agent Lead Capture for Small Businesses"
       description="Capture, qualify, and organize new leads before they go cold. Ozony Tech builds AI agent lead capture systems that respond quickly, collect the right customer details, and alert your team with clean lead summaries."

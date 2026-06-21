@@ -23,7 +23,8 @@ const SITE_URL = 'https://ozony.tech';
 const DEFAULT_OG_IMAGE = '/images/ozony-og-preview.png';
 
 const ALL_SERVICE_LINKS = [
-  { label: 'AI Lead Capture', to: '/ai-agent-lead-capture' },
+  { label: 'AI Lead Agent', to: '/ai-lead-agent' },
+  { label: 'Business Network Setup NYC', to: '/network-setup-nyc' },
   { label: 'Business Wi-Fi Connecticut', to: '/business-wifi-connecticut' },
   { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
   { label: 'Firewall Setup Connecticut', to: '/firewall-setup-connecticut' },
@@ -165,6 +166,7 @@ const ServiceLandingTemplate = ({
   areasServed = 'Serving businesses across NYC, including Manhattan, Brooklyn, Queens, the Bronx, Staten Island, and nearby areas.',
   faqItems = defaultFaqItems,
   relatedServices = null,
+  canonicalPath = null,
   midCtaEyebrow = 'Get Started',
   midCtaTitle = 'Ready to Get Your Business Network Setup?',
   midCtaDescription = 'Get a clean, reliable solution built for your business without unnecessary complexity or guesswork.',
@@ -183,8 +185,13 @@ const ServiceLandingTemplate = ({
   );
 
   const canonicalUrl = useMemo(
-    () => absoluteUrl(normalizedPathname),
-    [normalizedPathname]
+    () =>
+      absoluteUrl(
+        canonicalPath
+          ? normalizePathname(canonicalPath)
+          : normalizedPathname
+      ),
+    [canonicalPath, normalizedPathname]
   );
 
   const ogImageUrl = useMemo(

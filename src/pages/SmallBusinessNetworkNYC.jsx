@@ -12,97 +12,106 @@ import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTem
 const SmallBusinessNetworkNYC = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="Small Business Network Setup in NYC | Ozony Tech"
-      pageDescription="Ozony Tech provides small business network setup in NYC for companies that need reliable Wi-Fi, organized connectivity, secure network structure, and a setup built for daily operations."
-      eyebrow="OZONY TECH · SMALL BUSINESS NETWORK NYC"
-      title="Small Business Network Setup in NYC"
-      description="Ozony Tech provides small business network setup in NYC for offices, retail stores, restaurants, and growing teams that need reliable connectivity, stronger organization, and a network built to support daily business operations."
+      pageTitle="Small Business Network Setup Guide for NYC Businesses | Ozony Tech"
+      pageDescription="A practical guide for NYC small businesses planning a reliable network setup, including Wi-Fi, routers, firewalls, guest access, POS devices, printers, and future growth."
+      eyebrow="OZONY TECH · SMALL BUSINESS NETWORK GUIDE"
+      title="Small Business Network Setup Guide for NYC Businesses"
+      description="Planning a small business network in NYC? This guide explains what your setup should include, what mistakes to avoid, and when to bring in help for Wi-Fi, routers, firewalls, printers, POS systems, and business devices."
       heroImage="/images/services/small-business-network-nyc.webp"
-      heroImageAlt="Small business network setup in NYC"
+      heroImageAlt="Small business network setup guide for NYC businesses"
       ogImage="/images/services/small-business-network-nyc.webp"
       twitterImage="/images/services/small-business-network-nyc.webp"
-      includeTitle="What’s Included"
-      includeDescription="Everything needed to build a reliable, organized, and business-ready network for small businesses that need their internet, Wi-Fi, and devices to work without constant issues."
+      includeTitle="What a Small Business Network Should Include"
+      includeDescription="A practical breakdown of the core pieces NYC small businesses should plan for when building or upgrading a reliable network."
       serviceIncludes={[
-        'Small business network setup and configuration',
-        'Router and firewall setup',
-        'Wi-Fi deployment and optimization',
+        'Router and firewall planning',
+        'Business Wi-Fi coverage and access point placement',
         'Guest and staff network separation',
-        'Printer, POS, and workstation connectivity',
-        'Structured network planning for future growth',
+        'Printer, POS, and workstation connectivity planning',
+        'Device organization for offices, retail stores, and restaurants',
+        'Room for future growth, upgrades, and troubleshooting',
       ]}
       outcomes={[
         {
           icon: Network,
           title: 'Cleaner Connectivity',
-          text: 'Build a more organized network environment with better structure, more dependable connectivity, and fewer day-to-day issues.',
+          text: 'Understand how to build a more organized network environment with better structure, more dependable connectivity, and fewer day-to-day issues.',
         },
         {
           icon: Shield,
           title: 'Stronger Foundation',
-          text: 'Create a better setup for business devices, internet access, wireless coverage, and long-term network reliability.',
+          text: 'Learn what a better setup should include for business devices, internet access, wireless coverage, and long-term reliability.',
         },
         {
           icon: CheckCircle2,
           title: 'Built for Daily Business Use',
-          text: 'Get a practical network setup designed around the real needs of small businesses instead of unnecessary complexity.',
+          text: 'Plan a practical network setup around the real needs of small businesses instead of unnecessary complexity.',
         },
       ]}
-      industriesTitle="Built for Small Business Environments"
+      industriesTitle="Network Planning for Small Business Environments"
       idealFor={[
         {
           title: 'Offices',
           description:
-            'Reliable small business network setup for teams, workstations, printers, phones, and shared office operations.',
+            'Useful for planning reliable connectivity for teams, workstations, printers, phones, and shared office operations.',
           icon: Briefcase,
         },
         {
           title: 'Retail Stores',
           description:
-            'Clean connectivity for POS systems, staff devices, guest Wi-Fi, and back-office workflows.',
+            'Helpful for stores that need clean connectivity for POS systems, staff devices, guest Wi-Fi, and back-office workflows.',
           icon: Store,
         },
         {
           title: 'Restaurants & Service Businesses',
           description:
-            'Practical network setup for restaurants, cafés, studios, and other customer-facing spaces that need stable connectivity.',
+            'Useful for restaurants, cafés, studios, and customer-facing spaces that depend on stable connectivity.',
           icon: Building2,
         },
       ]}
-      midCtaEyebrow="Need a Better Business Network?"
-      midCtaTitle="Get a Small Business Network That Works the Way It Should"
-      midCtaDescription="From Wi-Fi and device connectivity to cleaner structure and better reliability, Ozony Tech helps small businesses build networks that support real-world daily operations."
-      seoTitle="Why Choose Ozony Tech for Small Business Network Setup in NYC"
+      midCtaEyebrow="Need Help Building the Actual Network?"
+      midCtaTitle="Need Help Building the Actual Network?"
+      midCtaDescription="If you are ready to install, clean up, or upgrade your business network, view our NYC network setup service for hands-on help."
+      seoTitle="Small Business Network Setup Guide for NYC Businesses"
       seoParagraphs={[
-        'Ozony Tech provides small business network setup in NYC for companies that need dependable internet, organized internal connectivity, and a cleaner overall network structure. We help small businesses build practical setups that support day-to-day work without overcomplicating the environment.',
-        'Small business network setup can include router and firewall configuration, Wi-Fi deployment, device connectivity, guest and staff separation, and structured planning for future growth. The goal is to create a setup that feels reliable, organized, and easier to manage.',
-        'Businesses choose Ozony Tech because the focus is on practical network solutions for real small business environments across NYC. That means cleaner connectivity, less confusion, and a stronger foundation for day-to-day operations.',
+        'A reliable small business network in NYC should be planned around the way the business actually operates. Offices, retail stores, restaurants, studios, and service businesses all need dependable internet, organized device connectivity, and Wi-Fi that supports daily work without constant interruptions.',
+        'A proper small business network setup may include router and firewall planning, Wi-Fi coverage, printer and workstation connectivity, POS system support, guest and staff network separation, and room for future growth. The goal is not to overcomplicate the environment. The goal is to create a cleaner foundation that is easier to use, troubleshoot, and expand.',
+        'This guide is meant to help NYC small businesses understand what should go into a reliable setup before they invest in hardware, upgrades, or professional installation. When you are ready for hands-on help, Ozony Tech provides business network setup services for small businesses across NYC.',
       ]}
       areasServed="Serving small businesses across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, and nearby areas in NYC."
       faqItems={[
         {
-          question: 'Do you provide small business network setup in NYC?',
+          question: 'What should a small business network setup include?',
           answer:
-            'Yes. Ozony Tech provides small business network setup in NYC for offices, retail stores, restaurants, and other business environments that need reliable and organized connectivity.',
+            'A small business network setup should usually include router and firewall planning, Wi-Fi coverage, device connectivity, printer and POS support, guest access, staff access, and a structure that can support future growth.',
         },
         {
-          question: 'What does a small business network setup include?',
+          question: 'Do small businesses need separate guest and staff Wi-Fi?',
           answer:
-            'A small business network setup can include router and firewall configuration, Wi-Fi setup, printer and workstation connectivity, network segmentation, and a cleaner overall structure for everyday business use.',
+            'In most business environments, yes. Separating guest and staff Wi-Fi helps keep customer traffic away from internal business devices and creates a cleaner, more organized network structure.',
         },
         {
-          question: 'Can you improve an existing small business network?',
+          question: 'Can an existing small business network be improved?',
           answer:
             'Yes. Existing business networks can often be cleaned up, reorganized, and optimized to improve performance, coverage, reliability, and day-to-day usability.',
         },
         {
-          question: 'Can you separate guest, staff, and business devices on the network?',
+          question: 'When should a business get professional network setup help?',
           answer:
-            'Yes. Networks can be segmented to better separate guest access, staff use, and business-critical devices for stronger organization and security.',
+            'A business should consider professional help when Wi-Fi is unreliable, devices keep disconnecting, POS systems are affected, guest access is mixed with business devices, or the network has grown beyond a basic home-style setup.',
         },
       ]}
-      finalTitle="Need Small Business Network Setup in NYC?"
-      finalDescription="Get a clean, reliable network setup built around your business, your devices, and the way your team works every day."
+      relatedServices={[
+        { label: 'Business Network Setup NYC', to: '/network-setup-nyc' },
+        { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
+        { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
+        {
+          label: 'Network Troubleshooting NYC',
+          to: '/network-troubleshooting-nyc',
+        },
+      ]}
+      finalTitle="Ready for Professional Network Setup in NYC?"
+      finalDescription="Use this guide to plan your setup, then work with Ozony Tech when you are ready to build a cleaner, more reliable small business network."
     />
   );
 };
