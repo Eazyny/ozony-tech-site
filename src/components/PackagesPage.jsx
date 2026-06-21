@@ -6,9 +6,13 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUp,
+  Bot,
+  CheckCircle2,
+  Headphones,
   Network,
   ShieldCheck,
   Wifi,
+  Wrench,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
@@ -26,8 +30,9 @@ const packageTiers = [
     stackLabel: 'Recommended stack',
     stackName: 'Omada / compact business setup',
     description:
-      'A clean entry point for smaller businesses that need a more reliable setup without overcomplicating the environment.',
-    bestFor: 'Barbershops, small retail, home offices, simple office setups',
+      'A clean entry point for smaller businesses that need better Wi-Fi, basic network structure, and more reliable device connectivity without overcomplicating the setup.',
+    bestFor:
+      'Barbershops, salons, small retail spaces, home offices, simple offices, and smaller service businesses',
     includes: [
       'Router / firewall setup',
       'Basic switch and device connectivity',
@@ -46,8 +51,9 @@ const packageTiers = [
     stackLabel: 'Recommended stack',
     stackName: 'UniFi / managed small business setup',
     description:
-      'Built for growing businesses that need stronger Wi-Fi, better segmentation, and a more organized, scalable setup.',
-    bestFor: 'Busier offices, multi-room businesses, growing teams, guest Wi-Fi needs',
+      'Built for growing businesses that need stronger Wi-Fi, cleaner guest and staff separation, better performance, and a more organized upgrade path.',
+    bestFor:
+      'Busier offices, multi-room businesses, restaurants, retail stores, growing teams, and businesses with guest Wi-Fi needs',
     includes: [
       'Managed networking upgrade path',
       'Guest and staff network separation',
@@ -67,8 +73,9 @@ const packageTiers = [
     stackLabel: 'Recommended stack',
     stackName: 'Aruba Instant On / premium SMB setup',
     description:
-      'A more complete small-business network package designed for reliability, cleaner deployment, and future growth.',
-    bestFor: 'Larger small businesses, higher device counts, polished long-term setups',
+      'A more complete small-business network package designed for cleaner deployment, stronger control, better reliability, and future growth.',
+    bestFor:
+      'Larger small businesses, higher device counts, professional spaces, polished offices, and long-term network builds',
     includes: [
       'Business-grade gateway and switching',
       'Managed Wi-Fi and network segmentation',
@@ -121,7 +128,7 @@ const brandLogic = [
     image: '/images/brands/Unifi.webp',
     eyebrow: 'Polished ecosystem',
     description:
-      'A strong option when a business wants a polished ecosystem, clean management, and a more unified network experience.',
+      'A strong option when a business wants clean management, strong visibility, and a more unified network experience.',
   },
   {
     icon: Network,
@@ -141,6 +148,72 @@ const brandLogic = [
   },
 ];
 
+const servicePaths = [
+  {
+    icon: Network,
+    title: 'Business Network Setup',
+    description:
+      'For businesses that need a cleaner router, switch, Wi-Fi, firewall, printer, POS, and device connectivity foundation.',
+    to: '/network-setup-nyc',
+    label: 'View network setup',
+  },
+  {
+    icon: Wifi,
+    title: 'Business Wi-Fi',
+    description:
+      'For businesses dealing with weak coverage, dead zones, unstable wireless, guest access issues, or growing device counts.',
+    to: '/business-wifi-nyc',
+    label: 'View business Wi-Fi',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Firewall Setup',
+    description:
+      'For businesses that need cleaner traffic control, guest and staff separation, stronger boundaries, and better network organization.',
+    to: '/firewall-setup-nyc',
+    label: 'View firewall setup',
+  },
+  {
+    icon: Wrench,
+    title: 'IT Support',
+    description:
+      'For businesses that need help with devices, printers, access issues, workstations, troubleshooting, and day-to-day tech problems.',
+    to: '/it-support-nyc',
+    label: 'View IT support',
+  },
+  {
+    icon: Headphones,
+    title: 'Managed IT Services',
+    description:
+      'For businesses that need recurring support, cleaner systems, and a more consistent path for handling technology issues.',
+    to: '/managed-it-services',
+    label: 'View managed IT',
+  },
+  {
+    icon: Bot,
+    title: 'AI Lead Response Agent',
+    description:
+      'For businesses that want faster lead follow-up, instant notifications, confirmation emails, and AI-assisted response drafts.',
+    to: '/ai-lead-agent',
+    label: 'View AI lead agent',
+  },
+];
+
+const setupSteps = [
+  {
+    title: '1. Review the space',
+    text: 'We look at the business layout, device needs, Wi-Fi expectations, current pain points, and how the team actually works.',
+  },
+  {
+    title: '2. Choose the right tier',
+    text: 'Starter, Growth, and Complete are starting points. The final recommendation depends on coverage, reliability, control, and budget.',
+  },
+  {
+    title: '3. Build a clean path forward',
+    text: 'The goal is not to oversell hardware. The goal is to build a setup that is practical, reliable, manageable, and easier to grow over time.',
+  },
+];
+
 const fitCards = [
   'Barbershops & salons',
   'Retail shops',
@@ -154,12 +227,12 @@ const packageFaqs = [
   {
     question: 'Which package is right for my business?',
     answer:
-      'That depends on your space, number of users and devices, Wi-Fi expectations, and whether you need a cleaner upgrade path for future growth.',
+      'That depends on your space, number of users and devices, Wi-Fi expectations, current setup, and whether you need a cleaner upgrade path for future growth.',
   },
   {
     question: 'Can packages be customized?',
     answer:
-      'Yes. These packages are designed as starting points, not rigid boxes. The final recommendation can be adjusted to your business needs and budget.',
+      'Yes. These packages are designed as starting points, not rigid boxes. The final recommendation can be adjusted around your business needs, layout, budget, and goals.',
   },
   {
     question: 'Do you only work with one brand?',
@@ -169,7 +242,17 @@ const packageFaqs = [
   {
     question: 'Can I start with a smaller setup and upgrade later?',
     answer:
-      'Yes. A good network setup should make it easier to grow over time instead of forcing a full rebuild later.',
+      'Yes. A good setup should make it easier to grow over time instead of forcing a full rebuild later.',
+  },
+  {
+    question: 'Do these packages include IT support?',
+    answer:
+      'Packages can include setup support and practical guidance. Businesses that need recurring help can also review managed IT services or request a custom support plan.',
+  },
+  {
+    question: 'Do you offer AI lead response setup too?',
+    answer:
+      'Yes. Ozony Tech also offers an AI Lead Response Agent service for businesses that want faster lead follow-up, alerts, confirmation emails, and AI-assisted response drafts.',
   },
 ];
 
@@ -194,13 +277,69 @@ const PackagesPage = () => {
   const canonicalUrl = 'https://ozony.tech/packages';
   const ogImage = 'https://ozony.tech/images/packages/complete-stack.webp';
 
+  const packagesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Ozony Tech Business IT and Network Packages',
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'Ozony Tech',
+      url: 'https://ozony.tech',
+      email: 'contact@ozony.tech',
+      telephone: '+1-347-653-7655',
+    },
+    url: canonicalUrl,
+    areaServed: ['New York City', 'New Jersey', 'Connecticut'],
+    serviceType: [
+      'Network Setup',
+      'Business Wi-Fi',
+      'Firewall Setup',
+      'IT Support',
+      'Managed IT Services',
+      'AI Lead Response Automation',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Small Business IT and Network Packages',
+      itemListElement: packageTiers.map((tier) => ({
+        '@type': 'Offer',
+        name: `${tier.name} Package`,
+        description: tier.description,
+        itemOffered: {
+          '@type': 'Service',
+          name: `${tier.name} Business IT and Network Package`,
+          serviceType: tier.includes,
+        },
+      })),
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://ozony.tech/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Packages',
+        item: canonicalUrl,
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
-        <title>Ozony Tech Packages | Business IT &amp; Network Packages</title>
+        <title>Small Business IT &amp; Network Packages | Ozony Tech</title>
         <meta
           name="description"
-          content="Explore Ozony Tech package options for small businesses, including Starter, Growth, and Complete IT and network solutions."
+          content="Compare Ozony Tech small business IT and network packages, including Starter, Growth, and Complete options for Wi-Fi, network setup, firewall setup, IT support, and AI lead response services."
         />
         <meta
           name="robots"
@@ -208,19 +347,28 @@ const PackagesPage = () => {
         />
         <link rel="canonical" href={canonicalUrl} />
 
-        <meta property="og:title" content="Ozony Tech Packages | Business IT & Network Packages" />
+        <meta
+          property="og:title"
+          content="Small Business IT & Network Packages | Ozony Tech"
+        />
         <meta
           property="og:description"
-          content="Explore Starter, Growth, and Complete package options for practical small-business IT and networking."
+          content="Compare Starter, Growth, and Complete package options for practical small-business IT, Wi-Fi, networking, firewall setup, and support."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Ozony Tech" />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:image:alt" content="Ozony Tech Complete package recommended network hardware stack" />
+        <meta
+          property="og:image:alt"
+          content="Ozony Tech Complete package recommended network hardware stack"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ozony Tech Packages | Business IT & Network Packages" />
+        <meta
+          name="twitter:title"
+          content="Small Business IT & Network Packages | Ozony Tech"
+        />
         <meta
           name="twitter:description"
           content="Compare Starter, Growth, and Complete package options for small-business IT and networking."
@@ -228,27 +376,11 @@ const PackagesPage = () => {
         <meta name="twitter:image" content={ogImage} />
 
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: 'Ozony Tech Business IT & Network Packages',
-            provider: {
-              '@type': 'ProfessionalService',
-              name: 'Ozony Tech',
-              url: 'https://ozony.tech',
-              email: 'contact@ozony.tech',
-              telephone: '+1-347-653-7655',
-            },
-            url: canonicalUrl,
-            areaServed: ['New York City', 'New Jersey', 'Connecticut'],
-            serviceType: [
-              'Network Setup',
-              'Business Wi-Fi',
-              'Firewall Setup',
-              'IT Support',
-              'Managed IT Services',
-            ],
-          })}
+          {JSON.stringify(packagesSchema)}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
 
         <script type="application/ld+json">
@@ -298,13 +430,14 @@ const PackagesPage = () => {
                 </p>
 
                 <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-                  Business IT &amp; Network Packages Built for Real-World Small Business Needs
+                  Small Business IT &amp; Network Packages Built Around Real Needs
                 </h1>
 
                 <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400">
-                  These packages are designed to give small businesses a clearer path to reliable
-                  Wi-Fi, stronger networking, cleaner setup, and smarter growth over time. They are
-                  practical starting points built to stay understandable, scalable, and business-ready.
+                  Compare practical package paths for better Wi-Fi, cleaner networking,
+                  stronger firewall structure, support planning, and smarter business growth.
+                  Each package is a starting point that can be adjusted around your space,
+                  budget, and goals.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -322,24 +455,24 @@ const PackagesPage = () => {
                     variant="outline"
                     className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
                   >
-                    <Link to="/#contact">
-                      <DecodedText speed={12}>Contact Ozony Tech</DecodedText>
+                    <Link to="/ai-lead-agent">
+                      <DecodedText speed={12}>View AI Lead Agent</DecodedText>
                     </Link>
                   </Button>
                 </div>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400">
                   <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Built with trusted platforms
+                    Starter
                   </span>
                   <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    UniFi
+                    Growth
                   </span>
                   <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Omada
+                    Complete
                   </span>
                   <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Aruba Instant On
+                    Custom options available
                   </span>
                 </div>
               </motion.div>
@@ -384,11 +517,12 @@ const PackagesPage = () => {
 
               <div className="mt-10 rounded-2xl border border-slate-700/50 bg-slate-900/50 px-6 py-5 text-center">
                 <p className="text-sm uppercase tracking-[0.18em] text-blue-400">
-                  Trusted platforms
+                  Built around the right fit
                 </p>
                 <p className="mx-auto mt-2 max-w-3xl text-gray-400">
-                  Ozony Tech builds around practical, proven platforms like UniFi, Omada, and
-                  Aruba Instant On based on your budget, layout, management needs, and long-term goals.
+                  Ozony Tech builds around practical, proven platforms like UniFi,
+                  Omada, and Aruba Instant On based on your budget, layout,
+                  management needs, and long-term goals.
                 </p>
               </div>
             </div>
@@ -401,33 +535,140 @@ const PackagesPage = () => {
                   Compare the Packages
                 </h2>
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  A simple view of how the tiers scale based on complexity, structure, and long-term growth.
+                  A simple view of how the tiers scale based on complexity,
+                  coverage, structure, and long-term growth.
                 </p>
               </div>
 
               <div className="overflow-x-auto rounded-2xl border border-slate-700/50 bg-slate-900/70">
                 <div className="min-w-[720px]">
                   <div className="grid grid-cols-4 border-b border-slate-700/50 bg-slate-900/80">
-                    <div className="p-4 text-sm font-semibold text-gray-400">Category</div>
-                    <div className="p-4 text-sm font-semibold text-white">Starter</div>
-                    <div className="p-4 text-sm font-semibold text-white">Growth</div>
-                    <div className="p-4 text-sm font-semibold text-white">Complete</div>
+                    <div className="p-4 text-sm font-semibold text-gray-400">
+                      Category
+                    </div>
+                    <div className="p-4 text-sm font-semibold text-white">
+                      Starter
+                    </div>
+                    <div className="p-4 text-sm font-semibold text-white">
+                      Growth
+                    </div>
+                    <div className="p-4 text-sm font-semibold text-white">
+                      Complete
+                    </div>
                   </div>
 
                   {comparisonRows.map((row, index) => (
                     <div
                       key={row.label}
                       className={`grid grid-cols-4 ${
-                        index !== comparisonRows.length - 1 ? 'border-b border-slate-700/50' : ''
+                        index !== comparisonRows.length - 1
+                          ? 'border-b border-slate-700/50'
+                          : ''
                       }`}
                     >
-                      <div className="p-4 text-sm font-medium text-gray-300">{row.label}</div>
-                      <div className="p-4 text-sm text-gray-400">{row.starter}</div>
-                      <div className="p-4 text-sm text-gray-400">{row.growth}</div>
-                      <div className="p-4 text-sm text-gray-400">{row.complete}</div>
+                      <div className="p-4 text-sm font-medium text-gray-300">
+                        {row.label}
+                      </div>
+                      <div className="p-4 text-sm text-gray-400">
+                        {row.starter}
+                      </div>
+                      <div className="p-4 text-sm text-gray-400">
+                        {row.growth}
+                      </div>
+                      <div className="p-4 text-sm text-gray-400">
+                        {row.complete}
+                      </div>
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="px-4 py-20">
+            <div className="container mx-auto max-w-7xl">
+              <div className="mb-12 text-center">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
+                  Service Paths
+                </p>
+                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+                  Not Sure Which Service Fits?
+                </h2>
+                <p className="mx-auto max-w-3xl text-lg text-gray-400">
+                  Packages are one way to start. You can also jump directly into
+                  the service that matches your biggest issue right now.
+                </p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {servicePaths.map((service, index) => {
+                  const Icon = service.icon;
+
+                  return (
+                    <motion.div
+                      key={service.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.45, delay: index * 0.06 }}
+                      className="flex h-full flex-col rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
+                    >
+                      <div className="mb-5 inline-flex w-fit rounded-xl bg-blue-500/10 p-3">
+                        <Icon className="h-6 w-6 text-blue-400" />
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-white">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 flex-1 leading-relaxed text-gray-400">
+                        {service.description}
+                      </p>
+
+                      <Link
+                        to={service.to}
+                        className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-400 transition-colors hover:text-blue-300"
+                      >
+                        <span>{service.label}</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          <section className="bg-slate-800/30 px-4 py-20">
+            <div className="container mx-auto max-w-7xl">
+              <div className="mb-12 text-center">
+                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+                  How Package Selection Works
+                </h2>
+                <p className="mx-auto max-w-3xl text-lg text-gray-400">
+                  The right setup depends on the business, not a generic checklist.
+                  Here’s the basic path.
+                </p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {setupSteps.map((step, index) => (
+                  <motion.div
+                    key={step.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
+                  >
+                    <div className="mb-5 inline-flex rounded-xl bg-green-500/10 p-3">
+                      <CheckCircle2 className="h-6 w-6 text-green-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                    <p className="mt-3 leading-relaxed text-gray-400">
+                      {step.text}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </section>
@@ -439,8 +680,9 @@ const PackagesPage = () => {
                   Why These Solutions?
                 </h2>
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  Ozony Tech doesn’t recommend equipment based on hype. The right setup depends on
-                  your space, budget, business type, and how much control or scalability you need.
+                  Ozony Tech doesn’t recommend equipment based on hype. The right
+                  setup depends on your space, budget, business type, and how much
+                  control or scalability you need.
                 </p>
               </div>
 
@@ -476,8 +718,12 @@ const PackagesPage = () => {
                       <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
                         {item.eyebrow}
                       </p>
-                      <h3 className="mt-2 text-2xl font-bold text-white">{item.title}</h3>
-                      <p className="mt-3 leading-relaxed text-gray-400">{item.description}</p>
+                      <h3 className="mt-2 text-2xl font-bold text-white">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 leading-relaxed text-gray-400">
+                        {item.description}
+                      </p>
                     </motion.div>
                   );
                 })}
@@ -488,10 +734,12 @@ const PackagesPage = () => {
           <section className="bg-slate-800/30 px-4 py-20">
             <div className="container mx-auto max-w-7xl">
               <div className="mb-12 text-center">
-                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">Great Fit For</h2>
+                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+                  Great Fit For
+                </h2>
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  These packages are designed around the kinds of businesses that benefit most from clean,
-                  reliable networking and practical IT support.
+                  These packages are designed around the kinds of businesses that
+                  benefit most from clean, reliable networking and practical IT support.
                 </p>
               </div>
 
@@ -515,7 +763,9 @@ const PackagesPage = () => {
           <section className="px-4 py-20">
             <div className="container mx-auto max-w-7xl">
               <div className="mb-12 text-center">
-                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">Packages FAQ</h2>
+                <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+                  Packages FAQ
+                </h2>
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
                   A few common questions about how the package tiers work.
                 </p>
@@ -531,8 +781,12 @@ const PackagesPage = () => {
                     transition={{ duration: 0.5, delay: index * 0.06 }}
                     className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
                   >
-                    <h3 className="text-xl font-semibold text-white">{faq.question}</h3>
-                    <p className="mt-3 leading-relaxed text-gray-400">{faq.answer}</p>
+                    <h3 className="text-xl font-semibold text-white">
+                      {faq.question}
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-gray-400">
+                      {faq.answer}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -547,8 +801,10 @@ const PackagesPage = () => {
                 </h2>
 
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-gray-400">
-                  Whether you need a smaller starter setup or a more complete long-term solution,
-                  Ozony Tech can help you choose a practical path forward.
+                  Whether you need a smaller starter setup, a more complete
+                  long-term solution, or a custom mix of IT support, networking,
+                  Wi-Fi, firewall setup, and automation, Ozony Tech can help you
+                  choose a practical path forward.
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -566,9 +822,9 @@ const PackagesPage = () => {
                     variant="outline"
                     className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
                   >
-                    <Link to="/">
+                    <Link to="/it-solutions">
                       <ArrowRight className="mr-2 h-5 w-5" />
-                      <DecodedText speed={12}>Back to Homepage</DecodedText>
+                      <DecodedText speed={12}>Explore IT Solutions</DecodedText>
                     </Link>
                   </Button>
                 </div>
