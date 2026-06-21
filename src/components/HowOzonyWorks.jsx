@@ -53,9 +53,11 @@ const HowOzonyWorks = () => {
           className="relative overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/50 shadow-lg shadow-blue-500/10"
         >
           <img
-            src="/images/HowWeWork.png"
-            width="1672"
-            height="941"
+            src="/images/HowWeWork-1200.webp"
+            srcSet="/images/HowWeWork-800.webp 800w, /images/HowWeWork-1200.webp 1200w, /images/HowWeWork-1600.webp 1600w"
+            sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px"
+            width="1200"
+            height="675"
             alt="How Ozony Tech works process from assessment to support and optimization"
             className="h-full w-full object-cover"
             loading="lazy"

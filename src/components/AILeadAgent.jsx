@@ -31,9 +31,22 @@ const SITE_URL = 'https://ozony.tech';
 const PAGE_URL = `${SITE_URL}/ai-lead-agent`;
 const OG_IMAGE = `${SITE_URL}/images/ozony-og-preview.png`;
 
-const AI_AGENT_HERO_IMAGE = '/images/AIAgent1.png';
-const AI_AGENT_WORKFLOW_IMAGE = '/images/AIAgent2.png';
-const AI_AGENT_CAPABILITIES_IMAGE = '/images/AIAgent3.png';
+const createResponsiveImage = (name) => ({
+  src: `/images/${name}-1200.webp`,
+  srcSet: `/images/${name}-800.webp 800w, /images/${name}-1200.webp 1200w, /images/${name}-1600.webp 1600w`,
+  sizes:
+    '(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px',
+  width: '1200',
+  height: '675',
+});
+
+const AI_AGENT_HERO_IMAGE = {
+  ...createResponsiveImage('AIAgent1'),
+  sizes: '(max-width: 1024px) calc(100vw - 32px), 1200px',
+};
+
+const AI_AGENT_WORKFLOW_IMAGE = createResponsiveImage('AIAgent2');
+const AI_AGENT_CAPABILITIES_IMAGE = createResponsiveImage('AIAgent3');
 
 const responseCapabilities = [
   'Respond to website form submissions',
@@ -410,6 +423,10 @@ const SecondaryCtaButton = ({ to, children }) => (
 
 const VisualImageCard = ({
   src,
+  srcSet,
+  sizes,
+  width = '1200',
+  height = '675',
   alt,
   eager = false,
   className = '',
@@ -427,8 +444,10 @@ const VisualImageCard = ({
     <div className="relative overflow-hidden rounded-[1.5rem] border border-slate-700/60 bg-slate-900/50 shadow-lg shadow-blue-500/10 transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
       <img
         src={src}
-        width="1672"
-        height="941"
+        srcSet={srcSet}
+        sizes={sizes}
+        width={width}
+        height={height}
         alt={alt}
         className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015] ${imageClassName}`}
         loading={eager ? 'eager' : 'lazy'}
@@ -639,9 +658,11 @@ const AILeadAgent = () => {
                   <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.06] p-2 shadow-[0_0_80px_rgba(37,99,235,0.22)] backdrop-blur-xl transition-all duration-300 group-hover:border-blue-400/35 group-hover:shadow-blue-500/25">
                     <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] bg-slate-950">
                       <img
-                        src={AI_AGENT_HERO_IMAGE}
-                        width="1672"
-                        height="941"
+                        src={AI_AGENT_HERO_IMAGE.src}
+                        srcSet={AI_AGENT_HERO_IMAGE.srcSet}
+                        sizes={AI_AGENT_HERO_IMAGE.sizes}
+                        width={AI_AGENT_HERO_IMAGE.width}
+                        height={AI_AGENT_HERO_IMAGE.height}
                         alt="AI Lead Response Agent dashboard showing lead capture, AI reply, lead qualification, and team alert workflow"
                         className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                         loading="eager"
@@ -711,7 +732,7 @@ const AILeadAgent = () => {
               />
 
               <VisualImageCard
-                src={AI_AGENT_WORKFLOW_IMAGE}
+                {...AI_AGENT_WORKFLOW_IMAGE}
                 alt="AI Lead Agent workflow showing a lead coming in, the agent responding, qualification, team notification, and smarter follow-up"
                 className="mt-10"
               />
@@ -777,7 +798,7 @@ const AILeadAgent = () => {
               />
 
               <VisualImageCard
-                src={AI_AGENT_CAPABILITIES_IMAGE}
+                {...AI_AGENT_CAPABILITIES_IMAGE}
                 alt="AI Lead Agent capabilities visual showing instant lead capture, smart qualification, team alerts, after-hours coverage, custom business logic, and follow-up support"
                 className="mt-10"
               />

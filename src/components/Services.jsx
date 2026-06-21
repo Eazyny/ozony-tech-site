@@ -233,9 +233,11 @@ const Services = () => {
             <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-700/60 bg-slate-900/50 p-2 shadow-lg shadow-blue-500/10 backdrop-blur-xl transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
               <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] bg-slate-950">
                 <img
-                  src="/images/NetworkSetup.png"
-                  width="1672"
-                  height="941"
+                  src="/images/NetworkSetup-1200.webp"
+                  srcSet="/images/NetworkSetup-800.webp 800w, /images/NetworkSetup-1200.webp 1200w, /images/NetworkSetup-1600.webp 1600w"
+                  sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px"
+                  width="1200"
+                  height="675"
                   alt="Ozony Tech small business IT, networking, Wi-Fi, security, and support visual"
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                   loading="lazy"
