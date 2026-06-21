@@ -177,7 +177,7 @@ const ContactPage = () => {
           name="description"
           content="Contact Ozony Tech for small business IT support, network setup, business Wi-Fi, firewall setup, and managed IT services in NYC, New Jersey, and Connecticut."
         />
-        <link rel="canonical" href="https://ozony.tech/contactpage" />
+        <link rel="canonical" href="https://ozony.tech/contact" />
         <meta
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
@@ -188,7 +188,7 @@ const ContactPage = () => {
           property="og:description"
           content="Need help with business Wi-Fi, network setup, firewall configuration, or IT support? Contact Ozony Tech today."
         />
-        <meta property="og:url" content="https://ozony.tech/contactpage" />
+        <meta property="og:url" content="https://ozony.tech/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ozony Tech" />
         <meta property="og:image" content="https://ozony.tech/images/ozony-og-preview.png" />

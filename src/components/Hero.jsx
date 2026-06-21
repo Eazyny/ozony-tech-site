@@ -81,7 +81,7 @@ const Hero = () => {
               className="flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Button
-                onClick={() => navigate('/contactpage')}
+                onClick={() => navigate('/contact')}
                 className="bg-blue-600 px-6 py-6 text-base text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700"
               >
                 <Mail className="mr-2 h-5 w-5" />

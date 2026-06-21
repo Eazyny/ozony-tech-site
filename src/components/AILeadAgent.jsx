@@ -591,7 +591,7 @@ const AILeadAgent = () => {
                   </div>
 
                   <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                    <PrimaryCtaButton to="/contactpage">
+                    <PrimaryCtaButton to="/contact">
                       Book a Lead Response Consultation
                     </PrimaryCtaButton>
 
@@ -755,11 +755,11 @@ const AILeadAgent = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                    <PrimaryCtaButton to="/contactpage">
+                    <PrimaryCtaButton to="/contact">
                       Book a Lead Response Consultation
                     </PrimaryCtaButton>
 
-                    <SecondaryCtaButton to="/contactpage">
+                    <SecondaryCtaButton to="/contact">
                       Find Out Where Leads Are Missed
                     </SecondaryCtaButton>
                   </div>
@@ -1096,11 +1096,11 @@ const AILeadAgent = () => {
                 </p>
 
                 <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                  <PrimaryCtaButton to="/contactpage">
+                  <PrimaryCtaButton to="/contact">
                     Book a Lead Response Consultation
                   </PrimaryCtaButton>
 
-                  <SecondaryCtaButton to="/contactpage">
+                  <SecondaryCtaButton to="/contact">
                     Find Out Where Leads Are Missed
                   </SecondaryCtaButton>
                 </div>

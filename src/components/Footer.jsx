@@ -20,7 +20,7 @@ const Footer = () => {
     { label: 'Services', href: '#services' },
     { label: 'Credentials', href: '#credentials' },
     { label: 'About', href: '#about' },
-    { label: 'Contact', to: '/contactpage' },
+    { label: 'Contact', to: '/contact' },
     { label: 'Packages', to: '/packages' },
     { label: 'AI Lead Agent', to: '/ai-lead-agent' },
   ];
@@ -197,7 +197,7 @@ const Footer = () => {
 
                   <button
                     type="button"
-                    onClick={() => navigate('/contactpage')}
+                    onClick={() => navigate('/contact')}
                     className="inline-flex w-fit items-center rounded-full border border-slate-800 bg-slate-950/40 px-4 py-2 text-sm text-gray-400 transition-all hover:border-slate-700 hover:text-white"
                   >
                     Get a Quote

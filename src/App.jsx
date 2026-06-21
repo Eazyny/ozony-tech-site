@@ -311,6 +311,7 @@ function App() {
             element={<Navigate to="/it-solutions" replace />}
           />
 
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/contactpage" element={<ContactPage />} />
 
           <Route path="*" element={<NotFound />} />

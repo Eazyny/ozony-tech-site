@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import DecodedText from '@/components/ui/decode-text';
 
-const CONTACT_PAGE_PATH = '/contactpage';
+const CONTACT_PAGE_PATH = '/contact';
 
 const MotionLink = motion(Link);
 

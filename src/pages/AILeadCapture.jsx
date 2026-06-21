@@ -26,7 +26,7 @@ const AILeadCapture = () => {
       description="Capture, qualify, and organize new leads before they go cold. Ozony Tech builds AI agent lead capture systems that respond quickly, collect the right customer details, and alert your team with clean lead summaries."
       primaryCta="Get an AI Lead Capture Consultation"
       secondaryCta="View Premium AI Lead Agent"
-      primaryCtaTo="/contactpage"
+      primaryCtaTo="/contact"
       secondaryCtaTo="/ai-lead-agent"
       heroImage="/images/ozony-og-preview.png"
       heroImageAlt="Ozony Tech AI agent lead capture service for small businesses"
@@ -168,7 +168,7 @@ const AILeadCapture = () => {
         { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
         { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
         { label: 'Packages', to: '/packages' },
-        { label: 'Contact Ozony Tech', to: '/contactpage' },
+        { label: 'Contact Ozony Tech', to: '/contact' },
       ]}
       finalTitle="Need AI Lead Capture for Your Business?"
       finalDescription="Ozony Tech can build an AI agent lead capture workflow that responds faster, qualifies new inquiries, collects customer details, and alerts your team before leads go cold."
