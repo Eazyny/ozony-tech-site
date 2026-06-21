@@ -12,40 +12,40 @@ import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTem
 const ITSolutions = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="IT Solutions for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides practical IT solutions for small businesses, including IT support, network setup, business Wi-Fi, firewall setup, troubleshooting, and managed IT services."
-      eyebrow="OZONY TECH · IT SOLUTIONS"
-      title="IT Solutions for Small Businesses"
-      description="Ozony Tech provides practical IT solutions for small businesses that need reliable technology, stronger connectivity, cleaner network structure, and dependable support for day-to-day operations."
+      pageTitle="Small Business IT Solutions Hub | Ozony Tech"
+      pageDescription="Explore Ozony Tech IT solutions for small businesses, including IT support, managed IT services, network setup, business Wi-Fi, firewall setup, troubleshooting, AI lead agents, and service packages."
+      eyebrow="OZONY TECH · IT SOLUTIONS HUB"
+      title="Small Business IT Solutions Hub"
+      description="Explore practical IT, networking, automation, and support services for small businesses that need better connectivity, cleaner systems, stronger reliability, and a smarter technology foundation."
       heroImage="/images/services/it-support-nyc.webp"
-      heroImageAlt="IT solutions for small businesses"
+      heroImageAlt="Small business IT solutions hub"
       ogImage="/service_area_map.png"
       twitterImage="/service_area_map.png"
-      includeTitle="What’s Included"
-      includeDescription="Practical technology solutions built around the real issues small businesses deal with every day, from unreliable Wi-Fi to device problems and network headaches."
+      includeTitle="Explore Ozony Tech Services"
+      includeDescription="Use this hub to find the right solution for your business, whether you need IT support, network setup, Wi-Fi help, firewall setup, troubleshooting, managed services, or AI lead automation."
       serviceIncludes={[
-        'Small business IT support',
+        'Small business IT support and troubleshooting',
+        'Managed IT services for recurring support needs',
         'Business network setup and configuration',
         'Business Wi-Fi setup and optimization',
         'Firewall setup and traffic separation',
-        'Network troubleshooting and issue resolution',
-        'Managed IT services and ongoing support',
+        'AI Lead Response Agent services for faster follow-up',
       ]}
       outcomes={[
         {
           icon: Wrench,
-          title: 'Practical IT Support',
-          text: 'Get help with the everyday technology issues that slow down your team, interrupt work, and create unnecessary frustration.',
+          title: 'Support for Daily Issues',
+          text: 'Find practical IT support options for the everyday technology problems that slow down your team, interrupt work, and create unnecessary frustration.',
         },
         {
           icon: Network,
-          title: 'Cleaner Network Structure',
-          text: 'Build a stronger foundation for internet access, Wi-Fi, business devices, traffic separation, and future growth.',
+          title: 'Network & Wi-Fi Services',
+          text: 'Explore services for business network setup, Wi-Fi coverage, connectivity issues, firewall setup, and cleaner network structure.',
         },
         {
           icon: Shield,
-          title: 'Better Security Foundation',
-          text: 'Support stronger network control, cleaner separation, and better protection for business devices and daily operations.',
+          title: 'Stronger Business Foundation',
+          text: 'Build a cleaner technology foundation with better organization, improved reliability, practical support, and room to grow.',
         },
       ]}
       industriesTitle="Built for Small Business Environments"
@@ -65,44 +65,57 @@ const ITSolutions = () => {
         {
           title: 'Growing Small Businesses',
           description:
-            'A strong fit for businesses that need cleaner systems, better connectivity, stronger support, and a more reliable technology foundation.',
+            'A strong fit for businesses that need cleaner systems, better connectivity, stronger support, automation, and a more reliable technology foundation.',
           icon: Monitor,
         },
       ]}
-      midCtaEyebrow="Need Better IT Support?"
-      midCtaTitle="Get IT Solutions That Actually Support Your Business"
-      midCtaDescription="From network setup and Wi-Fi to troubleshooting, firewall setup, and ongoing support, Ozony Tech helps small businesses build technology environments that work better."
-      seoTitle="Why Choose Ozony Tech for IT Solutions"
+      midCtaEyebrow="Find the Right Service"
+      midCtaTitle="Not Sure Which IT Solution You Need?"
+      midCtaDescription="Start with the service that matches your biggest issue: IT support, managed services, network setup, business Wi-Fi, firewall setup, troubleshooting, or AI lead response automation."
+      seoTitle="Small Business IT Solutions from Ozony Tech"
       seoParagraphs={[
-        'Ozony Tech provides IT solutions for small businesses that need practical help with support, connectivity, Wi-Fi, network setup, firewall configuration, troubleshooting, and managed technology services. The focus is on solving the real technology problems that interrupt daily operations.',
-        'IT solutions can include device support, workstation help, printer troubleshooting, business Wi-Fi improvements, network setup, firewall setup, network troubleshooting, and ongoing managed IT support. The goal is to make your technology environment cleaner, more reliable, and easier to manage.',
-        'Businesses choose Ozony Tech because the approach is practical, straightforward, and built around real small business needs. That means less confusion, less downtime, and better technology support where it matters most.',
+        'Ozony Tech provides practical IT solutions for small businesses that need help with support, connectivity, Wi-Fi, network setup, firewall configuration, troubleshooting, managed technology services, and AI lead response systems. This page acts as a hub for the main services Ozony Tech offers.',
+        'Small businesses often need more than one isolated fix. A reliable technology foundation may include IT support, managed services, business Wi-Fi, network setup, firewall setup, troubleshooting, device support, and cleaner systems for daily operations.',
+        'Ozony Tech keeps the focus on practical solutions that fit real small business environments. Whether the issue is unreliable Wi-Fi, recurring device problems, weak network structure, slow lead follow-up, or general technology frustration, this hub helps point businesses toward the right service page.',
       ]}
       areasServed="Serving small businesses across NYC, New Jersey, Connecticut, and nearby areas."
       faqItems={[
         {
-          question: 'Do you provide IT solutions for small businesses?',
+          question: 'What IT solutions does Ozony Tech offer?',
           answer:
-            'Yes. Ozony Tech provides IT solutions for small businesses that need practical help with IT support, network setup, Wi-Fi, firewall setup, troubleshooting, and managed services.',
+            'Ozony Tech offers small business IT support, managed IT services, network setup, business Wi-Fi setup, firewall setup, network troubleshooting, and AI Lead Response Agent services.',
         },
         {
-          question: 'What types of IT solutions do you offer?',
+          question: 'Is this page the main service hub?',
           answer:
-            'IT solutions can include device support, workstation help, printer troubleshooting, business Wi-Fi setup, network setup, firewall setup, troubleshooting, and ongoing managed IT services.',
+            'Yes. This page is a broad IT solutions hub that helps small businesses find the right Ozony Tech service based on their needs.',
         },
         {
-          question: 'Can you help improve an existing business technology setup?',
+          question: 'Where should I start if I need local IT support?',
           answer:
-            'Yes. Existing business environments can often be improved through better organization, stronger connectivity, cleaner network structure, and practical troubleshooting.',
+            'If your business needs hands-on IT support in New York City, the Small Business IT Support NYC page is the best place to start.',
         },
         {
-          question: 'Are these IT solutions only for larger companies?',
+          question: 'Where should I start if my Wi-Fi or network is the main problem?',
           answer:
-            'No. Ozony Tech focuses on practical IT solutions for small businesses that need reliable support without unnecessary complexity.',
+            'If the issue is Wi-Fi coverage, connectivity, network setup, firewall configuration, or recurring network problems, start with the business Wi-Fi, network setup, firewall setup, or network troubleshooting pages.',
         },
       ]}
-      finalTitle="Need IT Solutions for Your Business?"
-      finalDescription="Get practical help with support, connectivity, Wi-Fi, firewall setup, troubleshooting, and the technology issues that slow business down."
+      relatedServices={[
+        { label: 'Small Business IT Support NYC', to: '/it-support-nyc' },
+        { label: 'Managed IT Services', to: '/managed-it-services' },
+        { label: 'Business Network Setup NYC', to: '/network-setup-nyc' },
+        { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
+        { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
+        {
+          label: 'Network Troubleshooting NYC',
+          to: '/network-troubleshooting-nyc',
+        },
+        { label: 'AI Lead Response Agent', to: '/ai-lead-agent' },
+        { label: 'Business IT & Network Packages', to: '/packages' },
+      ]}
+      finalTitle="Need Help Choosing the Right IT Solution?"
+      finalDescription="Explore the service that matches your biggest business need, or contact Ozony Tech for help choosing the right next step."
     />
   );
 };

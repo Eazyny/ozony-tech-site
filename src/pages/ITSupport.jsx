@@ -1,44 +1,51 @@
 import React from 'react';
-import { Wrench, Monitor, Headphones, Briefcase, Store, Network } from 'lucide-react';
+import {
+  Wrench,
+  Monitor,
+  Headphones,
+  Briefcase,
+  Store,
+  Network,
+} from 'lucide-react';
 import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTemplate';
 
 const ITSupport = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="IT Support for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides IT support for small businesses that need dependable help with devices, connectivity, troubleshooting, Wi-Fi issues, and everyday technology problems."
-      eyebrow="OZONY TECH · IT SUPPORT"
-      title="IT Support for Small Businesses"
-      description="Ozony Tech provides practical IT support for small businesses that need reliable help with devices, connectivity, troubleshooting, Wi-Fi issues, and the everyday technology problems that slow work down."
+      pageTitle="Small Business IT Support Services | Ozony Tech"
+      pageDescription="Explore Ozony Tech IT support services for small businesses, including NYC IT support, managed IT services, troubleshooting, Wi-Fi help, device setup, and network support."
+      eyebrow="OZONY TECH · IT SUPPORT HUB"
+      title="Small Business IT Support Services"
+      description="Explore practical IT support options for small businesses, from local NYC support and managed IT services to troubleshooting, Wi-Fi help, device setup, and network support."
       heroImage="/images/services/it-support-nyc.webp"
-      heroImageAlt="IT support for small businesses"
+      heroImageAlt="Small business IT support services"
       ogImage="/images/services/it-support-nyc.webp"
       twitterImage="/images/services/it-support-nyc.webp"
-      includeTitle="What’s Included"
-      includeDescription="Straightforward support for the business tech issues that interrupt operations, waste time, and create unnecessary frustration."
+      includeTitle="IT Support Options for Small Businesses"
+      includeDescription="A practical overview of the support areas Ozony Tech can help with, from everyday troubleshooting to local NYC IT support and ongoing managed service needs."
       serviceIncludes={[
+        'Local IT support for small businesses in NYC',
         'Device and workstation setup and support',
         'Printer and shared device troubleshooting',
         'Basic network and Wi-Fi issue resolution',
         'New user onboarding and device setup help',
-        'Shared access and permissions support',
-        'General small business IT troubleshooting',
+        'Managed IT service options for ongoing support',
       ]}
       outcomes={[
         {
           icon: Wrench,
-          title: 'Faster Issue Resolution',
-          text: 'Resolve common technology problems before they turn into bigger disruptions for your team, your customers, or your daily workflow.',
+          title: 'Troubleshooting Support',
+          text: 'Get help with common technology problems before they turn into bigger disruptions for your team, customers, or daily workflow.',
         },
         {
           icon: Monitor,
-          title: 'More Reliable Equipment',
-          text: 'Keep workstations, printers, and shared business devices better organized, easier to use, and more dependable throughout the day.',
+          title: 'Device & Workstation Help',
+          text: 'Support for workstations, printers, shared devices, access issues, setup needs, and the everyday systems small businesses rely on.',
         },
         {
           icon: Headphones,
-          title: 'Practical Ongoing Support',
-          text: 'Get clear, dependable help with the real IT issues small businesses run into most often across offices, retail spaces, and customer-facing environments.',
+          title: 'Support Path Guidance',
+          text: 'Use this hub to find the right support option, whether you need local NYC IT help, troubleshooting, managed IT services, or network support.',
         },
       ]}
       industriesTitle="Built for Small Business Environments"
@@ -62,40 +69,49 @@ const ITSupport = () => {
           icon: Network,
         },
       ]}
-      midCtaEyebrow="Need Reliable IT Help?"
-      midCtaTitle="Get IT Support Without the Headaches"
-      midCtaDescription="From device issues and connectivity problems to troubleshooting and day-to-day tech support, Ozony Tech helps small businesses keep work moving with practical IT help."
-      seoTitle="Why Choose Ozony Tech for IT Support"
+      midCtaEyebrow="Need the Right IT Support Path?"
+      midCtaTitle="Find the Right Support Option for Your Business"
+      midCtaDescription="Whether you need local NYC IT support, help troubleshooting a specific issue, or ongoing managed IT services, Ozony Tech can help you choose the right next step."
+      seoTitle="Small Business IT Support Services from Ozony Tech"
       seoParagraphs={[
-        'Ozony Tech provides IT support for small businesses that need practical help with devices, connectivity, shared access, troubleshooting, and everyday business technology issues. We focus on the real problems that interrupt work and create frustration during daily operations.',
-        'IT support can include device setup, workstation help, printer troubleshooting, Wi-Fi and connectivity support, shared access assistance, and general cleanup of business technology environments. The goal is simple: make your setup easier to manage, more reliable to use, and less frustrating for your team.',
-        'Businesses choose Ozony Tech because the focus is on straightforward support that fits real small business environments. That means less confusion, less downtime, and dependable help where it matters most.',
+        'Ozony Tech provides practical IT support services for small businesses that need help with devices, connectivity, shared access, troubleshooting, Wi-Fi issues, and everyday business technology problems. This page acts as a hub for the different types of IT support Ozony Tech offers.',
+        'Small business IT support may include device setup, workstation help, printer troubleshooting, Wi-Fi and connectivity support, shared access assistance, network troubleshooting, and general cleanup of business technology environments. For businesses in New York City, our local IT support page is the best place to start for hands-on support.',
+        'Some businesses need help with a specific issue. Others need ongoing support, cleaner systems, or a better plan for managing devices, users, and network reliability. Ozony Tech keeps the focus on straightforward support that fits real small business environments without unnecessary complexity.',
       ]}
       areasServed="Serving small businesses across NYC, New Jersey, Connecticut, and nearby areas."
       faqItems={[
         {
-          question: 'Do you provide IT support for small businesses?',
+          question: 'What kind of IT support does Ozony Tech provide?',
           answer:
-            'Yes. Ozony Tech provides IT support for small businesses that need practical help with devices, troubleshooting, connectivity, Wi-Fi issues, and everyday business technology problems.',
+            'Ozony Tech helps small businesses with practical IT support, including device setup, workstation help, printer troubleshooting, Wi-Fi and connectivity issues, shared access support, and general troubleshooting.',
         },
         {
-          question: 'What does IT support include?',
+          question: 'Is this the main NYC IT support page?',
           answer:
-            'IT support can include device setup, workstation support, printer troubleshooting, Wi-Fi and connectivity issue resolution, shared access help, and general troubleshooting for day-to-day business technology problems.',
+            'No. This page is a general IT support services hub. For local service in New York City, the best page to visit is the Small Business IT Support NYC page.',
         },
         {
-          question: 'Can you help improve an existing business tech setup?',
+          question: 'Do you offer ongoing IT support?',
           answer:
-            'Yes. Existing business environments can often be improved through better device organization, clearer setup, more reliable connectivity, and practical troubleshooting that helps everything run more smoothly.',
+            'Yes. Businesses that need recurring support, cleaner systems, and help managing day-to-day technology needs can review Ozony Tech managed IT service options.',
         },
         {
-          question: 'Do you only help with major IT problems?',
+          question: 'Can you help with network and Wi-Fi problems too?',
           answer:
-            'No. IT support also covers the everyday issues that waste time and interrupt work, including device setup problems, access issues, printer trouble, and inconsistent connectivity.',
+            'Yes. Ozony Tech can help with network troubleshooting, Wi-Fi issues, device connectivity, and related small business technology problems.',
         },
       ]}
-      finalTitle="Need IT Support for Your Business?"
-      finalDescription="Get practical help with devices, connectivity, troubleshooting, and the everyday tech issues that slow work down."
+      relatedServices={[
+        { label: 'Small Business IT Support NYC', to: '/it-support-nyc' },
+        { label: 'Managed IT Services', to: '/managed-it-services' },
+        { label: 'IT Services Near Me', to: '/it-services-near-me' },
+        {
+          label: 'Network Troubleshooting NYC',
+          to: '/network-troubleshooting-nyc',
+        },
+      ]}
+      finalTitle="Need Local IT Support for Your Business?"
+      finalDescription="Start with our NYC IT support page or contact Ozony Tech for help choosing the right support option for your business."
     />
   );
 };

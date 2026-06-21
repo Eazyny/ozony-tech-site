@@ -1,47 +1,54 @@
 import React from 'react';
-import { Wrench, Monitor, Headphones, MapPin, Store, Briefcase } from 'lucide-react';
+import {
+  Wrench,
+  Monitor,
+  Headphones,
+  MapPin,
+  Store,
+  Briefcase,
+} from 'lucide-react';
 import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTemplate';
 
 const ITServicesNearMe = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="IT Services Near Me for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides IT services for small businesses looking for reliable local support with devices, connectivity, troubleshooting, Wi-Fi, and network issues."
-      eyebrow="OZONY TECH · IT SERVICES NEAR ME"
-      title="IT Services Near Me for Small Businesses"
-      description="Ozony Tech provides practical IT services for small businesses looking for reliable local help with devices, connectivity, troubleshooting, Wi-Fi issues, and everyday technology problems that slow work down."
+      pageTitle="Local IT Services for Small Businesses | Ozony Tech"
+      pageDescription="Find local IT services from Ozony Tech for small businesses across NYC, New Jersey, Connecticut, and nearby areas, including device support, Wi-Fi help, troubleshooting, and managed IT options."
+      eyebrow="OZONY TECH · LOCAL IT SERVICES"
+      title="Local IT Services for Small Businesses"
+      description="Looking for IT services near your business? Ozony Tech helps small businesses find the right support path for device issues, Wi-Fi problems, troubleshooting, network help, and ongoing technology support."
       heroImage="/images/services/it-support-nyc.webp"
       heroImageAlt="Local IT services for small businesses"
       ogImage="/service_area_map.png"
       twitterImage="/service_area_map.png"
-      includeTitle="What’s Included"
-      includeDescription="Straightforward IT help for the day-to-day technology issues that interrupt operations, waste time, and create unnecessary frustration."
+      includeTitle="Local IT Services We Can Help With"
+      includeDescription="A practical overview of local IT support options for small businesses that need help with devices, connectivity, Wi-Fi, troubleshooting, and ongoing support."
       serviceIncludes={[
-        'Device and workstation setup and support',
+        'Local IT support for small businesses',
+        'Device and workstation setup help',
         'Printer and shared device troubleshooting',
-        'Basic network and Wi-Fi issue resolution',
-        'New user onboarding and device setup help',
-        'Shared access and permissions support',
-        'General small business IT troubleshooting',
+        'Wi-Fi and connectivity issue support',
+        'Network troubleshooting and cleanup',
+        'Managed IT service options for ongoing support',
       ]}
       outcomes={[
         {
           icon: Wrench,
-          title: 'Faster Problem Solving',
-          text: 'Resolve everyday technology problems before they turn into bigger disruptions for your team, your customers, or your workflow.',
+          title: 'Local Problem Solving',
+          text: 'Get practical help for the technology issues that interrupt work, slow down your team, or create frustration during daily operations.',
         },
         {
           icon: Monitor,
-          title: 'More Reliable Equipment',
-          text: 'Keep computers, printers, shared devices, and office technology better organized, easier to use, and more dependable throughout the day.',
+          title: 'Device & Connectivity Help',
+          text: 'Support for computers, printers, shared devices, Wi-Fi, access issues, and the systems small businesses rely on every day.',
         },
         {
           icon: Headphones,
-          title: 'Practical Local Support',
-          text: 'Get clear, dependable help with the kinds of IT issues small businesses run into most often across offices, retail spaces, and customer-facing environments.',
+          title: 'The Right Support Path',
+          text: 'Use this page to find the right next step, whether you need NYC IT support, managed IT services, network troubleshooting, or broader service-area help.',
         },
       ]}
-      industriesTitle="Built for Local Businesses"
+      industriesTitle="Built for Local Business Environments"
       idealFor={[
         {
           title: 'Offices',
@@ -58,44 +65,54 @@ const ITServicesNearMe = () => {
         {
           title: 'Businesses That Need Nearby Help',
           description:
-            'A practical option for small businesses searching for local IT services they can rely on when technology starts getting in the way.',
+            'A practical option for small businesses searching for local IT services and a clear support path when technology gets in the way.',
           icon: MapPin,
         },
       ]}
-      midCtaEyebrow="Need Reliable IT Help?"
-      midCtaTitle="Get IT Services Without the Headaches"
-      midCtaDescription="From device issues and connectivity problems to troubleshooting and network support, Ozony Tech helps small businesses get practical IT help that keeps work moving."
-      seoTitle="Why Choose Ozony Tech When Searching for IT Services Near Me"
+      midCtaEyebrow="Find the Right IT Support Option"
+      midCtaTitle="Choose the Best Local IT Support Path"
+      midCtaDescription="Whether you need hands-on NYC support, ongoing managed IT services, or help with a specific network issue, Ozony Tech can help you choose the right next step."
+      seoTitle="Local IT Services Near Your Small Business"
       seoParagraphs={[
-        'Ozony Tech provides IT services for small businesses looking for practical, dependable support with devices, connectivity, troubleshooting, Wi-Fi issues, and general business technology problems. We focus on the real issues that interrupt work and create frustration during daily operations.',
-        'IT services can include device setup, workstation help, printer troubleshooting, Wi-Fi and connectivity support, shared access assistance, and general cleanup of business technology environments. The goal is simple: make your setup easier to manage, more reliable to use, and less frustrating for your team.',
-        'Businesses choose Ozony Tech because the focus is on practical support that fits real small business environments. That means less confusion, less downtime, and dependable local help where it matters most.',
+        'Ozony Tech provides local IT services for small businesses that need practical support with devices, connectivity, troubleshooting, Wi-Fi issues, network problems, and everyday business technology challenges. This page helps route businesses toward the right support option based on location and need.',
+        'Some businesses need help with a specific issue, such as printer problems, Wi-Fi drops, workstation setup, or network troubleshooting. Others need ongoing support through managed IT services. For businesses in New York City, the local NYC IT support page is the best place to start for hands-on support.',
+        'Ozony Tech focuses on straightforward support for real small business environments across NYC, New Jersey, Connecticut, and nearby areas. The goal is to reduce confusion, improve reliability, and help businesses get to the right solution without unnecessary complexity.',
       ]}
       areasServed="Serving small businesses across NYC, New Jersey, Connecticut, and nearby areas."
       faqItems={[
         {
-          question: 'Do you provide local IT services for small businesses?',
+          question: 'Does Ozony Tech provide local IT services?',
           answer:
-            'Yes. Ozony Tech provides IT services for small businesses that need practical help with devices, troubleshooting, connectivity, Wi-Fi issues, and everyday business technology problems.',
+            'Yes. Ozony Tech provides local IT services for small businesses across NYC, New Jersey, Connecticut, and nearby areas, depending on the type of support needed.',
         },
         {
-          question: 'What kinds of IT services do you help with?',
+          question: 'What local IT services can Ozony Tech help with?',
           answer:
-            'IT services can include device setup, workstation support, printer troubleshooting, Wi-Fi and connectivity issue resolution, shared access help, and general troubleshooting for day-to-day business technology problems.',
+            'Ozony Tech can help with device setup, workstation support, printer troubleshooting, Wi-Fi and connectivity issues, network troubleshooting, shared access help, and managed IT service options.',
         },
         {
-          question: 'Can you help improve an existing business tech setup?',
+          question: 'Is this the main NYC IT support page?',
           answer:
-            'Yes. Existing business environments can often be improved through better device organization, clearer setup, more reliable connectivity, and practical troubleshooting that helps everything run more smoothly.',
+            'No. This page is a local IT services discovery page. For businesses specifically looking for hands-on IT support in New York City, the Small Business IT Support NYC page is the best place to start.',
         },
         {
-          question: 'Do you only help with major IT problems?',
+          question: 'Can Ozony Tech help with ongoing IT support?',
           answer:
-            'No. Local IT services also cover the everyday issues that waste time and interrupt work, including device setup problems, access issues, printer trouble, and inconsistent connectivity.',
+            'Yes. Businesses that need recurring help, cleaner systems, and more consistent support can review Ozony Tech managed IT service options.',
+        },
+      ]}
+      relatedServices={[
+        { label: 'Small Business IT Support NYC', to: '/it-support-nyc' },
+        { label: 'IT Support NJ', to: '/it-support-nj' },
+        { label: 'IT Support Connecticut', to: '/it-support-connecticut' },
+        { label: 'Managed IT Services', to: '/managed-it-services' },
+        {
+          label: 'Network Troubleshooting NYC',
+          to: '/network-troubleshooting-nyc',
         },
       ]}
       finalTitle="Need Local IT Services for Your Business?"
-      finalDescription="Get practical help with devices, connectivity, troubleshooting, and the everyday tech issues that slow business down."
+      finalDescription="Start with the service area or support option that best matches your business, or contact Ozony Tech for help choosing the right next step."
     />
   );
 };
