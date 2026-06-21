@@ -1,80 +1,126 @@
 import React from 'react';
-import { Shield, Lock, Network } from 'lucide-react';
+import {
+  Shield,
+  Lock,
+  Network,
+  Briefcase,
+  Store,
+  Building2,
+} from 'lucide-react';
 import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTemplate';
 
 const FirewallSetupConnecticut = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="Business Firewall Setup in Connecticut for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides business firewall setup in Connecticut for small businesses that want stronger protection, cleaner network control, and a better security foundation."
-      eyebrow="OZONY TECH · FIREWALL SETUP CONNECTICUT"
-      title="Business Firewall Setup in Connecticut for Small Businesses"
-      description="Ozony Tech provides business firewall setup in Connecticut for small businesses that want stronger protection, better network control, cleaner traffic separation, and a more secure foundation for daily operations."
+      pageTitle="Business Firewall Setup in Connecticut | Ozony Tech"
+      pageDescription="Ozony Tech provides business firewall setup in Connecticut for small businesses, offices, retail stores, clinics, studios, and local service businesses that need cleaner network control and traffic separation."
+      eyebrow="OZONY TECH · CONNECTICUT FIREWALL SETUP"
+      title="Business Firewall Setup in Connecticut"
+      description="Firewall setup for Connecticut small businesses that need cleaner network control, better guest and staff separation, safer device access, and a stronger foundation for daily operations."
       heroImage="/images/services/firewall-setup-nyc.webp"
       heroImageAlt="Business firewall setup in Connecticut for small businesses"
-      includeTitle="What’s Included"
       ogImage="/images/services/firewall-setup-nyc.webp"
       twitterImage="/images/services/firewall-setup-nyc.webp"
-      includeDescription="Practical firewall setup and network protection built around the day-to-day needs of small businesses that want stronger security without unnecessary complexity."
+      includeTitle="What Connecticut Firewall Setup Can Include"
+      includeDescription="Practical firewall setup and traffic separation for small businesses that want stronger network control without unnecessary complexity."
       serviceIncludes={[
         'Business firewall setup and configuration',
-        'Basic security rule creation',
+        'Router and firewall planning',
         'Guest and staff traffic separation',
-        'Network segmentation support',
+        'POS, workstation, and business device separation',
+        'Basic firewall rules and policy cleanup',
         'Remote access preparation where needed',
-        'Basic policy hardening and cleanup',
       ]}
       outcomes={[
         {
           icon: Shield,
-          title: 'Stronger Protection',
-          text: 'Create a stronger first line of defense for your business network with more intentional traffic control and cleaner security boundaries.',
+          title: 'Stronger Network Boundaries',
+          text: 'Create cleaner separation between guest access, staff devices, POS systems, shared tools, and business-critical network traffic.',
         },
         {
           icon: Lock,
-          title: 'Better Network Control',
-          text: 'Improve visibility, segmentation, and policy structure so your network is easier to manage safely and with more confidence.',
+          title: 'Better Access Control',
+          text: 'Support a more controlled network setup with practical firewall rules, cleaner device organization, and safer day-to-day access.',
         },
         {
           icon: Network,
-          title: 'Cleaner Security Foundation',
-          text: 'Build a more professional security baseline for future growth, troubleshooting, remote access, and long-term reliability.',
+          title: 'Cleaner Business Network Structure',
+          text: 'Build a firewall and network foundation that is easier to manage, easier to troubleshoot, and better prepared for future growth.',
         },
       ]}
-      midCtaEyebrow="Need Better Protection?"
-      midCtaTitle="Get a Firewall Setup That Helps Protect Your Business"
-      midCtaDescription="From cleaner traffic control to stronger segmentation and a better security baseline, Ozony Tech helps small businesses build firewall setups that support both protection and daily operations."
-      seoTitle="Why Choose Ozony Tech for Firewall Setup in Connecticut"
-      seoParagraphs={[
-        'Ozony Tech provides business firewall setup in Connecticut for small businesses that want stronger security, cleaner network organization, and better control over how business traffic flows. A properly configured firewall helps protect business devices, improve segmentation, and create a more stable foundation for future network growth.',
-        'Firewall setup can include initial configuration, basic rule creation, guest and staff separation, network segmentation support, remote access preparation where needed, and practical security hardening for small business environments. The goal is to build security that is useful, understandable, and aligned with daily operations.',
-        'Businesses choose Ozony Tech because the focus is on practical security for real small business environments, not unnecessary complexity. The result is a cleaner, more controlled network setup that supports both protection and growth.',
+      industriesTitle="Firewall Setup for Connecticut Small Businesses"
+      idealFor={[
+        {
+          title: 'Offices & Professional Spaces',
+          description:
+            'Firewall setup for offices, clinics, studios, and professional spaces that need cleaner access control for staff devices, shared tools, and business systems.',
+          icon: Briefcase,
+        },
+        {
+          title: 'Retail Stores',
+          description:
+            'Practical firewall and traffic separation for POS systems, staff devices, guest Wi-Fi, back-office tools, and customer-facing environments.',
+          icon: Store,
+        },
+        {
+          title: 'Restaurants & Local Service Businesses',
+          description:
+            'Useful for restaurants, cafés, salons, studios, and service businesses that need better separation between guest access and business devices.',
+          icon: Building2,
+        },
       ]}
-      areasServed="Serving businesses across Connecticut, including Stamford, Greenwich, Norwalk, and nearby areas."
+      midCtaEyebrow="Need Cleaner Network Control?"
+      midCtaTitle="Set Up a Firewall That Supports Daily Business Use"
+      midCtaDescription="From guest and staff separation to POS protection, firewall rules, and cleaner traffic control, Ozony Tech helps Connecticut businesses build practical firewall setups."
+      seoTitle="Firewall Setup for Small Businesses in Connecticut"
+      seoParagraphs={[
+        'Ozony Tech provides business firewall setup in Connecticut for small businesses that need stronger network control, cleaner traffic separation, and a better foundation for daily operations. A properly configured firewall can help separate guest access, staff devices, POS systems, shared tools, and business-critical traffic.',
+        'Firewall setup can include router and firewall planning, basic firewall rules, guest and staff Wi-Fi separation, network segmentation support, remote access preparation where needed, and practical policy cleanup for small business environments.',
+        'For Connecticut businesses in Stamford, Greenwich, Norwalk, Bridgeport, New Haven, Danbury, and nearby areas, Ozony Tech focuses on practical firewall setups that are useful, understandable, and built around real small business needs.',
+      ]}
+      areasServed="Serving businesses across Connecticut, including Stamford, Greenwich, Norwalk, Bridgeport, New Haven, Danbury, and nearby areas."
       faqItems={[
         {
-          question: 'Do you provide business firewall setup for small businesses in Connecticut?',
+          question:
+            'Do you provide business firewall setup in Connecticut?',
           answer:
-            'Yes. Ozony Tech provides business firewall setup in Connecticut for offices, retail stores, restaurants, and other small business environments that want stronger network protection and cleaner traffic control.',
+            'Yes. Ozony Tech provides business firewall setup in Connecticut for offices, retail stores, restaurants, clinics, studios, and other small business environments that need cleaner network control and traffic separation.',
         },
         {
           question: 'What does business firewall setup include?',
           answer:
-            'Business firewall setup can include firewall configuration, basic security rules, guest and staff separation, network segmentation support, remote access preparation where needed, and practical policy hardening based on your business environment.',
+            'Business firewall setup can include firewall configuration, router planning, basic security rules, guest and staff separation, POS and workstation separation, network segmentation support, and practical policy cleanup.',
         },
         {
-          question: 'Can a firewall improve an existing business network?',
+          question:
+            'Can firewall setup separate guest Wi-Fi from business devices?',
           answer:
-            'Yes. A properly configured firewall can improve security, support cleaner segmentation, and create better control over how devices and traffic move across the network.',
+            'Yes. Firewall and network segmentation can help separate guest Wi-Fi, staff devices, POS systems, and business-critical devices so traffic is better organized.',
         },
         {
-          question: 'Can you separate guest, staff, and business-critical traffic?',
+          question:
+            'Can firewall setup improve an existing business network?',
           answer:
-            'Yes. Firewall and segmentation policies can help better separate guest traffic, staff access, and important business systems to improve both security and organization.',
+            'Yes. A properly configured firewall can improve network organization, support cleaner traffic control, reduce messy access patterns, and make the environment easier to manage.',
         },
       ]}
+      relatedServices={[
+        {
+          label: 'Business Network Setup Connecticut',
+          to: '/network-setup-connecticut',
+        },
+        {
+          label: 'Business Wi-Fi Connecticut',
+          to: '/business-wifi-connecticut',
+        },
+        {
+          label: 'IT Support Connecticut',
+          to: '/it-support-connecticut',
+        },
+        { label: 'Local Network Services', to: '/network-services-near-me' },
+      ]}
       finalTitle="Need Business Firewall Setup in Connecticut?"
-      finalDescription="Get stronger protection, cleaner traffic control, and a better security foundation built around the way your business actually operates."
+      finalDescription="Get cleaner traffic control, better guest and staff separation, and a practical firewall setup built around the way your business actually operates."
     />
   );
 };

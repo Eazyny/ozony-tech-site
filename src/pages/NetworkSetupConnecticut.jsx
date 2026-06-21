@@ -12,97 +12,112 @@ import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTem
 const NetworkSetupConnecticut = () => {
   return (
     <ServiceLandingTemplate
-      pageTitle="Business Network Setup in Connecticut for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides business network setup in Connecticut for small businesses that need reliable Wi-Fi, secure connectivity, clean network structure, and room to grow."
-      eyebrow="OZONY TECH · NETWORK SETUP CONNECTICUT"
-      title="Business Network Setup in Connecticut for Small Businesses"
-      description="Ozony Tech provides business network setup in Connecticut for small businesses that need reliable Wi-Fi, organized connectivity, secure network structure, and a setup built to support daily business operations."
+      pageTitle="Business Network Setup in Connecticut | Ozony Tech"
+      pageDescription="Ozony Tech provides business network setup in Connecticut for small businesses, offices, professional spaces, retail stores, and local service businesses that need reliable Wi-Fi and cleaner connectivity."
+      eyebrow="OZONY TECH · CONNECTICUT NETWORK SETUP"
+      title="Business Network Setup in Connecticut"
+      description="Network setup for Connecticut small businesses that need reliable Wi-Fi, cleaner device connectivity, router and firewall planning, and a network structure built for daily operations."
       heroImage="/images/services/network-setup-nyc.webp"
       heroImageAlt="Business network setup in Connecticut for small businesses"
       ogImage="/images/services/network-setup-nyc.webp"
       twitterImage="/images/services/network-setup-nyc.webp"
-      includeTitle="What’s Included"
-      includeDescription="Everything needed to build a reliable, organized, and business-ready network environment without the clutter, confusion, or day-to-day connectivity issues that slow work down."
+      includeTitle="What Connecticut Network Setup Can Include"
+      includeDescription="Practical network setup for offices, storefronts, professional spaces, and service businesses that need dependable connectivity without messy wiring, weak Wi-Fi, or confusing network structure."
       serviceIncludes={[
         'Business network setup and configuration',
-        'Router and firewall setup',
-        'Wi-Fi deployment and optimization',
-        'Guest and staff network separation',
-        'Printer, POS, and workstation connectivity',
-        'Structured network planning for future growth',
+        'Router and firewall planning',
+        'Business Wi-Fi setup and access point planning',
+        'Guest, staff, and business device separation',
+        'Printer, POS, workstation, and shared device connectivity',
+        'Network cleanup, documentation, and planning for future growth',
       ]}
       outcomes={[
         {
           icon: Network,
-          title: 'Cleaner Network Structure',
-          text: 'Build a more organized business network with practical structure, dependable connectivity, and less day-to-day friction for your team.',
+          title: 'Cleaner Business Connectivity',
+          text: 'Create a more organized network foundation for workstations, printers, POS systems, phones, shared tools, and business devices.',
         },
         {
           icon: Shield,
-          title: 'More Reliable Connectivity',
-          text: 'Create a stronger foundation for business devices, internet access, wireless coverage, and long-term network stability.',
+          title: 'Better Network Control',
+          text: 'Support cleaner separation between guest Wi-Fi, staff devices, business systems, and traffic that should not be mixed together.',
         },
         {
           icon: CheckCircle2,
-          title: 'Built to Grow With You',
-          text: 'Set up your business with a network that is easier to manage now and easier to expand as your needs grow.',
+          title: 'Built for Reliable Daily Use',
+          text: 'Set up a network that is easier to use, easier to troubleshoot, and better prepared for future changes as your business grows.',
         },
       ]}
-      industriesTitle="Built for Local Businesses"
+      industriesTitle="Network Setup for Connecticut Small Businesses"
       idealFor={[
         {
-          title: 'Offices',
+          title: 'Offices & Professional Spaces',
           description:
-            'Reliable business network setup for teams, workstations, printers, phones, and shared office operations.',
+            'Network setup for offices, studios, clinics, and professional spaces that rely on workstations, printers, phones, shared tools, and stable connectivity.',
           icon: Briefcase,
         },
         {
           title: 'Retail Stores',
           description:
-            'Clean connectivity for POS systems, staff devices, guest Wi-Fi, back-office systems, and daily customer-facing workflows.',
+            'Clean connectivity for POS systems, staff devices, customer Wi-Fi, back-office systems, and daily customer-facing workflows.',
           icon: Store,
         },
         {
-          title: 'Restaurants & Small Business Spaces',
+          title: 'Restaurants & Local Service Businesses',
           description:
-            'Practical network setup for restaurants, cafés, studios, and service businesses that need stable connectivity and organized device access.',
+            'Practical network setup for restaurants, cafés, salons, studios, and service businesses that need stable Wi-Fi and organized device access.',
           icon: Building2,
         },
       ]}
-      midCtaEyebrow="Need a Better Setup?"
-      midCtaTitle="Get a Business Network That Works the Way It Should"
-      midCtaDescription="From Wi-Fi and device connectivity to cleaner structure and better reliability, Ozony Tech helps build business networks in Connecticut that support daily operations without unnecessary complexity."
-      seoTitle="Why Choose Ozony Tech for Network Setup in Connecticut"
+      midCtaEyebrow="Need a Cleaner Network Setup?"
+      midCtaTitle="Build a Network That Supports Your Connecticut Business"
+      midCtaDescription="From Wi-Fi reliability and device connectivity to router planning, firewall structure, and cleaner network organization, Ozony Tech helps Connecticut businesses build stronger network foundations."
+      seoTitle="Network Setup for Small Businesses in Connecticut"
       seoParagraphs={[
-        'Ozony Tech provides business network setup in Connecticut for small businesses that need dependable internet, organized internal connectivity, and room to grow. We help design and configure networks that support daily business operations without overcomplicating the environment.',
-        'From office network setup and Wi-Fi deployment to router configuration, device connectivity, and guest and staff segmentation, the focus is on practical systems built for real-world small business use across Connecticut.',
-        'Businesses choose Ozony Tech because the goal is not to overengineer the setup. The goal is to create a clean, scalable network that works well, feels organized, and supports long-term reliability.',
+        'Ozony Tech provides business network setup in Connecticut for small businesses that need dependable Wi-Fi, organized device connectivity, router and firewall planning, and a cleaner network structure for daily operations.',
+        'A proper small business network setup may include Wi-Fi planning, router and firewall configuration, guest and staff network separation, printer and POS connectivity, workstation support, and cleanup of unreliable or confusing network environments.',
+        'For Connecticut businesses in Stamford, Greenwich, Norwalk, Bridgeport, New Haven, Danbury, and nearby areas, Ozony Tech helps create cleaner network foundations that are easier to manage, easier to troubleshoot, and better prepared for growth.',
       ]}
-      areasServed="Serving businesses across Connecticut, including Stamford, Greenwich, Norwalk, and nearby areas."
+      areasServed="Serving businesses across Connecticut, including Stamford, Greenwich, Norwalk, Bridgeport, New Haven, Danbury, and nearby areas."
       faqItems={[
         {
-          question: 'Do you provide business network setup for small businesses in Connecticut?',
+          question:
+            'Do you provide business network setup for small businesses in Connecticut?',
           answer:
-            'Yes. Ozony Tech provides business network setup in Connecticut for offices, retail stores, restaurants, and other small business environments that need reliable and organized connectivity.',
+            'Yes. Ozony Tech provides business network setup for Connecticut small businesses that need reliable Wi-Fi, organized connectivity, router and firewall planning, and cleaner network structure.',
         },
         {
           question: 'What does a business network setup include?',
           answer:
-            'A business network setup can include router and firewall configuration, Wi-Fi deployment, printer and workstation connectivity, network segmentation, and a cleaner overall structure for everyday business use.',
+            'A business network setup can include router and firewall planning, Wi-Fi setup, printer and workstation connectivity, POS connectivity, guest and staff separation, and network cleanup for daily business use.',
         },
         {
-          question: 'Can you improve an existing network instead of building a new one?',
+          question:
+            'Can you improve an existing business network instead of building a new one?',
           answer:
-            'Yes. Existing networks can often be cleaned up, reorganized, and optimized to improve performance, coverage, reliability, and day-to-day usability.',
+            'Yes. Existing networks can often be cleaned up, reorganized, and optimized to improve reliability, Wi-Fi coverage, device connectivity, and day-to-day usability.',
         },
         {
-          question: 'Can you separate guest, staff, and business devices on the network?',
+          question:
+            'Can you separate guest Wi-Fi from staff and business devices?',
           answer:
-            'Yes. Networks can be segmented to better separate guest access, staff use, and business-critical devices for stronger organization and security.',
+            'Yes. Guest access, staff devices, and business-critical systems can be separated to create a cleaner and more organized network environment.',
         },
       ]}
+      relatedServices={[
+        { label: 'IT Support Connecticut', to: '/it-support-connecticut' },
+        {
+          label: 'Business Wi-Fi Connecticut',
+          to: '/business-wifi-connecticut',
+        },
+        {
+          label: 'Firewall Setup Connecticut',
+          to: '/firewall-setup-connecticut',
+        },
+        { label: 'Local Network Services', to: '/network-services-near-me' },
+      ]}
       finalTitle="Need Business Network Setup in Connecticut?"
-      finalDescription="Get a clean, reliable network setup built for your business, your devices, and the way your team actually works."
+      finalDescription="Get a cleaner, more reliable network setup built around your business, your devices, and the way your team works every day."
     />
   );
 };
