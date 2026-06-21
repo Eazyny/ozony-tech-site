@@ -17,8 +17,7 @@ import ContactPage from '@/pages/ContactPage';
 
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
-const CredentialsPage = lazy(() => import('@/pages/CredentialsPage'));
-const CertificationsPage = lazy(() => import('@/components/CertificationsPage'));
+const Certifications = lazy(() => import('@/components/CertificationsPage'));
 const AILeadAgentPage = lazy(() => import('@/components/AILeadAgent'));
 
 const NetworkSetupNYC = lazy(() => import('@/pages/NetworkSetupNYC'));
@@ -253,8 +252,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
 
           <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/credentials" element={<CredentialsPage />} />
-          <Route path="/certifications" element={<CertificationsPage />} />
+          <Route path="/certifications" element={<Certifications />} />
+          <Route
+            path="/credentials"
+            element={<Navigate to="/certifications" replace />}
+          />
 
           <Route path="/ai-lead-agent" element={<AILeadAgentPage />} />
           <Route path="/ai-agent-lead-capture" element={<AILeadCapture />} />
