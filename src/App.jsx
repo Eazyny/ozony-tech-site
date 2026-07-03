@@ -19,7 +19,7 @@ const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
 const Certifications = lazy(() => import('@/components/CertificationsPage'));
 const AILeadAgentPage = lazy(() => import('@/components/AILeadAgent'));
-
+const PrivacyPolicy = lazy(() => import('@/pages/PrivacyPolicy'));
 const NetworkSetupNYC = lazy(() => import('@/pages/NetworkSetupNYC'));
 const BusinessWifiNYC = lazy(() => import('@/pages/BusinessWifiNYC'));
 const FirewallSetupNYC = lazy(() => import('@/pages/FirewallSetupNYC'));
@@ -312,6 +312,9 @@ function App() {
             path="/itsolutions"
             element={<Navigate to="/it-solutions" replace />}
           />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
 
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/contactpage" element={<ContactPage />} />

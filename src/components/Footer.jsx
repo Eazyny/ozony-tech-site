@@ -23,6 +23,7 @@ const Footer = () => {
     { label: 'Contact', to: '/contact' },
     { label: 'Packages', to: '/packages' },
     { label: 'AI Lead Agent', to: '/ai-lead-agent' },
+    { label: 'Privacy Policy', to: '/privacy-policy' },
   ];
 
   const servicePageLinks = [
