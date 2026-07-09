@@ -76,6 +76,7 @@ function createSubmissionId() {
     typeof crypto.getRandomValues === 'function'
   ) {
     const bytes = new Uint8Array(16);
+
     crypto.getRandomValues(bytes);
 
     bytes[6] = (bytes[6] & 0x0f) | 0x40;
@@ -128,11 +129,17 @@ const ContactPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.urgency || !formData.message) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.urgency ||
+      !formData.message
+    ) {
       toast({
         title: 'Please fill in all required fields',
         variant: 'destructive',
       });
+
       return;
     }
 
@@ -143,6 +150,7 @@ const ContactPage = () => {
           'Please confirm that Ozony Tech may contact you about your request.',
         variant: 'destructive',
       });
+
       return;
     }
 
@@ -167,10 +175,17 @@ const ContactPage = () => {
           businessName: formData.business,
           email: formData.email,
           phone: formData.phone,
+
+          // Location is now its own field.
+          location: formData.location,
+
           service: formData.service,
           urgency: formData.urgency || 'Not specified',
           consentToContact: formData.consentToContact,
-          message: `Location: ${formData.location || 'Not provided'}\n\n${formData.message}`,
+
+          // Customer message stays customer message only.
+          message: formData.message,
+
           website: '',
         }),
       });
@@ -188,8 +203,11 @@ const ContactPage = () => {
 
       toast({
         title: 'Inquiry sent successfully!',
-        description: "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
-        icon: <CheckCircle2 className="h-4 w-4 text-emerald-300" />,
+        description:
+          "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
+        icon: (
+          <CheckCircle2 className="h-4 w-4 text-emerald-300" />
+        ),
       });
 
       submissionIdRef.current = null;
@@ -208,7 +226,9 @@ const ContactPage = () => {
     } catch (err) {
       toast({
         title: 'Message failed to send',
-        description: err?.message || 'Please try again in a moment.',
+        description:
+          err?.message ||
+          'Please try again in a moment.',
         variant: 'destructive',
       });
     } finally {
@@ -301,7 +321,8 @@ const ContactPage = () => {
             url: 'https://ozony.tech',
             email: 'contact@ozony.tech',
             telephone: '+1-347-653-7655',
-            image: 'https://ozony.tech/images/ozony-og-preview.png',
+            image:
+              'https://ozony.tech/images/ozony-og-preview.png',
             areaServed: [
               'New York City',
               'New Jersey',
@@ -333,8 +354,14 @@ const ContactPage = () => {
           <section className="relative mx-auto max-w-7xl px-6 pb-20 pt-32 sm:pt-36 lg:px-8">
             <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr]">
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 24,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 transition={{
                   duration: 0.65,
                   ease: 'easeOut',
@@ -349,9 +376,10 @@ const ContactPage = () => {
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                  Tell us what you need help with and Ozony Tech will help you figure out
-                  the right next step — whether that is business Wi-Fi, network setup,
-                  firewall configuration, IT support, or a full walkthrough.
+                  Tell us what you need help with and Ozony Tech will help you
+                  figure out the right next step — whether that is business
+                  Wi-Fi, network setup, firewall configuration, IT support, or
+                  a full walkthrough.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -396,8 +424,14 @@ const ContactPage = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 24,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 transition={{
                   duration: 0.65,
                   delay: 0.12,
@@ -412,7 +446,8 @@ const ContactPage = () => {
                     </h2>
 
                     <p className="mt-2 text-sm leading-6 text-slate-400">
-                      Send your request directly to Ozony Tech. No email app needed.
+                      Send your request directly to Ozony Tech. No email app
+                      needed.
                     </p>
                   </div>
 
@@ -584,7 +619,8 @@ const ContactPage = () => {
                       </select>
 
                       <p className="mt-2 text-xs text-slate-500">
-                        This helps Ozony Tech prioritize business-impacting issues.
+                        This helps Ozony Tech prioritize business-impacting
+                        issues.
                       </p>
                     </div>
 
@@ -624,9 +660,9 @@ const ContactPage = () => {
                         />
 
                         <span className="text-sm leading-6 text-slate-300">
-                          I agree that Ozony Tech may contact me by phone, text, or
-                          email about my request. Calls may be recorded and summarized
-                          so the team can follow up accurately. *
+                          I agree that Ozony Tech may contact me by phone, text,
+                          or email about my request. Calls may be recorded and
+                          summarized so the team can follow up accurately. *
                         </span>
                       </label>
                     </div>
@@ -682,7 +718,8 @@ const ContactPage = () => {
                       </h3>
 
                       <p className="mt-1 text-sm text-slate-400">
-                        NYC, New Jersey, Connecticut, and nearby small business locations.
+                        NYC, New Jersey, Connecticut, and nearby small business
+                        locations.
                       </p>
                     </div>
                   </div>
@@ -696,8 +733,8 @@ const ContactPage = () => {
                       </h3>
 
                       <p className="mt-1 text-sm text-slate-400">
-                        New installs, upgrades, troubleshooting, Wi-Fi cleanup, firewall
-                        setup, and small business IT planning.
+                        New installs, upgrades, troubleshooting, Wi-Fi cleanup,
+                        firewall setup, and small business IT planning.
                       </p>
                     </div>
                   </div>
@@ -710,9 +747,9 @@ const ContactPage = () => {
                 </h2>
 
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-400">
-                  The goal is to make the first step simple. You do not need to know all the
-                  technical details yet. Send the request, and Ozony Tech can help sort out
-                  the right path.
+                  The goal is to make the first step simple. You do not need to
+                  know all the technical details yet. Send the request, and
+                  Ozony Tech can help sort out the right path.
                 </p>
 
                 <div className="mt-7 space-y-4">
@@ -732,6 +769,7 @@ const ContactPage = () => {
 
                         <div className="mt-2 flex items-center gap-2 text-sm text-slate-400">
                           <CheckCircle className="h-4 w-4 text-blue-300" />
+
                           Simple, practical, and built around the business need.
                         </div>
                       </div>
@@ -741,9 +779,9 @@ const ContactPage = () => {
 
                 <div className="mt-8 rounded-2xl border border-blue-300/20 bg-blue-500/10 p-5">
                   <p className="text-sm leading-6 text-blue-100">
-                    For urgent business network or Wi-Fi issues, include as much detail as
-                    possible: internet provider, router/firewall model, number of devices,
-                    business type, and what stopped working.
+                    For urgent business network or Wi-Fi issues, include as much
+                    detail as possible: internet provider, router/firewall model,
+                    number of devices, business type, and what stopped working.
                   </p>
                 </div>
               </div>
