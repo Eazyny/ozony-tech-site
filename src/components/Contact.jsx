@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
@@ -16,6 +16,40 @@ import DecodedText from '@/components/ui/decode-text';
 
 const CONTACT_ENDPOINT = 'https://ozony-lead-alerts.ozonye.workers.dev';
 
+function createSubmissionId() {
+  if (
+    typeof crypto !== 'undefined' &&
+    typeof crypto.randomUUID === 'function'
+  ) {
+    return crypto.randomUUID();
+  }
+
+  if (
+    typeof crypto !== 'undefined' &&
+    typeof crypto.getRandomValues === 'function'
+  ) {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+
+    const hex = Array.from(bytes, (byte) =>
+      byte.toString(16).padStart(2, '0')
+    ).join('');
+
+    return [
+      hex.slice(0, 8),
+      hex.slice(8, 12),
+      hex.slice(12, 16),
+      hex.slice(16, 20),
+      hex.slice(20),
+    ].join('-');
+  }
+
+  return `fallback-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -29,6 +63,8 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submissionIdRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,6 +87,12 @@ const Contact = () => {
       return;
     }
 
+    if (!submissionIdRef.current) {
+      submissionIdRef.current = createSubmissionId();
+    }
+
+    const submissionId = submissionIdRef.current;
+
     setIsSubmitting(true);
 
     try {
@@ -60,6 +102,7 @@ const Contact = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          submissionId,
           source: 'Homepage Contact Section',
           name: formData.name,
           businessName: formData.businessName,
@@ -80,6 +123,7 @@ const Contact = () => {
           data?.errors?.[0]?.message ||
           data?.error ||
           'Something went wrong sending your message. Please try again.';
+
         throw new Error(msg);
       }
 
@@ -88,6 +132,8 @@ const Contact = () => {
         description: "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
         icon: <CheckCircle2 className="h-4 w-4 text-emerald-300" />,
       });
+
+      submissionIdRef.current = null;
 
       setFormData({
         name: '',
@@ -112,6 +158,8 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    submissionIdRef.current = null;
 
     setFormData((prev) => ({
       ...prev,
@@ -141,13 +189,21 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com/Eazyny' },
+    {
+      icon: Github,
+      label: 'GitHub',
+      href: 'https://github.com/Eazyny',
+    },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/ozony-elsevif/',
     },
-    { icon: Twitter, label: 'Twitter', href: 'https://x.com/ozonytech' },
+    {
+      icon: Twitter,
+      label: 'Twitter',
+      href: 'https://x.com/ozonytech',
+    },
   ];
 
   return (
@@ -163,6 +219,7 @@ const Contact = () => {
           <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
             Contact Ozony Tech
           </h2>
+
           <p className="mx-auto max-w-3xl text-lg text-gray-400">
             Need help with Wi-Fi, networking, device setup, troubleshooting, or
             general IT support? Send over a few details and let’s talk through
@@ -192,10 +249,12 @@ const Contact = () => {
                       <div className="shrink-0 rounded-lg bg-blue-500/10 p-3">
                         <Icon className="h-6 w-6 text-blue-400" />
                       </div>
+
                       <div>
                         <p className="mb-1 text-sm text-gray-400">
                           {item.label}
                         </p>
+
                         {item.href ? (
                           <a
                             href={item.href}
@@ -204,7 +263,9 @@ const Contact = () => {
                             {item.value}
                           </a>
                         ) : (
-                          <p className="font-medium text-white">{item.value}</p>
+                          <p className="font-medium text-white">
+                            {item.value}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -213,7 +274,10 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 border-t border-slate-700/50 pt-8">
-                <p className="mb-4 text-sm text-gray-400">Connect online</p>
+                <p className="mb-4 text-sm text-gray-400">
+                  Connect online
+                </p>
+
                 <div className="flex gap-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -237,7 +301,10 @@ const Contact = () => {
 
             <div className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-6 backdrop-blur-sm">
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-white">Service Area</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Service Area
+                </h3>
+
                 <p className="mt-2 max-w-lg text-sm leading-relaxed text-gray-400">
                   Serving businesses across the Tri-State area, with nearby service
                   availability based on project needs.
@@ -273,6 +340,7 @@ const Contact = () => {
                   >
                     Name *
                   </label>
+
                   <input
                     type="text"
                     id="name"
@@ -292,6 +360,7 @@ const Contact = () => {
                   >
                     Business Name
                   </label>
+
                   <input
                     type="text"
                     id="businessName"
@@ -310,6 +379,7 @@ const Contact = () => {
                   >
                     Email *
                   </label>
+
                   <input
                     type="email"
                     id="email"
@@ -329,6 +399,7 @@ const Contact = () => {
                   >
                     Phone
                   </label>
+
                   <input
                     type="tel"
                     id="phone"
@@ -347,6 +418,7 @@ const Contact = () => {
                   >
                     Service Needed
                   </label>
+
                   <input
                     type="text"
                     id="service"
@@ -365,6 +437,7 @@ const Contact = () => {
                   >
                     Urgency *
                   </label>
+
                   <select
                     id="urgency"
                     name="urgency"
@@ -376,15 +449,24 @@ const Contact = () => {
                     <option value="" disabled>
                       Select urgency
                     </option>
+
                     <option value="Planning / not urgent">
                       Planning / not urgent
                     </option>
-                    <option value="This week">This week</option>
-                    <option value="ASAP">ASAP</option>
+
+                    <option value="This week">
+                      This week
+                    </option>
+
+                    <option value="ASAP">
+                      ASAP
+                    </option>
+
                     <option value="Emergency / business impacted">
                       Emergency / business impacted
                     </option>
                   </select>
+
                   <p className="mt-2 text-xs text-gray-500">
                     This helps us prioritize urgent business-impacting issues.
                   </p>
@@ -397,6 +479,7 @@ const Contact = () => {
                   >
                     Project Details *
                   </label>
+
                   <textarea
                     id="message"
                     name="message"
@@ -423,6 +506,7 @@ const Contact = () => {
                       required
                       className="mt-1 h-4 w-4 rounded border-slate-600 bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
+
                     <span className="text-sm leading-relaxed text-gray-300">
                       I agree that Ozony Tech may contact me by phone, text, or
                       email about my request. Calls may be recorded and
@@ -438,10 +522,13 @@ const Contact = () => {
                 className="mt-6 w-full bg-blue-600 py-6 text-base font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <Send className="mr-2 h-5 w-5" />
+
                 {isSubmitting ? (
                   'Sending...'
                 ) : (
-                  <DecodedText speed={12}>Send Inquiry</DecodedText>
+                  <DecodedText speed={12}>
+                    Send Inquiry
+                  </DecodedText>
                 )}
               </Button>
             </form>

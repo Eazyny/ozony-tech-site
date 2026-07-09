@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -63,6 +63,40 @@ const processSteps = [
   'We follow up with the best next step, quote, or walkthrough recommendation.',
 ];
 
+function createSubmissionId() {
+  if (
+    typeof crypto !== 'undefined' &&
+    typeof crypto.randomUUID === 'function'
+  ) {
+    return crypto.randomUUID();
+  }
+
+  if (
+    typeof crypto !== 'undefined' &&
+    typeof crypto.getRandomValues === 'function'
+  ) {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+
+    const hex = Array.from(bytes, (byte) =>
+      byte.toString(16).padStart(2, '0')
+    ).join('');
+
+    return [
+      hex.slice(0, 8),
+      hex.slice(8, 12),
+      hex.slice(12, 16),
+      hex.slice(16, 20),
+      hex.slice(20),
+    ].join('-');
+  }
+
+  return `fallback-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -78,8 +112,12 @@ const ContactPage = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const submissionIdRef = useRef(null);
+
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
+
+    submissionIdRef.current = null;
 
     setFormData((currentData) => ({
       ...currentData,
@@ -108,6 +146,12 @@ const ContactPage = () => {
       return;
     }
 
+    if (!submissionIdRef.current) {
+      submissionIdRef.current = createSubmissionId();
+    }
+
+    const submissionId = submissionIdRef.current;
+
     setIsSubmitting(true);
 
     try {
@@ -117,6 +161,7 @@ const ContactPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          submissionId,
           source: 'Dedicated Contact Page',
           name: formData.name,
           businessName: formData.business,
@@ -147,6 +192,8 @@ const ContactPage = () => {
         icon: <CheckCircle2 className="h-4 w-4 text-emerald-300" />,
       });
 
+      submissionIdRef.current = null;
+
       setFormData({
         name: '',
         business: '',
@@ -172,38 +219,79 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Ozony Tech | IT & Network Support for Small Businesses</title>
+        <title>
+          Contact Ozony Tech | IT & Network Support for Small Businesses
+        </title>
+
         <meta
           name="description"
           content="Contact Ozony Tech for small business IT support, network setup, business Wi-Fi, firewall setup, and managed IT services in NYC, New Jersey, and Connecticut."
         />
-        <link rel="canonical" href="https://ozony.tech/contact" />
+
+        <link
+          rel="canonical"
+          href="https://ozony.tech/contact"
+        />
+
         <meta
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
         />
 
-        <meta property="og:title" content="Contact Ozony Tech | IT & Network Support" />
+        <meta
+          property="og:title"
+          content="Contact Ozony Tech | IT & Network Support"
+        />
+
         <meta
           property="og:description"
           content="Need help with business Wi-Fi, network setup, firewall configuration, or IT support? Contact Ozony Tech today."
         />
-        <meta property="og:url" content="https://ozony.tech/contact" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Ozony Tech" />
-        <meta property="og:image" content="https://ozony.tech/images/ozony-og-preview.png" />
+
+        <meta
+          property="og:url"
+          content="https://ozony.tech/contact"
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+
+        <meta
+          property="og:site_name"
+          content="Ozony Tech"
+        />
+
+        <meta
+          property="og:image"
+          content="https://ozony.tech/images/ozony-og-preview.png"
+        />
+
         <meta
           property="og:image:alt"
           content="Contact Ozony Tech for IT and network support"
         />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Ozony Tech | IT & Network Support" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+
+        <meta
+          name="twitter:title"
+          content="Contact Ozony Tech | IT & Network Support"
+        />
+
         <meta
           name="twitter:description"
           content="Need help with business Wi-Fi, network setup, firewall configuration, or IT support? Contact Ozony Tech today."
         />
-        <meta name="twitter:image" content="https://ozony.tech/images/ozony-og-preview.png" />
+
+        <meta
+          name="twitter:image"
+          content="https://ozony.tech/images/ozony-og-preview.png"
+        />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -214,7 +302,11 @@ const ContactPage = () => {
             email: 'contact@ozony.tech',
             telephone: '+1-347-653-7655',
             image: 'https://ozony.tech/images/ozony-og-preview.png',
-            areaServed: ['New York City', 'New Jersey', 'Connecticut'],
+            areaServed: [
+              'New York City',
+              'New Jersey',
+              'Connecticut',
+            ],
             serviceType: [
               'IT Support',
               'Network Setup',
@@ -243,7 +335,10 @@ const ContactPage = () => {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, ease: 'easeOut' }}
+                transition={{
+                  duration: 0.65,
+                  ease: 'easeOut',
+                }}
               >
                 <div className="mb-5 inline-flex items-center rounded-full border border-blue-400/25 bg-blue-400/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">
                   Ozony Tech · Contact
@@ -286,8 +381,14 @@ const ContactPage = () => {
                         className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur"
                       >
                         <Icon className="mb-4 h-6 w-6 text-blue-300" />
-                        <h2 className="text-sm font-bold text-white">{item.title}</h2>
-                        <p className="mt-2 text-sm leading-6 text-slate-400">{item.text}</p>
+
+                        <h2 className="text-sm font-bold text-white">
+                          {item.title}
+                        </h2>
+
+                        <p className="mt-2 text-sm leading-6 text-slate-400">
+                          {item.text}
+                        </p>
                       </div>
                     );
                   })}
@@ -297,18 +398,28 @@ const ContactPage = () => {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.12, ease: 'easeOut' }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.12,
+                  ease: 'easeOut',
+                }}
                 className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/30 backdrop-blur-xl"
               >
                 <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-6 sm:p-8">
                   <div className="mb-7">
-                    <h2 className="text-2xl font-bold text-white">Send a request</h2>
+                    <h2 className="text-2xl font-bold text-white">
+                      Send a request
+                    </h2>
+
                     <p className="mt-2 text-sm leading-6 text-slate-400">
                       Send your request directly to Ozony Tech. No email app needed.
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-5"
+                  >
                     <div className="grid gap-5 sm:grid-cols-2">
                       <div>
                         <label
@@ -317,6 +428,7 @@ const ContactPage = () => {
                         >
                           Name *
                         </label>
+
                         <input
                           id="name"
                           name="name"
@@ -336,6 +448,7 @@ const ContactPage = () => {
                         >
                           Business Name
                         </label>
+
                         <input
                           id="business"
                           name="business"
@@ -356,6 +469,7 @@ const ContactPage = () => {
                         >
                           Email *
                         </label>
+
                         <input
                           id="email"
                           name="email"
@@ -375,6 +489,7 @@ const ContactPage = () => {
                         >
                           Phone
                         </label>
+
                         <input
                           id="phone"
                           name="phone"
@@ -395,6 +510,7 @@ const ContactPage = () => {
                         >
                           Location
                         </label>
+
                         <input
                           id="location"
                           name="location"
@@ -413,6 +529,7 @@ const ContactPage = () => {
                         >
                           Service Needed
                         </label>
+
                         <select
                           id="service"
                           name="service"
@@ -420,9 +537,15 @@ const ContactPage = () => {
                           onChange={handleChange}
                           className="w-full rounded-xl border border-white/10 bg-slate-900 px-4 py-3 text-sm text-white outline-none transition focus:border-blue-300/70"
                         >
-                          <option value="">Select a service</option>
+                          <option value="">
+                            Select a service
+                          </option>
+
                           {serviceOptions.map((service) => (
-                            <option key={service} value={service}>
+                            <option
+                              key={service}
+                              value={service}
+                            >
                               {service}
                             </option>
                           ))}
@@ -437,6 +560,7 @@ const ContactPage = () => {
                       >
                         Urgency *
                       </label>
+
                       <select
                         id="urgency"
                         name="urgency"
@@ -448,12 +572,17 @@ const ContactPage = () => {
                         <option value="" disabled>
                           Select urgency
                         </option>
+
                         {urgencyOptions.map((urgency) => (
-                          <option key={urgency} value={urgency}>
+                          <option
+                            key={urgency}
+                            value={urgency}
+                          >
                             {urgency}
                           </option>
                         ))}
                       </select>
+
                       <p className="mt-2 text-xs text-slate-500">
                         This helps Ozony Tech prioritize business-impacting issues.
                       </p>
@@ -466,6 +595,7 @@ const ContactPage = () => {
                       >
                         Message *
                       </label>
+
                       <textarea
                         id="message"
                         name="message"
@@ -492,6 +622,7 @@ const ContactPage = () => {
                           onChange={handleChange}
                           className="mt-1 h-4 w-4 rounded border-white/20 bg-slate-900 text-blue-500 focus:ring-2 focus:ring-blue-400"
                         />
+
                         <span className="text-sm leading-6 text-slate-300">
                           I agree that Ozony Tech may contact me by phone, text, or
                           email about my request. Calls may be recorded and summarized
@@ -505,7 +636,10 @@ const ContactPage = () => {
                       disabled={isSubmitting}
                       className="inline-flex w-full items-center justify-center rounded-xl bg-blue-500 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+                      {isSubmitting
+                        ? 'Sending...'
+                        : 'Send Inquiry'}
+
                       <Send className="ml-2 h-4 w-4" />
                     </button>
                   </form>
@@ -517,7 +651,9 @@ const ContactPage = () => {
           <section className="relative mx-auto max-w-7xl px-6 pb-24 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
-                <h2 className="text-2xl font-bold text-white">Contact details</h2>
+                <h2 className="text-2xl font-bold text-white">
+                  Contact details
+                </h2>
 
                 <div className="mt-7 space-y-5">
                   <a
@@ -525,16 +661,26 @@ const ContactPage = () => {
                     className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-blue-300/40 hover:bg-white/[0.07]"
                   >
                     <Mail className="mt-1 h-5 w-5 flex-none text-blue-300" />
+
                     <div>
-                      <h3 className="font-semibold text-white">Email</h3>
-                      <p className="mt-1 text-sm text-slate-400">contact@ozony.tech</p>
+                      <h3 className="font-semibold text-white">
+                        Email
+                      </h3>
+
+                      <p className="mt-1 text-sm text-slate-400">
+                        contact@ozony.tech
+                      </p>
                     </div>
                   </a>
 
                   <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <MapPin className="mt-1 h-5 w-5 flex-none text-blue-300" />
+
                     <div>
-                      <h3 className="font-semibold text-white">Service Area</h3>
+                      <h3 className="font-semibold text-white">
+                        Service Area
+                      </h3>
+
                       <p className="mt-1 text-sm text-slate-400">
                         NYC, New Jersey, Connecticut, and nearby small business locations.
                       </p>
@@ -543,8 +689,12 @@ const ContactPage = () => {
 
                   <div className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <Clock className="mt-1 h-5 w-5 flex-none text-blue-300" />
+
                     <div>
-                      <h3 className="font-semibold text-white">Best For</h3>
+                      <h3 className="font-semibold text-white">
+                        Best For
+                      </h3>
+
                       <p className="mt-1 text-sm text-slate-400">
                         New installs, upgrades, troubleshooting, Wi-Fi cleanup, firewall
                         setup, and small business IT planning.
@@ -555,7 +705,10 @@ const ContactPage = () => {
               </div>
 
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
-                <h2 className="text-2xl font-bold text-white">What happens next?</h2>
+                <h2 className="text-2xl font-bold text-white">
+                  What happens next?
+                </h2>
+
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-400">
                   The goal is to make the first step simple. You do not need to know all the
                   technical details yet. Send the request, and Ozony Tech can help sort out
@@ -571,8 +724,12 @@ const ContactPage = () => {
                       <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-blue-500/15 text-sm font-bold text-blue-200">
                         {index + 1}
                       </div>
+
                       <div>
-                        <h3 className="font-semibold text-white">{step}</h3>
+                        <h3 className="font-semibold text-white">
+                          {step}
+                        </h3>
+
                         <div className="mt-2 flex items-center gap-2 text-sm text-slate-400">
                           <CheckCircle className="h-4 w-4 text-blue-300" />
                           Simple, practical, and built around the business need.
