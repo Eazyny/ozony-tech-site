@@ -22,8 +22,8 @@ const HowOzonyWorks = () => {
   ];
 
   return (
-    <section className="bg-slate-800/30 px-4 py-20">
-      <div className="container mx-auto max-w-7xl">
+    <section className="bg-slate-800/30 py-20">
+      <div className="ozony-container-wide">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}

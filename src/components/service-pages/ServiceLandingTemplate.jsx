@@ -92,7 +92,7 @@ const defaultFaqItems = [
   },
 ];
 
-const sectionClass = 'border-t border-white/5 px-4 py-20 md:px-6 lg:px-8';
+const sectionClass = 'border-t border-white/5 py-20';
 
 const normalizePathname = (pathname) => {
   if (!pathname) return '/';
@@ -347,8 +347,8 @@ const ServiceLandingTemplate = ({
             <StarfieldBackground />
 
             <div className="relative z-10">
-              <section className="px-4 pt-24 pb-8 md:px-6 lg:px-8">
-                <div className="mx-auto max-w-7xl">
+              <section className="pt-24 pb-8">
+                <div className="ozony-container-wide">
                   <Link
                     to="/"
                     className="inline-flex items-center gap-2 text-sm text-white/65 transition hover:text-white"
@@ -359,8 +359,8 @@ const ServiceLandingTemplate = ({
                 </div>
               </section>
 
-              <section className="px-4 pb-16 md:px-6 lg:px-8">
-                <div className="mx-auto max-w-5xl text-center">
+              <section className="pb-16">
+                <div className="ozony-container-narrow text-center">
                   <motion.p
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -424,8 +424,8 @@ const ServiceLandingTemplate = ({
                 </div>
               </section>
 
-              <section className="px-4 pb-20 md:px-6 lg:px-8">
-                <div className="mx-auto max-w-6xl">
+              <section className="pb-20">
+                <div className="ozony-container-visual">
                   <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_0_60px_rgba(37,99,235,0.12)] backdrop-blur">
                     <img
                       src={heroImage}
@@ -440,7 +440,7 @@ const ServiceLandingTemplate = ({
 
           <div className="bg-[#08152b]">
             <section className={sectionClass}>
-              <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+              <div className="ozony-container-wide grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {outcomes.map((item) => {
                   const Icon = item.icon;
 
@@ -461,7 +461,7 @@ const ServiceLandingTemplate = ({
             </section>
 
             <section className={sectionClass}>
-              <div className="mx-auto max-w-7xl">
+              <div className="ozony-container-wide">
                 <div className="max-w-3xl">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                     Services
@@ -474,7 +474,7 @@ const ServiceLandingTemplate = ({
                   </p>
                 </div>
 
-                <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:gap-7">
                   {serviceIncludes.map((item) => (
                     <div
                       key={item}
@@ -488,8 +488,8 @@ const ServiceLandingTemplate = ({
               </div>
             </section>
 
-            <section className="border-t border-white/5 px-4 py-16 md:px-6 lg:px-8">
-              <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
+            <section className="border-t border-white/5 py-16">
+              <div className="ozony-container-visual rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                   {midCtaEyebrow}
                 </p>
@@ -521,7 +521,7 @@ const ServiceLandingTemplate = ({
             </section>
 
             <section className={sectionClass}>
-              <div className="mx-auto max-w-7xl">
+              <div className="ozony-container-wide">
                 <div className="max-w-3xl">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                     Who It’s For
@@ -531,7 +531,7 @@ const ServiceLandingTemplate = ({
                   </h2>
                 </div>
 
-                <div className="mt-10 grid gap-5 lg:grid-cols-3">
+                <div className="mt-10 grid gap-5 lg:grid-cols-3 2xl:gap-7">
                   {idealFor.map((item) => {
                     const Icon = item.icon;
 
@@ -553,7 +553,7 @@ const ServiceLandingTemplate = ({
             </section>
 
             <section className={sectionClass}>
-              <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_1fr]">
+              <div className="ozony-container-wide grid gap-6 lg:grid-cols-[1fr_1fr] 2xl:gap-8">
                 <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                     Why Ozony Tech
@@ -594,7 +594,7 @@ const ServiceLandingTemplate = ({
 
             {relatedServicesToRender.length > 0 && (
               <section className={sectionClass}>
-                <div className="mx-auto max-w-7xl">
+                <div className="ozony-container-wide">
                   <div className="max-w-3xl">
                     <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                       Related Services
@@ -608,7 +608,7 @@ const ServiceLandingTemplate = ({
                     </p>
                   </div>
 
-                  <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                  <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4 2xl:gap-7">
                     {relatedServicesToRender.map((service) => (
                       <Link
                         key={service.to}
@@ -630,8 +630,8 @@ const ServiceLandingTemplate = ({
               </section>
             )}
 
-            <section className="border-t border-white/5 px-4 py-24 md:px-6 lg:px-8">
-              <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur md:p-14">
+            <section className="border-t border-white/5 py-24">
+              <div className="ozony-container-visual rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur md:p-14">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                   Get Started
                 </p>

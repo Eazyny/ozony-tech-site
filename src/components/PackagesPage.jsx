@@ -402,8 +402,8 @@ const PackagesPage = () => {
       <div className="min-h-screen app-bg">
         <Header />
 
-        <section className="px-4 pt-28 pb-2 md:pt-32">
-          <div className="container mx-auto max-w-7xl">
+        <section className="pt-28 pb-2 md:pt-32">
+          <div className="ozony-container-wide">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
@@ -415,10 +415,10 @@ const PackagesPage = () => {
         </section>
 
         <main>
-          <section className="relative overflow-hidden px-4 py-14 md:py-20">
+          <section className="relative overflow-hidden py-14 md:py-20">
             <StarfieldBackground />
 
-            <div className="relative container mx-auto max-w-7xl">
+            <div className="ozony-container-wide relative">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -479,9 +479,9 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="px-4 pb-20 pt-6">
-            <div className="container mx-auto max-w-7xl">
-              <div className="grid gap-6 lg:grid-cols-3">
+          <section className="pb-20 pt-6">
+            <div className="ozony-container-wide">
+              <div className="grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {packageTiers.map((tier, index) => (
                   <motion.div
                     key={tier.name}
@@ -528,8 +528,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
                   Compare the Packages
@@ -585,8 +585,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
                   Service Paths
@@ -638,8 +638,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
                   How Package Selection Works
@@ -650,7 +650,7 @@ const PackagesPage = () => {
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-3 2xl:gap-8">
                 {setupSteps.map((step, index) => (
                   <motion.div
                     key={step.title}
@@ -673,8 +673,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
                   Why These Solutions?
@@ -686,7 +686,7 @@ const PackagesPage = () => {
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-3 2xl:gap-8">
                 {brandLogic.map((item, index) => {
                   const Icon = item.icon;
 
@@ -731,8 +731,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
                   Great Fit For
@@ -760,8 +760,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="px-4 py-20">
-            <div className="container mx-auto max-w-7xl">
+          <section className="py-20">
+            <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
                   Packages FAQ
@@ -793,8 +793,8 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="px-4 pb-20">
-            <div className="container mx-auto max-w-6xl">
+          <section className="pb-20">
+            <div className="ozony-container">
               <div className="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/90 to-slate-800/80 px-8 py-14 text-center shadow-lg shadow-blue-500/10">
                 <h2 className="text-3xl font-bold text-white md:text-5xl">
                   Ready to find the right setup for your business?

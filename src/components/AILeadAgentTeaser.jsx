@@ -138,13 +138,13 @@ const SecondaryCtaButton = ({ to, children }) => (
 
 const AILeadAgentTeaser = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-24">
+    <section className="relative overflow-hidden py-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
         <div className="absolute right-10 bottom-10 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[110px]" />
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="ozony-container-wide relative z-10">
         <MotionReveal className="mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
             <Sparkles className="h-4 w-4" />
@@ -217,7 +217,7 @@ const AILeadAgentTeaser = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
-          className="mt-10 grid gap-5 md:grid-cols-3"
+          className="mt-10 grid gap-5 md:grid-cols-3 2xl:gap-7"
         >
           {highlights.map((item) => {
             const Icon = item.icon;

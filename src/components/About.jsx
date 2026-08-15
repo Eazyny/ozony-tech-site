@@ -51,8 +51,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-slate-800/30">
-      <div className="container mx-auto max-w-7xl">
+    <section id="about" className="py-20 bg-slate-800/30">
+      <div className="ozony-container-wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ const About = () => {
           </div>
         </SpotlightCard>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:gap-8">
           {aboutItems.map((item, index) => {
             const Icon = item.icon;
 

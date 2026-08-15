@@ -378,8 +378,8 @@ const ContactPage = () => {
         <main className="relative overflow-hidden bg-slate-950 text-white">
           <ContactLightRaysBackground />
 
-          <section className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-32 sm:pt-36 lg:px-8">
-            <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr]">
+          <section className="ozony-container-wide relative z-10 pb-20 pt-32 sm:pt-36">
+            <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr] 2xl:grid-cols-[minmax(0,0.9fr)_minmax(680px,1.1fr)] 2xl:gap-20">
               <motion.div
                 initial={{
                   opacity: 0,
@@ -720,8 +720,8 @@ const ContactPage = () => {
             </div>
           </section>
 
-          <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
+          <section className="ozony-container-wide relative z-10 pb-24">
+            <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr] 2xl:gap-10">
               <SpotlightCard
                 spotlightColor="rgba(96, 165, 250, 0.22)"
                 spotlightSize={520}

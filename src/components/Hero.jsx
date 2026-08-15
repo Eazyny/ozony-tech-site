@@ -19,11 +19,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden px-4 pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center">
+    <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
       <StarfieldBackground />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-4">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:grid-cols-[1.16fr_0.84fr] xl:gap-12 2xl:grid-cols-[1.2fr_0.8fr] 2xl:gap-16">
+      <div className="ozony-container-wide relative">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:grid-cols-[1.16fr_0.84fr] xl:gap-12 2xl:grid-cols-[minmax(0,1.05fr)_minmax(560px,0.95fr)] 2xl:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -34,7 +34,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="max-w-[760px] space-y-5"
+              className="max-w-[760px] space-y-5 2xl:max-w-[840px]"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white md:text-base">
                 Small Business IT Solutions
@@ -108,7 +108,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative w-full"
           >
-            <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[460px] lg:ml-auto lg:max-w-[460px] xl:max-w-[500px] 2xl:max-w-[520px]">
+            <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[460px] lg:ml-auto lg:max-w-[500px] xl:max-w-[560px] 2xl:max-w-[660px]">
               <div className="absolute -inset-8 rounded-[2.75rem] bg-blue-500/10 blur-3xl" />
               <div className="absolute inset-0 rounded-[2rem] border border-blue-500/20 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/20" />
 

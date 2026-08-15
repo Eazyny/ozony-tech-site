@@ -104,7 +104,7 @@ const Header = () => {
         }}
       />
 
-      <nav className="container mx-auto px-4 py-4" aria-label="Primary navigation">
+      <nav className="ozony-container-wide py-4" aria-label="Primary navigation">
         <div className="flex items-center justify-between gap-4">
           <MotionLink
             to="/"

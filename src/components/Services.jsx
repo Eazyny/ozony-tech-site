@@ -179,7 +179,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-slate-800/30 px-4 py-24"
+      className="relative overflow-hidden bg-slate-800/30 py-24"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
@@ -187,7 +187,7 @@ const Services = () => {
         <div className="absolute right-10 top-1/2 h-[260px] w-[260px] rounded-full bg-blue-400/10 blur-[100px]" />
       </div>
 
-      <div className="container relative z-10 mx-auto max-w-7xl">
+      <div className="ozony-container-wide relative z-10">
         <MotionReveal className="mx-auto max-w-5xl text-center" direction="up">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
             Small Business IT Services
@@ -227,7 +227,7 @@ const Services = () => {
           </motion.div>
         </MotionReveal>
 
-        <MotionReveal delay={0.08} direction="left" className="mt-14">
+        <MotionReveal delay={0.08} direction="left" className="mt-14 mx-auto max-w-[1200px] 2xl:max-w-[1460px]">
           <div className="group relative">
             <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-70 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -236,7 +236,7 @@ const Services = () => {
                 <img
                   src="/images/NetworkSetup-1200.webp"
                   srcSet="/images/NetworkSetup-800.webp 800w, /images/NetworkSetup-1200.webp 1200w, /images/NetworkSetup-1600.webp 1600w"
-                  sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px"
+                  sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1536px) calc(100vw - 64px), 1460px"
                   width="1200"
                   height="675"
                   alt="Ozony Tech small business IT, networking, Wi-Fi, security, and support visual"
@@ -249,7 +249,7 @@ const Services = () => {
           </div>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 2xl:gap-7">
           {serviceGroups.map((group, index) => {
             const Icon = group.icon;
             const direction = index % 2 === 0 ? 'diagonalRight' : 'diagonalLeft';

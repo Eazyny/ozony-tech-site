@@ -576,8 +576,8 @@ const AILeadAgent = () => {
               <div className="absolute right-0 top-1/3 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[120px]" />
             </div>
 
-            <div className="relative z-10 px-4 pb-24 pt-32 md:px-6 lg:px-8">
-              <div className="mx-auto max-w-[92rem]">
+            <div className="relative z-10 pb-24 pt-32">
+              <div className="ozony-container-wide">
                 <motion.div
                   initial={{ opacity: 0, y: 24, scale: 0.985 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -676,8 +676,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="Problem + Solution"
                 title="Slow follow-up costs money. Fast response creates opportunity."
@@ -702,7 +702,7 @@ const AILeadAgent = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                    className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 2xl:gap-5"
                   >
                     {responseCapabilities.map((item) => (
                       <motion.div
@@ -722,9 +722,9 @@ const AILeadAgent = () => {
 
           <section
             id="how-it-works"
-            className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8"
+            className="border-t border-slate-700/50 py-20"
           >
-            <div className="mx-auto max-w-7xl">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="How It Works"
                 title="From cold form submission to active sales opportunity."
@@ -789,8 +789,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="What the Agent Can Handle"
                 title="Built to support real intake, not just answer basic questions."
@@ -808,7 +808,7 @@ const AILeadAgent = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.18 }}
-                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4 2xl:gap-7"
               >
                 {agentFeatures.map((feature) => {
                   const Icon = feature.icon;
@@ -835,8 +835,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 py-20">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="Built for Service Businesses"
                 title="Ideal for businesses where fast response matters."
@@ -848,7 +848,7 @@ const AILeadAgent = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.18 }}
-                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+                className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4 2xl:gap-7"
               >
                 {useCases.map((useCase) => {
                   const Icon = useCase.icon;
@@ -905,8 +905,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="Custom Built"
                 title="Mapped around your business, your team, and your lead process."
@@ -984,8 +984,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 px-4 py-20 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 py-20">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="Premium Service Options"
                 title="Custom quoted based on your workflow."
@@ -997,7 +997,7 @@ const AILeadAgent = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.16 }}
-                className="mt-10 grid gap-5 lg:grid-cols-3"
+                className="mt-10 grid gap-5 lg:grid-cols-3 2xl:gap-7"
               >
                 {serviceOptions.map((option) => (
                   <motion.div
@@ -1029,8 +1029,8 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-24 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+          <section className="border-t border-slate-700/50 bg-slate-800/30 py-24">
+            <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow="FAQ"
                 title="Questions businesses usually ask before building an AI lead agent."
@@ -1042,7 +1042,7 @@ const AILeadAgent = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.12 }}
-                className="mt-12 grid items-start gap-5 lg:grid-cols-2"
+                className="mt-12 grid items-start gap-5 lg:grid-cols-2 2xl:gap-8"
               >
                 {faqs.map((faq, index) => {
                   const isActive = activeFaqIndex === index;
@@ -1102,9 +1102,9 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 px-4 py-24 md:px-6 lg:px-8">
+          <section className="border-t border-slate-700/50 py-24">
             <MotionReveal direction="up">
-              <div className="mx-auto max-w-6xl rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
+              <div className="ozony-container-visual rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                   Ready to Stop Missing Leads?
                 </p>

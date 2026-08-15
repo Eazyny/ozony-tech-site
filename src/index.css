@@ -122,6 +122,72 @@
     background-image: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
   }
 
+
+
+  /* Wide-screen container system for premium desktop / ultrawide layouts. */
+  .ozony-container {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .ozony-container-wide {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .ozony-container-visual {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .ozony-container-narrow {
+    width: 100%;
+    max-width: 64rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .ozony-container,
+    .ozony-container-wide,
+    .ozony-container-visual,
+    .ozony-container-narrow {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ozony-container,
+    .ozony-container-wide,
+    .ozony-container-visual,
+    .ozony-container-narrow {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .ozony-container {
+      max-width: 93.75rem;
+      padding-inline: 3rem;
+    }
+
+    .ozony-container-wide {
+      max-width: 105rem;
+      padding-inline: 3rem;
+    }
+
+    .ozony-container-visual {
+      max-width: 90rem;
+      padding-inline: 3rem;
+    }
+  }
+
   /* ✅ Blue-tinted SVG logo via mask */
   .oz-logo {
     width: 28px;

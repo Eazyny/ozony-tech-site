@@ -209,8 +209,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-800/30">
-      <div className="container mx-auto max-w-7xl">
+    <section id="contact" className="py-20 bg-slate-800/30">
+      <div className="ozony-container-wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +229,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid items-start gap-12 lg:grid-cols-2">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] 2xl:grid-cols-[0.85fr_1.15fr] 2xl:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
