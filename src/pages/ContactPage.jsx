@@ -18,6 +18,9 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { toast } from '@/components/ui/use-toast';
+import LightRays from '@/components/ui/lightrays';
+import SpotlightCard from '@/components/ui/spotlight-card';
+import StarBorder from '@/components/ui/star-border';
 
 const CONTACT_ENDPOINT = 'https://ozony-lead-alerts.ozonye.workers.dev';
 
@@ -62,6 +65,35 @@ const processSteps = [
   'Ozony Tech reviews the setup, location, urgency, and service needs.',
   'We follow up with the best next step, quote, or walkthrough recommendation.',
 ];
+
+const ContactLightRaysBackground = () => (
+  <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.14),transparent_34%),linear-gradient(to_bottom,rgba(2,6,23,0.12),rgba(2,6,23,1))]" />
+    <div className="absolute inset-0 opacity-[0.075] [background-image:linear-gradient(rgba(255,255,255,.62)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.62)_1px,transparent_1px)] [background-size:72px_72px]" />
+
+    <div className="absolute inset-x-0 top-0 h-[820px] opacity-90 [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]">
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#ffffff"
+        raysSpeed={0.5}
+        lightSpread={1}
+        rayLength={3}
+        followMouse={true}
+        mouseInfluence={0.1}
+        noiseAmount={0}
+        distortion={0}
+        className="custom-rays mix-blend-screen"
+        pulsating={false}
+        fadeDistance={0.5}
+        saturation={1}
+      />
+    </div>
+
+    <div className="absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[150px]" />
+    <div className="absolute right-[-8rem] top-[18rem] h-[520px] w-[520px] rounded-full bg-cyan-400/10 blur-[135px]" />
+    <div className="absolute left-[-10rem] bottom-[10rem] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[125px]" />
+  </div>
+);
 
 function createSubmissionId() {
   if (
@@ -344,14 +376,9 @@ const ContactPage = () => {
         <Header />
 
         <main className="relative overflow-hidden bg-slate-950 text-white">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[140px]" />
-            <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[120px]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_35%),linear-gradient(to_bottom,rgba(2,6,23,0.2),rgba(2,6,23,1))]" />
-            <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.6)_1px,transparent_1px)] [background-size:72px_72px]" />
-          </div>
+          <ContactLightRaysBackground />
 
-          <section className="relative mx-auto max-w-7xl px-6 pb-20 pt-32 sm:pt-36 lg:px-8">
+          <section className="relative z-10 mx-auto max-w-7xl px-6 pb-20 pt-32 sm:pt-36 lg:px-8">
             <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr]">
               <motion.div
                 initial={{
@@ -383,13 +410,15 @@ const ContactPage = () => {
                 </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <a
+                  <StarBorder
+                    as="a"
                     href="mailto:contact@ozony.tech"
-                    className="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-400"
+                    className="rounded-full shadow-lg shadow-blue-500/25"
+                    innerClassName="rounded-full bg-blue-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-400"
                   >
                     Email Ozony Tech
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </StarBorder>
 
                   <Link
                     to="/packages"
@@ -404,9 +433,11 @@ const ContactPage = () => {
                     const Icon = item.icon;
 
                     return (
-                      <div
+                      <SpotlightCard
                         key={item.title}
-                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur"
+                        spotlightColor="rgba(96, 165, 250, 0.26)"
+                        spotlightSize={300}
+                        className="rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.07]"
                       >
                         <Icon className="mb-4 h-6 w-6 text-blue-300" />
 
@@ -417,13 +448,14 @@ const ContactPage = () => {
                         <p className="mt-2 text-sm leading-6 text-slate-400">
                           {item.text}
                         </p>
-                      </div>
+                      </SpotlightCard>
                     );
                   })}
                 </div>
               </motion.div>
 
-              <motion.div
+              <SpotlightCard
+                as={motion.div}
                 initial={{
                   opacity: 0,
                   y: 24,
@@ -437,7 +469,9 @@ const ContactPage = () => {
                   delay: 0.12,
                   ease: 'easeOut',
                 }}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/30 backdrop-blur-xl"
+                spotlightColor="rgba(125, 211, 252, 0.24)"
+                spotlightSize={520}
+                className="rounded-[2rem] border border-blue-300/20 bg-white/[0.065] p-4 shadow-2xl shadow-blue-950/40 backdrop-blur-xl transition-all duration-300 hover:border-blue-300/35 hover:shadow-blue-500/15"
               >
                 <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-6 sm:p-8">
                   <div className="mb-7">
@@ -667,26 +701,32 @@ const ContactPage = () => {
                       </label>
                     </div>
 
-                    <button
+                    <StarBorder
+                      as="button"
                       type="submit"
                       disabled={isSubmitting}
-                      className="inline-flex w-full items-center justify-center rounded-xl bg-blue-500 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="w-full rounded-xl shadow-lg shadow-blue-500/25 disabled:cursor-not-allowed disabled:opacity-60"
+                      innerClassName="rounded-xl bg-blue-500 px-6 py-4 text-sm font-bold text-white transition hover:bg-blue-400"
                     >
                       {isSubmitting
                         ? 'Sending...'
                         : 'Send Inquiry'}
 
                       <Send className="ml-2 h-4 w-4" />
-                    </button>
+                    </StarBorder>
                   </form>
                 </div>
-              </motion.div>
+              </SpotlightCard>
             </div>
           </section>
 
-          <section className="relative mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+          <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
+              <SpotlightCard
+                spotlightColor="rgba(96, 165, 250, 0.22)"
+                spotlightSize={520}
+                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.065]"
+              >
                 <h2 className="text-2xl font-bold text-white">
                   Contact details
                 </h2>
@@ -739,9 +779,13 @@ const ContactPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
 
-              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
+              <SpotlightCard
+                spotlightColor="rgba(125, 211, 252, 0.20)"
+                spotlightSize={560}
+                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.065]"
+              >
                 <h2 className="text-2xl font-bold text-white">
                   What happens next?
                 </h2>
@@ -784,7 +828,7 @@ const ContactPage = () => {
                     number of devices, business type, and what stopped working.
                   </p>
                 </div>
-              </div>
+              </SpotlightCard>
             </div>
           </section>
         </main>
