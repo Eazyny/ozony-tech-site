@@ -21,7 +21,7 @@ const Header = () => {
   const navItems = [
     { label: 'AI Lead Agent', to: '/ai-lead-agent' },
     { label: 'Services', href: '#services' },
-    { label: 'Certifications', to: '/certifications' },
+    { label: 'Packages', to: '/packages' },
     { label: 'About', href: '#about' },
     { label: 'Contact', to: CONTACT_PAGE_PATH },
   ];
@@ -152,17 +152,6 @@ const Header = () => {
               )
             )}
 
-            <MotionLink
-              to="/packages"
-              onClick={closeMobileMenu}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.36 }}
-              className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
-            >
-              <DecodedText speed={12}>Packages</DecodedText>
-            </MotionLink>
-
             <StarBorder
               as={MotionLink}
               to={CONTACT_PAGE_PATH}
@@ -222,14 +211,6 @@ const Header = () => {
                   </a>
                 )
               )}
-
-              <Link
-                to="/packages"
-                onClick={closeMobileMenu}
-                className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-              >
-                <DecodedText speed={12}>Packages</DecodedText>
-              </Link>
 
               <StarBorder className="mt-2 w-full rounded-lg">
                 <Link
