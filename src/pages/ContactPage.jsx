@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  ArrowRight,
   CheckCircle,
   CheckCircle2,
   Clock,
@@ -67,31 +65,34 @@ const processSteps = [
 ];
 
 const ContactLightRaysBackground = () => (
-  <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.14),transparent_34%),linear-gradient(to_bottom,rgba(2,6,23,0.12),rgba(2,6,23,1))]" />
-    <div className="absolute inset-0 opacity-[0.075] [background-image:linear-gradient(rgba(255,255,255,.62)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.62)_1px,transparent_1px)] [background-size:72px_72px]" />
+  <div
+    className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+    aria-hidden="true"
+  >
+    <div className="absolute inset-0 bg-[linear-gradient(180deg,#020617_0%,#06111f_42%,#020617_100%)]" />
 
-    <div className="absolute inset-x-0 top-0 h-[820px] opacity-90 [mask-image:linear-gradient(to_bottom,black_0%,black_70%,transparent_100%)]">
+    <div className="absolute inset-x-0 top-0 h-[740px] opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]">
       <LightRays
         raysOrigin="top-center"
         raysColor="#ffffff"
-        raysSpeed={0.5}
-        lightSpread={1}
-        rayLength={3}
+        raysSpeed={0.28}
+        lightSpread={0.62}
+        rayLength={2}
         followMouse={true}
-        mouseInfluence={0.1}
+        mouseInfluence={0.025}
         noiseAmount={0}
         distortion={0}
-        className="custom-rays mix-blend-screen"
+        className="opacity-[0.28] sm:opacity-[0.34]"
         pulsating={false}
-        fadeDistance={0.5}
-        saturation={1}
+        fadeDistance={0.28}
+        saturation={0.65}
       />
     </div>
 
-    <div className="absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-[150px]" />
-    <div className="absolute right-[-8rem] top-[18rem] h-[520px] w-[520px] rounded-full bg-cyan-400/10 blur-[135px]" />
-    <div className="absolute left-[-10rem] bottom-[10rem] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[125px]" />
+    <div className="absolute left-1/2 top-[-8rem] h-[620px] w-[720px] -translate-x-1/2 rounded-full bg-blue-500/[0.14] blur-[170px]" />
+    <div className="absolute right-[-14rem] top-[16rem] h-[560px] w-[560px] rounded-full bg-cyan-400/[0.08] blur-[145px]" />
+    <div className="absolute left-[-14rem] bottom-[6rem] h-[520px] w-[520px] rounded-full bg-blue-500/[0.08] blur-[145px]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(96,165,250,0.12),transparent_32%),radial-gradient(circle_at_80%_28%,rgba(34,211,238,0.055),transparent_30%),linear-gradient(to_bottom,transparent_0%,rgba(2,6,23,0.72)_78%,#020617_100%)]" />
   </div>
 );
 
@@ -409,26 +410,15 @@ const ContactPage = () => {
                   a full walkthrough.
                 </p>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <StarBorder
-                    as="a"
-                    href="mailto:contact@ozony.tech"
-                    className="rounded-full shadow-lg shadow-blue-500/25"
-                    innerClassName="rounded-full bg-blue-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-blue-400"
-                  >
-                    Email Ozony Tech
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </StarBorder>
-
-                  <Link
-                    to="/packages"
-                    className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:border-blue-300/50 hover:bg-white/10"
-                  >
-                    View Packages
-                  </Link>
+                <div className="mt-8 max-w-2xl rounded-2xl border border-blue-300/[0.15] bg-blue-500/[0.08] p-5 backdrop-blur">
+                  <p className="text-sm leading-6 text-blue-100/[0.85]">
+                    Use the request form to send the details once. Ozony Tech
+                    will review the service type, location, urgency, and next
+                    best step before following up.
+                  </p>
                 </div>
 
-                <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
                   {contactHighlights.map((item) => {
                     const Icon = item.icon;
 
@@ -437,7 +427,7 @@ const ContactPage = () => {
                         key={item.title}
                         spotlightColor="rgba(96, 165, 250, 0.26)"
                         spotlightSize={300}
-                        className="rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.07]"
+                        className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 backdrop-blur transition-colors duration-300 hover:border-blue-300/30 hover:bg-white/[0.055]"
                       >
                         <Icon className="mb-4 h-6 w-6 text-blue-300" />
 
@@ -471,7 +461,7 @@ const ContactPage = () => {
                 }}
                 spotlightColor="rgba(125, 211, 252, 0.24)"
                 spotlightSize={520}
-                className="rounded-[2rem] border border-blue-300/20 bg-white/[0.065] p-4 shadow-2xl shadow-blue-950/40 backdrop-blur-xl transition-all duration-300 hover:border-blue-300/35 hover:shadow-blue-500/15"
+                className="rounded-[2rem] border border-blue-300/[0.15] bg-white/[0.045] p-4 shadow-2xl shadow-black/35 backdrop-blur-xl transition-all duration-300 hover:border-blue-300/30 hover:shadow-blue-500/10"
               >
                 <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/80 p-6 sm:p-8">
                   <div className="mb-7">
@@ -725,7 +715,7 @@ const ContactPage = () => {
               <SpotlightCard
                 spotlightColor="rgba(96, 165, 250, 0.22)"
                 spotlightSize={520}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.065]"
+                className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/30 hover:bg-white/[0.055]"
               >
                 <h2 className="text-2xl font-bold text-white">
                   Contact details
@@ -784,7 +774,7 @@ const ContactPage = () => {
               <SpotlightCard
                 spotlightColor="rgba(125, 211, 252, 0.20)"
                 spotlightSize={560}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/35 hover:bg-white/[0.065]"
+                className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/30 hover:bg-white/[0.055]"
               >
                 <h2 className="text-2xl font-bold text-white">
                   What happens next?
