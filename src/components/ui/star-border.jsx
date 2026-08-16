@@ -10,12 +10,12 @@ const StarBorder = ({
 }) => {
   return (
     <Component
-      className={`group/star relative inline-flex overflow-hidden p-[1px] ${className}`}
+      className={`group/star relative inline-flex w-fit max-w-full overflow-hidden bg-blue-400/25 p-[1px] sm:bg-transparent ${className}`}
       {...props}
     >
       <span
         aria-hidden="true"
-        className="absolute inset-[-160%] animate-spin opacity-70 transition-opacity duration-300 group-hover/star:opacity-100"
+        className="absolute inset-[-160%] hidden animate-spin opacity-70 transition-opacity duration-300 group-hover/star:opacity-100 motion-reduce:hidden sm:block"
         style={{
           animationDuration: '8s',
           background: gradient,
@@ -23,7 +23,7 @@ const StarBorder = ({
       />
 
       <span
-        className={`relative z-10 inline-flex h-full w-full items-center justify-center rounded-[inherit] ${innerClassName}`}
+        className={`relative z-10 inline-flex h-full w-full min-w-0 items-center justify-center rounded-[inherit] ${innerClassName}`}
       >
         {children}
       </span>
