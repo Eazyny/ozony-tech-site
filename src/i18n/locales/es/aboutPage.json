@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "title": "Sobre Ozony Tech | Soporte Práctico de TI y Redes para Pequeñas Empresas",
+    "description": "Conoce Ozony Tech, una empresa enfocada en pequeñas empresas que ofrece redes, Wi-Fi, seguridad, soporte de TI, servicios administrados y soluciones de respuesta a leads con IA.",
+    "ogTitle": "Sobre Ozony Tech | Tecnología Práctica para Pequeñas Empresas",
+    "ogDescription": "TI, redes, seguridad, soporte y automatización práctica construidos alrededor de las necesidades reales de pequeñas empresas.",
+    "ogImageAlt": "Soluciones de TI y redes para pequeñas empresas de Ozony Tech",
+    "schemaName": "Sobre Ozony Tech"
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "about": "Sobre Ozony Tech"
+  },
+  "hero": {
+    "eyebrow": "Ozony Tech · Nosotros",
+    "title": "La tecnología debe hacer que una pequeña empresa sea más fácil de operar.",
+    "description": "Ozony Tech ayuda a pequeñas empresas a construir, mejorar y respaldar la tecnología que utilizan todos los días — con redes, Wi-Fi, seguridad, soporte de TI y automatización práctica que se mantiene clara y comprensible.",
+    "primaryCta": "Habla con Ozony Tech",
+    "secondaryCta": "Ver Certificaciones",
+    "chips": [
+      "Enfocado en pequeñas empresas",
+      "Soluciones prácticas",
+      "Comunicación clara",
+      "Diseñado para ser confiable"
+    ],
+    "imageAlt": "Enfoque de Ozony Tech para soporte práctico de TI y soluciones de redes",
+    "visualEyebrow": "El enfoque de Ozony Tech",
+    "visualText": "Entender la necesidad real. Construir la solución correcta. Mantenerla fácil de soportar."
+  },
+  "story": {
+    "eyebrow": "En Qué Nos Basamos",
+    "title": "Las necesidades reales del negocio van antes que la tecnología por la tecnología.",
+    "paragraphOne": "Las pequeñas empresas necesitan tecnología que funcione de forma consistente, sea lógica de administrar y apoye la manera en que el negocio realmente opera. Ozony Tech comienza ahí.",
+    "paragraphTwo": "En vez de agregar complejidad, el objetivo es entender el entorno, identificar el problema real y elegir un camino limpio — ya sea mejorando una instalación existente, construyendo algo nuevo o conectando varios sistemas en un mejor flujo de trabajo.",
+    "points": [
+      "Diagnosticar y entender la causa raíz antes de recomendar cambios.",
+      "Elegir soluciones según el negocio, el espacio, los dispositivos, el presupuesto y el crecimiento futuro.",
+      "Mantener una comunicación clara para que el cliente entienda qué se está construyendo y por qué."
+    ],
+    "imageAlt": "Planificación de redes de Ozony Tech y entorno tecnológico para pequeñas empresas"
+  },
+  "pillars": {
+    "eyebrow": "Nuestras Prioridades",
+    "title": "Práctico, confiable y claro desde el diseño.",
+    "description": "La mejor tecnología no es la más complicada. Es la que resuelve el problema, sigue siendo manejable y ayuda al negocio a avanzar.",
+    "items": {
+      "practical": {
+        "title": "Lo Práctico Primero",
+        "text": "Las recomendaciones comienzan con la necesidad real del negocio. El objetivo es una solución que encaje con el entorno sin complejidad innecesaria ni exceso de infraestructura."
+      },
+      "reliable": {
+        "title": "Confiable por Diseño",
+        "text": "Las redes, el Wi-Fi, el acceso y los flujos de trabajo deben estructurarse para que la operación diaria sea más estable y el diagnóstico futuro sea más sencillo."
+      },
+      "clear": {
+        "title": "Comunicación Clara",
+        "text": "La tecnología no debe sentirse misteriosa. Ozony Tech explica el problema, la recomendación y el próximo paso con lenguaje directo."
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Cómo Trabajamos",
+    "title": "De un problema desordenado a una solución limpia que funciona.",
+    "description": "El proceso se mantiene intencional: entender lo que ocurre, eliminar complejidad innecesaria, construir la solución correcta y luego probarla y respaldarla.",
+    "steps": {
+      "understand": {
+        "title": "Entender",
+        "text": "Revisar el entorno, la instalación actual, la necesidad del negocio y qué es lo que realmente está causando fricción."
+      },
+      "simplify": {
+        "title": "Simplificar",
+        "text": "Separar los síntomas de las causas raíz y evitar reemplazar equipos o agregar herramientas si no resuelven un problema real."
+      },
+      "build": {
+        "title": "Construir",
+        "text": "Configurar e implementar una solución práctica con mejores redes, acceso, dispositivos, seguridad o automatización."
+      },
+      "support": {
+        "title": "Respaldar",
+        "text": "Probar el resultado, documentar lo importante y mantener un camino claro para diagnóstico, mejoras y crecimiento futuro."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Dónde Ayudamos",
+    "title": "Soporte tecnológico para los sistemas que las pequeñas empresas usan todos los días.",
+    "description": "Ozony Tech reúne redes, soporte de TI, seguridad y automatización moderna para que los negocios puedan resolver problemas sin depender de proveedores desconectados para cada necesidad.",
+    "items": {
+      "network": {
+        "title": "Configuración de Redes",
+        "text": "Routing, switching, conectividad de dispositivos, segmentación y planificación de redes más limpias para entornos comerciales reales."
+      },
+      "wifi": {
+        "title": "Wi-Fi Empresarial",
+        "text": "Planificación de cobertura, puntos de acceso, conectividad para invitados y rendimiento inalámbrico confiable para personal y clientes."
+      },
+      "support": {
+        "title": "Soporte de TI",
+        "text": "Diagnóstico práctico para computadoras, impresoras, conectividad, dispositivos compartidos y problemas tecnológicos del día a día."
+      },
+      "security": {
+        "title": "Firewall y Seguridad",
+        "text": "Planificación de firewall, mejor separación de redes, acceso más limpio y mejoras de seguridad sensatas para dispositivos del negocio."
+      },
+      "managed": {
+        "title": "Servicios de TI Administrados",
+        "text": "Una opción para negocios que necesitan soporte continuo, mantenimiento, diagnóstico y orientación tecnológica."
+      },
+      "ai": {
+        "title": "Respuesta a Leads con IA",
+        "text": "Flujos personalizados que ayudan a capturar consultas, calificar leads, alertar al equipo y dar seguimiento más rápido."
+      }
+    }
+  },
+  "credibility": {
+    "eyebrow": "Capacitación + Enfoque Real",
+    "title": "Capacitación verificada de TI respalda el trabajo detrás de Ozony Tech.",
+    "description": "Ozony Tech combina resolución práctica de problemas con capacitación verificada de Google en soporte técnico, redes, sistemas operativos, administración de sistemas y seguridad.",
+    "areas": [
+      "Soporte Técnico",
+      "Redes",
+      "Sistemas Operativos",
+      "Administración de Sistemas",
+      "Seguridad"
+    ],
+    "cta": "Explorar Certificaciones",
+    "imageAlt": "Certificado Profesional de Soporte de TI de Google asociado con Ozony Tech"
+  },
+  "fit": {
+    "eyebrow": "A Quién Servimos",
+    "title": "Construido alrededor de pequeñas empresas locales.",
+    "description": "Ozony Tech se enfoca en negocios que necesitan tecnología confiable sin el peso de una gran operación de TI empresarial.",
+    "areas": [
+      "Nueva York",
+      "Nueva Jersey",
+      "Connecticut"
+    ],
+    "items": {
+      "offices": {
+        "title": "Oficinas y Espacios Profesionales",
+        "text": "Estaciones de trabajo, impresoras, teléfonos, sistemas compartidos, Wi-Fi, acceso a la red y la tecnología que los equipos necesitan para trabajar de forma consistente."
+      },
+      "retail": {
+        "title": "Retail y Negocios de Atención al Público",
+        "text": "Conectividad para sistemas POS, dispositivos del personal, Wi-Fi de invitados, operaciones internas y los sistemas que mantienen el servicio en movimiento."
+      },
+      "service": {
+        "title": "Negocios Locales de Servicios",
+        "text": "TI, redes y automatización práctica para restaurantes, cafés, salones, estudios, contratistas y otros equipos basados en servicios."
+      }
+    }
+  },
+  "final": {
+    "eyebrow": "Comienza con la Necesidad Real",
+    "title": "¿Necesitas una configuración tecnológica más limpia para tu negocio?",
+    "description": "Cuéntale a Ozony Tech qué no está funcionando, qué estás planificando o qué quieres mejorar. El primer paso es entender el problema y encontrar el camino correcto.",
+    "primaryCta": "Iniciar una Conversación",
+    "secondaryCta": "Explorar Soluciones de TI"
+  }
+}

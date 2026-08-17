@@ -28,7 +28,7 @@ const Footer = () => {
   const footerLinks = [
     { key: 'services', href: '#services' },
     { key: 'credentials', to: '/certifications' },
-    { key: 'about', href: '#about' },
+    { key: 'about', to: '/about' },
     { key: 'contact', to: '/contact' },
     { key: 'packages', to: '/packages' },
     { key: 'aiLeadAgent', to: '/ai-lead-agent' },

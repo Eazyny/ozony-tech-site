@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "title": "About Ozony Tech | Practical IT & Network Support for Small Businesses",
+    "description": "Learn about Ozony Tech, a small-business-focused IT company providing practical networking, Wi-Fi, security, support, managed IT, and AI lead response solutions.",
+    "ogTitle": "About Ozony Tech | Practical Technology for Small Business",
+    "ogDescription": "Practical IT, networking, security, support, and automation built around real small-business needs.",
+    "ogImageAlt": "Ozony Tech small business IT and network solutions",
+    "schemaName": "About Ozony Tech"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "about": "About Ozony Tech"
+  },
+  "hero": {
+    "eyebrow": "Ozony Tech · About Us",
+    "title": "Technology should make a small business easier to run.",
+    "description": "Ozony Tech helps small businesses build, improve, and support the technology they rely on every day — with practical networking, Wi-Fi, security, IT support, and automation that stays understandable.",
+    "primaryCta": "Talk With Ozony Tech",
+    "secondaryCta": "View Certifications",
+    "chips": [
+      "Small-business focused",
+      "Practical solutions",
+      "Clear communication",
+      "Built for reliability"
+    ],
+    "imageAlt": "Ozony Tech approach to practical IT support and network solutions",
+    "visualEyebrow": "The Ozony Tech approach",
+    "visualText": "Understand the real need. Build the right solution. Keep it supportable."
+  },
+  "story": {
+    "eyebrow": "What We Are Built Around",
+    "title": "Real business needs come before technology for technology’s sake.",
+    "paragraphOne": "Small businesses need technology that works consistently, makes sense to manage, and supports the way the business actually operates. Ozony Tech starts there.",
+    "paragraphTwo": "Instead of pushing complexity, the goal is to understand the environment, identify the real problem, and choose a clean path forward — whether that means fixing an existing setup, building something new, or connecting several systems into a better workflow.",
+    "points": [
+      "Troubleshoot and understand the root issue before recommending changes.",
+      "Choose solutions around the business, space, devices, budget, and growth path.",
+      "Keep communication clear so the customer understands what is being built and why."
+    ],
+    "imageAlt": "Ozony Tech network planning and small business technology environment"
+  },
+  "pillars": {
+    "eyebrow": "Our Priorities",
+    "title": "Practical, reliable, and clear by design.",
+    "description": "The best technology is not the most complicated. It is the technology that solves the problem, stays manageable, and helps the business move forward.",
+    "items": {
+      "practical": {
+        "title": "Practical First",
+        "text": "Recommendations start with the actual business need. The objective is a solution that fits the environment without unnecessary complexity or overbuilding."
+      },
+      "reliable": {
+        "title": "Reliable by Design",
+        "text": "Networks, Wi-Fi, access, and workflows should be structured so daily operations are more stable and future troubleshooting is easier."
+      },
+      "clear": {
+        "title": "Clear Communication",
+        "text": "Technology should not feel mysterious. Ozony Tech explains the problem, the recommendation, and the next step in straightforward language."
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "How We Work",
+    "title": "From a messy problem to a clean working solution.",
+    "description": "The process stays deliberate: understand what is happening, remove unnecessary complexity, build the right solution, then test and support it.",
+    "steps": {
+      "understand": {
+        "title": "Understand",
+        "text": "Review the environment, the current setup, the business need, and what is actually getting in the way."
+      },
+      "simplify": {
+        "title": "Simplify",
+        "text": "Separate symptoms from root causes and avoid replacing equipment or adding tools unless they solve a real problem."
+      },
+      "build": {
+        "title": "Build",
+        "text": "Configure and implement a practical solution with cleaner networking, access, devices, security, or automation."
+      },
+      "support": {
+        "title": "Support",
+        "text": "Test the result, document what matters, and keep a clear path for troubleshooting, improvements, and future growth."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Where We Help",
+    "title": "Technology support across the systems small businesses use every day.",
+    "description": "Ozony Tech brings networking, IT support, security, and modern automation together so businesses can solve problems without juggling disconnected vendors for every small need.",
+    "items": {
+      "network": {
+        "title": "Network Setup",
+        "text": "Cleaner routing, switching, device connectivity, segmentation, and network planning for real business environments."
+      },
+      "wifi": {
+        "title": "Business Wi-Fi",
+        "text": "Coverage planning, access points, guest connectivity, and reliable wireless performance for staff and customers."
+      },
+      "support": {
+        "title": "IT Support",
+        "text": "Practical troubleshooting for computers, printers, connectivity, shared devices, and everyday technology issues."
+      },
+      "security": {
+        "title": "Firewall & Security",
+        "text": "Firewall planning, safer network separation, cleaner access, and sensible security improvements for business devices."
+      },
+      "managed": {
+        "title": "Managed IT Services",
+        "text": "A path for businesses that need ongoing support, maintenance, troubleshooting, and technology guidance."
+      },
+      "ai": {
+        "title": "AI Lead Response",
+        "text": "Custom lead-response workflows that help businesses capture inquiries, qualify leads, alert teams, and follow up faster."
+      }
+    }
+  },
+  "credibility": {
+    "eyebrow": "Training + Real-World Focus",
+    "title": "Verified IT training supports the work behind Ozony Tech.",
+    "description": "Ozony Tech combines practical hands-on problem solving with verified Google IT training across technical support, networking, operating systems, system administration, and security.",
+    "areas": [
+      "Technical Support",
+      "Networking",
+      "Operating Systems",
+      "System Administration",
+      "Security"
+    ],
+    "cta": "Explore Certifications",
+    "imageAlt": "Google IT Support Professional Certificate credential associated with Ozony Tech"
+  },
+  "fit": {
+    "eyebrow": "Who We Serve",
+    "title": "Built around local small-business environments.",
+    "description": "Ozony Tech focuses on businesses that need dependable technology without the weight of a large enterprise IT operation.",
+    "areas": [
+      "New York City",
+      "New Jersey",
+      "Connecticut"
+    ],
+    "items": {
+      "offices": {
+        "title": "Offices & Professional Spaces",
+        "text": "Workstations, printers, phones, shared systems, Wi-Fi, network access, and the technology teams need to work consistently."
+      },
+      "retail": {
+        "title": "Retail & Customer-Facing Businesses",
+        "text": "Connectivity for POS systems, staff devices, guest Wi-Fi, back-office workflows, and the systems that keep service moving."
+      },
+      "service": {
+        "title": "Local Service Businesses",
+        "text": "Practical IT, networking, and automation for restaurants, cafés, salons, studios, contractors, and other service-based teams."
+      }
+    }
+  },
+  "final": {
+    "eyebrow": "Start With the Real Need",
+    "title": "Need a cleaner technology setup for your business?",
+    "description": "Tell Ozony Tech what is not working, what you are planning, or what you want to improve. The first step is understanding the problem and finding the right path forward.",
+    "primaryCta": "Start a Conversation",
+    "secondaryCta": "Explore IT Solutions"
+  }
+}

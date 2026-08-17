@@ -7,8 +7,8 @@ import esCommon from "@/i18n/locales/es/common.json";
 import enHome from "@/i18n/locales/en/home.json";
 import esHome from "@/i18n/locales/es/home.json";
 
-import enContactPage from "@/i18n/locales/en/contactPage.json";
-import esContactPage from "@/i18n/locales/es/contactPage.json";
+import enContactPage from "@/i18n/locales/en/ContactPage.json";
+import esContactPage from "@/i18n/locales/es/ContactPage.json";
 
 import enAILeadAgent from "@/i18n/locales/en/aiLeadAgent.json";
 import esAILeadAgent from "@/i18n/locales/es/aiLeadAgent.json";
@@ -33,6 +33,9 @@ import esPrivacyPolicy from "@/i18n/locales/es/privacyPolicy.json";
 
 import enNotFound from "@/i18n/locales/en/notFound.json";
 import esNotFound from "@/i18n/locales/es/notFound.json";
+
+import enAboutPage from "@/i18n/locales/en/aboutPage.json";
+import esAboutPage from "@/i18n/locales/es/aboutPage.json";
 
 const getInitialLanguage = () => {
   if (typeof window === "undefined") {
@@ -59,6 +62,7 @@ i18n.use(initReactI18next).init({
       packages: enPackages,
       privacyPolicy: enPrivacyPolicy,
       notFound: enNotFound,
+      aboutPage: enAboutPage,
     },
 
     es: {
@@ -73,6 +77,7 @@ i18n.use(initReactI18next).init({
       packages: esPackages,
       privacyPolicy: esPrivacyPolicy,
       notFound: esNotFound,
+      aboutPage: esAboutPage,
     },
   },
 
@@ -95,6 +100,7 @@ i18n.use(initReactI18next).init({
     "packages",
     "privacyPolicy",
     "notFound",
+    "aboutPage",
   ],
 
   interpolation: {

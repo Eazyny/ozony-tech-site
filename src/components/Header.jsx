@@ -30,8 +30,9 @@ const Header = () => {
   const navItems = [
     { label: t('nav.aiLeadAgent'), to: '/ai-lead-agent' },
     { label: t('nav.services'), href: '#services' },,
-    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.about'), to: '/about' },
     { label: t('nav.contact'), to: CONTACT_PAGE_PATH },
+    { label: t('nav.packages'), to: '/packages' },
   ];
 
   useEffect(() => {
@@ -184,17 +185,6 @@ const Header = () => {
               )
             )}
 
-            <MotionLink
-              to={getLocalizedPath('/packages')}
-              onClick={closeMobileMenu}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.36 }}
-              className="font-medium text-gray-300 transition-colors duration-200 hover:text-white"
-            >
-              <DecodedText speed={12}>{t('nav.packages')}</DecodedText>
-            </MotionLink>
-
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -296,14 +286,6 @@ const Header = () => {
                   </a>
                 )
               )}
-
-              <Link
-                to={getLocalizedPath('/packages')}
-                onClick={closeMobileMenu}
-                className="block w-full rounded-lg px-4 py-3 text-left text-gray-300 transition-colors duration-200 hover:bg-white/10 hover:text-white"
-              >
-                <DecodedText speed={12}>{t('nav.packages')}</DecodedText>
-              </Link>
 
               <div
                 className="mx-4 my-2 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.04] p-1"

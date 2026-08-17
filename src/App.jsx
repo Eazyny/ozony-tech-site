@@ -17,6 +17,7 @@ import ContactPage from '@/pages/ContactPage';
 import LanguageSync from '@/components/LanguageSync';
 import { getLanguageFromPath } from '@/i18n/languageRoutes';
 
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
 const Certifications = lazy(() => import('@/components/CertificationsPage'));
@@ -293,6 +294,8 @@ const SpanishRoutes = () => (
   <Routes>
     <Route index element={<HomePage />} />
 
+    <Route path="about" element={<AboutPage />} />
+
     <Route path="packages" element={<PackagesPage />} />
     <Route path="certifications" element={<Certifications />} />
     <Route
@@ -436,6 +439,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/es/*" element={<SpanishRoutes />} />
+
+          <Route path="/about" element={<AboutPage />} />
 
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/certifications" element={<Certifications />} />
