@@ -9,6 +9,7 @@ import {
   Linkedin,
   Twitter,
   CheckCircle2,
+  LoaderCircle,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -477,20 +478,31 @@ const Contact = () => {
                 </div>
               </div>
 
-              <StarBorder className="mt-6 w-full rounded-md">
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full border-0 bg-blue-600 py-6 text-base font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  <Send className="mr-2 h-5 w-5" />
-                  {isSubmitting ? (
-                    t('contact.form.sending')
-                  ) : (
-                    <DecodedText speed={12}>{t('contact.form.sendInquiry')}</DecodedText>
-                  )}
-                </Button>
-              </StarBorder>
+              {isSubmitting ? (
+                <div className="mt-6 w-full overflow-hidden rounded-md border border-blue-400/30 bg-blue-600/90 shadow-[0_10px_30px_rgba(37,99,235,0.18)]">
+                  <Button
+                    type="submit"
+                    disabled
+                    aria-busy="true"
+                    className="w-full border-0 bg-transparent py-6 text-base font-semibold text-white opacity-100 disabled:cursor-wait disabled:opacity-100"
+                  >
+                    <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+                    {t('contact.form.sending')}
+                  </Button>
+                </div>
+              ) : (
+                <StarBorder className="mt-6 w-full rounded-md">
+                  <Button
+                    type="submit"
+                    className="w-full border-0 bg-blue-600 py-6 text-base font-semibold text-white hover:bg-blue-700"
+                  >
+                    <Send className="mr-2 h-5 w-5" />
+                    <DecodedText speed={12}>
+                      {t('contact.form.sendInquiry')}
+                    </DecodedText>
+                  </Button>
+                </StarBorder>
+              )}
             </SpotlightCard>
           </motion.div>
         </div>
