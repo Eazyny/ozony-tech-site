@@ -1,0 +1,211 @@
+{
+  "seo": {
+    "title": "Privacy Policy | Ozony Tech",
+    "description": "Read the Ozony Tech Privacy Policy to learn how we collect, use, protect, and manage personal information for website inquiries, services, and AI lead response workflows.",
+    "ogTitle": "Privacy Policy | Ozony Tech",
+    "ogDescription": "How Ozony Tech collects, uses, protects, and manages personal information.",
+    "ogImageAlt": "Ozony Tech privacy policy",
+    "twitterTitle": "Privacy Policy | Ozony Tech",
+    "twitterDescription": "How Ozony Tech collects, uses, protects, and manages personal information."
+  },
+  "schema": {
+    "pageName": "Privacy Policy",
+    "description": "Privacy Policy for Ozony Tech explaining how personal information is collected, used, shared, protected, and retained.",
+    "home": "Home"
+  },
+  "hero": {
+    "badge": "Privacy Notice",
+    "title": "Privacy Policy",
+    "description": "This Privacy Policy explains how Ozony Tech collects, uses, shares, protects, and manages personal information when you visit our website, contact us, request services, or use our lead response workflows.",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdatedDate": "July 3, 2026",
+    "readPolicy": "Read the Policy",
+    "contact": "Contact Ozony Tech"
+  },
+  "quickPoints": {
+    "collection": {
+      "title": "We collect only what helps us respond.",
+      "text": "Most information comes from forms, emails, calls, messages, service requests, and business consultations."
+    },
+    "ai": {
+      "title": "AI workflows support intake and follow-up.",
+      "text": "AI tools may help summarize inquiries, draft responses, route alerts, and organize lead details."
+    },
+    "security": {
+      "title": "We use reasonable safeguards.",
+      "text": "We work to protect personal information through access controls, secure tools, and limited internal use."
+    },
+    "rights": {
+      "title": "You can contact us about your data.",
+      "text": "You may request access, correction, deletion, or opt out of non-essential communications."
+    }
+  },
+  "onThisPage": "On this page",
+  "sections": {
+    "informationWeCollect": {
+      "title": "1. Information We Collect",
+      "body": [
+        "Ozony Tech collects personal information that you choose to provide when you contact us, request a quote, submit a form, schedule a consultation, purchase a service, communicate with us, or use one of our lead response workflows.",
+        "This may include your name, business name, email address, phone number, service address or general location, company details, project details, support request details, preferred contact method, and any information you include in messages, forms, calls, or emails.",
+        "For technical support, networking, website, automation, or AI lead response services, we may also collect information about your business systems, devices, website forms, workflow needs, communication channels, and service history when needed to provide the service."
+      ],
+      "bullets": [
+        "Contact details such as name, email, and phone number",
+        "Business information such as company name, service needs, and project details",
+        "Inquiry details submitted through website forms or lead forms",
+        "Communication records such as emails, call notes, SMS replies, or support messages",
+        "Technical details needed to troubleshoot, configure, or support a service",
+        "Payment, billing, or transaction details when you purchase a service"
+      ]
+    },
+    "howWeUseInformation": {
+      "title": "2. How We Use Personal Information",
+      "body": [
+        "We use personal information to respond to inquiries, provide quotes, deliver services, support customers, improve our workflows, protect our business, and communicate about active or requested services.",
+        "We may also use information to prepare internal summaries, prioritize urgent requests, troubleshoot technical issues, schedule appointments, send follow-ups, and maintain records related to services we provide."
+      ],
+      "bullets": [
+        "Respond to questions, quote requests, and service inquiries",
+        "Provide IT, networking, website, automation, and AI lead response services",
+        "Send confirmations, updates, reminders, and follow-up messages",
+        "Create internal notes, lead summaries, and service records",
+        "Route urgent inquiries to the right person or communication channel",
+        "Improve our website, intake process, and customer support workflows",
+        "Prevent fraud, abuse, unauthorized access, or misuse of our systems",
+        "Comply with legal, tax, security, or business record requirements"
+      ]
+    },
+    "aiLeadResponseAgent": {
+      "title": "3. AI Lead Response Agent and Automation Workflows",
+      "body": [
+        "Ozony Tech may use AI and automation tools to support lead intake, response preparation, internal alerts, and customer follow-up. These systems are designed to help businesses respond faster and organize inquiries more clearly.",
+        "When someone submits a website form or lead request, the AI Lead Response Agent may process the submitted information to generate a confirmation message, draft a follow-up response, ask approved qualifying questions, create an internal lead summary, and notify the appropriate team member.",
+        "AI tools are used to support workflow efficiency. They do not replace human judgment for important business decisions, pricing decisions, or service commitments unless specifically reviewed and approved by a person."
+      ],
+      "bullets": [
+        "Capture website form submissions and lead details",
+        "Generate internal summaries for review",
+        "Draft suggested replies or follow-up messages",
+        "Ask approved qualifying questions when appropriate",
+        "Send team alerts through approved channels",
+        "Help organize service requests and follow-up tasks"
+      ]
+    },
+    "phoneSmsEmail": {
+      "title": "4. Phone, SMS, and Email Communications",
+      "body": [
+        "When you provide your phone number, email address, or other contact information, you authorize Ozony Tech to contact you about your inquiry, requested service, consultation, quote, project, account, or support request.",
+        "Depending on the workflow, we may contact you by phone, email, SMS/text message, or another communication channel you provide. Message and data rates may apply for SMS messages.",
+        "You can opt out of non-essential SMS messages by replying STOP, asking us directly, or contacting us at contact@ozony.tech. Service-related messages may still be necessary when they are required to complete an active request or provide a requested service."
+      ],
+      "bullets": [
+        "We may send confirmation messages after you submit a form",
+        "We may follow up about quotes, consultations, or active service requests",
+        "We may send internal alerts to help our team respond faster",
+        "You can request that we stop non-essential marketing or follow-up messages"
+      ]
+    },
+    "sharingInformation": {
+      "title": "5. How We Share Information",
+      "body": [
+        "Ozony Tech does not sell personal information. We may share personal information with trusted service providers and tools that help us operate the business, deliver services, communicate with customers, host systems, process payments, send emails, send SMS messages, manage workflows, or protect our systems.",
+        "We may also share information when required by law, to protect our rights, to prevent fraud or security issues, or as part of a business transfer such as a merger, acquisition, restructuring, or sale of assets."
+      ],
+      "bullets": [
+        "Website hosting and infrastructure providers",
+        "Email, phone, SMS, and messaging providers",
+        "Payment processors and invoicing tools",
+        "Automation, AI, CRM, or lead management tools",
+        "Security, monitoring, and troubleshooting tools",
+        "Professional advisors such as accountants, attorneys, or consultants when needed"
+      ]
+    },
+    "clientData": {
+      "title": "6. Client Data and Customer Workflows",
+      "body": [
+        "When Ozony Tech builds, manages, or supports a workflow for a client, information submitted through that client’s forms, systems, or communication channels may be processed on behalf of that client.",
+        "In those cases, Ozony Tech uses the information to provide the requested service, maintain the workflow, troubleshoot issues, and support the client’s business process. The client may also have its own privacy policy or legal obligations that apply to how they collect and use data."
+      ],
+      "bullets": [
+        "We process client workflow data to provide the requested service",
+        "We limit access to people and tools that need it for the workflow",
+        "We do not use client lead data for unrelated advertising or resale",
+        "We may retain limited records needed for support, security, billing, or legal reasons"
+      ]
+    },
+    "security": {
+      "title": "7. How We Protect Information",
+      "body": [
+        "Ozony Tech uses reasonable administrative, technical, and organizational safeguards designed to protect personal information from unauthorized access, misuse, loss, disclosure, alteration, or destruction.",
+        "No website, network, software tool, or online service can be guaranteed to be completely secure. However, we work to limit access, use reputable service providers, maintain safer workflows, and protect information based on the sensitivity of the data and the nature of the service."
+      ],
+      "bullets": [
+        "Limiting access to information based on business need",
+        "Using trusted service providers and secure platforms",
+        "Maintaining account security and access controls",
+        "Reducing unnecessary collection where possible",
+        "Reviewing workflows for security and privacy risks"
+      ]
+    },
+    "retention": {
+      "title": "8. How Long We Keep Information",
+      "body": [
+        "We keep personal information only as long as reasonably necessary for the purposes described in this policy, including providing services, responding to inquiries, maintaining business records, resolving disputes, improving workflows, protecting security, and meeting legal or accounting obligations.",
+        "When information is no longer needed, we work to delete, de-identify, archive, or securely dispose of it in a reasonable manner."
+      ],
+      "bullets": [
+        "Lead and inquiry records may be kept for follow-up and business history",
+        "Service records may be kept for support, warranty, troubleshooting, and documentation",
+        "Billing records may be kept for tax, accounting, and legal requirements",
+        "Old or unnecessary records may be deleted or archived when no longer needed"
+      ]
+    },
+    "cookiesAnalytics": {
+      "title": "9. Website Data, Cookies, and Analytics",
+      "body": [
+        "Our website may collect basic technical information such as browser type, device type, pages visited, approximate location, referring pages, and interactions with the website. This information helps us understand site performance, security, and how visitors use the website.",
+        "We may use cookies, local storage, analytics tools, security tools, or similar technologies. You can adjust browser settings to block or delete cookies, but some website features may not work as expected."
+      ],
+      "bullets": [
+        "Understand website traffic and performance",
+        "Improve page layout, services, and content",
+        "Detect errors, abuse, spam, or security issues",
+        "Support basic website functionality"
+      ]
+    },
+    "yourChoices": {
+      "title": "10. Your Choices and Privacy Requests",
+      "body": [
+        "You may contact Ozony Tech to request access to personal information we maintain about you, ask us to correct inaccurate information, request deletion, or ask us to stop certain communications.",
+        "Depending on your location, you may have additional privacy rights under applicable law. We may need to verify your identity before completing certain privacy requests."
+      ],
+      "bullets": [
+        "Request access to your personal information",
+        "Ask us to correct or update information",
+        "Ask us to delete information when legally and operationally possible",
+        "Opt out of non-essential marketing or follow-up messages",
+        "Reply STOP to opt out of SMS messages when available"
+      ]
+    },
+    "children": {
+      "title": "11. Children’s Privacy",
+      "body": [
+        "Ozony Tech services are intended for businesses and adults. We do not knowingly collect personal information from children under 13.",
+        "If you believe a child has provided personal information to us, contact us and we will review the request and take appropriate action."
+      ],
+      "bullets": []
+    },
+    "updates": {
+      "title": "12. Updates to This Privacy Policy",
+      "body": [
+        "We may update this Privacy Policy from time to time to reflect changes in our services, workflows, legal requirements, or business practices.",
+        "When we update the policy, we will revise the “Last updated” date at the top of this page. Your continued use of the website or services after an update means the updated policy applies moving forward."
+      ],
+      "bullets": []
+    }
+  },
+  "contactSection": {
+    "title": "Contact Us About Privacy",
+    "description": "To ask a privacy question, request access, correct information, request deletion, or opt out of certain communications, contact Ozony Tech using the details below."
+  }
+}

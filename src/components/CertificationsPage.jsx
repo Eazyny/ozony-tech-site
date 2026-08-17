@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -8,144 +8,193 @@ import {
   CheckCircle,
   ExternalLink,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StarfieldBackground from '@/components/ui/starfield-background';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
+
+const SITE_URL = 'https://ozony.tech';
+const OG_IMAGE =
+  'https://ozony.tech/images/credentials/GoogleITSupportCert.webp';
+
+const credentials = [
+  {
+    key: 'technicalSupportFundamentals',
+    title: 'Technical Support Fundamentals',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-001',
+    verificationUrl: 'https://www.coursera.org/verify/EYCM6K2LYK10',
+    image: '/images/credentials/TechnicalSupportFundamentalCert.webp',
+  },
+  {
+    key: 'bitsAndBytes',
+    title: 'The Bits and Bytes of Computer Networking',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-003',
+    verificationUrl: 'https://www.coursera.org/verify/GXACQZY45CW7',
+    image: '/images/credentials/TheBitsandBytesCert.webp',
+  },
+  {
+    key: 'operatingSystems',
+    title: 'Operating Systems and You: Becoming a Power User',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-002',
+    verificationUrl: 'https://www.coursera.org/verify/9QNIGDEBM1MT',
+    image: '/images/credentials/OperatingSystemsandYou.webp',
+  },
+  {
+    key: 'systemAdministration',
+    title: 'System Administration and IT Infrastructure Services',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-004',
+    verificationUrl: 'https://www.coursera.org/verify/IBZO8E1TFB3U',
+    image: '/images/credentials/SystemAdministrator.webp',
+  },
+  {
+    key: 'itSecurity',
+    title: 'IT Security: Defense against the Digital Dark Arts',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-005',
+    verificationUrl: 'https://coursera.org/verify/YS67E8K4K2V4',
+    image: '/images/credentials/ITSecurity.webp',
+  },
+  {
+    key: 'professionalCertificate',
+    title: 'Google IT Support Professional Certificate',
+    issuer: 'Google',
+    credentialId: 'GOOG-IT-PRO',
+    verificationUrl:
+      'https://coursera.org/verify/professional-cert/2FLTPOHX1URJ',
+    image: '/images/credentials/GoogleITSupportCert.webp',
+    featured: true,
+  },
+];
 
 const Credentials = () => {
-  const credentials = [
-    {
-      title: 'Technical Support Fundamentals',
-      issuer: 'Google',
-      date: 'November 2025',
-      credentialId: 'GOOG-IT-001',
-      shortDescription:
-        'Foundational IT support, troubleshooting, and customer service training.',
-      verificationUrl: 'https://www.coursera.org/verify/EYCM6K2LYK10',
-      image: '/images/credentials/TechnicalSupportFundamentalCert.webp',
-      category: 'Support Foundations',
-    },
-    {
-      title: 'The Bits and Bytes of Computer Networking',
-      issuer: 'Google',
-      date: 'December 2025',
-      credentialId: 'GOOG-IT-003',
-      shortDescription:
-        'Networking fundamentals covering TCP/IP, DNS, DHCP, and connectivity troubleshooting.',
-      verificationUrl: 'https://www.coursera.org/verify/GXACQZY45CW7',
-      image: '/images/credentials/TheBitsandBytesCert.webp',
-      category: 'Networking',
-    },
-    {
-      title: 'Operating Systems and You: Becoming a Power User',
-      issuer: 'Google',
-      date: 'January 2026',
-      credentialId: 'GOOG-IT-002',
-      shortDescription:
-        'Windows, Linux, software configuration, file systems, and user admin basics.',
-      verificationUrl: 'https://www.coursera.org/verify/9QNIGDEBM1MT',
-      image: '/images/credentials/OperatingSystemsandYou.webp',
-      category: 'Operating Systems',
-    },
-    {
-      title: 'System Administration and IT Infrastructure Services',
-      issuer: 'Google',
-      date: 'January 2026',
-      credentialId: 'GOOG-IT-004',
-      shortDescription:
-        'System administration, infrastructure services, and operational best practices.',
-      verificationUrl: 'https://www.coursera.org/verify/IBZO8E1TFB3U',
-      image: '/images/credentials/SystemAdministrator.webp',
-      category: 'System Administration',
-    },
-    {
-      title: 'IT Security: Defense against the Digital Dark Arts',
-      issuer: 'Google',
-      date: 'January 2026',
-      credentialId: 'GOOG-IT-005',
-      shortDescription:
-        'Authentication, encryption, phishing awareness, and incident response basics.',
-      verificationUrl: 'https://coursera.org/verify/YS67E8K4K2V4',
-      image: '/images/credentials/ITSecurity.webp',
-      category: 'Security',
-    },
-    {
-      title: 'Google IT Support Professional Certificate',
-      issuer: 'Google',
-      date: 'January 2026',
-      credentialId: 'GOOG-IT-PRO',
-      shortDescription:
-        'Full professional certificate covering support, networking, systems, and security.',
-      verificationUrl: 'https://coursera.org/verify/professional-cert/2FLTPOHX1URJ',
-      image: '/images/credentials/GoogleITSupportCert.webp',
-      category: 'Professional Certificate',
-      featured: true,
-    },
-  ];
+  const location = useLocation();
+  const { t } = useTranslation('certifications');
+
+  const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
+  const homePath = localizePath('/', language);
+
+  const canonicalUrl = isSpanish
+    ? `${SITE_URL}/es/certifications`
+    : `${SITE_URL}/certifications`;
 
   const featuredCert =
-    credentials.find((cert) => cert.featured) || credentials[credentials.length - 1];
+    credentials.find((cert) => cert.featured) ||
+    credentials[credentials.length - 1];
 
-  const supportAreas = [
-    'IT Support',
-    'Networking',
-    'Operating Systems',
-    'System Administration',
-    'Security',
-    'Verified Google Training',
-  ];
+  const supportAreas = t('supportAreas', { returnObjects: true });
 
-  const canonicalUrl = 'https://ozony.tech/certifications';
-  const ogImage = 'https://ozony.tech/images/credentials/GoogleITSupportCert.webp';
+  const credentialSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Google IT Support Professional Certificate',
+    credentialCategory: t(
+      'credentials.professionalCertificate.category'
+    ),
+    recognizedBy: {
+      '@type': 'Organization',
+      name: 'Google',
+    },
+    url: featuredCert.verificationUrl,
+    description: t(
+      'credentials.professionalCertificate.schemaDescription'
+    ),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: t('schema.home'),
+        item: isSpanish ? `${SITE_URL}/es` : `${SITE_URL}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('schema.certifications'),
+        item: canonicalUrl,
+      },
+    ],
+  };
 
   return (
     <>
       <Helmet>
-        <title>Ozony Tech Certifications | Verified IT Training & Credentials</title>
+        <title>{t('seo.title')}</title>
         <meta
           name="description"
-          content="Explore Ozony Tech certifications and verified Google IT training in IT support, networking, operating systems, system administration, and security."
+          content={t('seo.description')}
         />
         <meta
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
         />
+
         <link rel="canonical" href={canonicalUrl} />
 
-        <meta property="og:title" content="Ozony Tech Certifications | Verified IT Training & Credentials" />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${SITE_URL}/certifications`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${SITE_URL}/es/certifications`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${SITE_URL}/certifications`}
+        />
+
+        <meta
+          property="og:title"
+          content={t('seo.ogTitle')}
+        />
         <meta
           property="og:description"
-          content="View Ozony Tech’s verified Google IT training credentials across support, networking, systems, and security."
+          content={t('seo.ogDescription')}
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Ozony Tech" />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:alt" content="Google IT Support Professional Certificate credential preview" />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta
+          property="og:image:alt"
+          content={t('seo.ogImageAlt')}
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ozony Tech Certifications | Verified IT Training & Credentials" />
+        <meta
+          name="twitter:title"
+          content={t('seo.twitterTitle')}
+        />
         <meta
           name="twitter:description"
-          content="Explore verified Google IT credentials behind Ozony Tech’s support, networking, systems, and security services."
+          content={t('seo.twitterDescription')}
         />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={OG_IMAGE} />
 
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'EducationalOccupationalCredential',
-            name: 'Google IT Support Professional Certificate',
-            credentialCategory: 'Professional Certificate',
-            recognizedBy: {
-              '@type': 'Organization',
-              name: 'Google',
-            },
-            url: 'https://coursera.org/verify/professional-cert/2FLTPOHX1URJ',
-            description:
-              'Professional certificate covering IT support, networking, operating systems, system administration, and security.',
-          })}
+          {JSON.stringify(credentialSchema)}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       </Helmet>
 
@@ -156,16 +205,15 @@ const Credentials = () => {
           <section className="px-4 pt-24 pb-2 md:pt-28">
             <div className="container mx-auto max-w-7xl">
               <Link
-                to="/"
+                to={homePath}
                 className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Back to Home
+                {t('backToHome')}
               </Link>
             </div>
           </section>
 
-          {/* Hero */}
           <section className="relative overflow-hidden px-4 py-14 md:py-20">
             <StarfieldBackground />
 
@@ -177,16 +225,15 @@ const Credentials = () => {
                 className="mx-auto max-w-5xl text-center"
               >
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-                  Ozony Tech Certifications
+                  {t('hero.eyebrow')}
                 </p>
 
                 <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-                  Verified Training That Supports Real-World IT &amp; Network Work
+                  {t('hero.title')}
                 </h1>
 
                 <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400">
-                  Google-backed coursework across support, networking, systems, and security —
-                  aligned with the practical small-business services Ozony Tech provides.
+                  {t('hero.description')}
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400">
@@ -203,7 +250,6 @@ const Credentials = () => {
             </div>
           </section>
 
-          {/* Featured certification block */}
           <section className="px-4 pb-12">
             <div className="container mx-auto max-w-7xl">
               <motion.div
@@ -218,7 +264,9 @@ const Credentials = () => {
                     <div className="absolute inset-0">
                       <img
                         src={featuredCert.image}
-                        alt={`${featuredCert.title} certificate preview`}
+                        alt={t('certificatePreviewAlt', {
+                          title: featuredCert.title,
+                        })}
                         className="h-full w-full object-cover object-top"
                         loading="lazy"
                       />
@@ -236,19 +284,26 @@ const Credentials = () => {
 
                         <div className="inline-flex items-center gap-1 rounded-full border border-green-400/20 bg-green-400/10 px-2.5 py-1 text-xs font-medium text-green-400 backdrop-blur-sm">
                           <CheckCircle className="h-3 w-3" />
-                          <span>Featured</span>
+                          <span>{t('featured')}</span>
                         </div>
                       </div>
 
                       <div className="max-w-lg">
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-                          Featured Certification
+                          {t('featuredCertification')}
                         </p>
+
                         <h2 className="text-2xl font-bold leading-tight text-white md:text-3xl">
                           {featuredCert.title}
                         </h2>
+
                         <p className="mt-3 text-sm font-medium text-blue-300">
-                          {featuredCert.issuer} · Issued {featuredCert.date}
+                          {featuredCert.issuer} ·{' '}
+                          {t('issued', {
+                            date: t(
+                              `credentials.${featuredCert.key}.date`
+                            ),
+                          })}
                         </p>
                       </div>
                     </div>
@@ -257,29 +312,35 @@ const Credentials = () => {
                   <div className="flex flex-col justify-between">
                     <div>
                       <p className="w-fit rounded-full border border-slate-700/60 bg-slate-900/60 px-3 py-1 text-xs font-medium text-blue-300">
-                        {featuredCert.category}
+                        {t(
+                          `credentials.${featuredCert.key}.category`
+                        )}
                       </p>
 
                       <p className="mt-5 text-base leading-relaxed text-gray-300 md:text-lg">
-                        {featuredCert.shortDescription}
+                        {t(
+                          `credentials.${featuredCert.key}.description`
+                        )}
                       </p>
 
                       <div className="mt-8 grid gap-3 sm:grid-cols-2">
                         <div className="rounded-xl border border-slate-700/50 bg-slate-900/45 p-4">
                           <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
-                            Coverage
+                            {t('coverage.title')}
                           </p>
+
                           <p className="mt-2 text-sm text-gray-300">
-                            Support, networking, operating systems, systems, and security.
+                            {t('coverage.text')}
                           </p>
                         </div>
 
                         <div className="rounded-xl border border-slate-700/50 bg-slate-900/45 p-4">
                           <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
-                            Verified
+                            {t('verified.title')}
                           </p>
+
                           <p className="mt-2 text-sm text-gray-300">
-                            Google coursework and professional certificate track completion.
+                            {t('verified.text')}
                           </p>
                         </div>
                       </div>
@@ -296,7 +357,7 @@ const Credentials = () => {
                           rel="noopener noreferrer"
                         >
                           <CheckCircle className="mr-2 h-4 w-4" />
-                          Verify Featured Certificate
+                          {t('verifyFeatured')}
                           <ExternalLink className="ml-2 h-4 w-4" />
                         </a>
                       </Button>
@@ -307,26 +368,24 @@ const Credentials = () => {
             </div>
           </section>
 
-          {/* All certifications */}
           <section className="px-4 pb-20">
             <div className="container mx-auto max-w-7xl">
               <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <h2 className="mb-3 text-3xl font-bold text-white md:text-5xl">
-                    All Certifications
+                    {t('allCertifications.title')}
                   </h2>
+
                   <p className="max-w-3xl text-lg text-gray-400">
-                    Explore the full credential set behind Ozony Tech’s support, networking,
-                    systems, and security foundation.
+                    {t('allCertifications.description')}
                   </p>
                 </div>
 
                 <div className="hidden rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2 text-sm text-gray-300 lg:inline-flex">
-                  Hover cards to expand
+                  {t('hoverHint')}
                 </div>
               </div>
 
-              {/* Mobile / Tablet */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:hidden">
                 {credentials.map((cert, index) => (
                   <motion.a
@@ -337,13 +396,18 @@ const Credentials = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.05 }}
+                    transition={{
+                      duration: 0.45,
+                      delay: index * 0.05,
+                    }}
                     className="group relative min-h-[300px] overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-900/70 shadow-lg shadow-blue-500/5"
                   >
                     <div className="absolute inset-0">
                       <img
                         src={cert.image}
-                        alt={`${cert.title} certificate preview`}
+                        alt={t('certificatePreviewAlt', {
+                          title: cert.title,
+                        })}
                         className="h-full w-full object-cover object-top opacity-30"
                         loading="lazy"
                       />
@@ -361,26 +425,34 @@ const Credentials = () => {
 
                         <div className="inline-flex items-center gap-1 rounded-full border border-green-400/20 bg-green-400/10 px-2.5 py-1 text-xs font-medium text-green-400 backdrop-blur-sm">
                           <CheckCircle className="h-3 w-3" />
-                          <span>Verified</span>
+                          <span>{t('verifiedBadge')}</span>
                         </div>
                       </div>
 
                       <div>
                         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-400">
-                          {cert.category}
+                          {t(`credentials.${cert.key}.category`)}
                         </p>
+
                         <h3 className="text-xl font-bold leading-tight text-white">
                           {cert.title}
                         </h3>
-                        <p className="mt-2 text-sm font-medium text-blue-300">{cert.issuer}</p>
+
+                        <p className="mt-2 text-sm font-medium text-blue-300">
+                          {cert.issuer}
+                        </p>
+
                         <p className="mt-3 text-sm leading-relaxed text-gray-200">
-                          {cert.shortDescription}
+                          {t(`credentials.${cert.key}.description`)}
                         </p>
 
                         <div className="mt-4 flex items-center justify-between gap-3 text-xs text-gray-400">
-                          <span>{cert.date}</span>
+                          <span>
+                            {t(`credentials.${cert.key}.date`)}
+                          </span>
+
                           <span className="inline-flex items-center gap-1 text-blue-400">
-                            Verify
+                            {t('verify')}
                             <ExternalLink className="h-3 w-3" />
                           </span>
                         </div>
@@ -390,7 +462,6 @@ const Credentials = () => {
                 ))}
               </div>
 
-              {/* Desktop expandable strip */}
               <div className="hidden rounded-2xl border border-slate-700/50 bg-slate-900/35 p-2 shadow-lg shadow-blue-500/5 lg:block">
                 <div className="flex h-[430px] overflow-hidden rounded-xl">
                   {credentials.map((cert, index) => (
@@ -402,13 +473,18 @@ const Credentials = () => {
                       initial={{ opacity: 0, y: 24 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.45, delay: index * 0.05 }}
+                      transition={{
+                        duration: 0.45,
+                        delay: index * 0.05,
+                      }}
                       className="group relative min-w-0 flex-1 overflow-hidden border-r border-slate-700/40 bg-slate-900/70 transition-all duration-500 ease-out last:border-r-0 hover:flex-[2.25]"
                     >
                       <div className="absolute inset-0">
                         <img
                           src={cert.image}
-                          alt={`${cert.title} certificate preview`}
+                          alt={t('certificatePreviewAlt', {
+                            title: cert.title,
+                          })}
                           className="h-full w-full object-cover object-top grayscale opacity-45 transition-all duration-500 ease-out group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-72"
                           loading="lazy"
                         />
@@ -425,18 +501,20 @@ const Credentials = () => {
 
                         <div className="inline-flex items-center gap-1 rounded-full border border-green-400/20 bg-green-400/10 px-2.5 py-1 text-xs font-medium text-green-400 backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                           <CheckCircle className="h-3 w-3" />
-                          <span>Verified</span>
+                          <span>{t('verifiedBadge')}</span>
                         </div>
                       </div>
 
                       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 transition-all duration-500 group-hover:items-end group-hover:justify-start group-hover:px-6 group-hover:pb-24">
                         <div className="max-w-[260px] text-center transition-all duration-500 group-hover:text-left">
                           <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-300/90 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            {cert.category}
+                            {t(`credentials.${cert.key}.category`)}
                           </p>
+
                           <h3 className="text-xl font-bold leading-tight text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.55)]">
                             {cert.title}
                           </h3>
+
                           <p className="mt-2 text-sm font-medium text-blue-300 opacity-0 transition-all duration-300 group-hover:opacity-100">
                             {cert.issuer}
                           </p>
@@ -445,13 +523,16 @@ const Credentials = () => {
 
                       <div className="absolute inset-x-0 bottom-0 z-20 translate-y-full bg-gradient-to-t from-slate-950/96 via-slate-950/88 to-transparent px-5 pb-5 pt-12 transition-transform duration-300 ease-out group-hover:translate-y-0">
                         <p className="text-sm leading-relaxed text-gray-200">
-                          {cert.shortDescription}
+                          {t(`credentials.${cert.key}.description`)}
                         </p>
 
                         <div className="mt-4 flex items-center justify-between gap-3 text-xs text-gray-400">
-                          <span>{cert.date}</span>
+                          <span>
+                            {t(`credentials.${cert.key}.date`)}
+                          </span>
+
                           <span className="inline-flex items-center gap-1 text-blue-400">
-                            Verify
+                            {t('verify')}
                             <ExternalLink className="h-3 w-3" />
                           </span>
                         </div>

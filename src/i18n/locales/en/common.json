@@ -1,0 +1,26 @@
+{
+  "language": {
+    "english": "English",
+    "spanish": "Español",
+    "shortEnglish": "EN",
+    "shortSpanish": "ES"
+  },
+
+  "nav": {
+    "aiLeadAgent": "AI Lead Agent",
+    "services": "Services",
+    "certifications": "Certifications",
+    "about": "About",
+    "contact": "Contact",
+    "packages": "Packages",
+    "requestQuote": "Request a Quote"
+  },
+
+  "accessibility": {
+    "primaryNavigation": "Primary navigation",
+    "goHome": "Go to homepage",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "changeLanguage": "Change language"
+  }
+}

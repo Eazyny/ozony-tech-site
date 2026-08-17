@@ -14,6 +14,8 @@ import Faq from '@/components/Faq';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ContactPage from '@/pages/ContactPage';
+import LanguageSync from '@/components/LanguageSync';
+import { getLanguageFromPath } from '@/i18n/languageRoutes';
 
 const PackagesPage = lazy(() => import('@/components/PackagesPage'));
 const AILeadCapture = lazy(() => import('@/pages/AILeadCapture'));
@@ -58,6 +60,62 @@ const NotFound = lazy(() => import('@/pages/not-found'));
 
 const HomePage = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const location = useLocation();
+
+  const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
+
+  const canonicalUrl = isSpanish
+    ? 'https://ozony.tech/es'
+    : 'https://ozony.tech/';
+
+  const seo = isSpanish
+    ? {
+        title:
+          'Ozony Tech | Soluciones de TI y Redes para Pequeñas Empresas',
+        description:
+          'Ozony Tech ofrece soluciones prácticas de TI y redes para pequeñas empresas, incluyendo configuración de Wi-Fi, redes, soporte de dispositivos, diagnóstico, automatización de respuesta a leads con IA y servicios empresariales de TI.',
+        ogTitle:
+          'Ozony Tech | Soluciones de TI y Redes para Pequeñas Empresas',
+        ogDescription:
+          'Soluciones prácticas de TI, Wi-Fi, redes, sitios web y respuesta a leads con IA para pequeñas empresas en NYC, NJ y Connecticut.',
+        imageAlt:
+          'Ozony Tech, soluciones de TI y redes para pequeñas empresas',
+        backToTop: 'Volver arriba',
+        locale: 'es_ES',
+        serviceTypes: [
+          'Soporte de TI',
+          'Configuración de Redes',
+          'Wi-Fi Empresarial',
+          'Configuración de Firewall',
+          'Servicios Administrados de TI',
+          'Servicios de Sitios Web',
+          'Automatización de Respuesta a Leads con IA',
+        ],
+      }
+    : {
+        title:
+          'Ozony Tech | IT & Network Solutions for Small Businesses',
+        description:
+          'Ozony Tech provides practical IT and network solutions for small businesses, including Wi-Fi setup, networking, device support, troubleshooting, AI lead response automation, and business IT services.',
+        ogTitle:
+          'Ozony Tech | IT & Network Solutions for Small Businesses',
+        ogDescription:
+          'Practical IT, Wi-Fi, networking, website, and AI lead response solutions for small businesses in NYC, NJ, and CT.',
+        imageAlt:
+          'Ozony Tech IT and network solutions for small businesses',
+        backToTop: 'Back to top',
+        locale: 'en_US',
+        serviceTypes: [
+          'IT Support',
+          'Network Setup',
+          'Business Wi-Fi',
+          'Firewall Setup',
+          'Managed IT Services',
+          'Website Services',
+          'AI Lead Response Automation',
+        ],
+      };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,49 +135,84 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Ozony Tech | IT &amp; Network Solutions for Small Businesses</title>
+        <title>{seo.title}</title>
+
         <meta
           name="description"
-          content="Ozony Tech provides practical IT and network solutions for small businesses, including Wi-Fi setup, networking, device support, troubleshooting, AI lead response automation, and business IT services."
+          content={seo.description}
         />
 
-        <link rel="canonical" href="https://ozony.tech/" />
+        <meta
+          name="robots"
+          content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+        />
+
+        <link rel="canonical" href={canonicalUrl} />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href="https://ozony.tech/"
+        />
+
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href="https://ozony.tech/es"
+        />
+
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://ozony.tech/"
+        />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ozony.tech/" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="Ozony Tech" />
+        <meta property="og:locale" content={seo.locale} />
+
         <meta
           property="og:title"
-          content="Ozony Tech | IT & Network Solutions for Small Businesses"
+          content={seo.ogTitle}
         />
+
         <meta
           property="og:description"
-          content="Practical IT, Wi-Fi, networking, website, and AI lead response solutions for small businesses in NYC, NJ, and CT."
+          content={seo.ogDescription}
         />
+
         <meta
           property="og:image"
           content="https://ozony.tech/images/ozony-og-preview.png"
         />
+
         <meta
           property="og:image:secure_url"
           content="https://ozony.tech/images/ozony-og-preview.png"
         />
+
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+
         <meta
           property="og:image:alt"
-          content="Ozony Tech IT and network solutions for small businesses"
+          content={seo.imageAlt}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
+
         <meta
           name="twitter:title"
-          content="Ozony Tech | IT & Network Solutions for Small Businesses"
+          content={seo.ogTitle}
         />
+
         <meta
           name="twitter:description"
-          content="Practical IT, Wi-Fi, networking, website, and AI lead response solutions for small businesses in NYC, NJ, and CT."
+          content={seo.ogDescription}
         />
+
         <meta
           name="twitter:image"
           content="https://ozony.tech/images/ozony-og-preview.png"
@@ -130,25 +223,28 @@ const HomePage = () => {
             '@context': 'https://schema.org',
             '@type': 'ProfessionalService',
             name: 'Ozony Tech',
-            url: 'https://ozony.tech',
+            url: canonicalUrl,
+            inLanguage: language,
             email: 'contact@ozony.tech',
             telephone: '+1-347-653-7655',
             image: 'https://ozony.tech/images/ozony-og-preview.png',
             areaServed: ['New York City', 'New Jersey', 'Connecticut'],
-            serviceType: [
-              'IT Support',
-              'Network Setup',
-              'Business Wi-Fi',
-              'Firewall Setup',
-              'Managed IT Services',
-              'Website Services',
-              'AI Lead Response Automation',
-            ],
+            serviceType: seo.serviceTypes,
             sameAs: [
               'https://x.com/ozonytech',
               'https://github.com/eazyny',
               'https://linkedin.com/in/ozony-elsevif',
             ],
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Ozony Tech',
+            url: canonicalUrl,
+            inLanguage: language,
           })}
         </script>
       </Helmet>
@@ -179,7 +275,7 @@ const HomePage = () => {
             >
               <button
                 onClick={scrollToTop}
-                aria-label="Back to top"
+                aria-label={seo.backToTop}
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-slate-900/90 text-blue-400 shadow-lg shadow-blue-500/20 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-blue-500/10 hover:text-white"
               >
                 <ArrowUp className="h-5 w-5" />
@@ -191,6 +287,86 @@ const HomePage = () => {
     </>
   );
 };
+
+
+const SpanishRoutes = () => (
+  <Routes>
+    <Route index element={<HomePage />} />
+
+    <Route path="packages" element={<PackagesPage />} />
+    <Route path="certifications" element={<Certifications />} />
+    <Route
+      path="credentials"
+      element={<Navigate to="/es/certifications" replace />}
+    />
+
+    <Route path="ai-lead-agent" element={<AILeadAgentPage />} />
+    <Route path="ai-agent-lead-capture" element={<AILeadCapture />} />
+    <Route
+      path="ai-lead-capture"
+      element={<Navigate to="/es/ai-agent-lead-capture" replace />}
+    />
+
+    <Route path="network-setup-nyc" element={<NetworkSetupNYC />} />
+    <Route path="business-wifi-nyc" element={<BusinessWifiNYC />} />
+    <Route path="firewall-setup-nyc" element={<FirewallSetupNYC />} />
+    <Route path="it-support-nyc" element={<ITSupportNYC />} />
+
+    <Route
+      path="network-troubleshooting-nyc"
+      element={<NetworkTroubleshootingNYC />}
+    />
+    <Route
+      path="small-business-network-nyc"
+      element={<SmallBusinessNetworkNYC />}
+    />
+
+    <Route path="network-setup-nj" element={<NetworkSetupNJ />} />
+    <Route path="it-support-nj" element={<ITSupportNJ />} />
+
+    <Route
+      path="network-setup-connecticut"
+      element={<NetworkSetupConnecticut />}
+    />
+    <Route
+      path="it-support-connecticut"
+      element={<ITSupportConnecticut />}
+    />
+    <Route
+      path="firewall-setup-connecticut"
+      element={<FirewallSetupConnecticut />}
+    />
+    <Route
+      path="business-wifi-connecticut"
+      element={<BusinessWifiConnecticut />}
+    />
+
+    <Route path="it-services-near-me" element={<ITServicesNearMe />} />
+    <Route
+      path="network-services-near-me"
+      element={<NetworkServicesNearMe />}
+    />
+    <Route path="managed-it-services" element={<ManagedITServices />} />
+    <Route path="it-support" element={<ITSupport />} />
+
+    <Route path="it-solutions" element={<ITSolutions />} />
+    <Route
+      path="itsolutions"
+      element={<Navigate to="/es/it-solutions" replace />}
+    />
+
+    <Route path="privacy-policy" element={<PrivacyPolicy />} />
+    <Route
+      path="privacy"
+      element={<Navigate to="/es/privacy-policy" replace />}
+    />
+
+    <Route path="contact" element={<ContactPage />} />
+    <Route path="contactpage" element={<ContactPage />} />
+
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -208,7 +384,10 @@ const ScrollManager = () => {
 
         if (el) {
           el.scrollIntoView({
-            behavior: location.pathname === '/' ? 'smooth' : 'auto',
+            behavior:
+              location.pathname === '/' || location.pathname === '/es'
+                ? 'smooth'
+                : 'auto',
             block: 'start',
           });
           return;
@@ -234,22 +413,29 @@ const ScrollManager = () => {
   return null;
 };
 
-const RouteLoader = () => (
-  <div className="min-h-screen app-bg flex items-center justify-center px-4">
-    <div className="text-sm uppercase tracking-[0.2em] text-blue-400">
-      Loading...
+const RouteLoader = () => {
+  const location = useLocation();
+  const language = getLanguageFromPath(location.pathname);
+
+  return (
+    <div className="min-h-screen app-bg flex items-center justify-center px-4">
+      <div className="text-sm uppercase tracking-[0.2em] text-blue-400">
+        {language === 'es' ? 'Cargando...' : 'Loading...'}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 function App() {
   return (
     <>
+      <LanguageSync />
       <ScrollManager />
 
       <Suspense fallback={<RouteLoader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/es/*" element={<SpanishRoutes />} />
 
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/certifications" element={<Certifications />} />

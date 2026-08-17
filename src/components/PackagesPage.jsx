@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,250 +14,181 @@ import {
   Wifi,
   Wrench,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
 import StarfieldBackground from '@/components/ui/starfield-background';
 import FlipCard from '@/components/FlipCard';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
-const packageTiers = [
-  {
-    name: 'Starter',
-    badge: 'Best for small spaces',
+const SITE_URL = 'https://ozony.tech';
+const OG_IMAGE = `${SITE_URL}/images/packages/complete-stack.webp`;
+
+const tierKeys = ['starter', 'growth', 'complete'];
+const comparisonKeys = [
+  'bestFor',
+  'wifiCoverage',
+  'networkSegmentation',
+  'scalability',
+  'supportFocus',
+];
+const brandKeys = ['unifi', 'omada', 'aruba'];
+const servicePathKeys = [
+  'networkSetup',
+  'businessWifi',
+  'firewallSetup',
+  'itSupport',
+  'managedIT',
+  'aiLeadAgent',
+];
+const setupStepKeys = ['review', 'choose', 'build'];
+const faqKeys = [
+  'rightPackage',
+  'customized',
+  'brands',
+  'upgradeLater',
+  'itSupport',
+  'aiLead',
+];
+
+const tierVisuals = {
+  starter: {
     image: '/images/packages/starter-stack.webp',
     imageClassName: 'object-[center_42%]',
-    stackLabel: 'Recommended stack',
-    stackName: 'Omada / compact business setup',
-    description:
-      'A clean entry point for smaller businesses that need better Wi-Fi, basic network structure, and more reliable device connectivity without overcomplicating the setup.',
-    bestFor:
-      'Barbershops, salons, small retail spaces, home offices, simple offices, and smaller service businesses',
-    includes: [
-      'Router / firewall setup',
-      'Basic switch and device connectivity',
-      'Wi-Fi optimization and coverage tuning',
-      'Printer / workstation connectivity help',
-      'Basic security and account setup guidance',
-    ],
     serviceLink: '/network-setup-nyc',
-    serviceLabel: 'Explore network setup',
   },
-  {
-    name: 'Growth',
-    badge: 'Most flexible',
+  growth: {
     image: '/images/packages/growth-stack.webp',
     imageClassName: 'object-[center_46%]',
-    stackLabel: 'Recommended stack',
-    stackName: 'UniFi / managed small business setup',
-    description:
-      'Built for growing businesses that need stronger Wi-Fi, cleaner guest and staff separation, better performance, and a more organized upgrade path.',
-    bestFor:
-      'Busier offices, multi-room businesses, restaurants, retail stores, growing teams, and businesses with guest Wi-Fi needs',
-    includes: [
-      'Managed networking upgrade path',
-      'Guest and staff network separation',
-      'Multiple device / workstation setup support',
-      'Improved wireless coverage planning',
-      'Cleaner organization and business-ready structure',
-    ],
     serviceLink: '/business-wifi-nyc',
-    serviceLabel: 'Explore business Wi-Fi',
   },
-  {
-    name: 'Complete',
-    badge: 'Best for long-term setup',
+  complete: {
     image: '/images/packages/complete-stack.webp',
     imageClassName:
       'object-[center_62%] brightness-[0.52] saturate-[0.72] contrast-[1.04]',
-    stackLabel: 'Recommended stack',
-    stackName: 'Aruba Instant On / premium SMB setup',
-    description:
-      'A more complete small-business network package designed for cleaner deployment, stronger control, better reliability, and future growth.',
-    bestFor:
-      'Larger small businesses, higher device counts, professional spaces, polished offices, and long-term network builds',
-    includes: [
-      'Business-grade gateway and switching',
-      'Managed Wi-Fi and network segmentation',
-      'Multiple access point deployment planning',
-      'Cleaner organization for long-term reliability',
-      'Scalable foundation for future upgrades',
-    ],
     serviceLink: '/firewall-setup-nyc',
-    serviceLabel: 'Explore firewall setup',
   },
-];
+};
 
-const comparisonRows = [
-  {
-    label: 'Best For',
-    starter: 'Small spaces',
-    growth: 'Growing businesses',
-    complete: 'Long-term setups',
-  },
-  {
-    label: 'Wi-Fi Coverage',
-    starter: 'Basic optimization',
-    growth: 'Improved multi-area coverage',
-    complete: 'Broader coverage planning',
-  },
-  {
-    label: 'Network Segmentation',
-    starter: 'Light / basic',
-    growth: 'Guest + staff separation',
-    complete: 'More complete segmentation',
-  },
-  {
-    label: 'Scalability',
-    starter: 'Entry-level',
-    growth: 'Growth-ready',
-    complete: 'Best long-term path',
-  },
-  {
-    label: 'Support Focus',
-    starter: 'Setup + stability',
-    growth: 'Performance + structure',
-    complete: 'Reliability + expandability',
-  },
-];
-
-const brandLogic = [
-  {
+const brandVisuals = {
+  unifi: {
     icon: Wifi,
     title: 'UniFi',
     image: '/images/brands/Unifi.webp',
-    eyebrow: 'Polished ecosystem',
-    description:
-      'A strong option when a business wants clean management, strong visibility, and a more unified network experience.',
   },
-  {
+  omada: {
     icon: Network,
     title: 'TP-Link Omada',
     image: '/images/brands/Omada.webp',
-    eyebrow: 'Strong value path',
-    description:
-      'A great value-focused choice for businesses that want solid performance and cleaner management without overspending.',
   },
-  {
+  aruba: {
     icon: ShieldCheck,
     title: 'Aruba Instant On',
     image: '/images/brands/Aruba.webp',
-    eyebrow: 'Premium SMB path',
-    description:
-      'A premium small-business option for businesses that want polished networking, simpler management, and a strong long-term setup path.',
   },
-];
+};
 
-const servicePaths = [
-  {
+const servicePathVisuals = {
+  networkSetup: {
     icon: Network,
-    title: 'Business Network Setup',
-    description:
-      'For businesses that need a cleaner router, switch, Wi-Fi, firewall, printer, POS, and device connectivity foundation.',
     to: '/network-setup-nyc',
-    label: 'View network setup',
   },
-  {
+  businessWifi: {
     icon: Wifi,
-    title: 'Business Wi-Fi',
-    description:
-      'For businesses dealing with weak coverage, dead zones, unstable wireless, guest access issues, or growing device counts.',
     to: '/business-wifi-nyc',
-    label: 'View business Wi-Fi',
   },
-  {
+  firewallSetup: {
     icon: ShieldCheck,
-    title: 'Firewall Setup',
-    description:
-      'For businesses that need cleaner traffic control, guest and staff separation, stronger boundaries, and better network organization.',
     to: '/firewall-setup-nyc',
-    label: 'View firewall setup',
   },
-  {
+  itSupport: {
     icon: Wrench,
-    title: 'IT Support',
-    description:
-      'For businesses that need help with devices, printers, access issues, workstations, troubleshooting, and day-to-day tech problems.',
     to: '/it-support-nyc',
-    label: 'View IT support',
   },
-  {
+  managedIT: {
     icon: Headphones,
-    title: 'Managed IT Services',
-    description:
-      'For businesses that need recurring support, cleaner systems, and a more consistent path for handling technology issues.',
     to: '/managed-it-services',
-    label: 'View managed IT',
   },
-  {
+  aiLeadAgent: {
     icon: Bot,
-    title: 'AI Lead Response Agent',
-    description:
-      'For businesses that want faster lead follow-up, instant notifications, confirmation emails, and AI-assisted response drafts.',
     to: '/ai-lead-agent',
-    label: 'View AI lead agent',
   },
-];
-
-const setupSteps = [
-  {
-    title: '1. Review the space',
-    text: 'We look at the business layout, device needs, Wi-Fi expectations, current pain points, and how the team actually works.',
-  },
-  {
-    title: '2. Choose the right tier',
-    text: 'Starter, Growth, and Complete are starting points. The final recommendation depends on coverage, reliability, control, and budget.',
-  },
-  {
-    title: '3. Build a clean path forward',
-    text: 'The goal is not to oversell hardware. The goal is to build a setup that is practical, reliable, manageable, and easier to grow over time.',
-  },
-];
-
-const fitCards = [
-  'Barbershops & salons',
-  'Retail shops',
-  'Small offices',
-  'Restaurants & cafés',
-  'Home offices / creators',
-  'Growing local businesses',
-];
-
-const packageFaqs = [
-  {
-    question: 'Which package is right for my business?',
-    answer:
-      'That depends on your space, number of users and devices, Wi-Fi expectations, current setup, and whether you need a cleaner upgrade path for future growth.',
-  },
-  {
-    question: 'Can packages be customized?',
-    answer:
-      'Yes. These packages are designed as starting points, not rigid boxes. The final recommendation can be adjusted around your business needs, layout, budget, and goals.',
-  },
-  {
-    question: 'Do you only work with one brand?',
-    answer:
-      'No. Ozony Tech chooses solutions based on reliability, budget, ease of management, and how well the setup fits the business environment.',
-  },
-  {
-    question: 'Can I start with a smaller setup and upgrade later?',
-    answer:
-      'Yes. A good setup should make it easier to grow over time instead of forcing a full rebuild later.',
-  },
-  {
-    question: 'Do these packages include IT support?',
-    answer:
-      'Packages can include setup support and practical guidance. Businesses that need recurring help can also review managed IT services or request a custom support plan.',
-  },
-  {
-    question: 'Do you offer AI lead response setup too?',
-    answer:
-      'Yes. Ozony Tech also offers an AI Lead Response Agent service for businesses that want faster lead follow-up, alerts, confirmation emails, and AI-assisted response drafts.',
-  },
-];
+};
 
 const PackagesPage = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const location = useLocation();
+  const { t } = useTranslation('packages');
+
+  const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
+  const homePath = localizePath('/', language);
+  const contactPath = localizePath('/contact', language);
+  const aiLeadPath = localizePath('/ai-lead-agent', language);
+  const itSolutionsPath = localizePath('/it-solutions', language);
+
+  const canonicalUrl = isSpanish
+    ? `${SITE_URL}/es/packages`
+    : `${SITE_URL}/packages`;
+
+  const packageTiers = tierKeys.map((key) => ({
+    key,
+    name: t(`tiers.${key}.name`),
+    badge: t(`tiers.${key}.badge`),
+    image: tierVisuals[key].image,
+    imageClassName: tierVisuals[key].imageClassName,
+    stackLabel: t(`tiers.${key}.stackLabel`),
+    stackName: t(`tiers.${key}.stackName`),
+    description: t(`tiers.${key}.description`),
+    bestFor: t(`tiers.${key}.bestFor`),
+    includes: t(`tiers.${key}.includes`, { returnObjects: true }),
+    serviceLink: localizePath(tierVisuals[key].serviceLink, language),
+    serviceLabel: t(`tiers.${key}.serviceLabel`),
+  }));
+
+  const comparisonRows = comparisonKeys.map((key) => ({
+    key,
+    label: t(`comparison.rows.${key}.label`),
+    starter: t(`comparison.rows.${key}.starter`),
+    growth: t(`comparison.rows.${key}.growth`),
+    complete: t(`comparison.rows.${key}.complete`),
+  }));
+
+  const brandLogic = brandKeys.map((key) => ({
+    key,
+    ...brandVisuals[key],
+    eyebrow: t(`brands.${key}.eyebrow`),
+    description: t(`brands.${key}.description`),
+  }));
+
+  const servicePaths = servicePathKeys.map((key) => ({
+    key,
+    ...servicePathVisuals[key],
+    to: localizePath(servicePathVisuals[key].to, language),
+    title: t(`servicePaths.${key}.title`),
+    description: t(`servicePaths.${key}.description`),
+    label: t(`servicePaths.${key}.label`),
+  }));
+
+  const setupSteps = setupStepKeys.map((key) => ({
+    key,
+    title: t(`setupSteps.${key}.title`),
+    text: t(`setupSteps.${key}.text`),
+  }));
+
+  const fitCards = t('fit.cards', { returnObjects: true });
+
+  const packageFaqs = faqKeys.map((key) => ({
+    key,
+    question: t(`faq.items.${key}.question`),
+    answer: t(`faq.items.${key}.answer`),
+  }));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -274,40 +205,30 @@ const PackagesPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const canonicalUrl = 'https://ozony.tech/packages';
-  const ogImage = 'https://ozony.tech/images/packages/complete-stack.webp';
-
   const packagesSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Ozony Tech Business IT and Network Packages',
+    name: t('schema.serviceName'),
     provider: {
       '@type': 'ProfessionalService',
       name: 'Ozony Tech',
-      url: 'https://ozony.tech',
+      url: SITE_URL,
       email: 'contact@ozony.tech',
       telephone: '+1-347-653-7655',
     },
     url: canonicalUrl,
     areaServed: ['New York City', 'New Jersey', 'Connecticut'],
-    serviceType: [
-      'Network Setup',
-      'Business Wi-Fi',
-      'Firewall Setup',
-      'IT Support',
-      'Managed IT Services',
-      'AI Lead Response Automation',
-    ],
+    serviceType: t('schema.serviceTypes', { returnObjects: true }),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Small Business IT and Network Packages',
+      name: t('schema.catalogName'),
       itemListElement: packageTiers.map((tier) => ({
         '@type': 'Offer',
-        name: `${tier.name} Package`,
+        name: t('schema.packageOfferName', { name: tier.name }),
         description: tier.description,
         itemOffered: {
           '@type': 'Service',
-          name: `${tier.name} Business IT and Network Package`,
+          name: t('schema.packageServiceName', { name: tier.name }),
           serviceType: tier.includes,
         },
       })),
@@ -321,59 +242,99 @@ const PackagesPage = () => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
-        item: 'https://ozony.tech/',
+        name: t('schema.home'),
+        item: isSpanish ? `${SITE_URL}/es` : `${SITE_URL}/`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Packages',
+        name: t('schema.packages'),
         item: canonicalUrl,
       },
     ],
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: packageFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Helmet>
-        <title>Small Business IT &amp; Network Packages | Ozony Tech</title>
+        <title>{t('seo.title')}</title>
+
         <meta
           name="description"
-          content="Compare Ozony Tech small business IT and network packages, including Starter, Growth, and Complete options for Wi-Fi, network setup, firewall setup, IT support, and AI lead response services."
+          content={t('seo.description')}
         />
+
         <meta
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
         />
+
         <link rel="canonical" href={canonicalUrl} />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${SITE_URL}/packages`}
+        />
+
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${SITE_URL}/es/packages`}
+        />
+
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${SITE_URL}/packages`}
+        />
 
         <meta
           property="og:title"
-          content="Small Business IT & Network Packages | Ozony Tech"
+          content={t('seo.ogTitle')}
         />
+
         <meta
           property="og:description"
-          content="Compare Starter, Growth, and Complete package options for practical small-business IT, Wi-Fi, networking, firewall setup, and support."
+          content={t('seo.ogDescription')}
         />
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Ozony Tech" />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={OG_IMAGE} />
+
         <meta
           property="og:image:alt"
-          content="Ozony Tech Complete package recommended network hardware stack"
+          content={t('seo.ogImageAlt')}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
+
         <meta
           name="twitter:title"
-          content="Small Business IT & Network Packages | Ozony Tech"
+          content={t('seo.twitterTitle')}
         />
+
         <meta
           name="twitter:description"
-          content="Compare Starter, Growth, and Complete package options for small-business IT and networking."
+          content={t('seo.twitterDescription')}
         />
-        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="twitter:image" content={OG_IMAGE} />
 
         <script type="application/ld+json">
           {JSON.stringify(packagesSchema)}
@@ -384,18 +345,7 @@ const PackagesPage = () => {
         </script>
 
         <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: packageFaqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          })}
+          {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
 
@@ -405,11 +355,11 @@ const PackagesPage = () => {
         <section className="pt-28 pb-2 md:pt-32">
           <div className="ozony-container-wide">
             <Link
-              to="/"
+              to={homePath}
               className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Home
+              {t('backToHome')}
             </Link>
           </div>
         </section>
@@ -426,18 +376,15 @@ const PackagesPage = () => {
                 className="mx-auto max-w-5xl text-center"
               >
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-                  Ozony Tech Packages
+                  {t('hero.eyebrow')}
                 </p>
 
                 <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-                  Small Business IT &amp; Network Packages Built Around Real Needs
+                  {t('hero.title')}
                 </h1>
 
                 <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400">
-                  Compare practical package paths for better Wi-Fi, cleaner networking,
-                  stronger firewall structure, support planning, and smarter business growth.
-                  Each package is a starting point that can be adjusted around your space,
-                  budget, and goals.
+                  {t('hero.description')}
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -445,8 +392,10 @@ const PackagesPage = () => {
                     asChild
                     className="bg-blue-600 px-6 py-6 text-base text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700"
                   >
-                    <Link to="/contact">
-                      <DecodedText speed={12}>Request a Quote</DecodedText>
+                    <Link to={contactPath}>
+                      <DecodedText speed={12}>
+                        {t('hero.primaryCta')}
+                      </DecodedText>
                     </Link>
                   </Button>
 
@@ -455,25 +404,23 @@ const PackagesPage = () => {
                     variant="outline"
                     className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
                   >
-                    <Link to="/ai-lead-agent">
-                      <DecodedText speed={12}>View AI Lead Agent</DecodedText>
+                    <Link to={aiLeadPath}>
+                      <DecodedText speed={12}>
+                        {t('hero.secondaryCta')}
+                      </DecodedText>
                     </Link>
                   </Button>
                 </div>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400">
-                  <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Starter
-                  </span>
-                  <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Growth
-                  </span>
-                  <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Complete
-                  </span>
-                  <span className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2">
-                    Custom options available
-                  </span>
+                  {t('hero.chips', { returnObjects: true }).map((chip) => (
+                    <span
+                      key={chip}
+                      className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2"
+                    >
+                      {chip}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
             </div>
@@ -484,7 +431,7 @@ const PackagesPage = () => {
               <div className="grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {packageTiers.map((tier, index) => (
                   <motion.div
-                    key={tier.name}
+                    key={tier.key}
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
@@ -517,12 +464,11 @@ const PackagesPage = () => {
 
               <div className="mt-10 rounded-2xl border border-slate-700/50 bg-slate-900/50 px-6 py-5 text-center">
                 <p className="text-sm uppercase tracking-[0.18em] text-blue-400">
-                  Built around the right fit
+                  {t('platformFit.eyebrow')}
                 </p>
+
                 <p className="mx-auto mt-2 max-w-3xl text-gray-400">
-                  Ozony Tech builds around practical, proven platforms like UniFi,
-                  Omada, and Aruba Instant On based on your budget, layout,
-                  management needs, and long-term goals.
+                  {t('platformFit.description')}
                 </p>
               </div>
             </div>
@@ -532,11 +478,11 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  Compare the Packages
+                  {t('comparison.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  A simple view of how the tiers scale based on complexity,
-                  coverage, structure, and long-term growth.
+                  {t('comparison.description')}
                 </p>
               </div>
 
@@ -544,22 +490,25 @@ const PackagesPage = () => {
                 <div className="min-w-[720px]">
                   <div className="grid grid-cols-4 border-b border-slate-700/50 bg-slate-900/80">
                     <div className="p-4 text-sm font-semibold text-gray-400">
-                      Category
+                      {t('comparison.category')}
                     </div>
+
                     <div className="p-4 text-sm font-semibold text-white">
-                      Starter
+                      {t('tiers.starter.name')}
                     </div>
+
                     <div className="p-4 text-sm font-semibold text-white">
-                      Growth
+                      {t('tiers.growth.name')}
                     </div>
+
                     <div className="p-4 text-sm font-semibold text-white">
-                      Complete
+                      {t('tiers.complete.name')}
                     </div>
                   </div>
 
                   {comparisonRows.map((row, index) => (
                     <div
-                      key={row.label}
+                      key={row.key}
                       className={`grid grid-cols-4 ${
                         index !== comparisonRows.length - 1
                           ? 'border-b border-slate-700/50'
@@ -569,12 +518,15 @@ const PackagesPage = () => {
                       <div className="p-4 text-sm font-medium text-gray-300">
                         {row.label}
                       </div>
+
                       <div className="p-4 text-sm text-gray-400">
                         {row.starter}
                       </div>
+
                       <div className="p-4 text-sm text-gray-400">
                         {row.growth}
                       </div>
+
                       <div className="p-4 text-sm text-gray-400">
                         {row.complete}
                       </div>
@@ -589,14 +541,15 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-                  Service Paths
+                  {t('servicePathsSection.eyebrow')}
                 </p>
+
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  Not Sure Which Service Fits?
+                  {t('servicePathsSection.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  Packages are one way to start. You can also jump directly into
-                  the service that matches your biggest issue right now.
+                  {t('servicePathsSection.description')}
                 </p>
               </div>
 
@@ -606,11 +559,14 @@ const PackagesPage = () => {
 
                   return (
                     <motion.div
-                      key={service.title}
+                      key={service.key}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.45, delay: index * 0.06 }}
+                      transition={{
+                        duration: 0.45,
+                        delay: index * 0.06,
+                      }}
                       className="flex h-full flex-col rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
                     >
                       <div className="mb-5 inline-flex w-fit rounded-xl bg-blue-500/10 p-3">
@@ -620,6 +576,7 @@ const PackagesPage = () => {
                       <h3 className="text-2xl font-bold text-white">
                         {service.title}
                       </h3>
+
                       <p className="mt-3 flex-1 leading-relaxed text-gray-400">
                         {service.description}
                       </p>
@@ -642,28 +599,35 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  How Package Selection Works
+                  {t('selection.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  The right setup depends on the business, not a generic checklist.
-                  Here’s the basic path.
+                  {t('selection.description')}
                 </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-3 2xl:gap-8">
                 {setupSteps.map((step, index) => (
                   <motion.div
-                    key={step.title}
+                    key={step.key}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    transition={{
+                      duration: 0.45,
+                      delay: index * 0.08,
+                    }}
                     className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
                   >
                     <div className="mb-5 inline-flex rounded-xl bg-green-500/10 p-3">
                       <CheckCircle2 className="h-6 w-6 text-green-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">{step.title}</h3>
+
+                    <h3 className="text-xl font-bold text-white">
+                      {step.title}
+                    </h3>
+
                     <p className="mt-3 leading-relaxed text-gray-400">
                       {step.text}
                     </p>
@@ -677,12 +641,11 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  Why These Solutions?
+                  {t('brandsSection.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  Ozony Tech doesn’t recommend equipment based on hype. The right
-                  setup depends on your space, budget, business type, and how much
-                  control or scalability you need.
+                  {t('brandsSection.description')}
                 </p>
               </div>
 
@@ -692,19 +655,25 @@ const PackagesPage = () => {
 
                   return (
                     <motion.div
-                      key={item.title}
+                      key={item.key}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.08 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.08,
+                      }}
                       className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
                     >
                       <div className="mb-5 overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-950/50">
                         <div className="relative h-44 overflow-hidden">
                           <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/40" />
+
                           <img
                             src={item.image}
-                            alt={`${item.title} recommended hardware stack`}
+                            alt={t('brandImageAlt', {
+                              title: item.title,
+                            })}
                             className="h-full w-full object-contain p-4"
                             loading="lazy"
                           />
@@ -718,9 +687,11 @@ const PackagesPage = () => {
                       <p className="text-xs uppercase tracking-[0.18em] text-blue-400">
                         {item.eyebrow}
                       </p>
+
                       <h3 className="mt-2 text-2xl font-bold text-white">
                         {item.title}
                       </h3>
+
                       <p className="mt-3 leading-relaxed text-gray-400">
                         {item.description}
                       </p>
@@ -735,11 +706,11 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  Great Fit For
+                  {t('fit.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  These packages are designed around the kinds of businesses that
-                  benefit most from clean, reliable networking and practical IT support.
+                  {t('fit.description')}
                 </p>
               </div>
 
@@ -750,10 +721,15 @@ const PackagesPage = () => {
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.05,
+                    }}
                     className="rounded-xl border border-slate-700/50 bg-slate-900/60 p-5"
                   >
-                    <p className="font-medium text-white">{item}</p>
+                    <p className="font-medium text-white">
+                      {item}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -764,26 +740,31 @@ const PackagesPage = () => {
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-                  Packages FAQ
+                  {t('faq.title')}
                 </h2>
+
                 <p className="mx-auto max-w-3xl text-lg text-gray-400">
-                  A few common questions about how the package tiers work.
+                  {t('faq.description')}
                 </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
                 {packageFaqs.map((faq, index) => (
                   <motion.div
-                    key={faq.question}
+                    key={faq.key}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.06 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.06,
+                    }}
                     className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6"
                   >
                     <h3 className="text-xl font-semibold text-white">
                       {faq.question}
                     </h3>
+
                     <p className="mt-3 leading-relaxed text-gray-400">
                       {faq.answer}
                     </p>
@@ -797,14 +778,11 @@ const PackagesPage = () => {
             <div className="ozony-container">
               <div className="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/90 to-slate-800/80 px-8 py-14 text-center shadow-lg shadow-blue-500/10">
                 <h2 className="text-3xl font-bold text-white md:text-5xl">
-                  Ready to find the right setup for your business?
+                  {t('finalCta.title')}
                 </h2>
 
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-gray-400">
-                  Whether you need a smaller starter setup, a more complete
-                  long-term solution, or a custom mix of IT support, networking,
-                  Wi-Fi, firewall setup, and automation, Ozony Tech can help you
-                  choose a practical path forward.
+                  {t('finalCta.description')}
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -812,8 +790,10 @@ const PackagesPage = () => {
                     asChild
                     className="bg-blue-600 px-6 py-6 text-base text-white hover:bg-blue-700"
                   >
-                    <Link to="/contact">
-                      <DecodedText speed={12}>Request a Quote</DecodedText>
+                    <Link to={contactPath}>
+                      <DecodedText speed={12}>
+                        {t('finalCta.primaryCta')}
+                      </DecodedText>
                     </Link>
                   </Button>
 
@@ -822,9 +802,11 @@ const PackagesPage = () => {
                     variant="outline"
                     className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
                   >
-                    <Link to="/it-solutions">
+                    <Link to={itSolutionsPath}>
                       <ArrowRight className="mr-2 h-5 w-5" />
-                      <DecodedText speed={12}>Explore IT Solutions</DecodedText>
+                      <DecodedText speed={12}>
+                        {t('finalCta.secondaryCta')}
+                      </DecodedText>
                     </Link>
                   </Button>
                 </div>
@@ -846,7 +828,7 @@ const PackagesPage = () => {
             >
               <button
                 onClick={scrollToTop}
-                aria-label="Back to top"
+                aria-label={t('backToTop')}
                 className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-blue-400/30 bg-slate-900/90 text-blue-400 shadow-lg shadow-blue-500/20 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-blue-500/10 hover:text-white"
               >
                 <ArrowUp className="h-5 w-5" />

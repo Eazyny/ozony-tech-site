@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Página No Encontrada | Ozony Tech"
+  },
+  "backgroundAriaLabel": "Fondo degradado oscuro para la página de error 404.",
+  "badge": "404 • Página No Encontrada",
+  "titleLine1": "Esta página se perdió",
+  "titleLine2": "en algún lugar de la noche.",
+  "description": "Es posible que el enlace esté roto, que la página se haya movido o que ya no exista. De cualquier forma, Ozony Tech sigue en línea.",
+  "backToHome": "Volver al Inicio",
+  "goBack": "Volver Atrás",
+  "packagesCard": {
+    "title": "Ver Paquetes",
+    "description": "Revisa nuestros niveles de servicio para Wi-Fi empresarial, redes, configuración de firewall y soporte."
+  },
+  "contactCard": {
+    "title": "Contactar a Ozony Tech",
+    "description": "¿Necesitas ayuda rápido? Regresa al sitio y envíanos los detalles."
+  }
+}

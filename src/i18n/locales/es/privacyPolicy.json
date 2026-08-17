@@ -1,0 +1,211 @@
+{
+  "seo": {
+    "title": "Política de Privacidad | Ozony Tech",
+    "description": "Consulta la Política de Privacidad de Ozony Tech para conocer cómo recopilamos, utilizamos, protegemos y administramos información personal relacionada con consultas, servicios y flujos de respuesta a leads con IA.",
+    "ogTitle": "Política de Privacidad | Ozony Tech",
+    "ogDescription": "Cómo Ozony Tech recopila, utiliza, protege y administra información personal.",
+    "ogImageAlt": "Política de privacidad de Ozony Tech",
+    "twitterTitle": "Política de Privacidad | Ozony Tech",
+    "twitterDescription": "Cómo Ozony Tech recopila, utiliza, protege y administra información personal."
+  },
+  "schema": {
+    "pageName": "Política de Privacidad",
+    "description": "Política de Privacidad de Ozony Tech que explica cómo se recopila, utiliza, comparte, protege y conserva la información personal.",
+    "home": "Inicio"
+  },
+  "hero": {
+    "badge": "Aviso de Privacidad",
+    "title": "Política de Privacidad",
+    "description": "Esta Política de Privacidad explica cómo Ozony Tech recopila, utiliza, comparte, protege y administra información personal cuando visitas nuestro sitio web, te comunicas con nosotros, solicitas servicios o utilizas nuestros flujos de respuesta a leads.",
+    "lastUpdatedLabel": "Última actualización",
+    "lastUpdatedDate": "3 de julio de 2026",
+    "readPolicy": "Leer la Política",
+    "contact": "Contactar a Ozony Tech"
+  },
+  "quickPoints": {
+    "collection": {
+      "title": "Recopilamos únicamente lo necesario para responder.",
+      "text": "La mayor parte de la información proviene de formularios, correos electrónicos, llamadas, mensajes, solicitudes de servicio y consultas comerciales."
+    },
+    "ai": {
+      "title": "Los flujos con IA apoyan la recepción y el seguimiento.",
+      "text": "Las herramientas de IA pueden ayudar a resumir consultas, redactar respuestas, dirigir alertas y organizar los datos de leads."
+    },
+    "security": {
+      "title": "Utilizamos medidas de protección razonables.",
+      "text": "Trabajamos para proteger la información personal mediante controles de acceso, herramientas seguras y uso interno limitado."
+    },
+    "rights": {
+      "title": "Puedes contactarnos sobre tus datos.",
+      "text": "Puedes solicitar acceso, corrección o eliminación de tus datos, o dejar de recibir comunicaciones no esenciales."
+    }
+  },
+  "onThisPage": "En esta página",
+  "sections": {
+    "informationWeCollect": {
+      "title": "1. Información que Recopilamos",
+      "body": [
+        "Ozony Tech recopila la información personal que decides proporcionar cuando te comunicas con nosotros, solicitas una cotización, envías un formulario, programas una consulta, compras un servicio, te comunicas con nosotros o utilizas uno de nuestros flujos de respuesta a leads.",
+        "Esto puede incluir tu nombre, nombre del negocio, dirección de correo electrónico, número de teléfono, dirección donde se prestará el servicio o ubicación general, información de la empresa, detalles del proyecto, detalles de solicitudes de soporte, método de contacto preferido y cualquier información que incluyas en mensajes, formularios, llamadas o correos electrónicos.",
+        "Para servicios de soporte técnico, redes, sitios web, automatización o respuesta a leads con IA, también podemos recopilar información sobre los sistemas de tu negocio, dispositivos, formularios del sitio web, necesidades de flujo de trabajo, canales de comunicación e historial de servicio cuando sea necesario para prestar el servicio."
+      ],
+      "bullets": [
+        "Datos de contacto como nombre, correo electrónico y número de teléfono",
+        "Información comercial como nombre de la empresa, necesidades de servicio y detalles del proyecto",
+        "Detalles de consultas enviados mediante formularios del sitio web o formularios de leads",
+        "Registros de comunicaciones como correos electrónicos, notas de llamadas, respuestas por SMS o mensajes de soporte",
+        "Detalles técnicos necesarios para diagnosticar, configurar o brindar soporte a un servicio",
+        "Información de pago, facturación o transacciones cuando compras un servicio"
+      ]
+    },
+    "howWeUseInformation": {
+      "title": "2. Cómo Utilizamos la Información Personal",
+      "body": [
+        "Utilizamos la información personal para responder consultas, proporcionar cotizaciones, prestar servicios, brindar soporte a clientes, mejorar nuestros flujos de trabajo, proteger nuestro negocio y comunicarnos sobre servicios activos o solicitados.",
+        "También podemos utilizar la información para preparar resúmenes internos, priorizar solicitudes urgentes, diagnosticar problemas técnicos, programar citas, enviar seguimientos y mantener registros relacionados con los servicios que prestamos."
+      ],
+      "bullets": [
+        "Responder preguntas, solicitudes de cotización y consultas sobre servicios",
+        "Prestar servicios de TI, redes, sitios web, automatización y respuesta a leads con IA",
+        "Enviar confirmaciones, actualizaciones, recordatorios y mensajes de seguimiento",
+        "Crear notas internas, resúmenes de leads y registros de servicio",
+        "Dirigir consultas urgentes a la persona o canal de comunicación correspondiente",
+        "Mejorar nuestro sitio web, proceso de recepción y flujos de soporte al cliente",
+        "Prevenir fraude, abuso, acceso no autorizado o uso indebido de nuestros sistemas",
+        "Cumplir requisitos legales, fiscales, de seguridad o de conservación de registros comerciales"
+      ]
+    },
+    "aiLeadResponseAgent": {
+      "title": "3. Agente de Respuesta a Leads con IA y Flujos de Automatización",
+      "body": [
+        "Ozony Tech puede utilizar herramientas de inteligencia artificial y automatización para apoyar la recepción de leads, la preparación de respuestas, las alertas internas y el seguimiento de clientes. Estos sistemas están diseñados para ayudar a los negocios a responder con mayor rapidez y organizar las consultas de manera más clara.",
+        "Cuando una persona envía un formulario del sitio web o una solicitud de lead, el Agente de Respuesta a Leads con IA puede procesar la información enviada para generar un mensaje de confirmación, redactar una respuesta de seguimiento, formular preguntas de calificación previamente aprobadas, crear un resumen interno del lead y notificar al miembro correspondiente del equipo.",
+        "Las herramientas de IA se utilizan para mejorar la eficiencia de los flujos de trabajo. No sustituyen el criterio humano en decisiones comerciales importantes, decisiones de precios o compromisos de servicio, salvo que una persona los revise y apruebe específicamente."
+      ],
+      "bullets": [
+        "Capturar envíos de formularios del sitio web y datos de leads",
+        "Generar resúmenes internos para revisión",
+        "Redactar respuestas sugeridas o mensajes de seguimiento",
+        "Formular preguntas de calificación aprobadas cuando corresponda",
+        "Enviar alertas al equipo mediante canales aprobados",
+        "Ayudar a organizar solicitudes de servicio y tareas de seguimiento"
+      ]
+    },
+    "phoneSmsEmail": {
+      "title": "4. Comunicaciones por Teléfono, SMS y Correo Electrónico",
+      "body": [
+        "Cuando proporcionas tu número de teléfono, dirección de correo electrónico u otra información de contacto, autorizas a Ozony Tech a comunicarse contigo sobre tu consulta, servicio solicitado, consulta comercial, cotización, proyecto, cuenta o solicitud de soporte.",
+        "Según el flujo de trabajo, podemos comunicarnos contigo por teléfono, correo electrónico, SMS/mensaje de texto u otro canal de comunicación que proporciones. Pueden aplicarse tarifas de mensajes y datos a los mensajes SMS.",
+        "Puedes dejar de recibir mensajes SMS no esenciales respondiendo STOP, solicitándolo directamente o contactándonos en contact@ozony.tech. Los mensajes relacionados con el servicio pueden seguir siendo necesarios cuando se requieran para completar una solicitud activa o prestar un servicio solicitado."
+      ],
+      "bullets": [
+        "Podemos enviar mensajes de confirmación después de que envíes un formulario",
+        "Podemos realizar seguimiento sobre cotizaciones, consultas o solicitudes de servicio activas",
+        "Podemos enviar alertas internas para ayudar a nuestro equipo a responder más rápido",
+        "Puedes solicitar que dejemos de enviar mensajes de marketing o seguimiento no esenciales"
+      ]
+    },
+    "sharingInformation": {
+      "title": "5. Cómo Compartimos la Información",
+      "body": [
+        "Ozony Tech no vende información personal. Podemos compartir información personal con proveedores de servicios y herramientas de confianza que nos ayudan a operar el negocio, prestar servicios, comunicarnos con clientes, alojar sistemas, procesar pagos, enviar correos electrónicos, enviar mensajes SMS, administrar flujos de trabajo o proteger nuestros sistemas.",
+        "También podemos compartir información cuando la ley lo exija, para proteger nuestros derechos, prevenir fraude o problemas de seguridad, o como parte de una transferencia comercial como una fusión, adquisición, reestructuración o venta de activos."
+      ],
+      "bullets": [
+        "Proveedores de alojamiento web e infraestructura",
+        "Proveedores de correo electrónico, telefonía, SMS y mensajería",
+        "Procesadores de pagos y herramientas de facturación",
+        "Herramientas de automatización, IA, CRM o gestión de leads",
+        "Herramientas de seguridad, monitoreo y diagnóstico",
+        "Asesores profesionales como contadores, abogados o consultores cuando sea necesario"
+      ]
+    },
+    "clientData": {
+      "title": "6. Datos de Clientes y Flujos de Trabajo",
+      "body": [
+        "Cuando Ozony Tech crea, administra o brinda soporte a un flujo de trabajo para un cliente, la información enviada a través de los formularios, sistemas o canales de comunicación de ese cliente puede ser procesada en nombre de dicho cliente.",
+        "En esos casos, Ozony Tech utiliza la información para prestar el servicio solicitado, mantener el flujo de trabajo, diagnosticar problemas y apoyar el proceso comercial del cliente. El cliente también puede tener su propia política de privacidad u obligaciones legales aplicables a la forma en que recopila y utiliza los datos."
+      ],
+      "bullets": [
+        "Procesamos datos de flujos de clientes para prestar el servicio solicitado",
+        "Limitamos el acceso a las personas y herramientas que lo necesitan para el flujo de trabajo",
+        "No utilizamos los datos de leads de clientes para publicidad no relacionada ni para reventa",
+        "Podemos conservar registros limitados necesarios por razones de soporte, seguridad, facturación o cumplimiento legal"
+      ]
+    },
+    "security": {
+      "title": "7. Cómo Protegemos la Información",
+      "body": [
+        "Ozony Tech utiliza medidas administrativas, técnicas y organizativas razonables diseñadas para proteger la información personal contra acceso no autorizado, uso indebido, pérdida, divulgación, alteración o destrucción.",
+        "Ningún sitio web, red, herramienta de software o servicio en línea puede garantizarse como completamente seguro. Sin embargo, trabajamos para limitar el acceso, utilizar proveedores de servicios confiables, mantener flujos de trabajo más seguros y proteger la información según la sensibilidad de los datos y la naturaleza del servicio."
+      ],
+      "bullets": [
+        "Limitar el acceso a la información según la necesidad comercial",
+        "Utilizar proveedores de servicios confiables y plataformas seguras",
+        "Mantener la seguridad de cuentas y controles de acceso",
+        "Reducir la recopilación innecesaria cuando sea posible",
+        "Revisar los flujos de trabajo para detectar riesgos de seguridad y privacidad"
+      ]
+    },
+    "retention": {
+      "title": "8. Cuánto Tiempo Conservamos la Información",
+      "body": [
+        "Conservamos la información personal únicamente durante el tiempo razonablemente necesario para los fines descritos en esta política, incluyendo prestar servicios, responder consultas, mantener registros comerciales, resolver disputas, mejorar flujos de trabajo, proteger la seguridad y cumplir obligaciones legales o contables.",
+        "Cuando la información deja de ser necesaria, trabajamos para eliminarla, desidentificarla, archivarla o desecharla de manera segura y razonable."
+      ],
+      "bullets": [
+        "Los registros de leads y consultas pueden conservarse para seguimiento e historial comercial",
+        "Los registros de servicio pueden conservarse para soporte, garantía, diagnóstico y documentación",
+        "Los registros de facturación pueden conservarse para requisitos fiscales, contables y legales",
+        "Los registros antiguos o innecesarios pueden eliminarse o archivarse cuando ya no sean necesarios"
+      ]
+    },
+    "cookiesAnalytics": {
+      "title": "9. Datos del Sitio Web, Cookies y Analítica",
+      "body": [
+        "Nuestro sitio web puede recopilar información técnica básica como tipo de navegador, tipo de dispositivo, páginas visitadas, ubicación aproximada, páginas de referencia e interacciones con el sitio web. Esta información nos ayuda a comprender el rendimiento y la seguridad del sitio, así como la forma en que los visitantes lo utilizan.",
+        "Podemos utilizar cookies, almacenamiento local, herramientas de analítica, herramientas de seguridad o tecnologías similares. Puedes ajustar la configuración de tu navegador para bloquear o eliminar cookies, pero algunas funciones del sitio web podrían no funcionar según lo esperado."
+      ],
+      "bullets": [
+        "Comprender el tráfico y rendimiento del sitio web",
+        "Mejorar el diseño de las páginas, los servicios y el contenido",
+        "Detectar errores, abuso, spam o problemas de seguridad",
+        "Permitir funciones básicas del sitio web"
+      ]
+    },
+    "yourChoices": {
+      "title": "10. Tus Opciones y Solicitudes de Privacidad",
+      "body": [
+        "Puedes contactar a Ozony Tech para solicitar acceso a la información personal que mantenemos sobre ti, pedir que corrijamos información inexacta, solicitar su eliminación o pedir que dejemos de enviarte determinadas comunicaciones.",
+        "Dependiendo de tu ubicación, podrías tener derechos adicionales de privacidad conforme a la legislación aplicable. Es posible que necesitemos verificar tu identidad antes de completar determinadas solicitudes de privacidad."
+      ],
+      "bullets": [
+        "Solicitar acceso a tu información personal",
+        "Solicitar que corrijamos o actualicemos información",
+        "Solicitar que eliminemos información cuando sea legal y operativamente posible",
+        "Dejar de recibir mensajes de marketing o seguimiento no esenciales",
+        "Responder STOP para dejar de recibir mensajes SMS cuando esté disponible"
+      ]
+    },
+    "children": {
+      "title": "11. Privacidad de los Menores",
+      "body": [
+        "Los servicios de Ozony Tech están destinados a negocios y adultos. No recopilamos conscientemente información personal de menores de 13 años.",
+        "Si crees que un menor nos ha proporcionado información personal, contáctanos y revisaremos la solicitud y tomaremos las medidas correspondientes."
+      ],
+      "bullets": []
+    },
+    "updates": {
+      "title": "12. Actualizaciones de Esta Política de Privacidad",
+      "body": [
+        "Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestros servicios, flujos de trabajo, requisitos legales o prácticas comerciales.",
+        "Cuando actualicemos la política, modificaremos la fecha de “Última actualización” que aparece en la parte superior de esta página. El uso continuado del sitio web o de los servicios después de una actualización significa que la política actualizada se aplicará en adelante."
+      ],
+      "bullets": []
+    }
+  },
+  "contactSection": {
+    "title": "Contáctanos Sobre Privacidad",
+    "description": "Para hacer una pregunta sobre privacidad, solicitar acceso, corregir información, solicitar eliminación o dejar de recibir determinadas comunicaciones, contacta a Ozony Tech utilizando los datos que aparecen a continuación."
+  }
+}

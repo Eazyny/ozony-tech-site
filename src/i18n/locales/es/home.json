@@ -1,0 +1,311 @@
+{
+  "hero": {
+    "eyebrow": "Soluciones de TI para Pequeñas Empresas",
+    "titleLineOne": "TI y Redes.",
+    "titleLineTwoMobile": "Hecho para Pequeñas",
+    "titleLineThreeMobile": "Empresas.",
+    "titleLineTwoTablet": "Hecho para Pequeñas",
+    "titleLineThreeTablet": "Empresas.",
+    "titleLineDesktop": "Hecho para Pequeñas Empresas.",
+    "description": "Wi-Fi confiable, redes seguras, soporte y soluciones prácticas de TI para mantener tu negocio conectado y productivo.",
+    "requestQuote": "Solicitar Cotización",
+    "viewServices": "Ver Servicios"
+  },
+  "services": {
+    "eyebrow": "Servicios de TI para Pequeñas Empresas",
+    "title": "Servicios Diseñados para las Necesidades de Pequeñas Empresas",
+    "description": "Ozony Tech ofrece soporte práctico de TI y redes para las necesidades diarias de pequeñas empresas, desde conectividad y configuración de dispositivos hasta acceso compartido, seguridad y soporte continuo.",
+    "imageAlt": "Servicios de TI, redes, Wi-Fi, seguridad y soporte de Ozony Tech para pequeñas empresas",
+    "whatItCovers": "Qué incluye",
+    "chips": {
+      "networking": "Redes",
+      "businessWifi": "Wi-Fi Empresarial",
+      "sharedAccess": "Acceso Compartido",
+      "security": "Seguridad",
+      "troubleshooting": "Solución de Problemas"
+    },
+    "groups": {
+      "networking": {
+        "title": "Redes y Wi-Fi",
+        "stack": [
+          "Configuración de Routers y Switches",
+          "Wi-Fi para Invitados",
+          "Segmentación"
+        ],
+        "description": "Crea una conectividad más limpia y confiable para tu empresa con configuración práctica de redes, mejoras de Wi-Fi y una mejor organización de dispositivos.",
+        "takeaways": [
+          "Configuración y diseño de redes para oficinas pequeñas",
+          "Separación de redes para empleados e invitados",
+          "Diagnóstico de cobertura, rendimiento y conectividad"
+        ],
+        "linkLabel": "Explorar configuración de redes"
+      },
+      "office": {
+        "title": "Configuración de Equipos y Oficina",
+        "stack": [
+          "Computadoras",
+          "Impresoras",
+          "Dispositivos Compartidos"
+        ],
+        "description": "Configura oficinas, equipos de trabajo y espacios compartidos más rápido con dispositivos consistentes y listos para las operaciones diarias.",
+        "takeaways": [
+          "Configuración de computadoras, impresoras y dispositivos de oficina",
+          "Preparación de espacios compartidos y nuevos usuarios",
+          "Soporte básico para Windows y macOS"
+        ],
+        "linkLabel": "Explorar soporte de TI"
+      },
+      "security": {
+        "title": "Acceso Compartido y Seguridad",
+        "stack": [
+          "Archivos Compartidos",
+          "Permisos",
+          "MFA",
+          "Cuentas"
+        ],
+        "description": "Ayuda a tu equipo a trabajar de forma más eficiente y segura con acceso compartido organizado, mejores permisos y medidas esenciales de seguridad empresarial.",
+        "takeaways": [
+          "Organización de carpetas compartidas y accesos",
+          "Configuración de usuarios y planificación de permisos",
+          "MFA, actualizaciones y prácticas de acceso más seguras"
+        ],
+        "linkLabel": "Explorar configuración de firewall"
+      },
+      "support": {
+        "title": "Soporte y Solución de Problemas",
+        "stack": [
+          "Soporte Remoto",
+          "Evaluación de Incidentes",
+          "Diagnóstico"
+        ],
+        "description": "Mantén las operaciones diarias funcionando sin interrupciones con soporte remoto y presencial para problemas recurrentes de TI y situaciones comunes de oficina.",
+        "takeaways": [
+          "Diagnóstico de Wi-Fi, dispositivos e impresoras",
+          "Investigación de la causa raíz y soluciones prácticas",
+          "Asistencia remota, seguimiento y soporte continuo"
+        ],
+        "linkLabel": "Explorar soporte de TI"
+      }
+    }
+  },
+  "aiLeadTeaser": {
+    "badge": "Nuevo Servicio Premium",
+    "title": "Agente de Respuesta a Leads con IA",
+    "description": "Convierte las consultas de tu sitio web en oportunidades calificadas con respuestas instantáneas, recopilación automatizada de información y alertas para tu equipo. Diseñado para negocios que no pueden dejar que los leads interesados queden sin respuesta.",
+    "primaryCta": "Explorar Agente de Leads con IA",
+    "secondaryCta": "Ver Captura de Leads con IA",
+    "imageAlt": "Flujo del Agente de Respuesta a Leads con IA mostrando una consulta web, calificación con IA y una alerta al equipo",
+    "footerNote": "Captura, califica y alerta a tu equipo al instante.",
+    "trustChips": {
+      "websiteInquiryCapture": "Captura de consultas web",
+      "aiQualification": "Calificación con IA",
+      "teamAlerts": "Alertas al equipo",
+      "afterHoursCoverage": "Cobertura fuera de horario"
+    },
+    "highlights": {
+      "instantResponse": {
+        "title": "Respuesta instantánea",
+        "text": "Responde a nuevas consultas antes de que pierdan interés."
+      },
+      "smartQualification": {
+        "title": "Calificación inteligente",
+        "text": "Haz automáticamente las preguntas correctas de preselección."
+      },
+      "teamAlerts": {
+        "title": "Alertas al equipo",
+        "text": "Envía resúmenes claros de cada lead a tu equipo."
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre Ozony Tech",
+    "description": "Un negocio moderno de soluciones de TI enfocado en ayudar a pequeñas empresas a mantenerse conectadas, seguras y respaldadas con tecnología práctica que funciona en el mundo real.",
+    "whyOzony": {
+      "eyebrow": "Por Qué Ozony Tech",
+      "title": "Soporte práctico de TI pensado para las necesidades reales de pequeñas empresas",
+      "description": "Ozony Tech se enfoca en redes confiables, una configuración de dispositivos más limpia, seguridad práctica y soporte diario que ayuda a las pequeñas empresas a operar con menos fricción."
+    },
+    "quickPoints": {
+      "smallBusinessFocused": "Enfoque en pequeñas empresas",
+      "practicalModernSetups": "Configuraciones modernas y prácticas",
+      "clearCommunication": "Comunicación clara",
+      "reliableSupport": "Soporte confiable"
+    },
+    "items": {
+      "smallBusiness": {
+        "title": "Diseñado para Pequeñas Empresas",
+        "subtitle": "Soporte práctico de TI con un enfoque moderno",
+        "description": "Ozony Tech ayuda a pequeñas empresas a obtener soporte confiable y directo de TI y redes sin complejidad innecesaria.",
+        "points": [
+          "Soporte adaptado a pequeñas empresas",
+          "Comunicación clara y sin tecnicismos innecesarios",
+          "Soluciones limpias y prácticas"
+        ]
+      },
+      "howWeWork": {
+        "title": "Cómo Trabajamos",
+        "subtitle": "Primero diagnosticamos, luego construimos mejor",
+        "description": "Comenzamos entendiendo el problema real y luego recomendamos e implementamos soluciones prácticas que mejoran la facilidad de uso y la confiabilidad.",
+        "points": [
+          "Identificar primero la causa raíz",
+          "Recomendar los próximos pasos más prácticos",
+          "Dar seguimiento a pruebas y resultados"
+        ]
+      },
+      "priorities": {
+        "title": "Lo Que Priorizamos",
+        "subtitle": "Confiable, seguro y fácil de administrar",
+        "description": "El objetivo no es simplemente instalar tecnología, sino hacer que funcione mejor cada día para el negocio que depende de ella.",
+        "points": [
+          "Wi-Fi confiable y rendimiento estable",
+          "Mejor segmentación y fundamentos de seguridad",
+          "Soporte basado en claridad y confianza"
+        ]
+      }
+    }
+  },
+  "howOzonyWorks": {
+    "eyebrow": "Cómo Trabajamos",
+    "title": "TI, redes y automatización prácticas, diseñadas alrededor de tu negocio.",
+    "description": "Ozony Tech mantiene el proceso claro: entender el problema, construir la solución adecuada, asegurarla y darle soporte con el tiempo.",
+    "imageAlt": "Proceso de trabajo de Ozony Tech desde la evaluación hasta el soporte y la optimización",
+    "outcome": "Diseñado para resultados reales en pequeñas empresas",
+    "points": {
+      "practicalSolutions": {
+        "title": "Soluciones prácticas",
+        "text": "Diseñadas para necesidades reales de pequeñas empresas, sin complejidad empresarial innecesaria."
+      },
+      "secureByDesign": {
+        "title": "Seguro desde el diseño",
+        "text": "Accesos más limpios, flujos de trabajo más seguros y mejor protección desde el principio."
+      },
+      "builtToSupport": {
+        "title": "Diseñado para dar soporte",
+        "text": "Seguimiento claro, resolución de problemas y mejoras después de la implementación."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas Frecuentes",
+    "title": "Respuestas Claras Sobre TI y Redes para Pequeñas Empresas",
+    "description": "Una guía rápida sobre cómo Ozony Tech aborda el soporte, diagnóstico, redes, Wi-Fi y las necesidades tecnológicas prácticas de pequeñas empresas.",
+    "items": {
+      "businessTypes": {
+        "question": "¿Con qué tipos de negocios trabaja Ozony Tech?",
+        "answer": "Ozony Tech está diseñado para pequeñas empresas que necesitan ayuda práctica con redes, Wi-Fi, configuración de firewalls, diagnóstico y soporte diario de TI. Esto puede incluir oficinas, tiendas, barberías, salones, restaurantes, estudios creativos y otros equipos locales que necesitan tecnología confiable."
+      },
+      "existingNetworks": {
+        "question": "¿Trabajan con redes existentes o solo con instalaciones nuevas?",
+        "answer": "Con ambas. Ozony Tech puede diagnosticar y mejorar instalaciones existentes o ayudar a planificar nuevas implementaciones más limpias. El objetivo es entender qué ya existe, identificar el problema real y recomendar los próximos pasos más prácticos sin complicar innecesariamente la solución."
+      },
+      "wifiImprovements": {
+        "question": "¿Pueden mejorar un Wi-Fi lento o inestable sin reemplazar todo?",
+        "answer": "En muchos casos, sí. Una cobertura débil, demasiados dispositivos, una mala ubicación de equipos, configuraciones antiguas o una segmentación deficiente pueden causar problemas de Wi-Fi. Ozony Tech se enfoca primero en encontrar la causa raíz y luego recomienda la solución más sensata según el negocio y la infraestructura actual."
+      },
+      "supportTypes": {
+        "question": "¿Ofrecen soporte remoto, presencial o ambos?",
+        "answer": "Depende del tipo de problema. Algunas situaciones se pueden resolver de forma remota, mientras que otras tienen más sentido de manera presencial. Ozony Tech utiliza el enfoque de soporte que mejor se ajuste al problema, al entorno y a las necesidades del negocio."
+      },
+      "serviceAreas": {
+        "question": "¿Qué áreas atiende Ozony Tech?",
+        "answer": "Ozony Tech actualmente se enfoca en negocios de NYC, Nueva Jersey, Connecticut y Pensilvania, con páginas de servicios creadas para esas áreas. Si estás cerca y no estás seguro de si tu ubicación está dentro de nuestra cobertura, lo mejor es comunicarte con nosotros."
+      },
+      "getQuote": {
+        "question": "¿Cómo solicito una cotización o inicio una conversación?",
+        "answer": "Usa el <contactLink>formulario de contacto</contactLink> del sitio y cuéntanos un poco sobre tu negocio, ubicación y el tipo de ayuda que necesitas. Una breve descripción del problema o del objetivo facilita recomendar el siguiente paso correcto, ya sea diagnóstico, mejoras, una actualización o una instalación nueva."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacta a Ozony Tech",
+    "description": "¿Necesitas ayuda con Wi-Fi, redes, configuración de dispositivos, diagnóstico o soporte general de TI? Envíanos algunos detalles y conversemos sobre las necesidades de tu negocio.",
+    "businessContact": "Contacto Comercial",
+    "connectOnline": "Conecta en línea",
+    "info": {
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "serviceArea": "Área de Servicio",
+      "serviceAreaValue": "Ciudad de Nueva York"
+    },
+    "serviceArea": {
+      "title": "Área de Servicio",
+      "description": "Atendemos negocios en el área triestatal, con disponibilidad cercana según las necesidades de cada proyecto.",
+      "imageAlt": "Mapa del área de servicio de Ozony Tech en la región triestatal"
+    },
+    "form": {
+      "nameLabel": "Nombre *",
+      "namePlaceholder": "Tu nombre",
+      "businessNameLabel": "Nombre del Negocio",
+      "businessNamePlaceholder": "Tu negocio u organización",
+      "emailLabel": "Correo Electrónico *",
+      "phoneLabel": "Teléfono",
+      "phonePlaceholder": "Mejor número para devolverte la llamada",
+      "serviceLabel": "Servicio Necesario",
+      "servicePlaceholder": "Wi-Fi, redes, configuración, diagnóstico, etc.",
+      "urgencyLabel": "Urgencia *",
+      "urgencyPlaceholder": "Selecciona la urgencia",
+      "urgencyOptions": {
+        "planning": "Planificación / no urgente",
+        "thisWeek": "Esta semana",
+        "asap": "Lo antes posible",
+        "emergency": "Emergencia / negocio afectado"
+      },
+      "urgencyHelp": "Esto nos ayuda a priorizar problemas urgentes que afectan al negocio.",
+      "projectDetailsLabel": "Detalles del Proyecto *",
+      "projectDetailsPlaceholder": "Cuéntanos sobre tu configuración, el problema que estás teniendo o el tipo de ayuda que necesitas.",
+      "consent": "Acepto que Ozony Tech pueda contactarme por teléfono, mensaje de texto o correo electrónico sobre mi solicitud. Las llamadas pueden ser grabadas y resumidas para que el equipo pueda dar seguimiento con precisión. *",
+      "sending": "Enviando...",
+      "sendInquiry": "Enviar Consulta"
+    },
+    "toasts": {
+      "requiredFields": "Completa todos los campos obligatorios",
+      "permissionRequiredTitle": "Se requiere permiso de contacto",
+      "permissionRequiredDescription": "Confirma que Ozony Tech puede contactarte sobre tu solicitud.",
+      "sendErrorFallback": "Ocurrió un problema al enviar tu mensaje. Inténtalo nuevamente.",
+      "successTitle": "¡Consulta enviada correctamente!",
+      "successDescription": "Gracias por comunicarte con Ozony Tech. Me pondré en contacto contigo pronto.",
+      "failureTitle": "No se pudo enviar el mensaje",
+      "failureDescription": "Inténtalo nuevamente en un momento."
+    }
+  },
+  "footer": {
+    "goHome": "Ir a la página principal",
+    "tagline": "Soluciones de TI y Redes para Pequeñas Empresas",
+    "description": "Redes, Wi-Fi, firewalls, soporte de TI para pequeñas empresas y servicios administrados diseñados para mantener a los equipos locales conectados, seguros y preparados para crecer.",
+    "navigate": "Navegar",
+    "getInTouch": "Ponte en Contacto",
+    "getQuote": "Solicitar Cotización",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "servicePages": "Páginas de Servicios",
+    "servingAreas": "Atendiendo negocios en CT, PA, NJ y NY/NYC.",
+    "links": {
+      "services": "Servicios",
+      "credentials": "Credenciales",
+      "about": "Nosotros",
+      "contact": "Contacto",
+      "packages": "Paquetes",
+      "aiLeadAgent": "Agente de Leads con IA",
+      "privacyPolicy": "Política de Privacidad"
+    },
+    "serviceLinks": {
+      "aiLeadCapture": "Captura de Leads con IA",
+      "businessWifiConnecticut": "Wi-Fi Empresarial en Connecticut",
+      "businessWifiNYC": "Wi-Fi Empresarial en NYC",
+      "firewallSetupConnecticut": "Configuración de Firewall en Connecticut",
+      "firewallSetupNYC": "Configuración de Firewall en NYC",
+      "itServicesNearMe": "Servicios de TI Cerca de Mí",
+      "itSolutions": "Soluciones de TI",
+      "itSupport": "Soporte de TI",
+      "itSupportConnecticut": "Soporte de TI en Connecticut",
+      "itSupportNJ": "Soporte de TI en NJ",
+      "itSupportNYC": "Soporte de TI en NYC",
+      "managedITServices": "Servicios Administrados de TI",
+      "networkServicesNearMe": "Servicios de Redes Cerca de Mí",
+      "networkSetupConnecticut": "Configuración de Redes en Connecticut",
+      "networkSetupNJ": "Configuración de Redes en NJ",
+      "networkSetupNYC": "Configuración de Redes en NYC",
+      "networkTroubleshootingNYC": "Diagnóstico de Redes en NYC",
+      "smallBusinessNetworkNYC": "Redes para Pequeñas Empresas en NYC"
+    }
+  }
+}

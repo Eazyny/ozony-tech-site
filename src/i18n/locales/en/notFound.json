@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Page Not Found | Ozony Tech"
+  },
+  "backgroundAriaLabel": "Dark gradient background for the 404 page.",
+  "badge": "404 • Not Found",
+  "titleLine1": "This page wandered",
+  "titleLine2": "off into the night.",
+  "description": "The link may be broken, the page may have moved, or it may not exist anymore. Either way, Ozony Tech is still online.",
+  "backToHome": "Back to Home",
+  "goBack": "Go Back",
+  "packagesCard": {
+    "title": "View Packages",
+    "description": "Check the service tiers for business Wi-Fi, networking, firewall setup, and support."
+  },
+  "contactCard": {
+    "title": "Contact Ozony Tech",
+    "description": "Need help fast? Jump back to the site and send over the details."
+  }
+}

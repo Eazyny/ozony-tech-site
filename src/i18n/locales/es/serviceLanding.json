@@ -1,0 +1,121 @@
+{
+  "ui": {
+    "backToHome": "Volver al Inicio",
+    "services": "Servicios",
+    "whoItsFor": "Para Quién Es",
+    "whyOzonyTech": "Por Qué Ozony Tech",
+    "faq": "Preguntas Frecuentes",
+    "commonQuestions": "Preguntas Comunes",
+    "relatedServices": "Servicios Relacionados",
+    "exploreMoreSolutions": "Explora Más Soluciones",
+    "relatedDescription": "Conoce otras formas en que Ozony Tech puede apoyar tu negocio con soluciones prácticas de TI y redes.",
+    "viewService": "Ver servicio",
+    "getStarted": "Comenzar",
+    "backToTop": "Volver arriba"
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "serviceLinks": {
+    "aiLeadAgent": "Agente de Leads con IA",
+    "businessNetworkSetupNYC": "Configuración de Redes Empresariales en NYC",
+    "businessWifiConnecticut": "Wi-Fi Empresarial en Connecticut",
+    "businessWifiNYC": "Wi-Fi Empresarial en NYC",
+    "firewallSetupConnecticut": "Configuración de Firewall en Connecticut",
+    "firewallSetupNYC": "Configuración de Firewall en NYC",
+    "itServicesNearMe": "Servicios de TI Cerca de Mí",
+    "itSolutions": "Soluciones de TI",
+    "itSupport": "Soporte de TI",
+    "itSupportConnecticut": "Soporte de TI en Connecticut",
+    "itSupportNJ": "Soporte de TI en NJ",
+    "itSupportNYC": "Soporte de TI en NYC",
+    "managedITServices": "Servicios Administrados de TI",
+    "networkServicesNearMe": "Servicios de Redes Cerca de Mí",
+    "networkSetupConnecticut": "Configuración de Redes en Connecticut",
+    "networkSetupNJ": "Configuración de Redes en NJ",
+    "networkSetupNYC": "Configuración de Redes en NYC",
+    "networkTroubleshootingNYC": "Diagnóstico de Redes en NYC",
+    "smallBusinessNetworkNYC": "Redes para Pequeñas Empresas en NYC"
+  },
+  "defaults": {
+    "pageTitle": "Servicios de Configuración de Redes en NYC | Ozony Tech",
+    "pageDescription": "Servicios profesionales de configuración de redes en NYC para pequeñas empresas que necesitan conectividad confiable, segura y escalable.",
+    "eyebrow": "SERVICIOS DE OZONY TECH",
+    "title": "Servicios de Configuración de Redes en NYC para Pequeñas Empresas",
+    "description": "Configuración profesional de redes para oficinas, tiendas, restaurantes y equipos en crecimiento que necesitan conectividad confiable, segura y escalable.",
+    "primaryCta": "Solicitar Cotización",
+    "secondaryCta": "Contactar a Ozony Tech",
+    "heroImageAlt": "Servicios de configuración de redes empresariales en NYC",
+    "trustChips": [
+      "Enfocado en pequeñas empresas de NYC",
+      "Configuración segura y escalable",
+      "Soporte para Wi-Fi, firewall y dispositivos",
+      "Diseñado para crecer con tu negocio"
+    ],
+    "includeTitle": "Qué Incluye",
+    "includeDescription": "Todo lo necesario para crear un entorno de red estable, organizado y listo para tu negocio.",
+    "includes": [
+      "Configuración de router y firewall",
+      "Configuración y optimización de Wi-Fi empresarial",
+      "Separación de redes para invitados y empleados",
+      "Conectividad de impresoras, POS y estaciones de trabajo",
+      "Planificación estructurada de red para crecimiento",
+      "Mejoras básicas de seguridad y rendimiento"
+    ],
+    "outcomes": {
+      "professional": {
+        "title": "Configuración Profesional",
+        "text": "Implementación de red limpia y organizada, diseñada para confiabilidad y uso diario del negocio."
+      },
+      "security": {
+        "title": "Enfoque en Seguridad",
+        "text": "Mejor segmentación, mayor protección y una estructura más inteligente para pequeñas empresas modernas."
+      },
+      "local": {
+        "title": "Servicio Local",
+        "text": "Enfocado en apoyar negocios de NYC y áreas cercanas con soluciones prácticas."
+      }
+    },
+    "industriesTitle": "Diseñado para Negocios Locales",
+    "idealFor": {
+      "offices": {
+        "title": "Oficinas",
+        "description": "Conectividad cableada e inalámbrica confiable para equipos, impresoras, teléfonos y operaciones diarias."
+      },
+      "retail": {
+        "title": "Tiendas",
+        "description": "Redes confiables para sistemas POS, Wi-Fi de invitados, dispositivos administrativos y operaciones del negocio."
+      },
+      "restaurants": {
+        "title": "Restaurantes y Cafeterías",
+        "description": "Conectividad estable para cajas, dispositivos de cocina, sistemas del personal y acceso a internet para clientes."
+      }
+    },
+    "seoTitle": "Configuración Profesional de Redes en NYC",
+    "seoParagraphs": [
+      "Ozony Tech ofrece servicios profesionales de configuración de redes en NYC para pequeñas empresas que necesitan conectividad confiable, segura y bien organizada. Ya sea que estés abriendo una nueva oficina, mejorando tu Wi-Fi actual o reorganizando tu red, diseñamos soluciones que apoyan las operaciones diarias sin complejidad innecesaria.",
+      "Nuestros servicios pueden incluir configuración de routers y firewalls, implementación de Wi-Fi empresarial, conectividad de dispositivos, separación de redes para invitados y empleados, y optimización del rendimiento. Trabajamos con pequeñas empresas que necesitan servicio confiable, comunicación clara y una infraestructura que pueda crecer con el negocio."
+    ],
+    "areasServed": "Atendiendo negocios en NYC, incluyendo Manhattan, Brooklyn, Queens, Bronx, Staten Island y áreas cercanas.",
+    "faqItems": [
+      {
+        "question": "¿Ofrecen configuración de redes para pequeñas empresas en NYC?",
+        "answer": "Sí. Ozony Tech ayuda a pequeñas empresas en NYC con configuración de redes, implementación de Wi-Fi, firewalls y planificación general de conectividad."
+      },
+      {
+        "question": "¿Pueden separar el Wi-Fi de invitados y empleados?",
+        "answer": "Sí. Podemos configurar redes separadas para empleados, invitados y dispositivos específicos del negocio para mejorar la seguridad y organización."
+      },
+      {
+        "question": "¿Trabajan con redes existentes o solo instalaciones nuevas?",
+        "answer": "Ambas. Podemos crear una red nueva desde cero o mejorar y diagnosticar una configuración empresarial existente."
+      }
+    ],
+    "midCtaEyebrow": "Comenzar",
+    "midCtaTitle": "¿Listo para Configurar la Red de Tu Negocio?",
+    "midCtaDescription": "Obtén una solución limpia y confiable, diseñada para tu negocio sin complejidad ni adivinanzas innecesarias.",
+    "finalTitle": "¿Listo para Mejorar la Red de Tu Negocio?",
+    "finalDescription": "Ya sea que necesites una instalación nueva, mejor Wi-Fi o una configuración más limpia, Ozony Tech puede ayudarte a avanzar con confianza."
+  }
+}

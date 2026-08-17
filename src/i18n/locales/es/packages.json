@@ -1,0 +1,255 @@
+{
+  "seo": {
+    "title": "Paquetes de TI y Redes para Pequeñas Empresas | Ozony Tech",
+    "description": "Compara los paquetes de TI y redes de Ozony Tech para pequeñas empresas, incluyendo opciones Starter, Growth y Complete para Wi-Fi, redes, firewall, soporte de TI y respuesta a leads con IA.",
+    "ogTitle": "Paquetes de TI y Redes para Pequeñas Empresas | Ozony Tech",
+    "ogDescription": "Compara opciones Starter, Growth y Complete para TI, Wi-Fi, redes, firewall y soporte práctico para pequeñas empresas.",
+    "ogImageAlt": "Stack de hardware recomendado para el paquete Complete de Ozony Tech",
+    "twitterTitle": "Paquetes de TI y Redes para Pequeñas Empresas | Ozony Tech",
+    "twitterDescription": "Compara opciones Starter, Growth y Complete para TI y redes de pequeñas empresas."
+  },
+  "schema": {
+    "serviceName": "Paquetes Empresariales de TI y Redes de Ozony Tech",
+    "serviceTypes": [
+      "Configuración de Redes",
+      "Wi-Fi Empresarial",
+      "Configuración de Firewall",
+      "Soporte de TI",
+      "Servicios Administrados de TI",
+      "Automatización de Respuesta a Leads con IA"
+    ],
+    "catalogName": "Paquetes de TI y Redes para Pequeñas Empresas",
+    "packageOfferName": "Paquete {{name}}",
+    "packageServiceName": "Paquete Empresarial de TI y Redes {{name}}",
+    "home": "Inicio",
+    "packages": "Paquetes"
+  },
+  "backToHome": "Volver al Inicio",
+  "backToTop": "Volver arriba",
+  "hero": {
+    "eyebrow": "Paquetes de Ozony Tech",
+    "title": "Paquetes de TI y Redes para Pequeñas Empresas Diseñados para Necesidades Reales",
+    "description": "Compara rutas prácticas para mejorar Wi-Fi, redes, estructura de firewall, planificación de soporte y crecimiento tecnológico. Cada paquete es un punto de partida que puede ajustarse a tu espacio, presupuesto y objetivos.",
+    "primaryCta": "Solicitar Cotización",
+    "secondaryCta": "Ver Agente de Leads con IA",
+    "chips": [
+      "Starter",
+      "Growth",
+      "Complete",
+      "Opciones personalizadas disponibles"
+    ]
+  },
+  "tiers": {
+    "starter": {
+      "name": "Starter",
+      "badge": "Ideal para espacios pequeños",
+      "stackLabel": "Stack recomendado",
+      "stackName": "Omada / configuración empresarial compacta",
+      "description": "Un punto de entrada limpio para negocios pequeños que necesitan mejor Wi-Fi, estructura básica de red y conectividad más confiable sin complicar demasiado la configuración.",
+      "bestFor": "Barberías, salones, tiendas pequeñas, oficinas en casa, oficinas sencillas y negocios de servicios pequeños",
+      "includes": [
+        "Configuración de router / firewall",
+        "Conectividad básica de switch y dispositivos",
+        "Optimización de Wi-Fi y ajuste de cobertura",
+        "Ayuda con conectividad de impresoras y estaciones de trabajo",
+        "Orientación básica sobre seguridad y configuración de cuentas"
+      ],
+      "serviceLabel": "Explorar configuración de redes"
+    },
+    "growth": {
+      "name": "Growth",
+      "badge": "La opción más flexible",
+      "stackLabel": "Stack recomendado",
+      "stackName": "UniFi / configuración administrada para pequeñas empresas",
+      "description": "Diseñado para negocios en crecimiento que necesitan Wi-Fi más sólido, mejor separación entre invitados y empleados, mayor rendimiento y una ruta de expansión más organizada.",
+      "bestFor": "Oficinas con mayor actividad, negocios con varias áreas, restaurantes, tiendas, equipos en crecimiento y negocios que necesitan Wi-Fi para invitados",
+      "includes": [
+        "Ruta de actualización a redes administradas",
+        "Separación de redes para invitados y empleados",
+        "Soporte para múltiples dispositivos y estaciones de trabajo",
+        "Mejor planificación de cobertura inalámbrica",
+        "Organización más limpia y estructura lista para el negocio"
+      ],
+      "serviceLabel": "Explorar Wi-Fi empresarial"
+    },
+    "complete": {
+      "name": "Complete",
+      "badge": "Ideal para una solución a largo plazo",
+      "stackLabel": "Stack recomendado",
+      "stackName": "Aruba Instant On / configuración premium para pequeñas empresas",
+      "description": "Un paquete de red más completo diseñado para una implementación más limpia, mayor control, mejor confiabilidad y crecimiento futuro.",
+      "bestFor": "Pequeñas empresas más grandes, mayor cantidad de dispositivos, espacios profesionales, oficinas modernas y redes diseñadas para largo plazo",
+      "includes": [
+        "Gateway y switching de nivel empresarial",
+        "Wi-Fi administrado y segmentación de red",
+        "Planificación de múltiples puntos de acceso",
+        "Organización más limpia para confiabilidad a largo plazo",
+        "Base escalable para futuras mejoras"
+      ],
+      "serviceLabel": "Explorar configuración de firewall"
+    }
+  },
+  "platformFit": {
+    "eyebrow": "Diseñado alrededor de la opción correcta",
+    "description": "Ozony Tech trabaja con plataformas prácticas y probadas como UniFi, Omada y Aruba Instant On según tu presupuesto, distribución, necesidades de administración y objetivos a largo plazo."
+  },
+  "comparison": {
+    "title": "Compara los Paquetes",
+    "description": "Una vista simple de cómo escalan los niveles según complejidad, cobertura, estructura y crecimiento a largo plazo.",
+    "category": "Categoría",
+    "rows": {
+      "bestFor": {
+        "label": "Ideal Para",
+        "starter": "Espacios pequeños",
+        "growth": "Negocios en crecimiento",
+        "complete": "Soluciones a largo plazo"
+      },
+      "wifiCoverage": {
+        "label": "Cobertura Wi-Fi",
+        "starter": "Optimización básica",
+        "growth": "Mejor cobertura en múltiples áreas",
+        "complete": "Planificación de cobertura más amplia"
+      },
+      "networkSegmentation": {
+        "label": "Segmentación de Red",
+        "starter": "Ligera / básica",
+        "growth": "Separación de invitados + empleados",
+        "complete": "Segmentación más completa"
+      },
+      "scalability": {
+        "label": "Escalabilidad",
+        "starter": "Nivel inicial",
+        "growth": "Lista para crecer",
+        "complete": "Mejor ruta a largo plazo"
+      },
+      "supportFocus": {
+        "label": "Enfoque del Soporte",
+        "starter": "Configuración + estabilidad",
+        "growth": "Rendimiento + estructura",
+        "complete": "Confiabilidad + capacidad de expansión"
+      }
+    }
+  },
+  "servicePathsSection": {
+    "eyebrow": "Rutas de Servicio",
+    "title": "¿No Estás Seguro de Qué Servicio Te Conviene?",
+    "description": "Los paquetes son una forma de comenzar. También puedes ir directamente al servicio que mejor coincida con tu problema principal."
+  },
+  "servicePaths": {
+    "networkSetup": {
+      "title": "Configuración de Redes Empresariales",
+      "description": "Para negocios que necesitan una base más limpia para router, switch, Wi-Fi, firewall, impresoras, POS y conectividad de dispositivos.",
+      "label": "Ver configuración de redes"
+    },
+    "businessWifi": {
+      "title": "Wi-Fi Empresarial",
+      "description": "Para negocios con cobertura débil, zonas muertas, conexiones inalámbricas inestables, problemas de acceso de invitados o una cantidad creciente de dispositivos.",
+      "label": "Ver Wi-Fi empresarial"
+    },
+    "firewallSetup": {
+      "title": "Configuración de Firewall",
+      "description": "Para negocios que necesitan mejor control de tráfico, separación entre invitados y empleados, límites más sólidos y mejor organización de red.",
+      "label": "Ver configuración de firewall"
+    },
+    "itSupport": {
+      "title": "Soporte de TI",
+      "description": "Para negocios que necesitan ayuda con dispositivos, impresoras, acceso, estaciones de trabajo, diagnóstico y problemas tecnológicos cotidianos.",
+      "label": "Ver soporte de TI"
+    },
+    "managedIT": {
+      "title": "Servicios Administrados de TI",
+      "description": "Para negocios que necesitan soporte recurrente, sistemas más organizados y una ruta más consistente para resolver problemas tecnológicos.",
+      "label": "Ver servicios administrados"
+    },
+    "aiLeadAgent": {
+      "title": "Agente de Respuesta a Leads con IA",
+      "description": "Para negocios que quieren seguimiento más rápido, notificaciones instantáneas, correos de confirmación y borradores de respuesta asistidos por IA.",
+      "label": "Ver agente de leads con IA"
+    }
+  },
+  "selection": {
+    "title": "Cómo Funciona la Selección del Paquete",
+    "description": "La configuración correcta depende del negocio, no de una lista genérica. Este es el proceso básico."
+  },
+  "setupSteps": {
+    "review": {
+      "title": "1. Revisamos el espacio",
+      "text": "Revisamos la distribución del negocio, los dispositivos, las expectativas de Wi-Fi, los problemas actuales y la forma en que realmente trabaja el equipo."
+    },
+    "choose": {
+      "title": "2. Elegimos el nivel correcto",
+      "text": "Starter, Growth y Complete son puntos de partida. La recomendación final depende de cobertura, confiabilidad, control y presupuesto."
+    },
+    "build": {
+      "title": "3. Construimos una ruta clara hacia adelante",
+      "text": "El objetivo no es vender hardware de más. Es construir una solución práctica, confiable, administrable y fácil de ampliar con el tiempo."
+    }
+  },
+  "brandsSection": {
+    "title": "¿Por Qué Estas Soluciones?",
+    "description": "Ozony Tech no recomienda equipos por moda. La solución correcta depende de tu espacio, presupuesto, tipo de negocio y del nivel de control o escalabilidad que necesites."
+  },
+  "brands": {
+    "unifi": {
+      "eyebrow": "Ecosistema pulido",
+      "description": "Una opción sólida cuando un negocio quiere administración limpia, buena visibilidad y una experiencia de red más unificada."
+    },
+    "omada": {
+      "eyebrow": "Excelente relación valor-rendimiento",
+      "description": "Una excelente opción enfocada en valor para negocios que quieren buen rendimiento y administración más limpia sin gastar de más."
+    },
+    "aruba": {
+      "eyebrow": "Ruta premium para pequeñas empresas",
+      "description": "Una opción premium para negocios que quieren redes pulidas, administración más sencilla y una base sólida a largo plazo."
+    }
+  },
+  "brandImageAlt": "Stack de hardware recomendado de {{title}}",
+  "fit": {
+    "title": "Ideal Para",
+    "description": "Estos paquetes están diseñados alrededor de los tipos de negocios que más se benefician de redes limpias, confiables y soporte práctico de TI.",
+    "cards": [
+      "Barberías y salones",
+      "Tiendas",
+      "Oficinas pequeñas",
+      "Restaurantes y cafeterías",
+      "Oficinas en casa / creadores",
+      "Negocios locales en crecimiento"
+    ]
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes sobre los Paquetes",
+    "description": "Algunas preguntas comunes sobre cómo funcionan los diferentes niveles.",
+    "items": {
+      "rightPackage": {
+        "question": "¿Qué paquete es el correcto para mi negocio?",
+        "answer": "Depende de tu espacio, cantidad de usuarios y dispositivos, expectativas de Wi-Fi, configuración actual y de si necesitas una ruta más limpia para crecer en el futuro."
+      },
+      "customized": {
+        "question": "¿Se pueden personalizar los paquetes?",
+        "answer": "Sí. Estos paquetes son puntos de partida, no cajas rígidas. La recomendación final puede ajustarse a las necesidades, distribución, presupuesto y objetivos de tu negocio."
+      },
+      "brands": {
+        "question": "¿Trabajan solamente con una marca?",
+        "answer": "No. Ozony Tech elige soluciones según confiabilidad, presupuesto, facilidad de administración y qué tan bien encajan con el entorno del negocio."
+      },
+      "upgradeLater": {
+        "question": "¿Puedo comenzar con una configuración más pequeña y mejorarla después?",
+        "answer": "Sí. Una buena configuración debe facilitar el crecimiento con el tiempo en lugar de obligarte a reconstruir todo más adelante."
+      },
+      "itSupport": {
+        "question": "¿Estos paquetes incluyen soporte de TI?",
+        "answer": "Los paquetes pueden incluir soporte de configuración y orientación práctica. Los negocios que necesitan ayuda recurrente también pueden revisar nuestros servicios administrados de TI o solicitar un plan personalizado."
+      },
+      "aiLead": {
+        "question": "¿También ofrecen configuración de respuesta a leads con IA?",
+        "answer": "Sí. Ozony Tech también ofrece un Agente de Respuesta a Leads con IA para negocios que quieren seguimiento más rápido, alertas, correos de confirmación y borradores de respuesta asistidos por IA."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "¿Listo para encontrar la configuración correcta para tu negocio?",
+    "description": "Ya sea que necesites una configuración Starter, una solución más completa a largo plazo o una combinación personalizada de soporte de TI, redes, Wi-Fi, firewall y automatización, Ozony Tech puede ayudarte a elegir una ruta práctica.",
+    "primaryCta": "Solicitar Cotización",
+    "secondaryCta": "Explorar Soluciones de TI"
+  }
+}

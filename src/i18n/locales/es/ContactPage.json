@@ -1,0 +1,97 @@
+{
+  "seo": {
+    "title": "Contacta a Ozony Tech | Soporte de TI y Redes para Pequeñas Empresas",
+    "description": "Contacta a Ozony Tech para soporte de TI, configuración de redes, Wi-Fi empresarial, firewalls y servicios administrados en NYC, Nueva Jersey y Connecticut.",
+    "ogTitle": "Contacta a Ozony Tech | Soporte de TI y Redes",
+    "ogDescription": "¿Necesitas ayuda con Wi-Fi empresarial, redes, firewalls o soporte de TI? Contacta a Ozony Tech hoy.",
+    "ogImageAlt": "Contacta a Ozony Tech para soporte de TI y redes"
+  },
+  "hero": {
+    "badge": "Ozony Tech · Contacto",
+    "title": "¿Necesitas ayuda de TI o redes para tu negocio?",
+    "description": "Cuéntanos con qué necesitas ayuda y Ozony Tech te ayudará a identificar el siguiente paso correcto, ya sea Wi-Fi empresarial, configuración de redes, firewalls, soporte de TI o una evaluación completa.",
+    "helper": "Usa el formulario para enviar los detalles una sola vez. Ozony Tech revisará el tipo de servicio, la ubicación, la urgencia y el mejor siguiente paso antes de darte seguimiento."
+  },
+  "highlights": {
+    "networkSetup": {
+      "title": "Configuración de Redes",
+      "text": "Redes estructuradas para pequeñas empresas, diseñadas para estabilidad, crecimiento y una mejor administración de dispositivos."
+    },
+    "businessWifi": {
+      "title": "Wi-Fi Empresarial",
+      "text": "Planificación de Wi-Fi confiable para oficinas, tiendas, restaurantes y espacios de atención al cliente."
+    },
+    "firewallSecurity": {
+      "title": "Firewall y Seguridad",
+      "text": "Configuración práctica de firewalls, separación de redes para invitados y mejor protección para los dispositivos del negocio."
+    }
+  },
+  "form": {
+    "title": "Envía una solicitud",
+    "description": "Envía tu solicitud directamente a Ozony Tech. No necesitas abrir una aplicación de correo.",
+    "nameLabel": "Nombre *",
+    "namePlaceholder": "Tu nombre",
+    "businessLabel": "Nombre del Negocio",
+    "businessPlaceholder": "Nombre de la empresa o tienda",
+    "emailLabel": "Correo Electrónico *",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "Mejor número para devolverte la llamada",
+    "locationLabel": "Ubicación",
+    "locationPlaceholder": "NYC, NJ, CT, etc.",
+    "serviceLabel": "Servicio Necesario",
+    "servicePlaceholder": "Selecciona un servicio",
+    "urgencyLabel": "Urgencia *",
+    "urgencyPlaceholder": "Selecciona la urgencia",
+    "urgencyHelp": "Esto ayuda a Ozony Tech a priorizar problemas que afectan al negocio.",
+    "messageLabel": "Mensaje *",
+    "messagePlaceholder": "Cuéntanos qué está pasando, qué necesitas instalar, reparar, actualizar o planificar.",
+    "consent": "Acepto que Ozony Tech pueda contactarme por teléfono, mensaje de texto o correo electrónico sobre mi solicitud. Las llamadas pueden ser grabadas y resumidas para que el equipo pueda dar seguimiento con precisión. *",
+    "sending": "Enviando...",
+    "sendInquiry": "Enviar Consulta"
+  },
+  "serviceOptions": {
+    "Network Setup": "Configuración de Redes",
+    "Business Wi-Fi": "Wi-Fi Empresarial",
+    "Firewall Setup": "Configuración de Firewall",
+    "IT Support": "Soporte de TI",
+    "Managed IT Services": "Servicios Administrados de TI",
+    "Website / Digital Services": "Sitios Web / Servicios Digitales",
+    "AI Lead Response Agent": "Agente de Respuesta a Leads con IA",
+    "Not Sure Yet": "Aún No Estoy Seguro"
+  },
+  "urgencyOptions": {
+    "Planning / not urgent": "Planificación / no urgente",
+    "This week": "Esta semana",
+    "ASAP": "Lo antes posible",
+    "Emergency / business impacted": "Emergencia / negocio afectado"
+  },
+  "details": {
+    "title": "Detalles de contacto",
+    "email": "Correo Electrónico",
+    "serviceAreaTitle": "Área de Servicio",
+    "serviceAreaText": "NYC, Nueva Jersey, Connecticut y ubicaciones cercanas de pequeñas empresas.",
+    "bestForTitle": "Ideal Para",
+    "bestForText": "Instalaciones nuevas, actualizaciones, diagnóstico, mejoras de Wi-Fi, configuración de firewalls y planificación de TI para pequeñas empresas."
+  },
+  "next": {
+    "title": "¿Qué sucede después?",
+    "description": "La idea es que el primer paso sea sencillo. No necesitas conocer todos los detalles técnicos todavía. Envía la solicitud y Ozony Tech te ayudará a definir el camino correcto.",
+    "steps": {
+      "submit": "Envía tu solicitud con los detalles que ya conoces.",
+      "review": "Ozony Tech revisa la configuración, ubicación, urgencia y necesidades de servicio.",
+      "followUp": "Te damos seguimiento con el mejor siguiente paso, cotización o recomendación de evaluación."
+    },
+    "stepNote": "Simple, práctico y enfocado en las necesidades del negocio.",
+    "urgentNote": "Para problemas urgentes de red o Wi-Fi empresarial, incluye tantos detalles como sea posible: proveedor de internet, modelo del router/firewall, cantidad de dispositivos, tipo de negocio y qué dejó de funcionar."
+  },
+  "toasts": {
+    "requiredFields": "Completa todos los campos obligatorios",
+    "permissionTitle": "Se requiere permiso de contacto",
+    "permissionDescription": "Confirma que Ozony Tech puede contactarte sobre tu solicitud.",
+    "sendErrorFallback": "Ocurrió un problema al enviar tu mensaje. Inténtalo nuevamente.",
+    "successTitle": "¡Consulta enviada correctamente!",
+    "successDescription": "Gracias por comunicarte con Ozony Tech. Me pondré en contacto contigo pronto.",
+    "failureTitle": "No se pudo enviar el mensaje",
+    "failureDescription": "Inténtalo nuevamente en un momento."
+  }
+}

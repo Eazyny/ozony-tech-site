@@ -1,0 +1,121 @@
+{
+  "ui": {
+    "backToHome": "Back to Home",
+    "services": "Services",
+    "whoItsFor": "Who It’s For",
+    "whyOzonyTech": "Why Ozony Tech",
+    "faq": "FAQ",
+    "commonQuestions": "Common Questions",
+    "relatedServices": "Related Services",
+    "exploreMoreSolutions": "Explore More Solutions",
+    "relatedDescription": "See other ways Ozony Tech can support your business with practical IT and network solutions.",
+    "viewService": "View service",
+    "getStarted": "Get Started",
+    "backToTop": "Back to top"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "services": "Services"
+  },
+  "serviceLinks": {
+    "aiLeadAgent": "AI Lead Agent",
+    "businessNetworkSetupNYC": "Business Network Setup NYC",
+    "businessWifiConnecticut": "Business Wi-Fi Connecticut",
+    "businessWifiNYC": "Business Wi-Fi NYC",
+    "firewallSetupConnecticut": "Firewall Setup Connecticut",
+    "firewallSetupNYC": "Firewall Setup NYC",
+    "itServicesNearMe": "IT Services Near Me",
+    "itSolutions": "IT Solutions",
+    "itSupport": "IT Support",
+    "itSupportConnecticut": "IT Support Connecticut",
+    "itSupportNJ": "IT Support NJ",
+    "itSupportNYC": "IT Support NYC",
+    "managedITServices": "Managed IT Services",
+    "networkServicesNearMe": "Network Services Near Me",
+    "networkSetupConnecticut": "Network Setup Connecticut",
+    "networkSetupNJ": "Network Setup NJ",
+    "networkSetupNYC": "Network Setup NYC",
+    "networkTroubleshootingNYC": "Network Troubleshooting NYC",
+    "smallBusinessNetworkNYC": "Small Business Network NYC"
+  },
+  "defaults": {
+    "pageTitle": "Network Setup Services in NYC | Ozony Tech",
+    "pageDescription": "Professional network setup services in NYC for small businesses that need reliable, secure, and scalable connectivity.",
+    "eyebrow": "OZONY TECH SERVICES",
+    "title": "Network Setup Services in NYC for Small Businesses",
+    "description": "Professional network setup for offices, retail spaces, restaurants, and growing teams that need reliable, secure, and scalable connectivity.",
+    "primaryCta": "Request a Quote",
+    "secondaryCta": "Contact Ozony Tech",
+    "heroImageAlt": "Business network setup services in NYC",
+    "trustChips": [
+      "NYC small business focused",
+      "Secure, scalable setup",
+      "Wi-Fi, firewall, and device support",
+      "Built for growth and reliability"
+    ],
+    "includeTitle": "What’s Included",
+    "includeDescription": "Everything needed to create a stable, organized, and business-ready network environment.",
+    "includes": [
+      "Router and firewall configuration",
+      "Business Wi-Fi setup and optimization",
+      "Guest and staff network separation",
+      "Printer, POS, and workstation connectivity",
+      "Structured network planning for growth",
+      "Basic security and performance hardening"
+    ],
+    "outcomes": {
+      "professional": {
+        "title": "Professional Setup",
+        "text": "Clean, organized network deployment designed for reliability and daily business use."
+      },
+      "security": {
+        "title": "Security Minded",
+        "text": "Better segmentation, stronger protection, and smarter structure for modern small businesses."
+      },
+      "local": {
+        "title": "Local Service",
+        "text": "Focused on supporting businesses across NYC and nearby areas with practical solutions."
+      }
+    },
+    "industriesTitle": "Built for Local Businesses",
+    "idealFor": {
+      "offices": {
+        "title": "Offices",
+        "description": "Reliable wired and wireless connectivity for teams, printers, phones, and daily operations."
+      },
+      "retail": {
+        "title": "Retail Stores",
+        "description": "Dependable networking for POS systems, guest Wi-Fi, back-office devices, and business operations."
+      },
+      "restaurants": {
+        "title": "Restaurants & Cafés",
+        "description": "Stable connectivity for registers, kitchen devices, staff systems, and customer internet access."
+      }
+    },
+    "seoTitle": "Professional Network Setup in NYC",
+    "seoParagraphs": [
+      "Ozony Tech provides professional network setup services in NYC for small businesses that need reliable, secure, and well-organized connectivity. Whether you are opening a new office, upgrading your current Wi-Fi, or improving the structure of your network, we help design solutions that support daily operations without unnecessary complexity.",
+      "Our network setup services can include router and firewall configuration, business Wi-Fi deployment, device connectivity, guest and staff network separation, and performance optimization. We work with small business environments that need dependable service, clear communication, and a setup that can grow with the business."
+    ],
+    "areasServed": "Serving businesses across NYC, including Manhattan, Brooklyn, Queens, the Bronx, Staten Island, and nearby areas.",
+    "faqItems": [
+      {
+        "question": "Do you provide network setup for small businesses in NYC?",
+        "answer": "Yes. Ozony Tech helps small businesses in NYC with network setup, Wi-Fi deployment, firewall configuration, and overall connectivity planning."
+      },
+      {
+        "question": "Can you separate guest and staff Wi-Fi?",
+        "answer": "Yes. We can configure separate networks for staff, guests, and specific business devices to improve security and organization."
+      },
+      {
+        "question": "Do you help with existing networks or only new installs?",
+        "answer": "Both. We can build a new network from scratch or improve and troubleshoot an existing business setup."
+      }
+    ],
+    "midCtaEyebrow": "Get Started",
+    "midCtaTitle": "Ready to Get Your Business Network Setup?",
+    "midCtaDescription": "Get a clean, reliable solution built for your business without unnecessary complexity or guesswork.",
+    "finalTitle": "Ready to Improve Your Business Network?",
+    "finalDescription": "Whether you need a fresh install, stronger Wi-Fi, or a cleaner setup for your business, Ozony Tech can help you move forward with confidence."
+  }
+}

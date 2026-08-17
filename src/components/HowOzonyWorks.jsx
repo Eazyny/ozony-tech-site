@@ -1,24 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, ShieldCheck, Wrench, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const HowOzonyWorks = () => {
+  const { t } = useTranslation('home');
+
   const points = [
-    {
-      icon: Zap,
-      title: 'Practical solutions',
-      text: 'Designed around real small business needs, not overbuilt enterprise fluff.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Secure by design',
-      text: 'Clean access, safer workflows, and better protection from the start.',
-    },
-    {
-      icon: Wrench,
-      title: 'Built to support',
-      text: 'Clear follow-up, troubleshooting, and improvements after launch.',
-    },
+    { key: 'practicalSolutions', icon: Zap },
+    { key: 'secureByDesign', icon: ShieldCheck },
+    { key: 'builtToSupport', icon: Wrench },
   ];
 
   return (
@@ -32,16 +23,15 @@ const HowOzonyWorks = () => {
           className="mb-12 text-center"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-            How We Work
+            {t('howOzonyWorks.eyebrow')}
           </p>
 
           <h2 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-5xl">
-            Practical IT, networking, and automation built around your business.
+            {t('howOzonyWorks.title')}
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-400">
-            Ozony Tech keeps the process clear: understand the issue, build the
-            right solution, secure it, and support it over time.
+            {t('howOzonyWorks.description')}
           </p>
         </motion.div>
 
@@ -58,7 +48,7 @@ const HowOzonyWorks = () => {
             sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px"
             width="1200"
             height="675"
-            alt="How Ozony Tech works process from assessment to support and optimization"
+            alt={t('howOzonyWorks.imageAlt')}
             className="h-full w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -71,7 +61,7 @@ const HowOzonyWorks = () => {
 
             return (
               <motion.div
-                key={point.title}
+                key={point.key}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
@@ -83,16 +73,16 @@ const HowOzonyWorks = () => {
                 </div>
 
                 <h3 className="text-lg font-semibold text-white">
-                  {point.title}
+                  {t(`howOzonyWorks.points.${point.key}.title`)}
                 </h3>
 
                 <p className="mt-3 text-sm leading-6 text-gray-400">
-                  {point.text}
+                  {t(`howOzonyWorks.points.${point.key}.text`)}
                 </p>
 
                 <div className="mt-5 flex items-center gap-2 text-sm text-blue-400">
                   <CheckCircle className="h-4 w-4" />
-                  <span>Built for small business outcomes</span>
+                  <span>{t('howOzonyWorks.outcome')}</span>
                 </div>
               </motion.div>
             );

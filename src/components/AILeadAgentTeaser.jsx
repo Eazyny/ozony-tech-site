@@ -1,46 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Bell,
-  Bot,
   CheckCircle,
   MessageSquare,
   Sparkles,
   Target,
   Zap,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/button';
 import SpotlightCard from '@/components/ui/spotlight-card';
 import StarBorder from '@/components/ui/star-border';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
 const smoothEase = [0.22, 1, 0.36, 1];
 
 const highlights = [
   {
     icon: Zap,
-    title: 'Instant response',
-    text: 'Respond to new inquiries before they go cold.',
+    key: 'instantResponse',
   },
   {
     icon: Target,
-    title: 'Smart qualification',
-    text: 'Ask the right intake questions automatically.',
+    key: 'smartQualification',
   },
   {
     icon: Bell,
-    title: 'Team alerts',
-    text: 'Send clean lead summaries to your team.',
+    key: 'teamAlerts',
   },
 ];
 
-const trustChips = [
-  'Website inquiry capture',
-  'AI qualification',
-  'Team alerts',
-  'After-hours coverage',
+const trustChipKeys = [
+  'websiteInquiryCapture',
+  'aiQualification',
+  'teamAlerts',
+  'afterHoursCoverage',
 ];
 
 const staggerContainer = {
@@ -137,6 +138,13 @@ const SecondaryCtaButton = ({ to, children }) => (
 );
 
 const AILeadAgentTeaser = () => {
+  const location = useLocation();
+  const { t } = useTranslation('home');
+
+  const language = getLanguageFromPath(location.pathname);
+  const aiLeadAgentPath = localizePath('/ai-lead-agent', language);
+  const aiLeadCapturePath = localizePath('/ai-agent-lead-capture', language);
+
   return (
     <section className="relative overflow-hidden py-24">
       <div className="pointer-events-none absolute inset-0">
@@ -148,26 +156,24 @@ const AILeadAgentTeaser = () => {
         <MotionReveal className="mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
             <Sparkles className="h-4 w-4" />
-            New Premium Service
+            {t('aiLeadTeaser.badge')}
           </div>
 
           <h2 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            AI Lead Response Agent
+            {t('aiLeadTeaser.title')}
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-400 md:text-xl">
-            Turn website inquiries into qualified opportunities with instant
-            response, automated intake, and team alerts. Built for businesses
-            that cannot afford to let hot leads sit unanswered.
+            {t('aiLeadTeaser.description')}
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-            <PrimaryCtaButton to="/ai-lead-agent">
-              Explore AI Lead Agent
+            <PrimaryCtaButton to={aiLeadAgentPath}>
+              {t('aiLeadTeaser.primaryCta')}
             </PrimaryCtaButton>
 
-            <SecondaryCtaButton to="/ai-agent-lead-capture">
-              View AI Lead Capture
+            <SecondaryCtaButton to={aiLeadCapturePath}>
+              {t('aiLeadTeaser.secondaryCta')}
             </SecondaryCtaButton>
           </div>
 
@@ -178,20 +184,20 @@ const AILeadAgentTeaser = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="mt-8 flex flex-wrap justify-center gap-3"
           >
-            {trustChips.map((chip) => (
+            {trustChipKeys.map((key) => (
               <motion.span
-                key={chip}
+                key={key}
                 variants={staggerItem}
                 className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur"
               >
-                {chip}
+                {t(`aiLeadTeaser.trustChips.${key}`)}
               </motion.span>
             ))}
           </motion.div>
         </MotionReveal>
 
         <MotionReveal delay={0.08} y={42} className="mt-14">
-          <Link to="/ai-lead-agent" className="group relative block">
+          <Link to={aiLeadAgentPath} className="group relative block">
             <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-70 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
             <SpotlightCard className="relative rounded-[1.75rem] border border-slate-700/60 bg-slate-900/50 p-2 shadow-lg shadow-blue-500/10 backdrop-blur-xl transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
@@ -202,7 +208,7 @@ const AILeadAgentTeaser = () => {
                   sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1280px) calc(100vw - 32px), 1200px"
                   width="1200"
                   height="675"
-                  alt="AI Lead Response Agent workflow showing website inquiry, AI qualification, and team alert"
+                  alt={t('aiLeadTeaser.imageAlt')}
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                   loading="lazy"
                   decoding="async"
@@ -225,7 +231,7 @@ const AILeadAgentTeaser = () => {
             return (
               <SpotlightCard
                 as={motion.div}
-                key={item.title}
+                key={item.key}
                 variants={staggerItem}
                 whileHover={{
                   y: -6,
@@ -238,11 +244,11 @@ const AILeadAgentTeaser = () => {
                 </div>
 
                 <h3 className="text-xl font-semibold text-white">
-                  {item.title}
+                  {t(`aiLeadTeaser.highlights.${item.key}.title`)}
                 </h3>
 
                 <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-gray-400">
-                  {item.text}
+                  {t(`aiLeadTeaser.highlights.${item.key}.text`)}
                 </p>
               </SpotlightCard>
             );
@@ -252,7 +258,7 @@ const AILeadAgentTeaser = () => {
         <MotionReveal delay={0.05} className="mt-8">
           <div className="mx-auto flex max-w-xl items-center justify-center gap-3 rounded-2xl border border-blue-400/15 bg-blue-500/10 px-5 py-4 text-center text-sm text-gray-300 backdrop-blur">
             <CheckCircle className="h-5 w-5 flex-none text-blue-400" />
-            <span>Capture, qualify, and alert your team instantly.</span>
+            <span>{t('aiLeadTeaser.footerNote')}</span>
           </div>
         </MotionReveal>
       </div>

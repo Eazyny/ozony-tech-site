@@ -5,117 +5,69 @@ import {
   Wifi,
   MapPin,
   Store,
-  Briefcase,
+  Briefcase
 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTemplate';
+import { getLanguageFromPath, localizePath } from '@/i18n/languageRoutes';
 
 const NetworkServicesNearMe = () => {
+  const location = useLocation();
+  const { t } = useTranslation('servicePages');
+  const language = getLanguageFromPath(location.pathname);
+  const localized = (path) => localizePath(path, language);
+  const base = 'networkServicesNearMe';
+
+  const outcomes = [
+    { icon: Network, title: t(`${base}.outcomes.0.title`), text: t(`${base}.outcomes.0.text`) },
+    { icon: Wifi, title: t(`${base}.outcomes.1.title`), text: t(`${base}.outcomes.1.text`) },
+    { icon: Shield, title: t(`${base}.outcomes.2.title`), text: t(`${base}.outcomes.2.text`) }
+  ];
+
+  const idealFor = [
+    { icon: Briefcase, title: t(`${base}.idealFor.0.title`), description: t(`${base}.idealFor.0.description`) },
+    { icon: Store, title: t(`${base}.idealFor.1.title`), description: t(`${base}.idealFor.1.description`) },
+    { icon: MapPin, title: t(`${base}.idealFor.2.title`), description: t(`${base}.idealFor.2.description`) }
+  ];
+
+  const relatedServices = [
+    { label: t(`relatedLabels.networkSetupNYC`), to: localized('/network-setup-nyc') },
+    { label: t(`relatedLabels.businessWifiNYC`), to: localized('/business-wifi-nyc') },
+    { label: t(`relatedLabels.firewallSetupNYC`), to: localized('/firewall-setup-nyc') },
+    { label: t(`relatedLabels.networkTroubleshootingNYC`), to: localized('/network-troubleshooting-nyc') },
+    { label: t(`relatedLabels.smallBusinessNetworkNYC`), to: localized('/small-business-network-nyc') }
+  ];
+
   return (
     <ServiceLandingTemplate
-      pageTitle="Local Network Services for Small Businesses | Ozony Tech"
-      pageDescription="Find local network services from Ozony Tech for small businesses across NYC, New Jersey, Connecticut, and nearby areas, including network setup, business Wi-Fi, firewall setup, and troubleshooting."
-      eyebrow="OZONY TECH · LOCAL NETWORK SERVICES"
-      title="Local Network Services for Small Businesses"
-      description="Looking for network services near your business? Ozony Tech helps small businesses find the right support path for Wi-Fi, connectivity, firewall setup, network troubleshooting, and cleaner business network structure."
+      pageTitle={t(`${base}.pageTitle`)}
+      pageDescription={t(`${base}.pageDescription`)}
+      canonicalPath="/network-services-near-me"
+      eyebrow={t(`${base}.eyebrow`)}
+      title={t(`${base}.title`)}
+      description={t(`${base}.description`)}
       heroImage="/images/services/network-setup-nyc.webp"
-      heroImageAlt="Local network services for small businesses"
+      heroImageAlt={t(`${base}.heroImageAlt`)}
       ogImage="/service_area_map.png"
       twitterImage="/service_area_map.png"
-      includeTitle="Local Network Services We Can Help With"
-      includeDescription="A practical overview of network support options for small businesses that need stronger connectivity, cleaner structure, better wireless performance, and more reliable day-to-day operations."
-      serviceIncludes={[
-        'Local business network setup and configuration',
-        'Business Wi-Fi planning and optimization',
-        'Firewall setup and traffic separation',
-        'Network troubleshooting and issue diagnosis',
-        'Printer, POS, and workstation connectivity support',
-        'Small business network planning for future growth',
-      ]}
-      outcomes={[
-        {
-          icon: Network,
-          title: 'The Right Network Service Path',
-          text: 'Use this page to find the right next step, whether your business needs network setup, Wi-Fi help, firewall setup, or troubleshooting.',
-        },
-        {
-          icon: Wifi,
-          title: 'Stronger Connectivity Options',
-          text: 'Explore support for Wi-Fi coverage, unstable connections, business devices, customer access, and everyday connectivity issues.',
-        },
-        {
-          icon: Shield,
-          title: 'Cleaner Network Control',
-          text: 'Find support options for better network organization, guest and staff separation, firewall planning, and more reliable business operations.',
-        },
-      ]}
-      industriesTitle="Built for Local Business Environments"
-      idealFor={[
-        {
-          title: 'Offices',
-          description:
-            'Reliable network services for teams, printers, phones, workstations, meetings, and shared office operations.',
-          icon: Briefcase,
-        },
-        {
-          title: 'Retail Stores',
-          description:
-            'Clean connectivity for POS systems, staff devices, guest Wi-Fi, and back-office workflows that need to stay online.',
-          icon: Store,
-        },
-        {
-          title: 'Businesses Searching for Nearby Help',
-          description:
-            'A practical option for small businesses looking for local network services and a clear support path when connectivity starts getting in the way.',
-          icon: MapPin,
-        },
-      ]}
-      midCtaEyebrow="Find the Right Network Service"
-      midCtaTitle="Choose the Best Network Support Path"
-      midCtaDescription="Whether you need hands-on NYC network setup, business Wi-Fi help, firewall setup, or troubleshooting, Ozony Tech can help you choose the right next step."
-      seoTitle="Local Network Services Near Your Small Business"
-      seoParagraphs={[
-        'Ozony Tech provides local network services for small businesses that need practical support with Wi-Fi, connectivity, firewall setup, troubleshooting, device connections, and cleaner business network organization. This page helps route businesses toward the right network service based on their needs.',
-        'Some businesses need a full network setup for a new office or location. Others need better Wi-Fi coverage, firewall planning, printer and POS connectivity, guest network separation, or troubleshooting for recurring network problems. The right service depends on what is actually slowing the business down.',
-        'Ozony Tech focuses on practical network support for real small business environments across NYC, New Jersey, Connecticut, and nearby areas. The goal is to reduce confusion, improve reliability, and help businesses get to the right network solution without unnecessary complexity.',
-      ]}
-      areasServed="Serving small businesses across NYC, New Jersey, Connecticut, and nearby areas."
-      faqItems={[
-        {
-          question: 'Does Ozony Tech provide local network services?',
-          answer:
-            'Yes. Ozony Tech provides local network services for small businesses across NYC, New Jersey, Connecticut, and nearby areas, depending on the type of support needed.',
-        },
-        {
-          question: 'What network services can Ozony Tech help with?',
-          answer:
-            'Ozony Tech can help with business network setup, business Wi-Fi planning, firewall setup, network troubleshooting, device connectivity, printer and POS connectivity, and general network cleanup.',
-        },
-        {
-          question: 'Is this the main NYC network setup page?',
-          answer:
-            'No. This page is a local network services discovery page. For businesses specifically looking for hands-on network setup in New York City, the Business Network Setup NYC page is the best place to start.',
-        },
-        {
-          question: 'Can Ozony Tech help with Wi-Fi and firewall issues too?',
-          answer:
-            'Yes. Ozony Tech can help with business Wi-Fi issues, firewall setup, traffic separation, connectivity problems, and network troubleshooting for small business environments.',
-        },
-      ]}
-      relatedServices={[
-        { label: 'Business Network Setup NYC', to: '/network-setup-nyc' },
-        { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
-        { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
-        {
-          label: 'Network Troubleshooting NYC',
-          to: '/network-troubleshooting-nyc',
-        },
-        {
-          label: 'Small Business Network Guide',
-          to: '/small-business-network-nyc',
-        },
-      ]}
-      finalTitle="Need Local Network Services for Your Business?"
-      finalDescription="Start with the network service that best matches your business need, or contact Ozony Tech for help choosing the right next step."
+      includeTitle={t(`${base}.includeTitle`)}
+      includeDescription={t(`${base}.includeDescription`)}
+      serviceIncludes={t(`${base}.serviceIncludes`, { returnObjects: true })}
+      outcomes={outcomes}
+      industriesTitle={t(`${base}.industriesTitle`)}
+      idealFor={idealFor.length ? idealFor : undefined}
+      midCtaEyebrow={t(`${base}.midCtaEyebrow`)}
+      midCtaTitle={t(`${base}.midCtaTitle`)}
+      midCtaDescription={t(`${base}.midCtaDescription`)}
+      seoTitle={t(`${base}.seoTitle`)}
+      seoParagraphs={t(`${base}.seoParagraphs`, { returnObjects: true })}
+      areasServed={t(`${base}.areasServed`)}
+      faqItems={t(`${base}.faqItems`, { returnObjects: true })}
+      relatedServices={relatedServices.length ? relatedServices : null}
+      finalTitle={t(`${base}.finalTitle`)}
+      finalDescription={t(`${base}.finalDescription`)}
     />
   );
 };

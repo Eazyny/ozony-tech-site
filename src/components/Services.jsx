@@ -1,76 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Building2, Network, Shield, Wrench } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SpotlightCard from '@/components/ui/spotlight-card';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
 const smoothEase = [0.22, 1, 0.36, 1];
 
 const serviceGroups = [
   {
     icon: Network,
-    title: 'Networking & Wi-Fi',
-    stack: ['Router & Switch Setup', 'Guest Wi-Fi', 'Segmentation'],
-    description:
-      'Build cleaner, more reliable connectivity for small businesses with practical network setup, Wi-Fi improvement, and better device organization.',
-    takeaways: [
-      'Small office network setup and layout',
-      'Guest and staff network separation',
-      'Coverage, performance, and connectivity troubleshooting',
-    ],
+    key: 'networking',
     href: '/network-setup-nyc',
-    linkLabel: 'Explore network setup',
   },
   {
     icon: Building2,
-    title: 'Device & Office Setup',
-    stack: ['Workstations', 'Printers', 'Shared Devices'],
-    description:
-      'Get offices, teams, and shared workspaces set up faster with consistent device configuration and practical day-to-day readiness.',
-    takeaways: [
-      'PC, printer, and office device setup',
-      'Shared workspace and new-user readiness',
-      'Basic Windows and macOS support',
-    ],
+    key: 'office',
     href: '/it-support-nyc',
-    linkLabel: 'Explore IT support',
   },
   {
     icon: Shield,
-    title: 'Shared Access & Security',
-    stack: ['Shared Files', 'Permissions', 'MFA', 'Accounts'],
-    description:
-      'Help teams work more efficiently and securely with cleaner shared access, better permissions, and simple business security essentials.',
-    takeaways: [
-      'Shared folder and access organization',
-      'User account setup and permission planning',
-      'MFA, update hygiene, and safer access practices',
-    ],
+    key: 'security',
     href: '/firewall-setup-nyc',
-    linkLabel: 'Explore firewall setup',
   },
   {
     icon: Wrench,
-    title: 'Support & Troubleshooting',
-    stack: ['Remote Support', 'Issue Triage', 'Troubleshooting'],
-    description:
-      'Keep day-to-day operations running smoothly with practical remote and on-site support for recurring IT problems and common office issues.',
-    takeaways: [
-      'Wi-Fi, device, and printer troubleshooting',
-      'Root-cause investigation and practical fixes',
-      'Remote assistance, follow-ups, and ongoing help',
-    ],
+    key: 'support',
     href: '/it-support-nyc',
-    linkLabel: 'Explore IT support',
   },
 ];
 
-const serviceChips = [
-  'Networking',
-  'Business Wi-Fi',
-  'Shared Access',
-  'Security',
-  'Troubleshooting',
+const serviceChipKeys = [
+  'networking',
+  'businessWifi',
+  'sharedAccess',
+  'security',
+  'troubleshooting',
 ];
 
 const getRevealOffset = (direction) => {
@@ -176,6 +145,11 @@ const cardContentItem = {
 };
 
 const Services = () => {
+  const location = useLocation();
+  const { t } = useTranslation('home');
+
+  const language = getLanguageFromPath(location.pathname);
+
   return (
     <section
       id="services"
@@ -190,17 +164,15 @@ const Services = () => {
       <div className="ozony-container-wide relative z-10">
         <MotionReveal className="mx-auto max-w-5xl text-center" direction="up">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-            Small Business IT Services
+            {t('services.eyebrow')}
           </p>
 
           <h2 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            Services Built for Small Business Needs
+            {t('services.title')}
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-400 md:text-xl">
-            Ozony Tech provides practical IT and network help for the everyday
-            needs small businesses face, from connectivity and device setup to
-            shared access, security, and ongoing support.
+            {t('services.description')}
           </p>
 
           <motion.div
@@ -210,9 +182,9 @@ const Services = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="mt-8 flex flex-wrap justify-center gap-3"
           >
-            {serviceChips.map((item) => (
+            {serviceChipKeys.map((key) => (
               <motion.span
-                key={item}
+                key={key}
                 variants={chipItem}
                 whileHover={{
                   y: -3,
@@ -221,13 +193,17 @@ const Services = () => {
                 }}
                 className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2 text-sm text-gray-300 backdrop-blur"
               >
-                {item}
+                {t(`services.chips.${key}`)}
               </motion.span>
             ))}
           </motion.div>
         </MotionReveal>
 
-        <MotionReveal delay={0.08} direction="left" className="mt-14 mx-auto max-w-[1200px] 2xl:max-w-[1460px]">
+        <MotionReveal
+          delay={0.08}
+          direction="left"
+          className="mt-14 mx-auto max-w-[1200px] 2xl:max-w-[1460px]"
+        >
           <div className="group relative">
             <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-70 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -239,7 +215,7 @@ const Services = () => {
                   sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1536px) calc(100vw - 64px), 1460px"
                   width="1200"
                   height="675"
-                  alt="Ozony Tech small business IT, networking, Wi-Fi, security, and support visual"
+                  alt={t('services.imageAlt')}
                   className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                   loading="lazy"
                   decoding="async"
@@ -252,11 +228,18 @@ const Services = () => {
         <div className="mt-10 grid gap-5 md:grid-cols-2 2xl:gap-7">
           {serviceGroups.map((group, index) => {
             const Icon = group.icon;
-            const direction = index % 2 === 0 ? 'diagonalRight' : 'diagonalLeft';
+            const direction =
+              index % 2 === 0 ? 'diagonalRight' : 'diagonalLeft';
+            const stack = t(`services.groups.${group.key}.stack`, {
+              returnObjects: true,
+            });
+            const takeaways = t(`services.groups.${group.key}.takeaways`, {
+              returnObjects: true,
+            });
 
             return (
               <MotionReveal
-                key={group.title}
+                key={group.key}
                 direction={direction}
                 delay={index * 0.045}
                 amount={0.18}
@@ -270,79 +253,83 @@ const Services = () => {
                 >
                   <SpotlightCard className="h-full rounded-3xl border border-slate-700/50 bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 hover:border-blue-500/50 hover:bg-slate-900/70">
                     <Link
-                      to={group.href}
+                      to={localizePath(group.href, language)}
                       className="group block h-full p-7 text-center"
                     >
-                    <motion.div
-                      variants={cardContentContainer}
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{ once: true, amount: 0.35 }}
-                    >
                       <motion.div
-                        variants={cardContentItem}
-                        className="mx-auto mb-5 inline-flex rounded-xl bg-blue-500/10 p-3"
+                        variants={cardContentContainer}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.35 }}
                       >
-                        <Icon className="h-7 w-7 text-blue-400" />
-                      </motion.div>
+                        <motion.div
+                          variants={cardContentItem}
+                          className="mx-auto mb-5 inline-flex rounded-xl bg-blue-500/10 p-3"
+                        >
+                          <Icon className="h-7 w-7 text-blue-400" />
+                        </motion.div>
 
-                      <motion.h3
-                        variants={cardContentItem}
-                        className="text-2xl font-semibold leading-tight text-white"
-                      >
-                        {group.title}
-                      </motion.h3>
+                        <motion.h3
+                          variants={cardContentItem}
+                          className="text-2xl font-semibold leading-tight text-white"
+                        >
+                          {t(`services.groups.${group.key}.title`)}
+                        </motion.h3>
 
-                      <motion.div
-                        variants={cardContentItem}
-                        className="mt-5 flex flex-wrap justify-center gap-2"
-                      >
-                        {group.stack.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-slate-700/50 bg-slate-800/80 px-3 py-1 text-sm text-gray-300"
-                          >
-                            {item}
+                        <motion.div
+                          variants={cardContentItem}
+                          className="mt-5 flex flex-wrap justify-center gap-2"
+                        >
+                          {Array.isArray(stack) &&
+                            stack.map((item) => (
+                              <span
+                                key={item}
+                                className="rounded-full border border-slate-700/50 bg-slate-800/80 px-3 py-1 text-sm text-gray-300"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                        </motion.div>
+
+                        <motion.p
+                          variants={cardContentItem}
+                          className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400"
+                        >
+                          {t(`services.groups.${group.key}.description`)}
+                        </motion.p>
+
+                        <motion.div
+                          variants={cardContentItem}
+                          className="mt-6 border-t border-slate-700/50 pt-5"
+                        >
+                          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
+                            {t('services.whatItCovers')}
+                          </p>
+
+                          <ul className="mx-auto max-w-md space-y-2 text-sm text-gray-400">
+                            {Array.isArray(takeaways) &&
+                              takeaways.map((item) => (
+                                <li
+                                  key={item}
+                                  className="flex items-start justify-center gap-2 text-left"
+                                >
+                                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-400" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                          </ul>
+                        </motion.div>
+
+                        <motion.div
+                          variants={cardContentItem}
+                          className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-400 transition-colors duration-200 group-hover:text-blue-300"
+                        >
+                          <span>
+                            {t(`services.groups.${group.key}.linkLabel`)}
                           </span>
-                        ))}
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                        </motion.div>
                       </motion.div>
-
-                      <motion.p
-                        variants={cardContentItem}
-                        className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400"
-                      >
-                        {group.description}
-                      </motion.p>
-
-                      <motion.div
-                        variants={cardContentItem}
-                        className="mt-6 border-t border-slate-700/50 pt-5"
-                      >
-                        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
-                          What it covers
-                        </p>
-
-                        <ul className="mx-auto max-w-md space-y-2 text-sm text-gray-400">
-                          {group.takeaways.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-start justify-center gap-2 text-left"
-                            >
-                              <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-400" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-
-                      <motion.div
-                        variants={cardContentItem}
-                        className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-400 transition-colors duration-200 group-hover:text-blue-300"
-                      >
-                        <span>{group.linkLabel}</span>
-                        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                      </motion.div>
-                    </motion.div>
                     </Link>
                   </SpotlightCard>
                 </motion.div>

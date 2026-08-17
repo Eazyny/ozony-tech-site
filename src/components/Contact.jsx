@@ -10,6 +10,7 @@ import {
   Twitter,
   CheckCircle2,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import DecodedText from '@/components/ui/decode-text';
@@ -53,6 +54,8 @@ function createSubmissionId() {
 }
 
 const Contact = () => {
+  const { t } = useTranslation('home');
+
   const [formData, setFormData] = useState({
     name: '',
     businessName: '',
@@ -65,7 +68,6 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const submissionIdRef = useRef(null);
 
   const handleSubmit = async (e) => {
@@ -73,7 +75,7 @@ const Contact = () => {
 
     if (!formData.name || !formData.email || !formData.urgency || !formData.message) {
       toast({
-        title: 'Please fill in all required fields',
+        title: t('contact.toasts.requiredFields'),
         variant: 'destructive',
       });
       return;
@@ -81,9 +83,8 @@ const Contact = () => {
 
     if (!formData.consentToContact) {
       toast({
-        title: 'Contact permission required',
-        description:
-          'Please confirm that Ozony Tech may contact you about your request.',
+        title: t('contact.toasts.permissionRequiredTitle'),
+        description: t('contact.toasts.permissionRequiredDescription'),
         variant: 'destructive',
       });
       return;
@@ -94,7 +95,6 @@ const Contact = () => {
     }
 
     const submissionId = submissionIdRef.current;
-
     setIsSubmitting(true);
 
     try {
@@ -124,14 +124,14 @@ const Contact = () => {
         const msg =
           data?.errors?.[0]?.message ||
           data?.error ||
-          'Something went wrong sending your message. Please try again.';
+          t('contact.toasts.sendErrorFallback');
 
         throw new Error(msg);
       }
 
       toast({
-        title: 'Inquiry sent successfully!',
-        description: "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
+        title: t('contact.toasts.successTitle'),
+        description: t('contact.toasts.successDescription'),
         icon: <CheckCircle2 className="h-4 w-4 text-emerald-300" />,
       });
 
@@ -149,8 +149,8 @@ const Contact = () => {
       });
     } catch (err) {
       toast({
-        title: 'Message failed to send',
-        description: err?.message || 'Please try again in a moment.',
+        title: t('contact.toasts.failureTitle'),
+        description: err?.message || t('contact.toasts.failureDescription'),
         variant: 'destructive',
       });
     } finally {
@@ -172,20 +172,20 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
+      label: t('contact.info.email'),
       value: 'contact@ozony.tech',
       href: 'mailto:contact@ozony.tech',
     },
     {
       icon: Phone,
-      label: 'Phone',
+      label: t('contact.info.phone'),
       value: '(347) 653-7655',
       href: 'tel:+13476537655',
     },
     {
       icon: MapPin,
-      label: 'Service Area',
-      value: 'New York City',
+      label: t('contact.info.serviceArea'),
+      value: t('contact.info.serviceAreaValue'),
       href: null,
     },
   ];
@@ -219,13 +219,11 @@ const Contact = () => {
           className="mb-16 text-center"
         >
           <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
-            Contact Ozony Tech
+            {t('contact.title')}
           </h2>
 
           <p className="mx-auto max-w-3xl text-lg text-gray-400">
-            Need help with Wi-Fi, networking, device setup, troubleshooting, or
-            general IT support? Send over a few details and let’s talk through
-            your business needs.
+            {t('contact.description')}
           </p>
         </motion.div>
 
@@ -239,7 +237,7 @@ const Contact = () => {
           >
             <SpotlightCard className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-8 backdrop-blur-sm">
               <h3 className="mb-6 text-2xl font-bold text-white">
-                Business Contact
+                {t('contact.businessContact')}
               </h3>
 
               <div className="space-y-6">
@@ -265,9 +263,7 @@ const Contact = () => {
                             {item.value}
                           </a>
                         ) : (
-                          <p className="font-medium text-white">
-                            {item.value}
-                          </p>
+                          <p className="font-medium text-white">{item.value}</p>
                         )}
                       </div>
                     </div>
@@ -277,7 +273,7 @@ const Contact = () => {
 
               <div className="mt-8 border-t border-slate-700/50 pt-8">
                 <p className="mb-4 text-sm text-gray-400">
-                  Connect online
+                  {t('contact.connectOnline')}
                 </p>
 
                 <div className="flex gap-4">
@@ -304,19 +300,18 @@ const Contact = () => {
             <SpotlightCard className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-6 backdrop-blur-sm">
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-white">
-                  Service Area
+                  {t('contact.serviceArea.title')}
                 </h3>
 
                 <p className="mt-2 max-w-lg text-sm leading-relaxed text-gray-400">
-                  Serving businesses across the Tri-State area, with nearby service
-                  availability based on project needs.
+                  {t('contact.serviceArea.description')}
                 </p>
               </div>
 
               <div className="relative h-[250px] overflow-hidden rounded-lg border border-slate-700/50 bg-slate-900/70 lg:h-[260px]">
                 <img
                   src="/service_area_map.png"
-                  alt="Ozony Tech service area map covering the Tri-State area"
+                  alt={t('contact.serviceArea.imageAlt')}
                   loading="lazy"
                   className="absolute left-1/2 top-1/2 h-full w-full min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.5] object-cover object-center"
                 />
@@ -337,13 +332,9 @@ const Contact = () => {
             >
               <div className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Name *
+                  <label htmlFor="name" className="mb-2 block font-medium text-white">
+                    {t('contact.form.nameLabel')}
                   </label>
-
                   <input
                     type="text"
                     id="name"
@@ -352,18 +343,14 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your name"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="businessName"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Business Name
+                  <label htmlFor="businessName" className="mb-2 block font-medium text-white">
+                    {t('contact.form.businessNameLabel')}
                   </label>
-
                   <input
                     type="text"
                     id="businessName"
@@ -371,18 +358,14 @@ const Contact = () => {
                     value={formData.businessName}
                     onChange={handleChange}
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your business or organization"
+                    placeholder={t('contact.form.businessNamePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Email *
+                  <label htmlFor="email" className="mb-2 block font-medium text-white">
+                    {t('contact.form.emailLabel')}
                   </label>
-
                   <input
                     type="email"
                     id="email"
@@ -396,13 +379,9 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Phone
+                  <label htmlFor="phone" className="mb-2 block font-medium text-white">
+                    {t('contact.form.phoneLabel')}
                   </label>
-
                   <input
                     type="tel"
                     id="phone"
@@ -410,18 +389,14 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Best callback number"
+                    placeholder={t('contact.form.phonePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="service"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Service Needed
+                  <label htmlFor="service" className="mb-2 block font-medium text-white">
+                    {t('contact.form.serviceLabel')}
                   </label>
-
                   <input
                     type="text"
                     id="service"
@@ -429,16 +404,13 @@ const Contact = () => {
                     value={formData.service}
                     onChange={handleChange}
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Wi-Fi, networking, setup, troubleshooting, etc."
+                    placeholder={t('contact.form.servicePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="urgency"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Urgency *
+                  <label htmlFor="urgency" className="mb-2 block font-medium text-white">
+                    {t('contact.form.urgencyLabel')}
                   </label>
 
                   <select
@@ -450,39 +422,31 @@ const Contact = () => {
                     className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="" disabled>
-                      Select urgency
+                      {t('contact.form.urgencyPlaceholder')}
                     </option>
-
                     <option value="Planning / not urgent">
-                      Planning / not urgent
+                      {t('contact.form.urgencyOptions.planning')}
                     </option>
-
                     <option value="This week">
-                      This week
+                      {t('contact.form.urgencyOptions.thisWeek')}
                     </option>
-
                     <option value="ASAP">
-                      ASAP
+                      {t('contact.form.urgencyOptions.asap')}
                     </option>
-
                     <option value="Emergency / business impacted">
-                      Emergency / business impacted
+                      {t('contact.form.urgencyOptions.emergency')}
                     </option>
                   </select>
 
                   <p className="mt-2 text-xs text-gray-500">
-                    This helps us prioritize urgent business-impacting issues.
+                    {t('contact.form.urgencyHelp')}
                   </p>
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block font-medium text-white"
-                  >
-                    Project Details *
+                  <label htmlFor="message" className="mb-2 block font-medium text-white">
+                    {t('contact.form.projectDetailsLabel')}
                   </label>
-
                   <textarea
                     id="message"
                     name="message"
@@ -491,15 +455,12 @@ const Contact = () => {
                     required
                     rows={6}
                     className="w-full resize-none rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Tell me about your setup, the issue you’re having, or the kind of help you need."
+                    placeholder={t('contact.form.projectDetailsPlaceholder')}
                   />
                 </div>
 
                 <div className="rounded-lg border border-slate-700/70 bg-slate-900/40 p-4">
-                  <label
-                    htmlFor="consentToContact"
-                    className="flex cursor-pointer items-start gap-3"
-                  >
+                  <label htmlFor="consentToContact" className="flex cursor-pointer items-start gap-3">
                     <input
                       type="checkbox"
                       id="consentToContact"
@@ -509,11 +470,8 @@ const Contact = () => {
                       required
                       className="mt-1 h-4 w-4 rounded border-slate-600 bg-slate-900 text-blue-600 focus:ring-2 focus:ring-blue-500"
                     />
-
                     <span className="text-sm leading-relaxed text-gray-300">
-                      I agree that Ozony Tech may contact me by phone, text, or
-                      email about my request. Calls may be recorded and
-                      summarized so the team can follow up accurately. *
+                      {t('contact.form.consent')}
                     </span>
                   </label>
                 </div>
@@ -526,13 +484,10 @@ const Contact = () => {
                   className="w-full border-0 bg-blue-600 py-6 text-base font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Send className="mr-2 h-5 w-5" />
-
                   {isSubmitting ? (
-                    'Sending...'
+                    t('contact.form.sending')
                   ) : (
-                    <DecodedText speed={12}>
-                      Send Inquiry
-                    </DecodedText>
+                    <DecodedText speed={12}>{t('contact.form.sendInquiry')}</DecodedText>
                   )}
                 </Button>
               </StarBorder>

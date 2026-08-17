@@ -1,18 +1,32 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Home, Package, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
 const SPRITE_URL =
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/15979/404-character-new.png';
 
 const NotFound = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { t } = useTranslation('notFound');
+
+  const language = getLanguageFromPath(location.pathname);
+
+  const homePath = localizePath('/', language);
+  const packagesPath = localizePath('/packages', language);
+  const contactPath = `${localizePath('/', language)}#contact`;
 
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Ozony Tech</title>
+        <title>{t('seo.title')}</title>
         <meta name="robots" content="noindex,follow" />
       </Helmet>
 
@@ -282,7 +296,7 @@ const NotFound = () => {
             preserveAspectRatio="xMidYMid slice"
             className="h-full w-full"
             role="img"
-            aria-label="Dark gradient background for the 404 page."
+            aria-label={t('backgroundAriaLabel')}
           >
             <defs>
               <linearGradient id="ozSkyOnly" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -323,27 +337,26 @@ const NotFound = () => {
         <div className="relative z-10 container mx-auto grid min-h-screen items-center gap-10 px-4 py-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,460px)] xl:gap-16">
           <div className="max-w-3xl">
             <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-blue-300">
-              404 • Not Found
+              {t('badge')}
             </div>
 
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-[0.95] text-white sm:text-5xl md:text-7xl">
-              This page wandered
+              {t('titleLine1')}
               <br />
-              off into the night.
+              {t('titleLine2')}
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 md:text-2xl">
-              The link may be broken, the page may have moved, or it may not exist
-              anymore. Either way, Ozony Tech is still online.
+              {t('description')}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/"
+                to={homePath}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-blue-700"
               >
                 <Home className="h-4 w-4" />
-                Back to Home
+                {t('backToHome')}
               </Link>
 
               <button
@@ -352,35 +365,42 @@ const NotFound = () => {
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/75 px-6 py-3.5 text-sm font-semibold text-slate-200 transition-all duration-200 hover:border-slate-600 hover:bg-slate-800"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Go Back
+                {t('goBack')}
               </button>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               <Link
-                to="/packages"
+                to={packagesPath}
                 className="rounded-2xl border border-slate-800 bg-slate-950/45 p-5 backdrop-blur-sm transition-all duration-200 hover:border-blue-500/30 hover:bg-slate-900/70"
               >
                 <div className="mb-3 inline-flex rounded-xl bg-blue-500/10 p-3">
                   <Package className="h-5 w-5 text-blue-400" />
                 </div>
-                <h2 className="text-lg font-semibold text-white">View Packages</h2>
+
+                <h2 className="text-lg font-semibold text-white">
+                  {t('packagesCard.title')}
+                </h2>
+
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                  Check the service tiers for business Wi-Fi, networking, firewall
-                  setup, and support.
+                  {t('packagesCard.description')}
                 </p>
               </Link>
 
               <Link
-                to="/#contact"
+                to={contactPath}
                 className="rounded-2xl border border-slate-800 bg-slate-950/45 p-5 backdrop-blur-sm transition-all duration-200 hover:border-blue-500/30 hover:bg-slate-900/70"
               >
                 <div className="mb-3 inline-flex rounded-xl bg-blue-500/10 p-3">
                   <Mail className="h-5 w-5 text-blue-400" />
                 </div>
-                <h2 className="text-lg font-semibold text-white">Contact Ozony Tech</h2>
+
+                <h2 className="text-lg font-semibold text-white">
+                  {t('contactCard.title')}
+                </h2>
+
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                  Need help fast? Jump back to the site and send over the details.
+                  {t('contactCard.description')}
                 </p>
               </Link>
             </div>

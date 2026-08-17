@@ -1,0 +1,247 @@
+{
+  "seo": {
+    "title": "AI Lead Response Agent for Small Businesses | Ozony Tech",
+    "description": "Ozony Tech builds AI Lead Response Agents that capture inquiries, qualify leads, notify your team instantly, and help small businesses follow up faster.",
+    "ogTitle": "AI Lead Response Agent | Ozony Tech",
+    "ogDescription": "Never let a hot lead go cold again. Ozony Tech builds AI lead response systems that help businesses respond instantly and qualify new opportunities.",
+    "ogImageAlt": "Ozony Tech AI Lead Response Agent service preview",
+    "twitterTitle": "AI Lead Response Agent | Ozony Tech",
+    "twitterDescription": "AI lead response systems that help businesses respond instantly, qualify leads, and notify their team."
+  },
+  "schema": {
+    "serviceName": "AI Lead Response Agent",
+    "serviceType": "AI Lead Response Automation",
+    "serviceDescription": "Custom AI Lead Response Agents for businesses that need faster follow-up, lead qualification, automated alerts, and better inquiry workflows.",
+    "home": "Home",
+    "breadcrumbName": "AI Lead Agent"
+  },
+  "hero": {
+    "badge": "Premium AI Service",
+    "title": "Never Let a Hot Lead Go Cold Again",
+    "description": "Ozony Tech builds AI Lead Response Agents that instantly capture new inquiries, ask the right qualifying questions, alert your team, and prepare a clean follow-up summary so you can respond faster.",
+    "notChatbotTitle": "This is not just a chatbot.",
+    "notChatbotText": "It is a custom lead response workflow built around your business, your services, and your follow-up process.",
+    "chips": {
+      "instantResponse": "Instant response",
+      "qualification": "Lead qualification",
+      "afterHours": "After-hours coverage",
+      "teamAlerts": "Team alerts"
+    }
+  },
+  "cta": {
+    "bookConsultation": "Book a Lead Response Consultation",
+    "seeWorkflow": "See the Workflow",
+    "findMissedLeads": "Find Out Where Leads Are Missed"
+  },
+  "images": {
+    "heroAlt": "AI Lead Response Agent dashboard showing lead capture, AI reply, lead qualification, and team alert workflow",
+    "workflowAlt": "AI Lead Agent workflow showing a lead coming in, the agent responding, qualification, team notification, and smarter follow-up",
+    "capabilitiesAlt": "AI Lead Agent capabilities visual showing instant lead capture, smart qualification, team alerts, after-hours coverage, custom business logic, and follow-up support"
+  },
+  "problem": {
+    "eyebrow": "Problem + Solution",
+    "title": "Slow follow-up costs money. Fast response creates opportunity.",
+    "description": "Most small businesses do not have a lead problem. They have a response problem. When someone reaches out and nobody responds quickly, that lead can move on to a competitor.",
+    "systemTitle": "What the system can do",
+    "systemText": "The agent responds immediately, collects useful context, and alerts your team while the customer is still interested.",
+    "capabilities": {
+      "websiteForms": "Respond to website form submissions",
+      "qualifyingQuestions": "Ask pre-approved qualifying questions",
+      "customerDetails": "Collect customer details and service context",
+      "urgentRouting": "Route urgent leads to the right person",
+      "instantAlerts": "Send instant alerts to your team",
+      "leadSummaries": "Create clean internal lead summaries",
+      "multichannel": "Support phone, SMS, and email workflows when appropriate",
+      "noMissedOpportunities": "Keep valuable opportunities from sitting unanswered"
+    }
+  },
+  "workflow": {
+    "eyebrow": "How It Works",
+    "title": "From cold form submission to active sales opportunity.",
+    "description": "Instead of waiting for someone to manually review the request, the agent starts the intake process and prepares your team with useful context.",
+    "questionsTitle": "The agent can ask questions like:",
+    "questions": {
+      "service": "What service do you need?",
+      "issue": "What issue are you experiencing?",
+      "location": "Where are you located?",
+      "urgency": "How urgent is the request?",
+      "contact": "What is the best number or email to reach you?",
+      "sameDay": "Do you need same-day service?"
+    },
+    "ctaEyebrow": "Need Faster Lead Response?",
+    "ctaTitle": "Turn new inquiries into organized opportunities before they go cold.",
+    "ctaDescription": "Ozony Tech can review your current lead process and map out where an AI Lead Response Agent would help."
+  },
+  "capabilities": {
+    "eyebrow": "What the Agent Can Handle",
+    "title": "Built to support real intake, not just answer basic questions.",
+    "description": "The agent supports the parts of lead response that slow teams down: intake, qualification, routing, alerts, and follow-up preparation.",
+    "features": {
+      "instantCapture": {
+        "title": "Instant Lead Capture",
+        "text": "Collect names, emails, phone numbers, service needs, locations, urgency, and custom details specific to your business."
+      },
+      "smartQualification": {
+        "title": "Smart Qualification",
+        "text": "Ask the questions your team normally asks before deciding how valuable, urgent, or ready a lead is."
+      },
+      "teamAlerts": {
+        "title": "Team Alerts",
+        "text": "Send clean summaries to the channels your team actually checks, including email, Discord, SMS, or another internal workflow."
+      },
+      "businessLogic": {
+        "title": "Custom Business Logic",
+        "text": "Follow rules based on location, service type, urgency, pricing range, lead quality, or the next step your team wants taken."
+      }
+    }
+  },
+  "businesses": {
+    "eyebrow": "Built for Service Businesses",
+    "title": "Ideal for businesses where fast response matters.",
+    "description": "If your business receives leads through website forms, phone calls, ads, referrals, or after-hours inquiries, this system can help capture more opportunities before they go cold.",
+    "fitTitle": "Strong fit for:",
+    "useCases": {
+      "websiteResponse": {
+        "title": "Website Form Response",
+        "text": "A customer fills out your website form and gets a fast approved response while your team receives a clean lead alert."
+      },
+      "afterHours": {
+        "title": "After-Hours Intake",
+        "text": "The agent collects important details overnight so your team starts the next day with qualified leads instead of cold form submissions."
+      },
+      "serviceQualification": {
+        "title": "Service Request Qualification",
+        "text": "The agent asks about the issue, location, urgency, and service needed before your team follows up."
+      },
+      "followUpPrep": {
+        "title": "Follow-Up Preparation",
+        "text": "Your team gets the context needed to respond faster, prioritize the lead, and sound more prepared."
+      }
+    },
+    "industries": {
+      "itProviders": "IT service providers",
+      "homeServices": "Home service companies",
+      "contractors": "Contractors",
+      "cleaning": "Cleaning companies",
+      "realEstate": "Real estate teams",
+      "medical": "Medical and wellness offices",
+      "repair": "Local repair businesses",
+      "consultants": "Consultants",
+      "agencies": "Agencies",
+      "appointmentBased": "Appointment-based businesses"
+    }
+  },
+  "custom": {
+    "eyebrow": "Custom Built",
+    "title": "Mapped around your business, your team, and your lead process.",
+    "description": "Ozony Tech does not install generic bots and walk away. The workflow is built around approved messaging, business rules, team alerts, and real follow-up needs.",
+    "buildTitle": "Custom built by Ozony Tech.",
+    "buildDescription": "We map the workflow around your current lead sources, delays, missed alerts, and intake process.",
+    "buildProcess": {
+      "mapSources": "Map where your leads currently come from",
+      "identifyDelays": "Identify delays, missed alerts, and weak intake points",
+      "createQuestions": "Create approved qualifying questions",
+      "writeMessaging": "Write approved response messaging",
+      "connectAlerts": "Connect alerts and delivery channels",
+      "testWorkflow": "Test the workflow before launch",
+      "refineSystem": "Refine the system after real lead activity"
+    },
+    "controlTitle": "You stay in control.",
+    "controlDescription": "The goal is not to replace your team. The goal is to help your team respond faster with better information.",
+    "controlRules": {
+      "agentCanSay": "What the agent can say",
+      "questionsToAsk": "Which questions it should ask",
+      "teamAlerts": "When your team should be alerted",
+      "urgentLeads": "Which leads need urgent attention",
+      "approvalMode": "Whether responses are automatic or human-reviewed"
+    }
+  },
+  "plans": {
+    "eyebrow": "Premium Service Options",
+    "title": "Custom quoted based on your workflow.",
+    "description": "Every AI Lead Agent is priced based on the complexity of your workflow, channels, automations, and integrations.",
+    "options": {
+      "starter": {
+        "eyebrow": "Starter",
+        "title": "Starter Lead Agent",
+        "text": "Best for businesses that need fast website form response, clean lead summaries, and internal team alerts.",
+        "items": [
+          "Website form intake workflow",
+          "Basic qualification questions",
+          "Email, Discord, or internal alert delivery",
+          "Clean lead summary for follow-up",
+          "Approved response messaging"
+        ]
+      },
+      "growth": {
+        "eyebrow": "Growth",
+        "title": "Growth Lead Agent",
+        "text": "Best for businesses that need advanced qualification, urgency handling, and stronger follow-up support.",
+        "items": [
+          "Everything in Starter",
+          "Multi-step intake flow",
+          "Lead routing rules",
+          "Urgency and priority scoring",
+          "Follow-up reminder support"
+        ]
+      },
+      "premium": {
+        "eyebrow": "Premium",
+        "title": "Premium AI Response System",
+        "text": "Best for businesses that want a complete automated intake system across multiple response channels.",
+        "items": [
+          "Everything in Growth",
+          "Consent-aware phone or SMS workflow options",
+          "Advanced business logic",
+          "Custom integrations",
+          "Deeper launch testing and refinement"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions businesses usually ask before building an AI lead agent.",
+    "description": "Clear answers before you book a consultation.",
+    "items": {
+      "chatbot": {
+        "question": "Is this just a chatbot?",
+        "answer": "No. A chatbot usually sits on a website and answers basic questions. An AI Lead Response Agent is designed to capture, qualify, and route leads as part of your business process."
+      },
+      "callLeads": {
+        "question": "Can the agent call leads?",
+        "answer": "Yes. Phone-based workflows can be included when appropriate, using approved messaging and consent-aware processes for your business."
+      },
+      "sms": {
+        "question": "Can it send text messages?",
+        "answer": "Yes. SMS workflows can be added when appropriate. Ozony Tech designs these around your workflow, approved messaging, and consent requirements for your industry and location."
+      },
+      "approveMessaging": {
+        "question": "Can I approve what the agent says?",
+        "answer": "Yes. The agent is built around approved messaging, approved qualifying questions, and clear business rules so you stay in control."
+      },
+      "afterHours": {
+        "question": "Can it work after hours?",
+        "answer": "Yes. After-hours response is one of the strongest use cases for this type of system."
+      },
+      "replaceTeam": {
+        "question": "Will this replace my team?",
+        "answer": "No. The goal is to help your team respond faster and spend less time on repetitive intake tasks."
+      },
+      "website": {
+        "question": "Can it connect to my website?",
+        "answer": "Yes. The agent can be connected to your website forms and lead capture points."
+      },
+      "pricing": {
+        "question": "How much does it cost?",
+        "answer": "Pricing depends on the complexity of the agent, the number of channels, and the integrations required. Ozony Tech offers custom quotes after reviewing your workflow."
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Ready to Stop Missing Leads?",
+    "title": "Your customers should not have to wait for your business to respond.",
+    "description": "Ozony Tech can build an AI Lead Response Agent that captures new opportunities, qualifies leads, and alerts your team instantly.",
+    "consultationLabel": "Custom workflow consultation"
+  }
+}

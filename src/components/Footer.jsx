@@ -7,44 +7,53 @@ import {
   Twitter,
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import {
+  getLanguageFromPath,
+  localizePath,
+  stripLanguagePrefix,
+} from '@/i18n/languageRoutes';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation('home');
   const [servicePagesOpen, setServicePagesOpen] = useState(false);
 
-  const isHomePage = location.pathname === '/';
+  const language = getLanguageFromPath(location.pathname);
+  const isHomePage = stripLanguagePrefix(location.pathname) === '/';
+  const homePath = localizePath('/', language);
 
   const footerLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Credentials', to: '/certifications' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', to: '/contact' },
-    { label: 'Packages', to: '/packages' },
-    { label: 'AI Lead Agent', to: '/ai-lead-agent' },
-    { label: 'Privacy Policy', to: '/privacy-policy' },
+    { key: 'services', href: '#services' },
+    { key: 'credentials', to: '/certifications' },
+    { key: 'about', href: '#about' },
+    { key: 'contact', to: '/contact' },
+    { key: 'packages', to: '/packages' },
+    { key: 'aiLeadAgent', to: '/ai-lead-agent' },
+    { key: 'privacyPolicy', to: '/privacy-policy' },
   ];
 
   const servicePageLinks = [
-    { label: 'AI Lead Capture', to: '/ai-agent-lead-capture' },
-    { label: 'Business Wi-Fi Connecticut', to: '/business-wifi-connecticut' },
-    { label: 'Business Wi-Fi NYC', to: '/business-wifi-nyc' },
-    { label: 'Firewall Setup Connecticut', to: '/firewall-setup-connecticut' },
-    { label: 'Firewall Setup NYC', to: '/firewall-setup-nyc' },
-    { label: 'IT Services Near Me', to: '/it-services-near-me' },
-    { label: 'IT Solutions', to: '/it-solutions' },
-    { label: 'IT Support', to: '/it-support' },
-    { label: 'IT Support Connecticut', to: '/it-support-connecticut' },
-    { label: 'IT Support NJ', to: '/it-support-nj' },
-    { label: 'IT Support NYC', to: '/it-support-nyc' },
-    { label: 'Managed IT Services', to: '/managed-it-services' },
-    { label: 'Network Services Near Me', to: '/network-services-near-me' },
-    { label: 'Network Setup Connecticut', to: '/network-setup-connecticut' },
-    { label: 'Network Setup NJ', to: '/network-setup-nj' },
-    { label: 'Network Setup NYC', to: '/network-setup-nyc' },
-    { label: 'Network Troubleshooting NYC', to: '/network-troubleshooting-nyc' },
-    { label: 'Small Business Network NYC', to: '/small-business-network-nyc' },
+    { key: 'aiLeadCapture', to: '/ai-agent-lead-capture' },
+    { key: 'businessWifiConnecticut', to: '/business-wifi-connecticut' },
+    { key: 'businessWifiNYC', to: '/business-wifi-nyc' },
+    { key: 'firewallSetupConnecticut', to: '/firewall-setup-connecticut' },
+    { key: 'firewallSetupNYC', to: '/firewall-setup-nyc' },
+    { key: 'itServicesNearMe', to: '/it-services-near-me' },
+    { key: 'itSolutions', to: '/it-solutions' },
+    { key: 'itSupport', to: '/it-support' },
+    { key: 'itSupportConnecticut', to: '/it-support-connecticut' },
+    { key: 'itSupportNJ', to: '/it-support-nj' },
+    { key: 'itSupportNYC', to: '/it-support-nyc' },
+    { key: 'managedITServices', to: '/managed-it-services' },
+    { key: 'networkServicesNearMe', to: '/network-services-near-me' },
+    { key: 'networkSetupConnecticut', to: '/network-setup-connecticut' },
+    { key: 'networkSetupNJ', to: '/network-setup-nj' },
+    { key: 'networkSetupNYC', to: '/network-setup-nyc' },
+    { key: 'networkTroubleshootingNYC', to: '/network-troubleshooting-nyc' },
+    { key: 'smallBusinessNetworkNYC', to: '/small-business-network-nyc' },
   ];
 
   const socialLinks = [
@@ -73,13 +82,15 @@ const Footer = () => {
   const goToSection = (href) => {
     if (isHomePage) {
       const element = document.querySelector(href);
+
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+
       return;
     }
 
-    navigate(`/${href}`);
+    navigate(`${homePath}${href}`);
   };
 
   const handleBrandClick = () => {
@@ -88,8 +99,10 @@ const Footer = () => {
       return;
     }
 
-    navigate('/');
+    navigate(homePath);
   };
+
+  const getLocalizedPath = (path) => localizePath(path, language);
 
   return (
     <footer className="border-t border-slate-800 bg-slate-900/50 px-4 py-14">
@@ -101,7 +114,7 @@ const Footer = () => {
                 type="button"
                 onClick={handleBrandClick}
                 className="flex items-start gap-4 text-left text-gray-400 transition-colors hover:text-gray-200"
-                aria-label="Go to homepage"
+                aria-label={t('footer.goHome')}
               >
                 <span
                   className="oz-logo-wrap mt-1 scale-[1.12] transform"
@@ -115,15 +128,13 @@ const Footer = () => {
                     Ozony Tech
                   </span>
                   <span className="mt-2 text-base text-gray-400">
-                    IT &amp; Network Solutions for Small Businesses
+                    {t('footer.tagline')}
                   </span>
                 </div>
               </button>
 
               <p className="mt-6 max-w-xl text-[15px] leading-8 text-gray-500">
-                Practical networking, Wi-Fi, firewall, small business IT support,
-                and managed services built to keep local teams connected, secure,
-                and ready to grow.
+                {t('footer.description')}
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -149,27 +160,27 @@ const Footer = () => {
             <div className="grid gap-10 sm:grid-cols-[160px_minmax(220px,1fr)] lg:pt-1">
               <div>
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-gray-300">
-                  Navigate
+                  {t('footer.navigate')}
                 </h3>
 
                 <div className="flex flex-col gap-4">
                   {footerLinks.map((link) =>
                     link.to ? (
                       <Link
-                        key={link.label}
-                        to={link.to}
+                        key={link.key}
+                        to={getLocalizedPath(link.to)}
                         className="text-[15px] text-gray-400 transition-colors hover:text-white"
                       >
-                        {link.label}
+                        {t(`footer.links.${link.key}`)}
                       </Link>
                     ) : (
                       <button
-                        key={link.label}
+                        key={link.key}
                         type="button"
                         onClick={() => goToSection(link.href)}
                         className="text-left text-[15px] text-gray-400 transition-colors hover:text-white"
                       >
-                        {link.label}
+                        {t(`footer.links.${link.key}`)}
                       </button>
                     )
                   )}
@@ -178,7 +189,7 @@ const Footer = () => {
 
               <div>
                 <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
-                  Get in Touch
+                  {t('footer.getInTouch')}
                 </h4>
 
                 <div className="flex flex-col gap-4">
@@ -198,10 +209,10 @@ const Footer = () => {
 
                   <button
                     type="button"
-                    onClick={() => navigate('/contact')}
+                    onClick={() => navigate(getLocalizedPath('/contact'))}
                     className="inline-flex w-fit items-center rounded-full border border-slate-800 bg-slate-950/40 px-4 py-2 text-sm text-gray-400 transition-all hover:border-slate-700 hover:text-white"
                   >
-                    Get a Quote
+                    {t('footer.getQuote')}
                   </button>
                 </div>
               </div>
@@ -211,7 +222,7 @@ const Footer = () => {
           <div className="border-t border-slate-800 pt-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <p className="text-sm text-gray-500">
-                © {currentYear} Ozony Tech. All rights reserved.
+                © {currentYear} Ozony Tech. {t('footer.allRightsReserved')}
               </p>
 
               <div className="flex w-full max-w-4xl flex-col gap-4 lg:items-end">
@@ -223,7 +234,7 @@ const Footer = () => {
                     aria-expanded={servicePagesOpen}
                     aria-controls="footer-service-pages"
                   >
-                    <span>Service Pages</span>
+                    <span>{t('footer.servicePages')}</span>
                     <ChevronDown
                       size={14}
                       className={`transition-transform duration-200 ${
@@ -234,7 +245,7 @@ const Footer = () => {
                   </button>
 
                   <p className="text-sm text-gray-500">
-                    Serving CT, PA, NJ, and NY/NYC businesses.
+                    {t('footer.servingAreas')}
                   </p>
                 </div>
 
@@ -251,11 +262,11 @@ const Footer = () => {
                     <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
                       {servicePageLinks.map((link) => (
                         <Link
-                          key={link.label}
-                          to={link.to}
+                          key={link.key}
+                          to={getLocalizedPath(link.to)}
                           className="text-sm leading-6 text-gray-500 transition-colors hover:text-white"
                         >
-                          {link.label}
+                          {t(`footer.serviceLinks.${link.key}`)}
                         </Link>
                       ))}
                     </div>

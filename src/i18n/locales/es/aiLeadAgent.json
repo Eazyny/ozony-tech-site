@@ -1,0 +1,247 @@
+{
+  "seo": {
+    "title": "Agente de Respuesta a Leads con IA para Pequeñas Empresas | Ozony Tech",
+    "description": "Ozony Tech crea Agentes de Respuesta a Leads con IA que capturan consultas, califican leads, alertan a tu equipo y ayudan a pequeñas empresas a responder más rápido.",
+    "ogTitle": "Agente de Respuesta a Leads con IA | Ozony Tech",
+    "ogDescription": "Evita que un lead interesado se enfríe. Ozony Tech crea sistemas de respuesta con IA que ayudan a los negocios a responder al instante y calificar nuevas oportunidades.",
+    "ogImageAlt": "Vista previa del servicio de Agente de Respuesta a Leads con IA de Ozony Tech",
+    "twitterTitle": "Agente de Respuesta a Leads con IA | Ozony Tech",
+    "twitterDescription": "Sistemas de respuesta a leads con IA que ayudan a los negocios a responder al instante, calificar leads y alertar a su equipo."
+  },
+  "schema": {
+    "serviceName": "Agente de Respuesta a Leads con IA",
+    "serviceType": "Automatización de Respuesta a Leads con IA",
+    "serviceDescription": "Agentes personalizados de Respuesta a Leads con IA para negocios que necesitan seguimiento más rápido, calificación de leads, alertas automatizadas y mejores flujos de consultas.",
+    "home": "Inicio",
+    "breadcrumbName": "Agente de Leads con IA"
+  },
+  "hero": {
+    "badge": "Servicio Premium de IA",
+    "title": "No Dejes Que un Lead Interesado Se Enfríe",
+    "description": "Ozony Tech crea Agentes de Respuesta a Leads con IA que capturan nuevas consultas al instante, hacen las preguntas correctas de calificación, alertan a tu equipo y preparan un resumen claro para que puedas responder más rápido.",
+    "notChatbotTitle": "Esto no es simplemente un chatbot.",
+    "notChatbotText": "Es un flujo personalizado de respuesta a leads construido alrededor de tu negocio, tus servicios y tu proceso de seguimiento.",
+    "chips": {
+      "instantResponse": "Respuesta instantánea",
+      "qualification": "Calificación de leads",
+      "afterHours": "Cobertura fuera de horario",
+      "teamAlerts": "Alertas al equipo"
+    }
+  },
+  "cta": {
+    "bookConsultation": "Reservar Consulta de Respuesta a Leads",
+    "seeWorkflow": "Ver el Flujo",
+    "findMissedLeads": "Descubrir Dónde Se Pierden Leads"
+  },
+  "images": {
+    "heroAlt": "Panel del Agente de Respuesta a Leads con IA mostrando captura, respuesta con IA, calificación y alerta al equipo",
+    "workflowAlt": "Flujo del Agente de Leads con IA mostrando la entrada de un lead, respuesta del agente, calificación, notificación al equipo y seguimiento inteligente",
+    "capabilitiesAlt": "Visual de capacidades del Agente de Leads con IA mostrando captura instantánea, calificación inteligente, alertas, cobertura fuera de horario, lógica personalizada y soporte de seguimiento"
+  },
+  "problem": {
+    "eyebrow": "Problema + Solución",
+    "title": "Responder tarde cuesta dinero. Responder rápido crea oportunidades.",
+    "description": "Muchas pequeñas empresas no tienen un problema de leads. Tienen un problema de respuesta. Cuando alguien se comunica y nadie responde rápido, ese lead puede irse con un competidor.",
+    "systemTitle": "Lo que puede hacer el sistema",
+    "systemText": "El agente responde de inmediato, recopila contexto útil y alerta a tu equipo mientras el cliente todavía está interesado.",
+    "capabilities": {
+      "websiteForms": "Responder a formularios enviados desde tu sitio web",
+      "qualifyingQuestions": "Hacer preguntas de calificación previamente aprobadas",
+      "customerDetails": "Recopilar datos del cliente y contexto del servicio",
+      "urgentRouting": "Dirigir leads urgentes a la persona correcta",
+      "instantAlerts": "Enviar alertas instantáneas a tu equipo",
+      "leadSummaries": "Crear resúmenes internos claros de cada lead",
+      "multichannel": "Compatible con flujos por teléfono, SMS y correo cuando sea apropiado",
+      "noMissedOpportunities": "Evitar que oportunidades valiosas queden sin respuesta"
+    }
+  },
+  "workflow": {
+    "eyebrow": "Cómo Funciona",
+    "title": "De un formulario frío a una oportunidad activa de ventas.",
+    "description": "En lugar de esperar a que alguien revise manualmente la solicitud, el agente comienza el proceso de recopilación y prepara a tu equipo con contexto útil.",
+    "questionsTitle": "El agente puede hacer preguntas como:",
+    "questions": {
+      "service": "¿Qué servicio necesitas?",
+      "issue": "¿Qué problema estás experimentando?",
+      "location": "¿Dónde estás ubicado?",
+      "urgency": "¿Qué tan urgente es la solicitud?",
+      "contact": "¿Cuál es el mejor teléfono o correo para contactarte?",
+      "sameDay": "¿Necesitas servicio el mismo día?"
+    },
+    "ctaEyebrow": "¿Necesitas Responder Más Rápido?",
+    "ctaTitle": "Convierte nuevas consultas en oportunidades organizadas antes de que se enfríen.",
+    "ctaDescription": "Ozony Tech puede revisar tu proceso actual de leads y definir dónde un Agente de Respuesta a Leads con IA puede ayudarte."
+  },
+  "capabilities": {
+    "eyebrow": "Lo Que Puede Manejar el Agente",
+    "title": "Diseñado para apoyar la captación real, no solo responder preguntas básicas.",
+    "description": "El agente ayuda con las partes del proceso que más retrasan a los equipos: captación, calificación, enrutamiento, alertas y preparación del seguimiento.",
+    "features": {
+      "instantCapture": {
+        "title": "Captura Instantánea de Leads",
+        "text": "Recopila nombres, correos, teléfonos, servicios solicitados, ubicaciones, urgencia y detalles personalizados de tu negocio."
+      },
+      "smartQualification": {
+        "title": "Calificación Inteligente",
+        "text": "Hace las preguntas que tu equipo normalmente haría antes de decidir qué tan valioso, urgente o listo está un lead."
+      },
+      "teamAlerts": {
+        "title": "Alertas al Equipo",
+        "text": "Envía resúmenes claros a los canales que tu equipo realmente revisa, incluyendo correo, Discord, SMS u otro flujo interno."
+      },
+      "businessLogic": {
+        "title": "Lógica Personalizada del Negocio",
+        "text": "Sigue reglas basadas en ubicación, tipo de servicio, urgencia, rango de precios, calidad del lead o el siguiente paso que tu equipo quiera tomar."
+      }
+    }
+  },
+  "businesses": {
+    "eyebrow": "Diseñado para Negocios de Servicios",
+    "title": "Ideal para negocios donde responder rápido importa.",
+    "description": "Si tu negocio recibe leads por formularios web, llamadas, anuncios, referidos o consultas fuera de horario, este sistema puede ayudarte a capturar más oportunidades antes de que se enfríen.",
+    "fitTitle": "Ideal para:",
+    "useCases": {
+      "websiteResponse": {
+        "title": "Respuesta a Formularios Web",
+        "text": "Un cliente llena tu formulario y recibe una respuesta aprobada rápidamente mientras tu equipo recibe una alerta clara del lead."
+      },
+      "afterHours": {
+        "title": "Captación Fuera de Horario",
+        "text": "El agente recopila detalles importantes durante la noche para que tu equipo comience el día con leads calificados en lugar de formularios fríos."
+      },
+      "serviceQualification": {
+        "title": "Calificación de Solicitudes",
+        "text": "El agente pregunta por el problema, ubicación, urgencia y servicio necesario antes de que tu equipo haga seguimiento."
+      },
+      "followUpPrep": {
+        "title": "Preparación del Seguimiento",
+        "text": "Tu equipo recibe el contexto necesario para responder más rápido, priorizar el lead y llegar mejor preparado."
+      }
+    },
+    "industries": {
+      "itProviders": "Proveedores de servicios de TI",
+      "homeServices": "Empresas de servicios para el hogar",
+      "contractors": "Contratistas",
+      "cleaning": "Empresas de limpieza",
+      "realEstate": "Equipos inmobiliarios",
+      "medical": "Consultorios médicos y de bienestar",
+      "repair": "Negocios locales de reparación",
+      "consultants": "Consultores",
+      "agencies": "Agencias",
+      "appointmentBased": "Negocios basados en citas"
+    }
+  },
+  "custom": {
+    "eyebrow": "Construido a la Medida",
+    "title": "Diseñado alrededor de tu negocio, tu equipo y tu proceso de leads.",
+    "description": "Ozony Tech no instala bots genéricos y desaparece. El flujo se construye alrededor de mensajes aprobados, reglas del negocio, alertas al equipo y necesidades reales de seguimiento.",
+    "buildTitle": "Construido a la medida por Ozony Tech.",
+    "buildDescription": "Diseñamos el flujo alrededor de tus fuentes actuales de leads, retrasos, alertas perdidas y proceso de captación.",
+    "buildProcess": {
+      "mapSources": "Mapear de dónde provienen actualmente tus leads",
+      "identifyDelays": "Identificar retrasos, alertas perdidas y puntos débiles de captación",
+      "createQuestions": "Crear preguntas de calificación aprobadas",
+      "writeMessaging": "Redactar mensajes de respuesta aprobados",
+      "connectAlerts": "Conectar alertas y canales de entrega",
+      "testWorkflow": "Probar el flujo antes del lanzamiento",
+      "refineSystem": "Refinar el sistema después de actividad real de leads"
+    },
+    "controlTitle": "Tú mantienes el control.",
+    "controlDescription": "El objetivo no es reemplazar a tu equipo. Es ayudarlo a responder más rápido con mejor información.",
+    "controlRules": {
+      "agentCanSay": "Qué puede decir el agente",
+      "questionsToAsk": "Qué preguntas debe hacer",
+      "teamAlerts": "Cuándo debe alertarse a tu equipo",
+      "urgentLeads": "Qué leads necesitan atención urgente",
+      "approvalMode": "Si las respuestas son automáticas o revisadas por una persona"
+    }
+  },
+  "plans": {
+    "eyebrow": "Opciones de Servicio Premium",
+    "title": "Cotización personalizada según tu flujo.",
+    "description": "Cada Agente de Leads con IA se cotiza según la complejidad del flujo, canales, automatizaciones e integraciones.",
+    "options": {
+      "starter": {
+        "eyebrow": "Inicial",
+        "title": "Agente de Leads Inicial",
+        "text": "Ideal para negocios que necesitan respuesta rápida a formularios web, resúmenes claros y alertas internas al equipo.",
+        "items": [
+          "Flujo de captación desde formularios web",
+          "Preguntas básicas de calificación",
+          "Entrega de alertas por correo, Discord o canales internos",
+          "Resumen claro del lead para seguimiento",
+          "Mensajes de respuesta aprobados"
+        ]
+      },
+      "growth": {
+        "eyebrow": "Crecimiento",
+        "title": "Agente de Leads Growth",
+        "text": "Ideal para negocios que necesitan calificación avanzada, manejo de urgencia y mejor soporte de seguimiento.",
+        "items": [
+          "Todo lo incluido en Inicial",
+          "Flujo de captación de varios pasos",
+          "Reglas de enrutamiento de leads",
+          "Puntuación de urgencia y prioridad",
+          "Soporte de recordatorios de seguimiento"
+        ]
+      },
+      "premium": {
+        "eyebrow": "Premium",
+        "title": "Sistema Premium de Respuesta con IA",
+        "text": "Ideal para negocios que quieren un sistema completo de captación automatizada en múltiples canales.",
+        "items": [
+          "Todo lo incluido en Growth",
+          "Opciones de flujos por teléfono o SMS con consentimiento",
+          "Lógica empresarial avanzada",
+          "Integraciones personalizadas",
+          "Pruebas de lanzamiento y refinamiento más profundo"
+        ]
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas Frecuentes",
+    "title": "Preguntas que los negocios suelen hacer antes de crear un agente de leads con IA.",
+    "description": "Respuestas claras antes de reservar una consulta.",
+    "items": {
+      "chatbot": {
+        "question": "¿Esto es simplemente un chatbot?",
+        "answer": "No. Un chatbot normalmente vive en un sitio web y responde preguntas básicas. Un Agente de Respuesta a Leads con IA está diseñado para capturar, calificar y dirigir leads como parte del proceso de tu negocio."
+      },
+      "callLeads": {
+        "question": "¿El agente puede llamar a los leads?",
+        "answer": "Sí. Se pueden incluir flujos por teléfono cuando sea apropiado, usando mensajes aprobados y procesos que tengan en cuenta el consentimiento."
+      },
+      "sms": {
+        "question": "¿Puede enviar mensajes de texto?",
+        "answer": "Sí. Se pueden agregar flujos por SMS cuando sea apropiado. Ozony Tech los diseña alrededor de tu proceso, mensajes aprobados y requisitos de consentimiento según tu industria y ubicación."
+      },
+      "approveMessaging": {
+        "question": "¿Puedo aprobar lo que dice el agente?",
+        "answer": "Sí. El agente se construye alrededor de mensajes aprobados, preguntas de calificación aprobadas y reglas claras del negocio para que mantengas el control."
+      },
+      "afterHours": {
+        "question": "¿Puede trabajar fuera de horario?",
+        "answer": "Sí. La respuesta fuera de horario es uno de los casos de uso más fuertes para este tipo de sistema."
+      },
+      "replaceTeam": {
+        "question": "¿Esto reemplazará a mi equipo?",
+        "answer": "No. El objetivo es ayudar a tu equipo a responder más rápido y dedicar menos tiempo a tareas repetitivas de captación."
+      },
+      "website": {
+        "question": "¿Puede conectarse a mi sitio web?",
+        "answer": "Sí. El agente puede conectarse a tus formularios web y puntos de captura de leads."
+      },
+      "pricing": {
+        "question": "¿Cuánto cuesta?",
+        "answer": "El precio depende de la complejidad del agente, la cantidad de canales y las integraciones requeridas. Ozony Tech ofrece cotizaciones personalizadas después de revisar tu flujo."
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "¿Listo para Dejar de Perder Leads?",
+    "title": "Tus clientes no deberían tener que esperar para recibir una respuesta de tu negocio.",
+    "description": "Ozony Tech puede crear un Agente de Respuesta a Leads con IA que capture nuevas oportunidades, califique leads y alerte a tu equipo al instante.",
+    "consultationLabel": "Consulta de flujo personalizado"
+  }
+}

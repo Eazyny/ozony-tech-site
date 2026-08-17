@@ -1,0 +1,311 @@
+{
+  "hero": {
+    "eyebrow": "Small Business IT Solutions",
+    "titleLineOne": "IT & Networking.",
+    "titleLineTwoMobile": "Built for Small",
+    "titleLineThreeMobile": "Business.",
+    "titleLineTwoTablet": "Built for Small",
+    "titleLineThreeTablet": "Business.",
+    "titleLineDesktop": "Built for Small Business.",
+    "description": "Reliable Wi-Fi, secure networking, support, and practical IT solutions that help your business stay connected and productive.",
+    "requestQuote": "Request a Quote",
+    "viewServices": "View Services"
+  },
+  "services": {
+    "eyebrow": "Small Business IT Services",
+    "title": "Services Built for Small Business Needs",
+    "description": "Ozony Tech provides practical IT and network help for the everyday needs small businesses face, from connectivity and device setup to shared access, security, and ongoing support.",
+    "imageAlt": "Ozony Tech small business IT, networking, Wi-Fi, security, and support visual",
+    "whatItCovers": "What it covers",
+    "chips": {
+      "networking": "Networking",
+      "businessWifi": "Business Wi-Fi",
+      "sharedAccess": "Shared Access",
+      "security": "Security",
+      "troubleshooting": "Troubleshooting"
+    },
+    "groups": {
+      "networking": {
+        "title": "Networking & Wi-Fi",
+        "stack": [
+          "Router & Switch Setup",
+          "Guest Wi-Fi",
+          "Segmentation"
+        ],
+        "description": "Build cleaner, more reliable connectivity for small businesses with practical network setup, Wi-Fi improvement, and better device organization.",
+        "takeaways": [
+          "Small office network setup and layout",
+          "Guest and staff network separation",
+          "Coverage, performance, and connectivity troubleshooting"
+        ],
+        "linkLabel": "Explore network setup"
+      },
+      "office": {
+        "title": "Device & Office Setup",
+        "stack": [
+          "Workstations",
+          "Printers",
+          "Shared Devices"
+        ],
+        "description": "Get offices, teams, and shared workspaces set up faster with consistent device configuration and practical day-to-day readiness.",
+        "takeaways": [
+          "PC, printer, and office device setup",
+          "Shared workspace and new-user readiness",
+          "Basic Windows and macOS support"
+        ],
+        "linkLabel": "Explore IT support"
+      },
+      "security": {
+        "title": "Shared Access & Security",
+        "stack": [
+          "Shared Files",
+          "Permissions",
+          "MFA",
+          "Accounts"
+        ],
+        "description": "Help teams work more efficiently and securely with cleaner shared access, better permissions, and simple business security essentials.",
+        "takeaways": [
+          "Shared folder and access organization",
+          "User account setup and permission planning",
+          "MFA, update hygiene, and safer access practices"
+        ],
+        "linkLabel": "Explore firewall setup"
+      },
+      "support": {
+        "title": "Support & Troubleshooting",
+        "stack": [
+          "Remote Support",
+          "Issue Triage",
+          "Troubleshooting"
+        ],
+        "description": "Keep day-to-day operations running smoothly with practical remote and on-site support for recurring IT problems and common office issues.",
+        "takeaways": [
+          "Wi-Fi, device, and printer troubleshooting",
+          "Root-cause investigation and practical fixes",
+          "Remote assistance, follow-ups, and ongoing help"
+        ],
+        "linkLabel": "Explore IT support"
+      }
+    }
+  },
+  "aiLeadTeaser": {
+    "badge": "New Premium Service",
+    "title": "AI Lead Response Agent",
+    "description": "Turn website inquiries into qualified opportunities with instant response, automated intake, and team alerts. Built for businesses that cannot afford to let hot leads sit unanswered.",
+    "primaryCta": "Explore AI Lead Agent",
+    "secondaryCta": "View AI Lead Capture",
+    "imageAlt": "AI Lead Response Agent workflow showing website inquiry, AI qualification, and team alert",
+    "footerNote": "Capture, qualify, and alert your team instantly.",
+    "trustChips": {
+      "websiteInquiryCapture": "Website inquiry capture",
+      "aiQualification": "AI qualification",
+      "teamAlerts": "Team alerts",
+      "afterHoursCoverage": "After-hours coverage"
+    },
+    "highlights": {
+      "instantResponse": {
+        "title": "Instant response",
+        "text": "Respond to new inquiries before they go cold."
+      },
+      "smartQualification": {
+        "title": "Smart qualification",
+        "text": "Ask the right intake questions automatically."
+      },
+      "teamAlerts": {
+        "title": "Team alerts",
+        "text": "Send clean lead summaries to your team."
+      }
+    }
+  },
+  "about": {
+    "title": "About Ozony Tech",
+    "description": "A modern IT solutions business focused on helping small businesses stay connected, secure, and supported with practical technology that works in the real world.",
+    "whyOzony": {
+      "eyebrow": "Why Ozony Tech",
+      "title": "Practical IT help built around real small business needs",
+      "description": "Ozony Tech focuses on reliable networking, cleaner device setup, practical security, and day-to-day support that helps small businesses run with less friction."
+    },
+    "quickPoints": {
+      "smallBusinessFocused": "Small-business focused",
+      "practicalModernSetups": "Practical modern setups",
+      "clearCommunication": "Clear communication",
+      "reliableSupport": "Reliable support"
+    },
+    "items": {
+      "smallBusiness": {
+        "title": "Built for Small Business",
+        "subtitle": "Practical IT support with a modern approach",
+        "description": "Ozony Tech helps small businesses get reliable, straightforward IT and network support without unnecessary complexity.",
+        "points": [
+          "Small-business friendly support",
+          "Clear communication without jargon",
+          "Clean, practical solutions"
+        ]
+      },
+      "howWeWork": {
+        "title": "How We Work",
+        "subtitle": "Troubleshoot first, then build smarter",
+        "description": "We start by understanding the real problem, then recommend and implement practical solutions that improve usability and reliability.",
+        "points": [
+          "Identify the root issue first",
+          "Recommend practical next steps",
+          "Support testing and follow-through"
+        ]
+      },
+      "priorities": {
+        "title": "What We Prioritize",
+        "subtitle": "Reliable, secure, and easy to manage",
+        "description": "The goal is not just to install technology, but to make it work better for the business behind it every day.",
+        "points": [
+          "Reliable Wi-Fi and stable performance",
+          "Cleaner segmentation and security basics",
+          "Support built on clarity and trust"
+        ]
+      }
+    }
+  },
+  "howOzonyWorks": {
+    "eyebrow": "How We Work",
+    "title": "Practical IT, networking, and automation built around your business.",
+    "description": "Ozony Tech keeps the process clear: understand the issue, build the right solution, secure it, and support it over time.",
+    "imageAlt": "How Ozony Tech works process from assessment to support and optimization",
+    "outcome": "Built for small business outcomes",
+    "points": {
+      "practicalSolutions": {
+        "title": "Practical solutions",
+        "text": "Designed around real small business needs, not overbuilt enterprise fluff."
+      },
+      "secureByDesign": {
+        "title": "Secure by design",
+        "text": "Clean access, safer workflows, and better protection from the start."
+      },
+      "builtToSupport": {
+        "title": "Built to support",
+        "text": "Clear follow-up, troubleshooting, and improvements after launch."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked Questions",
+    "title": "Straight Answers for Small Business IT and Network Questions",
+    "description": "A quick look at how Ozony Tech approaches support, troubleshooting, networking, Wi-Fi, and practical small business technology needs.",
+    "items": {
+      "businessTypes": {
+        "question": "What types of businesses does Ozony Tech work with?",
+        "answer": "Ozony Tech is built for small businesses that need practical help with networking, Wi-Fi, firewall setup, troubleshooting, and day-to-day IT support. That can include offices, retail spaces, barbershops, salons, restaurants, creative studios, and other local teams that need dependable technology."
+      },
+      "existingNetworks": {
+        "question": "Do you help with existing networks, or only brand-new setups?",
+        "answer": "Both. Ozony Tech can troubleshoot and improve existing setups or help plan cleaner new installations. The goal is to understand what is already in place, identify the real issue, and recommend practical next steps instead of overcomplicating the solution."
+      },
+      "wifiImprovements": {
+        "question": "Can you improve slow or unreliable Wi-Fi without replacing everything?",
+        "answer": "In many cases, yes. Weak coverage, device congestion, poor placement, outdated settings, or bad segmentation can all create Wi-Fi problems. Ozony Tech focuses on finding the root cause first and then recommending the most sensible fix based on the business and the current setup."
+      },
+      "supportTypes": {
+        "question": "Do you offer remote support, onsite support, or both?",
+        "answer": "That depends on the type of issue. Some problems can be handled remotely, while others make more sense onsite. Ozony Tech focuses on the support approach that best fits the problem, the environment, and the business need."
+      },
+      "serviceAreas": {
+        "question": "What areas does Ozony Tech serve?",
+        "answer": "Ozony Tech currently focuses on businesses in NYC, New Jersey, Connecticut, and Pennsylvania, with service pages built around those areas. If you are nearby and not sure whether your location is a fit, reaching out is the best next step."
+      },
+      "getQuote": {
+        "question": "How do I get a quote or start the conversation?",
+        "answer": "Use the <contactLink>contact form</contactLink> on the site and share a little about your business, location, and what kind of help you need. A short description of the issue or goal makes it easier to recommend the right next step, whether that is troubleshooting, cleanup, an upgrade, or a new setup."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Ozony Tech",
+    "description": "Need help with Wi-Fi, networking, device setup, troubleshooting, or general IT support? Send over a few details and let’s talk through your business needs.",
+    "businessContact": "Business Contact",
+    "connectOnline": "Connect online",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "serviceArea": "Service Area",
+      "serviceAreaValue": "New York City"
+    },
+    "serviceArea": {
+      "title": "Service Area",
+      "description": "Serving businesses across the Tri-State area, with nearby service availability based on project needs.",
+      "imageAlt": "Ozony Tech service area map covering the Tri-State area"
+    },
+    "form": {
+      "nameLabel": "Name *",
+      "namePlaceholder": "Your name",
+      "businessNameLabel": "Business Name",
+      "businessNamePlaceholder": "Your business or organization",
+      "emailLabel": "Email *",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "Best callback number",
+      "serviceLabel": "Service Needed",
+      "servicePlaceholder": "Wi-Fi, networking, setup, troubleshooting, etc.",
+      "urgencyLabel": "Urgency *",
+      "urgencyPlaceholder": "Select urgency",
+      "urgencyOptions": {
+        "planning": "Planning / not urgent",
+        "thisWeek": "This week",
+        "asap": "ASAP",
+        "emergency": "Emergency / business impacted"
+      },
+      "urgencyHelp": "This helps us prioritize urgent business-impacting issues.",
+      "projectDetailsLabel": "Project Details *",
+      "projectDetailsPlaceholder": "Tell me about your setup, the issue you’re having, or the kind of help you need.",
+      "consent": "I agree that Ozony Tech may contact me by phone, text, or email about my request. Calls may be recorded and summarized so the team can follow up accurately. *",
+      "sending": "Sending...",
+      "sendInquiry": "Send Inquiry"
+    },
+    "toasts": {
+      "requiredFields": "Please fill in all required fields",
+      "permissionRequiredTitle": "Contact permission required",
+      "permissionRequiredDescription": "Please confirm that Ozony Tech may contact you about your request.",
+      "sendErrorFallback": "Something went wrong sending your message. Please try again.",
+      "successTitle": "Inquiry sent successfully!",
+      "successDescription": "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
+      "failureTitle": "Message failed to send",
+      "failureDescription": "Please try again in a moment."
+    }
+  },
+  "footer": {
+    "goHome": "Go to homepage",
+    "tagline": "IT & Network Solutions for Small Businesses",
+    "description": "Practical networking, Wi-Fi, firewall, small business IT support, and managed services built to keep local teams connected, secure, and ready to grow.",
+    "navigate": "Navigate",
+    "getInTouch": "Get in Touch",
+    "getQuote": "Get a Quote",
+    "allRightsReserved": "All rights reserved.",
+    "servicePages": "Service Pages",
+    "servingAreas": "Serving CT, PA, NJ, and NY/NYC businesses.",
+    "links": {
+      "services": "Services",
+      "credentials": "Credentials",
+      "about": "About",
+      "contact": "Contact",
+      "packages": "Packages",
+      "aiLeadAgent": "AI Lead Agent",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "serviceLinks": {
+      "aiLeadCapture": "AI Lead Capture",
+      "businessWifiConnecticut": "Business Wi-Fi Connecticut",
+      "businessWifiNYC": "Business Wi-Fi NYC",
+      "firewallSetupConnecticut": "Firewall Setup Connecticut",
+      "firewallSetupNYC": "Firewall Setup NYC",
+      "itServicesNearMe": "IT Services Near Me",
+      "itSolutions": "IT Solutions",
+      "itSupport": "IT Support",
+      "itSupportConnecticut": "IT Support Connecticut",
+      "itSupportNJ": "IT Support NJ",
+      "itSupportNYC": "IT Support NYC",
+      "managedITServices": "Managed IT Services",
+      "networkServicesNearMe": "Network Services Near Me",
+      "networkSetupConnecticut": "Network Setup Connecticut",
+      "networkSetupNJ": "Network Setup NJ",
+      "networkSetupNYC": "Network Setup NYC",
+      "networkTroubleshootingNYC": "Network Troubleshooting NYC",
+      "smallBusinessNetworkNYC": "Small Business Network NYC"
+    }
+  }
+}

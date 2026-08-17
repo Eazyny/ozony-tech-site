@@ -1,0 +1,82 @@
+{
+  "seo": {
+    "title": "Ozony Tech Certifications | Verified IT Training & Credentials",
+    "description": "Explore Ozony Tech certifications and verified Google IT training in IT support, networking, operating systems, system administration, and security.",
+    "ogTitle": "Ozony Tech Certifications | Verified IT Training & Credentials",
+    "ogDescription": "View Ozony Tech’s verified Google IT training credentials across support, networking, systems, and security.",
+    "ogImageAlt": "Google IT Support Professional Certificate credential preview",
+    "twitterTitle": "Ozony Tech Certifications | Verified IT Training & Credentials",
+    "twitterDescription": "Explore verified Google IT credentials behind Ozony Tech’s support, networking, systems, and security services."
+  },
+  "schema": {
+    "home": "Home",
+    "certifications": "Certifications"
+  },
+  "backToHome": "Back to Home",
+  "hero": {
+    "eyebrow": "Ozony Tech Certifications",
+    "title": "Verified Training That Supports Real-World IT & Network Work",
+    "description": "Google-backed coursework across support, networking, systems, and security — aligned with the practical small-business services Ozony Tech provides."
+  },
+  "supportAreas": [
+    "IT Support",
+    "Networking",
+    "Operating Systems",
+    "System Administration",
+    "Security",
+    "Verified Google Training"
+  ],
+  "featured": "Featured",
+  "featuredCertification": "Featured Certification",
+  "issued": "Issued {{date}}",
+  "coverage": {
+    "title": "Coverage",
+    "text": "Support, networking, operating systems, systems, and security."
+  },
+  "verified": {
+    "title": "Verified",
+    "text": "Google coursework and professional certificate track completion."
+  },
+  "verifyFeatured": "Verify Featured Certificate",
+  "allCertifications": {
+    "title": "All Certifications",
+    "description": "Explore the full credential set behind Ozony Tech’s support, networking, systems, and security foundation."
+  },
+  "hoverHint": "Hover cards to expand",
+  "verifiedBadge": "Verified",
+  "verify": "Verify",
+  "certificatePreviewAlt": "{{title}} certificate preview",
+  "credentials": {
+    "technicalSupportFundamentals": {
+      "date": "November 2025",
+      "category": "Support Foundations",
+      "description": "Foundational IT support, troubleshooting, and customer service training."
+    },
+    "bitsAndBytes": {
+      "date": "December 2025",
+      "category": "Networking",
+      "description": "Networking fundamentals covering TCP/IP, DNS, DHCP, and connectivity troubleshooting."
+    },
+    "operatingSystems": {
+      "date": "January 2026",
+      "category": "Operating Systems",
+      "description": "Windows, Linux, software configuration, file systems, and user admin basics."
+    },
+    "systemAdministration": {
+      "date": "January 2026",
+      "category": "System Administration",
+      "description": "System administration, infrastructure services, and operational best practices."
+    },
+    "itSecurity": {
+      "date": "January 2026",
+      "category": "Security",
+      "description": "Authentication, encryption, phishing awareness, and incident response basics."
+    },
+    "professionalCertificate": {
+      "date": "January 2026",
+      "category": "Professional Certificate",
+      "description": "Full professional certificate covering support, networking, systems, and security.",
+      "schemaDescription": "Professional certificate covering IT support, networking, operating systems, system administration, and security."
+    }
+  }
+}

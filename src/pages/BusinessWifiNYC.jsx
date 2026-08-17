@@ -5,104 +5,65 @@ import {
   Gauge,
   Store,
   UtensilsCrossed,
-  Briefcase,
+  Briefcase
 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import ServiceLandingTemplate from '@/components/service-pages/ServiceLandingTemplate';
+import { getLanguageFromPath, localizePath } from '@/i18n/languageRoutes';
 
 const BusinessWifiNYC = () => {
+  const location = useLocation();
+  const { t } = useTranslation('servicePages');
+  const language = getLanguageFromPath(location.pathname);
+  const localized = (path) => localizePath(path, language);
+  const base = 'businessWifiNYC';
+
+  const outcomes = [
+    { icon: Radio, title: t(`${base}.outcomes.0.title`), text: t(`${base}.outcomes.0.text`) },
+    { icon: Gauge, title: t(`${base}.outcomes.1.title`), text: t(`${base}.outcomes.1.text`) },
+    { icon: Wifi, title: t(`${base}.outcomes.2.title`), text: t(`${base}.outcomes.2.text`) }
+  ];
+
+  const idealFor = [
+    { icon: Store, title: t(`${base}.idealFor.0.title`), description: t(`${base}.idealFor.0.description`) },
+    { icon: UtensilsCrossed, title: t(`${base}.idealFor.1.title`), description: t(`${base}.idealFor.1.description`) },
+    { icon: Briefcase, title: t(`${base}.idealFor.2.title`), description: t(`${base}.idealFor.2.description`) }
+  ];
+
+  const relatedServices = [
+    
+  ];
+
   return (
     <ServiceLandingTemplate
-      pageTitle="Business Wi-Fi Installation in NYC for Small Businesses | Ozony Tech"
-      pageDescription="Ozony Tech provides business Wi-Fi installation in NYC for small businesses that need stronger coverage, better wireless performance, and a more reliable setup."
-      eyebrow="OZONY TECH · BUSINESS WI-FI NYC"
-      title="Business Wi-Fi Installation in NYC for Small Businesses"
-      description="Ozony Tech provides business Wi-Fi installation in NYC for small businesses that need stronger coverage, cleaner performance, and a more reliable wireless experience for staff, guests, and daily operations."
+      pageTitle={t(`${base}.pageTitle`)}
+      pageDescription={t(`${base}.pageDescription`)}
+      canonicalPath="/business-wifi-nyc"
+      eyebrow={t(`${base}.eyebrow`)}
+      title={t(`${base}.title`)}
+      description={t(`${base}.description`)}
       heroImage="/images/services/business-wifi-nyc.webp"
-      heroImageAlt="Business Wi-Fi installation in NYC for small businesses"
-      includeTitle="What’s Included"
+      heroImageAlt={t(`${base}.heroImageAlt`)}
       ogImage="/images/services/business-wifi-nyc.webp"
       twitterImage="/images/services/business-wifi-nyc.webp"
-      includeDescription="Everything needed to build a stronger, more reliable wireless setup for your business without the signal issues, dead zones, and inconsistent performance."
-      serviceIncludes={[
-        'Business Wi-Fi design and installation',
-        'Access point placement planning',
-        'Coverage improvements and dead zone reduction',
-        'Guest and staff Wi-Fi separation',
-        'Wireless performance tuning and optimization',
-        'Basic wireless security and password hardening',
-      ]}
-      outcomes={[
-        {
-          icon: Radio,
-          title: 'Better Coverage',
-          text: 'Improve signal strength and reduce dead zones so staff and customers stay connected where it matters most throughout your space.',
-        },
-        {
-          icon: Gauge,
-          title: 'More Reliable Performance',
-          text: 'Support smoother browsing, stronger device connectivity, and more dependable day-to-day operations with a cleaner wireless setup.',
-        },
-        {
-          icon: Wifi,
-          title: 'Smarter Wi-Fi Design',
-          text: 'Get a practical wireless layout built around your space, your users, and the way your business actually operates.',
-        },
-      ]}
-      industriesTitle="Built for Local Businesses"
-      idealFor={[
-        {
-          title: 'Retail Stores',
-          description:
-            'Reliable business Wi-Fi for staff systems, customer access, POS workflows, and back-office devices.',
-          icon: Store,
-        },
-        {
-          title: 'Restaurants & Cafés',
-          description:
-            'Wireless coverage for registers, kitchen tools, staff devices, and guest internet access in busy customer-facing spaces.',
-          icon: UtensilsCrossed,
-        },
-        {
-          title: 'Offices',
-          description:
-            'Stable wireless connectivity for laptops, shared devices, printers, meetings, and everyday business operations.',
-          icon: Briefcase,
-        },
-      ]}
-      midCtaEyebrow="Need Better Wi-Fi?"
-      midCtaTitle="Get Business Wi-Fi That Actually Reaches Where You Need It"
-      midCtaDescription="From weak coverage to dead zones and unstable connections, Ozony Tech helps build a wireless setup that works better for staff, customers, and everyday business use."
-      seoTitle="Why Choose Ozony Tech for Business Wi-Fi Installation in NYC"
-      seoParagraphs={[
-        'Ozony Tech provides business Wi-Fi installation in NYC for small businesses that need stronger coverage, more dependable performance, and a cleaner wireless setup overall. Whether you are upgrading weak Wi-Fi in an existing location or setting up a new space, we help create wireless systems that feel reliable in real-world use.',
-        'Business Wi-Fi installation can include access point planning, coverage improvements, guest and staff separation, performance tuning, and practical wireless organization. The goal is to deliver Wi-Fi that supports your business instead of slowing it down with dead zones, poor signal, or unstable connections.',
-        'Businesses choose Ozony Tech because the focus is on practical wireless setups that work well, feel organized, and are built around the real needs of small business spaces across NYC.',
-      ]}
-      areasServed="Serving businesses across Manhattan, Brooklyn, Queens, the Bronx, Staten Island, and nearby areas in NYC."
-      faqItems={[
-        {
-          question: 'Do you provide business Wi-Fi installation for small businesses in NYC?',
-          answer:
-            'Yes. Ozony Tech provides business Wi-Fi installation in NYC for offices, retail stores, restaurants, and other small business spaces that need stronger and more reliable wireless coverage.',
-        },
-        {
-          question: 'What does business Wi-Fi installation include?',
-          answer:
-            'Business Wi-Fi installation can include access point placement planning, wireless setup, coverage improvements, guest and staff separation, performance tuning, and basic wireless security hardening.',
-        },
-        {
-          question: 'Can you improve weak Wi-Fi in an existing business location?',
-          answer:
-            'Yes. Existing Wi-Fi setups can often be improved through better placement, cleaner wireless design, stronger segmentation, and practical performance optimization.',
-        },
-        {
-          question: 'Can you separate guest Wi-Fi from staff and business devices?',
-          answer:
-            'Yes. Guest and staff Wi-Fi can be separated to improve security, organization, and overall performance for your business network.',
-        },
-      ]}
-      finalTitle="Need Business Wi-Fi Installation in NYC?"
-      finalDescription="Get stronger coverage, better wireless performance, and a cleaner setup built for the way your business actually operates."
+      includeTitle={t(`${base}.includeTitle`)}
+      includeDescription={t(`${base}.includeDescription`)}
+      serviceIncludes={t(`${base}.serviceIncludes`, { returnObjects: true })}
+      outcomes={outcomes}
+      industriesTitle={t(`${base}.industriesTitle`)}
+      idealFor={idealFor.length ? idealFor : undefined}
+      midCtaEyebrow={t(`${base}.midCtaEyebrow`)}
+      midCtaTitle={t(`${base}.midCtaTitle`)}
+      midCtaDescription={t(`${base}.midCtaDescription`)}
+      seoTitle={t(`${base}.seoTitle`)}
+      seoParagraphs={t(`${base}.seoParagraphs`, { returnObjects: true })}
+      areasServed={t(`${base}.areasServed`)}
+      faqItems={t(`${base}.faqItems`, { returnObjects: true })}
+      relatedServices={relatedServices.length ? relatedServices : null}
+      finalTitle={t(`${base}.finalTitle`)}
+      finalDescription={t(`${base}.finalDescription`)}
     />
   );
 };

@@ -1,0 +1,82 @@
+{
+  "seo": {
+    "title": "Certificaciones de Ozony Tech | Formación y Credenciales de TI Verificadas",
+    "description": "Explora las certificaciones de Ozony Tech y la formación verificada de Google en soporte de TI, redes, sistemas operativos, administración de sistemas y seguridad.",
+    "ogTitle": "Certificaciones de Ozony Tech | Formación de TI Verificada",
+    "ogDescription": "Consulta las credenciales verificadas de formación de Google que respaldan los servicios de soporte, redes, sistemas y seguridad de Ozony Tech.",
+    "ogImageAlt": "Vista previa del certificado profesional Google IT Support",
+    "twitterTitle": "Certificaciones de Ozony Tech | Formación de TI Verificada",
+    "twitterDescription": "Explora las credenciales verificadas de Google que respaldan los servicios de soporte, redes, sistemas y seguridad de Ozony Tech."
+  },
+  "schema": {
+    "home": "Inicio",
+    "certifications": "Certificaciones"
+  },
+  "backToHome": "Volver al Inicio",
+  "hero": {
+    "eyebrow": "Certificaciones de Ozony Tech",
+    "title": "Formación Verificada que Respalda el Trabajo Real de TI y Redes",
+    "description": "Formación respaldada por Google en soporte, redes, sistemas y seguridad, alineada con los servicios prácticos que Ozony Tech ofrece a pequeñas empresas."
+  },
+  "supportAreas": [
+    "Soporte de TI",
+    "Redes",
+    "Sistemas Operativos",
+    "Administración de Sistemas",
+    "Seguridad",
+    "Formación Verificada de Google"
+  ],
+  "featured": "Destacado",
+  "featuredCertification": "Certificación Destacada",
+  "issued": "Emitido en {{date}}",
+  "coverage": {
+    "title": "Áreas Cubiertas",
+    "text": "Soporte, redes, sistemas operativos, administración de sistemas y seguridad."
+  },
+  "verified": {
+    "title": "Verificado",
+    "text": "Formación de Google y finalización de la trayectoria del certificado profesional."
+  },
+  "verifyFeatured": "Verificar Certificado Destacado",
+  "allCertifications": {
+    "title": "Todas las Certificaciones",
+    "description": "Explora el conjunto completo de credenciales que respalda la base de Ozony Tech en soporte, redes, sistemas y seguridad."
+  },
+  "hoverHint": "Pasa el cursor para expandir",
+  "verifiedBadge": "Verificado",
+  "verify": "Verificar",
+  "certificatePreviewAlt": "Vista previa del certificado {{title}}",
+  "credentials": {
+    "technicalSupportFundamentals": {
+      "date": "noviembre de 2025",
+      "category": "Fundamentos de Soporte",
+      "description": "Formación fundamental en soporte de TI, diagnóstico de problemas y atención al cliente."
+    },
+    "bitsAndBytes": {
+      "date": "diciembre de 2025",
+      "category": "Redes",
+      "description": "Fundamentos de redes que cubren TCP/IP, DNS, DHCP y diagnóstico de conectividad."
+    },
+    "operatingSystems": {
+      "date": "enero de 2026",
+      "category": "Sistemas Operativos",
+      "description": "Fundamentos de Windows, Linux, configuración de software, sistemas de archivos y administración de usuarios."
+    },
+    "systemAdministration": {
+      "date": "enero de 2026",
+      "category": "Administración de Sistemas",
+      "description": "Administración de sistemas, servicios de infraestructura y buenas prácticas operativas."
+    },
+    "itSecurity": {
+      "date": "enero de 2026",
+      "category": "Seguridad",
+      "description": "Fundamentos de autenticación, cifrado, concientización sobre phishing y respuesta a incidentes."
+    },
+    "professionalCertificate": {
+      "date": "enero de 2026",
+      "category": "Certificado Profesional",
+      "description": "Certificado profesional completo que cubre soporte, redes, sistemas y seguridad.",
+      "schemaDescription": "Certificado profesional que cubre soporte de TI, redes, sistemas operativos, administración de sistemas y seguridad."
+    }
+  }
+}

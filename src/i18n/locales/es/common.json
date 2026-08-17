@@ -1,0 +1,26 @@
+{
+  "language": {
+    "english": "English",
+    "spanish": "Español",
+    "shortEnglish": "EN",
+    "shortSpanish": "ES"
+  },
+
+  "nav": {
+    "aiLeadAgent": "Agente de Leads con IA",
+    "services": "Servicios",
+    "certifications": "Certificaciones",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "packages": "Paquetes",
+    "requestQuote": "Solicitar Cotización"
+  },
+
+  "accessibility": {
+    "primaryNavigation": "Navegación principal",
+    "goHome": "Ir a la página principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "changeLanguage": "Cambiar idioma"
+  }
+}

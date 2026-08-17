@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -21,14 +21,18 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import StarfieldBackground from '@/components/ui/starfield-background';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
 const SITE_URL = 'https://ozony.tech';
-const PAGE_URL = `${SITE_URL}/ai-lead-agent`;
 const OG_IMAGE = `${SITE_URL}/images/ozony-og-preview.png`;
 
 const createResponsiveImage = (name) => ({
@@ -48,183 +52,82 @@ const AI_AGENT_HERO_IMAGE = {
 const AI_AGENT_WORKFLOW_IMAGE = createResponsiveImage('AIAgent2');
 const AI_AGENT_CAPABILITIES_IMAGE = createResponsiveImage('AIAgent3');
 
-const responseCapabilities = [
-  'Respond to website form submissions',
-  'Ask pre-approved qualifying questions',
-  'Collect customer details and service context',
-  'Route urgent leads to the right person',
-  'Send instant alerts to your team',
-  'Create clean internal lead summaries',
-  'Support phone, SMS, and email workflows when appropriate',
-  'Keep valuable opportunities from sitting unanswered',
+const responseCapabilityKeys = [
+  'websiteForms',
+  'qualifyingQuestions',
+  'customerDetails',
+  'urgentRouting',
+  'instantAlerts',
+  'leadSummaries',
+  'multichannel',
+  'noMissedOpportunities',
 ];
 
-const qualificationQuestions = [
-  'What service do you need?',
-  'What issue are you experiencing?',
-  'Where are you located?',
-  'How urgent is the request?',
-  'What is the best number or email to reach you?',
-  'Do you need same-day service?',
+const qualificationQuestionKeys = [
+  'service',
+  'issue',
+  'location',
+  'urgency',
+  'contact',
+  'sameDay',
 ];
 
 const agentFeatures = [
-  {
-    icon: Zap,
-    title: 'Instant Lead Capture',
-    text: 'Collect names, emails, phone numbers, service needs, locations, urgency, and custom details specific to your business.',
-  },
-  {
-    icon: Brain,
-    title: 'Smart Qualification',
-    text: 'Ask the questions your team normally asks before deciding how valuable, urgent, or ready a lead is.',
-  },
-  {
-    icon: Headphones,
-    title: 'Team Alerts',
-    text: 'Send clean summaries to the channels your team actually checks, including email, Discord, SMS, or another internal workflow.',
-  },
-  {
-    icon: Route,
-    title: 'Custom Business Logic',
-    text: 'Follow rules based on location, service type, urgency, pricing range, lead quality, or the next step your team wants taken.',
-  },
+  { icon: Zap, key: 'instantCapture' },
+  { icon: Brain, key: 'smartQualification' },
+  { icon: Headphones, key: 'teamAlerts' },
+  { icon: Route, key: 'businessLogic' },
 ];
 
-const industries = [
-  'IT service providers',
-  'Home service companies',
-  'Contractors',
-  'Cleaning companies',
-  'Real estate teams',
-  'Medical and wellness offices',
-  'Local repair businesses',
-  'Consultants',
-  'Agencies',
-  'Appointment-based businesses',
+const industryKeys = [
+  'itProviders',
+  'homeServices',
+  'contractors',
+  'cleaning',
+  'realEstate',
+  'medical',
+  'repair',
+  'consultants',
+  'agencies',
+  'appointmentBased',
 ];
 
 const useCases = [
-  {
-    icon: Send,
-    title: 'Website Form Response',
-    text: 'A customer fills out your website form and gets a fast approved response while your team receives a clean lead alert.',
-  },
-  {
-    icon: Clock,
-    title: 'After-Hours Intake',
-    text: 'The agent collects important details overnight so your team starts the next day with qualified leads instead of cold form submissions.',
-  },
-  {
-    icon: Target,
-    title: 'Service Request Qualification',
-    text: 'The agent asks about the issue, location, urgency, and service needed before your team follows up.',
-  },
-  {
-    icon: CalendarCheck,
-    title: 'Follow-Up Preparation',
-    text: 'Your team gets the context needed to respond faster, prioritize the lead, and sound more prepared.',
-  },
+  { icon: Send, key: 'websiteResponse' },
+  { icon: Clock, key: 'afterHours' },
+  { icon: Target, key: 'serviceQualification' },
+  { icon: CalendarCheck, key: 'followUpPrep' },
 ];
 
-const buildProcess = [
-  'Map where your leads currently come from',
-  'Identify delays, missed alerts, and weak intake points',
-  'Create approved qualifying questions',
-  'Write approved response messaging',
-  'Connect alerts and delivery channels',
-  'Test the workflow before launch',
-  'Refine the system after real lead activity',
+const buildProcessKeys = [
+  'mapSources',
+  'identifyDelays',
+  'createQuestions',
+  'writeMessaging',
+  'connectAlerts',
+  'testWorkflow',
+  'refineSystem',
 ];
 
-const controlRules = [
-  'What the agent can say',
-  'Which questions it should ask',
-  'When your team should be alerted',
-  'Which leads need urgent attention',
-  'Whether responses are automatic or human-reviewed',
+const controlRuleKeys = [
+  'agentCanSay',
+  'questionsToAsk',
+  'teamAlerts',
+  'urgentLeads',
+  'approvalMode',
 ];
 
-const serviceOptions = [
-  {
-    eyebrow: 'Starter',
-    title: 'Starter Lead Agent',
-    text: 'Best for businesses that need fast website form response, clean lead summaries, and internal team alerts.',
-    items: [
-      'Website form intake workflow',
-      'Basic qualification questions',
-      'Email, Discord, or internal alert delivery',
-      'Clean lead summary for follow-up',
-      'Approved response messaging',
-    ],
-  },
-  {
-    eyebrow: 'Growth',
-    title: 'Growth Lead Agent',
-    text: 'Best for businesses that need advanced qualification, urgency handling, and stronger follow-up support.',
-    items: [
-      'Everything in Starter',
-      'Multi-step intake flow',
-      'Lead routing rules',
-      'Urgency and priority scoring',
-      'Follow-up reminder support',
-    ],
-  },
-  {
-    eyebrow: 'Premium',
-    title: 'Premium AI Response System',
-    text: 'Best for businesses that want a complete automated intake system across multiple response channels.',
-    items: [
-      'Everything in Growth',
-      'Consent-aware phone or SMS workflow options',
-      'Advanced business logic',
-      'Custom integrations',
-      'Deeper launch testing and refinement',
-    ],
-  },
-];
+const serviceOptionKeys = ['starter', 'growth', 'premium'];
 
-const faqs = [
-  {
-    question: 'Is this just a chatbot?',
-    answer:
-      'No. A chatbot usually sits on a website and answers basic questions. An AI Lead Response Agent is designed to capture, qualify, and route leads as part of your business process.',
-  },
-  {
-    question: 'Can the agent call leads?',
-    answer:
-      'Yes. Phone-based workflows can be included when appropriate, using approved messaging and consent-aware processes for your business.',
-  },
-  {
-    question: 'Can it send text messages?',
-    answer:
-      'Yes. SMS workflows can be added when appropriate. Ozony Tech designs these around your workflow, approved messaging, and consent requirements for your industry and location.',
-  },
-  {
-    question: 'Can I approve what the agent says?',
-    answer:
-      'Yes. The agent is built around approved messaging, approved qualifying questions, and clear business rules so you stay in control.',
-  },
-  {
-    question: 'Can it work after hours?',
-    answer:
-      'Yes. After-hours response is one of the strongest use cases for this type of system.',
-  },
-  {
-    question: 'Will this replace my team?',
-    answer:
-      'No. The goal is to help your team respond faster and spend less time on repetitive intake tasks.',
-  },
-  {
-    question: 'Can it connect to my website?',
-    answer:
-      'Yes. The agent can be connected to your website forms and lead capture points.',
-  },
-  {
-    question: 'How much does it cost?',
-    answer:
-      'Pricing depends on the complexity of the agent, the number of channels, and the integrations required. Ozony Tech offers custom quotes after reviewing your workflow.',
-  },
+const faqKeys = [
+  'chatbot',
+  'callLeads',
+  'sms',
+  'approveMessaging',
+  'afterHours',
+  'replaceTeam',
+  'website',
+  'pricing',
 ];
 
 const smoothEase = [0.22, 1, 0.36, 1];
@@ -460,15 +363,29 @@ const VisualImageCard = ({
 
 const AILeadAgent = () => {
   const [activeFaqIndex, setActiveFaqIndex] = useState(0);
+  const location = useLocation();
+  const { t } = useTranslation('aiLeadAgent');
+
+  const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
+  const pageUrl = isSpanish
+    ? `${SITE_URL}/es/ai-lead-agent`
+    : `${SITE_URL}/ai-lead-agent`;
+  const contactPath = localizePath('/contact', language);
+
+  const faqs = faqKeys.map((key) => ({
+    key,
+    question: t(`faq.items.${key}.question`),
+    answer: t(`faq.items.${key}.answer`),
+  }));
 
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'AI Lead Response Agent',
-    serviceType: 'AI Lead Response Automation',
-    description:
-      'Custom AI Lead Response Agents for businesses that need faster follow-up, lead qualification, automated alerts, and better inquiry workflows.',
-    url: PAGE_URL,
+    name: t('schema.serviceName'),
+    serviceType: t('schema.serviceType'),
+    description: t('schema.serviceDescription'),
+    url: pageUrl,
     image: OG_IMAGE,
     provider: {
       '@type': 'ProfessionalService',
@@ -501,14 +418,14 @@ const AILeadAgent = () => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
-        item: `${SITE_URL}/`,
+        name: t('schema.home'),
+        item: isSpanish ? `${SITE_URL}/es` : `${SITE_URL}/`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'AI Lead Agent',
-        item: PAGE_URL,
+        name: t('schema.breadcrumbName'),
+        item: pageUrl,
       },
     ],
   };
@@ -516,41 +433,45 @@ const AILeadAgent = () => {
   return (
     <>
       <Helmet>
-        <title>AI Lead Response Agent for Small Businesses | Ozony Tech</title>
-        <meta
-          name="description"
-          content="Ozony Tech builds AI Lead Response Agents that capture inquiries, qualify leads, notify your team instantly, and help small businesses follow up faster."
-        />
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
         <meta
           name="robots"
           content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
         />
-        <link rel="canonical" href={PAGE_URL} />
+        <link rel="canonical" href={pageUrl} />
+
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${SITE_URL}/ai-lead-agent`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${SITE_URL}/es/ai-lead-agent`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${SITE_URL}/ai-lead-agent`}
+        />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Ozony Tech" />
-        <meta property="og:title" content="AI Lead Response Agent | Ozony Tech" />
-        <meta
-          property="og:description"
-          content="Never let a hot lead go cold again. Ozony Tech builds AI lead response systems that help businesses respond instantly and qualify new opportunities."
-        />
+        <meta property="og:title" content={t('seo.ogTitle')} />
+        <meta property="og:description" content={t('seo.ogDescription')} />
         <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:image:secure_url" content={OG_IMAGE} />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content="Ozony Tech AI Lead Response Agent service preview"
-        />
+        <meta property="og:image:alt" content={t('seo.ogImageAlt')} />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Lead Response Agent | Ozony Tech" />
-        <meta
-          name="twitter:description"
-          content="AI lead response systems that help businesses respond instantly, qualify leads, and notify their team."
-        />
+        <meta name="twitter:title" content={t('seo.twitterTitle')} />
+        <meta name="twitter:description" content={t('seo.twitterDescription')} />
         <meta name="twitter:image" content={OG_IMAGE} />
 
         <script type="application/ld+json">
@@ -586,32 +507,29 @@ const AILeadAgent = () => {
                 >
                   <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">
                     <Sparkles className="h-4 w-4" />
-                    Premium AI Service
+                    {t('hero.badge')}
                   </div>
 
                   <h1 className="mx-auto max-w-5xl text-4xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
-                    Never Let a Hot Lead Go Cold Again
+                    {t('hero.title')}
                   </h1>
 
                   <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">
-                    Ozony Tech builds AI Lead Response Agents that instantly capture
-                    new inquiries, ask the right qualifying questions, alert your team,
-                    and prepare a clean follow-up summary so you can respond faster.
+                    {t('hero.description')}
                   </p>
 
                   <div className="mx-auto mt-8 max-w-3xl rounded-3xl border border-blue-300/15 bg-blue-500/10 p-6 text-center backdrop-blur">
                     <p className="text-lg font-semibold text-white">
-                      This is not just a chatbot.
+                      {t('hero.notChatbotTitle')}
                     </p>
                     <p className="mx-auto mt-2 max-w-2xl text-base leading-7 text-blue-100/80">
-                      It is a custom lead response workflow built around your business,
-                      your services, and your follow-up process.
+                      {t('hero.notChatbotText')}
                     </p>
                   </div>
 
                   <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                    <PrimaryCtaButton to="/contact">
-                      Book a Lead Response Consultation
+                    <PrimaryCtaButton to={contactPath}>
+                      {t('cta.bookConsultation')}
                     </PrimaryCtaButton>
 
                     <Button
@@ -620,7 +538,7 @@ const AILeadAgent = () => {
                       variant="outline"
                       className="h-14 min-w-[220px] border-blue-400/30 bg-transparent px-8 text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-blue-500/10 md:h-16 md:px-10 md:text-lg"
                     >
-                      <a href="#how-it-works">See the Workflow</a>
+                      <a href="#how-it-works">{t('cta.seeWorkflow')}</a>
                     </Button>
                   </div>
 
@@ -630,18 +548,13 @@ const AILeadAgent = () => {
                     animate="show"
                     className="mt-8 flex flex-wrap justify-center gap-3"
                   >
-                    {[
-                      'Instant response',
-                      'Lead qualification',
-                      'After-hours coverage',
-                      'Team alerts',
-                    ].map((chip) => (
+                    {['instantResponse', 'qualification', 'afterHours', 'teamAlerts'].map((key) => (
                       <motion.span
-                        key={chip}
+                        key={key}
                         variants={staggerItem}
                         className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/75 backdrop-blur"
                       >
-                        {chip}
+                        {t(`hero.chips.${key}`)}
                       </motion.span>
                     ))}
                   </motion.div>
@@ -663,7 +576,7 @@ const AILeadAgent = () => {
                         sizes={AI_AGENT_HERO_IMAGE.sizes}
                         width={AI_AGENT_HERO_IMAGE.width}
                         height={AI_AGENT_HERO_IMAGE.height}
-                        alt="AI Lead Response Agent dashboard showing lead capture, AI reply, lead qualification, and team alert workflow"
+                        alt={t('images.heroAlt')}
                         className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                         loading="eager"
                         decoding="sync"
@@ -679,9 +592,9 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="Problem + Solution"
-                title="Slow follow-up costs money. Fast response creates opportunity."
-                description="Most small businesses do not have a lead problem. They have a response problem. When someone reaches out and nobody responds quickly, that lead can move on to a competitor."
+                eyebrow={t('problem.eyebrow')}
+                title={t('problem.title')}
+                description={t('problem.description')}
               />
 
               <MotionReveal direction="up" delay={0.06}>
@@ -689,11 +602,10 @@ const AILeadAgent = () => {
                   <div className="mx-auto max-w-3xl text-center">
                     <Clock className="mx-auto mb-5 h-8 w-8 text-blue-300" />
                     <h3 className="text-2xl font-semibold text-white">
-                      What the system can do
+                      {t('problem.systemTitle')}
                     </h3>
                     <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-white/60">
-                      The agent responds immediately, collects useful context, and alerts
-                      your team while the customer is still interested.
+                      {t('problem.systemText')}
                     </p>
                   </div>
 
@@ -704,14 +616,16 @@ const AILeadAgent = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 2xl:gap-5"
                   >
-                    {responseCapabilities.map((item) => (
+                    {responseCapabilityKeys.map((key) => (
                       <motion.div
-                        key={item}
+                        key={key}
                         variants={slideLeftItem}
                         className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
                       >
                         <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                        <p className="text-sm leading-6 text-white/75">{item}</p>
+                        <p className="text-sm leading-6 text-white/75">
+                          {t(`problem.capabilities.${key}`)}
+                        </p>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -726,22 +640,23 @@ const AILeadAgent = () => {
           >
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="How It Works"
-                title="From cold form submission to active sales opportunity."
-                description="Instead of waiting for someone to manually review the request, the agent starts the intake process and prepares your team with useful context."
+                eyebrow={t('workflow.eyebrow')}
+                title={t('workflow.title')}
+                description={t('workflow.description')}
               />
 
               <VisualImageCard
                 {...AI_AGENT_WORKFLOW_IMAGE}
-                alt="AI Lead Agent workflow showing a lead coming in, the agent responding, qualification, team notification, and smarter follow-up"
+                alt={t('images.workflowAlt')}
                 className="mt-10"
               />
 
               <MotionReveal direction="up" delay={0.05}>
                 <div className="mt-10 rounded-[2rem] border border-blue-300/15 bg-blue-500/10 p-8 text-center backdrop-blur md:p-10">
                   <h3 className="text-2xl font-semibold">
-                    The agent can ask questions like:
+                    {t('workflow.questionsTitle')}
                   </h3>
+
                   <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -749,13 +664,15 @@ const AILeadAgent = () => {
                     viewport={{ once: true, amount: 0.24 }}
                     className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
                   >
-                    {qualificationQuestions.map((question) => (
+                    {qualificationQuestionKeys.map((key) => (
                       <motion.div
-                        key={question}
+                        key={key}
                         variants={staggerItem}
                         className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
                       >
-                        <p className="text-sm leading-6 text-blue-100">{question}</p>
+                        <p className="text-sm leading-6 text-blue-100">
+                          {t(`workflow.questions.${key}`)}
+                        </p>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -765,23 +682,22 @@ const AILeadAgent = () => {
               <MotionReveal direction="up" delay={0.05}>
                 <div className="mt-10 rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                    Need Faster Lead Response?
+                    {t('workflow.ctaEyebrow')}
                   </p>
                   <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
-                    Turn new inquiries into organized opportunities before they go cold.
+                    {t('workflow.ctaTitle')}
                   </h2>
                   <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
-                    Ozony Tech can review your current lead process and map out where an AI
-                    Lead Response Agent would help.
+                    {t('workflow.ctaDescription')}
                   </p>
 
                   <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                    <PrimaryCtaButton to="/contact">
-                      Book a Lead Response Consultation
+                    <PrimaryCtaButton to={contactPath}>
+                      {t('cta.bookConsultation')}
                     </PrimaryCtaButton>
 
-                    <SecondaryCtaButton to="/contact">
-                      Find Out Where Leads Are Missed
+                    <SecondaryCtaButton to={contactPath}>
+                      {t('cta.findMissedLeads')}
                     </SecondaryCtaButton>
                   </div>
                 </div>
@@ -792,14 +708,14 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="What the Agent Can Handle"
-                title="Built to support real intake, not just answer basic questions."
-                description="The agent supports the parts of lead response that slow teams down: intake, qualification, routing, alerts, and follow-up preparation."
+                eyebrow={t('capabilities.eyebrow')}
+                title={t('capabilities.title')}
+                description={t('capabilities.description')}
               />
 
               <VisualImageCard
                 {...AI_AGENT_CAPABILITIES_IMAGE}
-                alt="AI Lead Agent capabilities visual showing instant lead capture, smart qualification, team alerts, after-hours coverage, custom business logic, and follow-up support"
+                alt={t('images.capabilitiesAlt')}
                 className="mt-10"
               />
 
@@ -815,7 +731,7 @@ const AILeadAgent = () => {
 
                   return (
                     <motion.div
-                      key={feature.title}
+                      key={feature.key}
                       variants={staggerItem}
                       whileHover={{
                         y: -6,
@@ -824,9 +740,11 @@ const AILeadAgent = () => {
                       className="rounded-3xl border border-white/10 bg-white/5 p-7 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
                     >
                       <Icon className="mx-auto mb-5 h-6 w-6 text-blue-300" />
-                      <h3 className="text-2xl font-semibold">{feature.title}</h3>
+                      <h3 className="text-2xl font-semibold">
+                        {t(`capabilities.features.${feature.key}.title`)}
+                      </h3>
                       <p className="mt-3 text-base leading-7 text-white/65">
-                        {feature.text}
+                        {t(`capabilities.features.${feature.key}.text`)}
                       </p>
                     </motion.div>
                   );
@@ -838,9 +756,9 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 py-20">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="Built for Service Businesses"
-                title="Ideal for businesses where fast response matters."
-                description="If your business receives leads through website forms, phone calls, ads, referrals, or after-hours inquiries, this system can help capture more opportunities before they go cold."
+                eyebrow={t('businesses.eyebrow')}
+                title={t('businesses.title')}
+                description={t('businesses.description')}
               />
 
               <motion.div
@@ -855,7 +773,7 @@ const AILeadAgent = () => {
 
                   return (
                     <motion.div
-                      key={useCase.title}
+                      key={useCase.key}
                       variants={staggerItem}
                       whileHover={{
                         y: -6,
@@ -865,10 +783,10 @@ const AILeadAgent = () => {
                     >
                       <Icon className="mx-auto mb-4 h-6 w-6 text-blue-300" />
                       <h3 className="text-lg font-semibold text-white">
-                        {useCase.title}
+                        {t(`businesses.useCases.${useCase.key}.title`)}
                       </h3>
                       <p className="mt-3 text-sm leading-6 text-white/65">
-                        {useCase.text}
+                        {t(`businesses.useCases.${useCase.key}.text`)}
                       </p>
                     </motion.div>
                   );
@@ -879,7 +797,7 @@ const AILeadAgent = () => {
                 <div className="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center backdrop-blur md:p-8">
                   <Building2 className="mx-auto mb-6 h-8 w-8 text-blue-300" />
                   <h3 className="text-2xl font-semibold text-white">
-                    Strong fit for:
+                    {t('businesses.fitTitle')}
                   </h3>
 
                   <motion.div
@@ -889,14 +807,16 @@ const AILeadAgent = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5"
                   >
-                    {industries.map((industry) => (
+                    {industryKeys.map((key) => (
                       <motion.div
-                        key={industry}
+                        key={key}
                         variants={slideLeftItem}
                         className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors duration-300 hover:border-blue-400/30 hover:bg-white/[0.07]"
                       >
                         <CheckCircle className="h-5 w-5 flex-none text-blue-300" />
-                        <span className="text-sm text-white/75">{industry}</span>
+                        <span className="text-sm text-white/75">
+                          {t(`businesses.industries.${key}`)}
+                        </span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -908,9 +828,9 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="Custom Built"
-                title="Mapped around your business, your team, and your lead process."
-                description="Ozony Tech does not install generic bots and walk away. The workflow is built around approved messaging, business rules, team alerts, and real follow-up needs."
+                eyebrow={t('custom.eyebrow')}
+                title={t('custom.title')}
+                description={t('custom.description')}
               />
 
               <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -920,11 +840,10 @@ const AILeadAgent = () => {
                 >
                   <Wrench className="mx-auto mb-6 h-8 w-8 text-blue-300" />
                   <h2 className="text-3xl font-semibold md:text-4xl">
-                    Custom built by Ozony Tech.
+                    {t('custom.buildTitle')}
                   </h2>
                   <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
-                    We map the workflow around your current lead sources, delays, missed
-                    alerts, and intake process.
+                    {t('custom.buildDescription')}
                   </p>
 
                   <motion.div
@@ -934,14 +853,16 @@ const AILeadAgent = () => {
                     viewport={{ once: true, amount: 0.18 }}
                     className="mt-8 grid gap-4"
                   >
-                    {buildProcess.map((item) => (
+                    {buildProcessKeys.map((key) => (
                       <motion.div
-                        key={item}
+                        key={key}
                         variants={staggerItem}
                         className="flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left"
                       >
                         <ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                        <p className="text-sm leading-6 text-white/75">{item}</p>
+                        <p className="text-sm leading-6 text-white/75">
+                          {t(`custom.buildProcess.${key}`)}
+                        </p>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -954,11 +875,10 @@ const AILeadAgent = () => {
                 >
                   <ShieldCheck className="mx-auto mb-6 h-8 w-8 text-blue-300" />
                   <h2 className="text-3xl font-semibold md:text-4xl">
-                    You stay in control.
+                    {t('custom.controlTitle')}
                   </h2>
                   <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
-                    The goal is not to replace your team. The goal is to help your team
-                    respond faster with better information.
+                    {t('custom.controlDescription')}
                   </p>
 
                   <motion.div
@@ -968,14 +888,16 @@ const AILeadAgent = () => {
                     viewport={{ once: true, amount: 0.18 }}
                     className="mt-8 grid gap-4"
                   >
-                    {controlRules.map((rule) => (
+                    {controlRuleKeys.map((key) => (
                       <motion.div
-                        key={rule}
+                        key={key}
                         variants={staggerItem}
                         className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950/35 p-5 text-left"
                       >
                         <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                        <p className="text-sm leading-6 text-white/75">{rule}</p>
+                        <p className="text-sm leading-6 text-white/75">
+                          {t(`custom.controlRules.${key}`)}
+                        </p>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -987,9 +909,9 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 py-20">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="Premium Service Options"
-                title="Custom quoted based on your workflow."
-                description="Every AI Lead Agent is priced based on the complexity of your workflow, channels, automations, and integrations."
+                eyebrow={t('plans.eyebrow')}
+                title={t('plans.title')}
+                description={t('plans.description')}
               />
 
               <motion.div
@@ -999,32 +921,42 @@ const AILeadAgent = () => {
                 viewport={{ once: true, amount: 0.16 }}
                 className="mt-10 grid gap-5 lg:grid-cols-3 2xl:gap-7"
               >
-                {serviceOptions.map((option) => (
-                  <motion.div
-                    key={option.title}
-                    variants={staggerItem}
-                    whileHover={{
-                      y: -7,
-                      transition: { duration: 0.22, ease: smoothEase },
-                    }}
-                    className="rounded-[2rem] border border-white/10 bg-white/5 p-7 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
-                  >
-                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
-                      {option.eyebrow}
-                    </p>
-                    <h3 className="mt-4 text-2xl font-semibold">{option.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-white/65">{option.text}</p>
+                {serviceOptionKeys.map((key) => {
+                  const items = t(`plans.options.${key}.items`, {
+                    returnObjects: true,
+                  });
 
-                    <div className="mt-6 space-y-3 text-left">
-                      {option.items.map((item) => (
-                        <div key={item} className="flex gap-3">
-                          <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
-                          <p className="text-sm leading-6 text-white/70">{item}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+                  return (
+                    <motion.div
+                      key={key}
+                      variants={staggerItem}
+                      whileHover={{
+                        y: -7,
+                        transition: { duration: 0.22, ease: smoothEase },
+                      }}
+                      className="rounded-[2rem] border border-white/10 bg-white/5 p-7 text-center backdrop-blur transition-colors duration-300 hover:border-blue-400/35 hover:bg-white/[0.07]"
+                    >
+                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
+                        {t(`plans.options.${key}.eyebrow`)}
+                      </p>
+                      <h3 className="mt-4 text-2xl font-semibold">
+                        {t(`plans.options.${key}.title`)}
+                      </h3>
+                      <p className="mt-3 text-base leading-7 text-white/65">
+                        {t(`plans.options.${key}.text`)}
+                      </p>
+
+                      <div className="mt-6 space-y-3 text-left">
+                        {items.map((item) => (
+                          <div key={item} className="flex gap-3">
+                            <CheckCircle className="mt-0.5 h-5 w-5 flex-none text-blue-300" />
+                            <p className="text-sm leading-6 text-white/70">{item}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </div>
           </section>
@@ -1032,9 +964,9 @@ const AILeadAgent = () => {
           <section className="border-t border-slate-700/50 bg-slate-800/30 py-24">
             <div className="ozony-container-wide">
               <SectionIntro
-                eyebrow="FAQ"
-                title="Questions businesses usually ask before building an AI lead agent."
-                description="Clear answers before you book a consultation."
+                eyebrow={t('faq.eyebrow')}
+                title={t('faq.title')}
+                description={t('faq.description')}
               />
 
               <motion.div
@@ -1049,7 +981,7 @@ const AILeadAgent = () => {
 
                   return (
                     <motion.div
-                      key={faq.question}
+                      key={faq.key}
                       variants={staggerItem}
                       className={`self-start rounded-[1.5rem] border p-6 shadow-[0_0_40px_rgba(37,99,235,0.05)] backdrop-blur transition-all duration-300 ${
                         isActive
@@ -1106,23 +1038,22 @@ const AILeadAgent = () => {
             <MotionReveal direction="up">
               <div className="ozony-container-visual rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
-                  Ready to Stop Missing Leads?
+                  {t('finalCta.eyebrow')}
                 </p>
                 <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold md:text-5xl">
-                  Your customers should not have to wait for your business to respond.
+                  {t('finalCta.title')}
                 </h2>
                 <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
-                  Ozony Tech can build an AI Lead Response Agent that captures new
-                  opportunities, qualifies leads, and alerts your team instantly.
+                  {t('finalCta.description')}
                 </p>
 
                 <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row sm:items-center">
-                  <PrimaryCtaButton to="/contact">
-                    Book a Lead Response Consultation
+                  <PrimaryCtaButton to={contactPath}>
+                    {t('cta.bookConsultation')}
                   </PrimaryCtaButton>
 
-                  <SecondaryCtaButton to="/contact">
-                    Find Out Where Leads Are Missed
+                  <SecondaryCtaButton to={contactPath}>
+                    {t('cta.findMissedLeads')}
                   </SecondaryCtaButton>
                 </div>
 
@@ -1137,7 +1068,7 @@ const AILeadAgent = () => {
                   </span>
                   <span className="inline-flex items-center gap-2">
                     <MessageSquare className="h-4 w-4 text-blue-300" />
-                    Custom workflow consultation
+                    {t('finalCta.consultationLabel')}
                   </span>
                 </div>
               </div>

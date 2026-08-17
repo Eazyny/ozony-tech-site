@@ -1,0 +1,97 @@
+{
+  "seo": {
+    "title": "Contact Ozony Tech | IT & Network Support for Small Businesses",
+    "description": "Contact Ozony Tech for small business IT support, network setup, business Wi-Fi, firewall setup, and managed IT services in NYC, New Jersey, and Connecticut.",
+    "ogTitle": "Contact Ozony Tech | IT & Network Support",
+    "ogDescription": "Need help with business Wi-Fi, network setup, firewall configuration, or IT support? Contact Ozony Tech today.",
+    "ogImageAlt": "Contact Ozony Tech for IT and network support"
+  },
+  "hero": {
+    "badge": "Ozony Tech · Contact",
+    "title": "Need IT or network help for your business?",
+    "description": "Tell us what you need help with and Ozony Tech will help you figure out the right next step — whether that is business Wi-Fi, network setup, firewall configuration, IT support, or a full walkthrough.",
+    "helper": "Use the request form to send the details once. Ozony Tech will review the service type, location, urgency, and next best step before following up."
+  },
+  "highlights": {
+    "networkSetup": {
+      "title": "Network Setup",
+      "text": "Structured small business networks built for stability, growth, and cleaner device management."
+    },
+    "businessWifi": {
+      "title": "Business Wi-Fi",
+      "text": "Reliable Wi-Fi planning for offices, shops, restaurants, and customer-facing spaces."
+    },
+    "firewallSecurity": {
+      "title": "Firewall & Security",
+      "text": "Practical firewall setup, guest network separation, and better protection for business devices."
+    }
+  },
+  "form": {
+    "title": "Send a request",
+    "description": "Send your request directly to Ozony Tech. No email app needed.",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "businessLabel": "Business Name",
+    "businessPlaceholder": "Company or shop name",
+    "emailLabel": "Email *",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Best callback number",
+    "locationLabel": "Location",
+    "locationPlaceholder": "NYC, NJ, CT, etc.",
+    "serviceLabel": "Service Needed",
+    "servicePlaceholder": "Select a service",
+    "urgencyLabel": "Urgency *",
+    "urgencyPlaceholder": "Select urgency",
+    "urgencyHelp": "This helps Ozony Tech prioritize business-impacting issues.",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Tell us what is going on, what you need installed, fixed, upgraded, or planned.",
+    "consent": "I agree that Ozony Tech may contact me by phone, text, or email about my request. Calls may be recorded and summarized so the team can follow up accurately. *",
+    "sending": "Sending...",
+    "sendInquiry": "Send Inquiry"
+  },
+  "serviceOptions": {
+    "Network Setup": "Network Setup",
+    "Business Wi-Fi": "Business Wi-Fi",
+    "Firewall Setup": "Firewall Setup",
+    "IT Support": "IT Support",
+    "Managed IT Services": "Managed IT Services",
+    "Website / Digital Services": "Website / Digital Services",
+    "AI Lead Response Agent": "AI Lead Response Agent",
+    "Not Sure Yet": "Not Sure Yet"
+  },
+  "urgencyOptions": {
+    "Planning / not urgent": "Planning / not urgent",
+    "This week": "This week",
+    "ASAP": "ASAP",
+    "Emergency / business impacted": "Emergency / business impacted"
+  },
+  "details": {
+    "title": "Contact details",
+    "email": "Email",
+    "serviceAreaTitle": "Service Area",
+    "serviceAreaText": "NYC, New Jersey, Connecticut, and nearby small business locations.",
+    "bestForTitle": "Best For",
+    "bestForText": "New installs, upgrades, troubleshooting, Wi-Fi cleanup, firewall setup, and small business IT planning."
+  },
+  "next": {
+    "title": "What happens next?",
+    "description": "The goal is to make the first step simple. You do not need to know all the technical details yet. Send the request, and Ozony Tech can help sort out the right path.",
+    "steps": {
+      "submit": "Submit your request with the details you already know.",
+      "review": "Ozony Tech reviews the setup, location, urgency, and service needs.",
+      "followUp": "We follow up with the best next step, quote, or walkthrough recommendation."
+    },
+    "stepNote": "Simple, practical, and built around the business need.",
+    "urgentNote": "For urgent business network or Wi-Fi issues, include as much detail as possible: internet provider, router/firewall model, number of devices, business type, and what stopped working."
+  },
+  "toasts": {
+    "requiredFields": "Please fill in all required fields",
+    "permissionTitle": "Contact permission required",
+    "permissionDescription": "Please confirm that Ozony Tech may contact you about your request.",
+    "sendErrorFallback": "Something went wrong sending your message. Please try again.",
+    "successTitle": "Inquiry sent successfully!",
+    "successDescription": "Thanks for reaching out to Ozony Tech. I'll get back to you soon.",
+    "failureTitle": "Message failed to send",
+    "failureDescription": "Please try again in a moment."
+  }
+}

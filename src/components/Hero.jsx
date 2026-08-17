@@ -6,16 +6,30 @@ import DecodedText from '@/components/ui/decode-text';
 import StarfieldBackground from '@/components/ui/starfield-background';
 import SpotlightCard from '@/components/ui/spotlight-card';
 import StarBorder from '@/components/ui/star-border';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import {
+  getLanguageFromPath,
+  localizePath,
+} from '@/i18n/languageRoutes';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { t } = useTranslation('home');
+
+  const language = getLanguageFromPath(location.pathname);
 
   const scrollToSection = (selector) => {
     const element = document.querySelector(selector);
+
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const goToContact = () => {
+    navigate(localizePath('/contact', language));
   };
 
   return (
@@ -37,7 +51,7 @@ const Hero = () => {
               className="max-w-[760px] space-y-5 2xl:max-w-[840px]"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white md:text-base">
-                Small Business IT Solutions
+                {t('hero.eyebrow')}
               </p>
 
               <div className="space-y-4">
@@ -47,32 +61,31 @@ const Hero = () => {
 
                 <h1 className="text-[clamp(2.45rem,8vw,4.35rem)] font-bold leading-[0.92] tracking-[-0.03em] text-white">
                   <span className="block md:whitespace-nowrap">
-                    IT &amp; Networking.
+                    {t('hero.titleLineOne')}
                   </span>
 
                   <span className="block text-white/95 sm:hidden">
-                    Built for Small
+                    {t('hero.titleLineTwoMobile')}
                   </span>
                   <span className="block text-white/95 sm:hidden">
-                    Business.
+                    {t('hero.titleLineThreeMobile')}
                   </span>
 
                   <span className="hidden text-white/95 sm:block xl:hidden">
-                    Built for Small
+                    {t('hero.titleLineTwoTablet')}
                   </span>
                   <span className="hidden text-white/95 sm:block xl:hidden">
-                    Business.
+                    {t('hero.titleLineThreeTablet')}
                   </span>
 
                   <span className="hidden text-white/95 xl:block 2xl:whitespace-nowrap">
-                    Built for Small Business.
+                    {t('hero.titleLineDesktop')}
                   </span>
                 </h1>
               </div>
 
               <p className="max-w-[38rem] text-base leading-relaxed text-gray-300 md:text-lg">
-                Reliable Wi-Fi, secure networking, support, and practical IT
-                solutions that help your business stay connected and productive.
+                {t('hero.description')}
               </p>
             </motion.div>
 
@@ -84,11 +97,11 @@ const Hero = () => {
             >
               <StarBorder className="rounded-md">
                 <Button
-                  onClick={() => navigate('/contact')}
+                  onClick={goToContact}
                   className="border-0 bg-blue-600 px-6 py-6 text-base text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700"
                 >
                   <Mail className="mr-2 h-5 w-5" />
-                  <DecodedText speed={12}>Request a Quote</DecodedText>
+                  <DecodedText speed={12}>{t('hero.requestQuote')}</DecodedText>
                 </Button>
               </StarBorder>
 
@@ -97,7 +110,7 @@ const Hero = () => {
                 variant="outline"
                 className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
               >
-                <DecodedText speed={12}>View Services</DecodedText>
+                <DecodedText speed={12}>{t('hero.viewServices')}</DecodedText>
               </Button>
             </motion.div>
           </motion.div>

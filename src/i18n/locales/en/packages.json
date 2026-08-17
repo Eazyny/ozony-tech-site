@@ -1,0 +1,255 @@
+{
+  "seo": {
+    "title": "Small Business IT & Network Packages | Ozony Tech",
+    "description": "Compare Ozony Tech small business IT and network packages, including Starter, Growth, and Complete options for Wi-Fi, network setup, firewall setup, IT support, and AI lead response services.",
+    "ogTitle": "Small Business IT & Network Packages | Ozony Tech",
+    "ogDescription": "Compare Starter, Growth, and Complete package options for practical small-business IT, Wi-Fi, networking, firewall setup, and support.",
+    "ogImageAlt": "Ozony Tech Complete package recommended network hardware stack",
+    "twitterTitle": "Small Business IT & Network Packages | Ozony Tech",
+    "twitterDescription": "Compare Starter, Growth, and Complete package options for small-business IT and networking."
+  },
+  "schema": {
+    "serviceName": "Ozony Tech Business IT and Network Packages",
+    "serviceTypes": [
+      "Network Setup",
+      "Business Wi-Fi",
+      "Firewall Setup",
+      "IT Support",
+      "Managed IT Services",
+      "AI Lead Response Automation"
+    ],
+    "catalogName": "Small Business IT and Network Packages",
+    "packageOfferName": "{{name}} Package",
+    "packageServiceName": "{{name}} Business IT and Network Package",
+    "home": "Home",
+    "packages": "Packages"
+  },
+  "backToHome": "Back to Home",
+  "backToTop": "Back to top",
+  "hero": {
+    "eyebrow": "Ozony Tech Packages",
+    "title": "Small Business IT & Network Packages Built Around Real Needs",
+    "description": "Compare practical package paths for better Wi-Fi, cleaner networking, stronger firewall structure, support planning, and smarter business growth. Each package is a starting point that can be adjusted around your space, budget, and goals.",
+    "primaryCta": "Request a Quote",
+    "secondaryCta": "View AI Lead Agent",
+    "chips": [
+      "Starter",
+      "Growth",
+      "Complete",
+      "Custom options available"
+    ]
+  },
+  "tiers": {
+    "starter": {
+      "name": "Starter",
+      "badge": "Best for small spaces",
+      "stackLabel": "Recommended stack",
+      "stackName": "Omada / compact business setup",
+      "description": "A clean entry point for smaller businesses that need better Wi-Fi, basic network structure, and more reliable device connectivity without overcomplicating the setup.",
+      "bestFor": "Barbershops, salons, small retail spaces, home offices, simple offices, and smaller service businesses",
+      "includes": [
+        "Router / firewall setup",
+        "Basic switch and device connectivity",
+        "Wi-Fi optimization and coverage tuning",
+        "Printer / workstation connectivity help",
+        "Basic security and account setup guidance"
+      ],
+      "serviceLabel": "Explore network setup"
+    },
+    "growth": {
+      "name": "Growth",
+      "badge": "Most flexible",
+      "stackLabel": "Recommended stack",
+      "stackName": "UniFi / managed small business setup",
+      "description": "Built for growing businesses that need stronger Wi-Fi, cleaner guest and staff separation, better performance, and a more organized upgrade path.",
+      "bestFor": "Busier offices, multi-room businesses, restaurants, retail stores, growing teams, and businesses with guest Wi-Fi needs",
+      "includes": [
+        "Managed networking upgrade path",
+        "Guest and staff network separation",
+        "Multiple device / workstation setup support",
+        "Improved wireless coverage planning",
+        "Cleaner organization and business-ready structure"
+      ],
+      "serviceLabel": "Explore business Wi-Fi"
+    },
+    "complete": {
+      "name": "Complete",
+      "badge": "Best for long-term setup",
+      "stackLabel": "Recommended stack",
+      "stackName": "Aruba Instant On / premium SMB setup",
+      "description": "A more complete small-business network package designed for cleaner deployment, stronger control, better reliability, and future growth.",
+      "bestFor": "Larger small businesses, higher device counts, professional spaces, polished offices, and long-term network builds",
+      "includes": [
+        "Business-grade gateway and switching",
+        "Managed Wi-Fi and network segmentation",
+        "Multiple access point deployment planning",
+        "Cleaner organization for long-term reliability",
+        "Scalable foundation for future upgrades"
+      ],
+      "serviceLabel": "Explore firewall setup"
+    }
+  },
+  "platformFit": {
+    "eyebrow": "Built around the right fit",
+    "description": "Ozony Tech builds around practical, proven platforms like UniFi, Omada, and Aruba Instant On based on your budget, layout, management needs, and long-term goals."
+  },
+  "comparison": {
+    "title": "Compare the Packages",
+    "description": "A simple view of how the tiers scale based on complexity, coverage, structure, and long-term growth.",
+    "category": "Category",
+    "rows": {
+      "bestFor": {
+        "label": "Best For",
+        "starter": "Small spaces",
+        "growth": "Growing businesses",
+        "complete": "Long-term setups"
+      },
+      "wifiCoverage": {
+        "label": "Wi-Fi Coverage",
+        "starter": "Basic optimization",
+        "growth": "Improved multi-area coverage",
+        "complete": "Broader coverage planning"
+      },
+      "networkSegmentation": {
+        "label": "Network Segmentation",
+        "starter": "Light / basic",
+        "growth": "Guest + staff separation",
+        "complete": "More complete segmentation"
+      },
+      "scalability": {
+        "label": "Scalability",
+        "starter": "Entry-level",
+        "growth": "Growth-ready",
+        "complete": "Best long-term path"
+      },
+      "supportFocus": {
+        "label": "Support Focus",
+        "starter": "Setup + stability",
+        "growth": "Performance + structure",
+        "complete": "Reliability + expandability"
+      }
+    }
+  },
+  "servicePathsSection": {
+    "eyebrow": "Service Paths",
+    "title": "Not Sure Which Service Fits?",
+    "description": "Packages are one way to start. You can also jump directly into the service that matches your biggest issue right now."
+  },
+  "servicePaths": {
+    "networkSetup": {
+      "title": "Business Network Setup",
+      "description": "For businesses that need a cleaner router, switch, Wi-Fi, firewall, printer, POS, and device connectivity foundation.",
+      "label": "View network setup"
+    },
+    "businessWifi": {
+      "title": "Business Wi-Fi",
+      "description": "For businesses dealing with weak coverage, dead zones, unstable wireless, guest access issues, or growing device counts.",
+      "label": "View business Wi-Fi"
+    },
+    "firewallSetup": {
+      "title": "Firewall Setup",
+      "description": "For businesses that need cleaner traffic control, guest and staff separation, stronger boundaries, and better network organization.",
+      "label": "View firewall setup"
+    },
+    "itSupport": {
+      "title": "IT Support",
+      "description": "For businesses that need help with devices, printers, access issues, workstations, troubleshooting, and day-to-day tech problems.",
+      "label": "View IT support"
+    },
+    "managedIT": {
+      "title": "Managed IT Services",
+      "description": "For businesses that need recurring support, cleaner systems, and a more consistent path for handling technology issues.",
+      "label": "View managed IT"
+    },
+    "aiLeadAgent": {
+      "title": "AI Lead Response Agent",
+      "description": "For businesses that want faster lead follow-up, instant notifications, confirmation emails, and AI-assisted response drafts.",
+      "label": "View AI lead agent"
+    }
+  },
+  "selection": {
+    "title": "How Package Selection Works",
+    "description": "The right setup depends on the business, not a generic checklist. Here’s the basic path."
+  },
+  "setupSteps": {
+    "review": {
+      "title": "1. Review the space",
+      "text": "We look at the business layout, device needs, Wi-Fi expectations, current pain points, and how the team actually works."
+    },
+    "choose": {
+      "title": "2. Choose the right tier",
+      "text": "Starter, Growth, and Complete are starting points. The final recommendation depends on coverage, reliability, control, and budget."
+    },
+    "build": {
+      "title": "3. Build a clean path forward",
+      "text": "The goal is not to oversell hardware. The goal is to build a setup that is practical, reliable, manageable, and easier to grow over time."
+    }
+  },
+  "brandsSection": {
+    "title": "Why These Solutions?",
+    "description": "Ozony Tech doesn’t recommend equipment based on hype. The right setup depends on your space, budget, business type, and how much control or scalability you need."
+  },
+  "brands": {
+    "unifi": {
+      "eyebrow": "Polished ecosystem",
+      "description": "A strong option when a business wants clean management, strong visibility, and a more unified network experience."
+    },
+    "omada": {
+      "eyebrow": "Strong value path",
+      "description": "A great value-focused choice for businesses that want solid performance and cleaner management without overspending."
+    },
+    "aruba": {
+      "eyebrow": "Premium SMB path",
+      "description": "A premium small-business option for businesses that want polished networking, simpler management, and a strong long-term setup path."
+    }
+  },
+  "brandImageAlt": "{{title}} recommended hardware stack",
+  "fit": {
+    "title": "Great Fit For",
+    "description": "These packages are designed around the kinds of businesses that benefit most from clean, reliable networking and practical IT support.",
+    "cards": [
+      "Barbershops & salons",
+      "Retail shops",
+      "Small offices",
+      "Restaurants & cafés",
+      "Home offices / creators",
+      "Growing local businesses"
+    ]
+  },
+  "faq": {
+    "title": "Packages FAQ",
+    "description": "A few common questions about how the package tiers work.",
+    "items": {
+      "rightPackage": {
+        "question": "Which package is right for my business?",
+        "answer": "That depends on your space, number of users and devices, Wi-Fi expectations, current setup, and whether you need a cleaner upgrade path for future growth."
+      },
+      "customized": {
+        "question": "Can packages be customized?",
+        "answer": "Yes. These packages are designed as starting points, not rigid boxes. The final recommendation can be adjusted around your business needs, layout, budget, and goals."
+      },
+      "brands": {
+        "question": "Do you only work with one brand?",
+        "answer": "No. Ozony Tech chooses solutions based on reliability, budget, ease of management, and how well the setup fits the business environment."
+      },
+      "upgradeLater": {
+        "question": "Can I start with a smaller setup and upgrade later?",
+        "answer": "Yes. A good setup should make it easier to grow over time instead of forcing a full rebuild later."
+      },
+      "itSupport": {
+        "question": "Do these packages include IT support?",
+        "answer": "Packages can include setup support and practical guidance. Businesses that need recurring help can also review managed IT services or request a custom support plan."
+      },
+      "aiLead": {
+        "question": "Do you offer AI lead response setup too?",
+        "answer": "Yes. Ozony Tech also offers an AI Lead Response Agent service for businesses that want faster lead follow-up, alerts, confirmation emails, and AI-assisted response drafts."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Ready to find the right setup for your business?",
+    "description": "Whether you need a smaller starter setup, a more complete long-term solution, or a custom mix of IT support, networking, Wi-Fi, firewall setup, and automation, Ozony Tech can help you choose a practical path forward.",
+    "primaryCta": "Request a Quote",
+    "secondaryCta": "Explore IT Solutions"
+  }
+}
