@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <section className="ozony-flow ozony-flow-hero relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
-      <StarfieldBackground />
+      <StarfieldBackground className="hero-starfield-fade" />
 
       <div className="ozony-container-wide relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 xl:grid-cols-[1.16fr_0.84fr] xl:gap-12 2xl:grid-cols-[minmax(0,1.05fr)_minmax(560px,0.95fr)] 2xl:gap-24">

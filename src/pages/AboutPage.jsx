@@ -211,11 +211,11 @@ const AboutPage = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen app-bg text-white">
+      <div className="ozony-page-canvas min-h-screen text-white">
         <Header />
 
         <main>
-          <section className="relative overflow-hidden pb-20 pt-32 md:pb-24 md:pt-36">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden pb-20 pt-32 md:pb-24 md:pt-36">
             <StarfieldBackground />
 
             <div className="pointer-events-none absolute inset-0">
@@ -322,7 +322,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-services py-20 md:py-24">
             <div className="ozony-container-wide">
               <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] xl:gap-16">
                 <Reveal x={-34}>
@@ -371,7 +371,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-ai py-20 md:py-24">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('pillars.eyebrow')}
@@ -411,7 +411,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="border-y border-slate-700/50 bg-[#08152b] py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-about py-20 md:py-24">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('approach.eyebrow')}
@@ -429,10 +429,7 @@ const AboutPage = () => {
                       </div>
 
                       <div className="relative">
-                        <span className="text-sm font-semibold text-blue-300">
-                          {step.number}
-                        </span>
-                        <h3 className="mt-4 text-xl font-semibold text-white">
+                        <h3 className="text-xl font-semibold text-white">
                           {t(`approach.steps.${step.key}.title`)}
                         </h3>
                         <p className="mt-3 text-sm leading-7 text-white/60">
@@ -446,7 +443,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-work py-20 md:py-24">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('services.eyebrow')}
@@ -487,7 +484,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="border-y border-slate-700/50 bg-slate-800/30 py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-credentials py-20 md:py-24">
             <div className="ozony-container-wide">
               <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] xl:gap-16">
                 <Reveal x={-32}>
@@ -544,7 +541,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="py-20 md:py-24">
+          <section className="ozony-flow ozony-flow-faq py-20 md:py-24">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('fit.eyebrow')}
@@ -588,7 +585,7 @@ const AboutPage = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-[#08152b] py-24">
+          <section className="ozony-flow ozony-flow-contact py-24">
             <div className="ozony-container-wide">
               <Reveal>
                 <div className="relative overflow-hidden rounded-[2.25rem] border border-blue-300/15 bg-blue-500/[0.08] px-6 py-12 text-center shadow-[0_0_80px_rgba(37,99,235,0.12)] md:px-10 md:py-16">

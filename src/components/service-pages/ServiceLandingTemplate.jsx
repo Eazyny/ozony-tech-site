@@ -50,7 +50,7 @@ const ALL_SERVICE_LINKS = [
   { key: 'smallBusinessNetworkNYC', to: '/small-business-network-nyc' },
 ];
 
-const sectionClass = 'border-t border-white/5 py-20';
+const sectionClass = 'ozony-flow py-20';
 
 const normalizePathname = (pathname) => {
   if (!pathname) return '/';
@@ -434,11 +434,11 @@ const ServiceLandingTemplate = ({
         )}
       </Helmet>
 
-      <div className="min-h-screen app-bg text-white">
+      <div className="ozony-page-canvas min-h-screen text-white">
         <Header />
 
         <main>
-          <section className="relative overflow-hidden">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden">
             <StarfieldBackground />
 
             <div className="relative z-10">
@@ -535,8 +535,8 @@ const ServiceLandingTemplate = ({
             </div>
           </section>
 
-          <div className="bg-[#08152b]">
-            <section className={sectionClass}>
+          <div className="bg-[#05080d]">
+            <section className={`${sectionClass} ozony-flow-services`}>
               <div className="ozony-container-wide grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {effectiveOutcomes.map((item) => {
                   const Icon = item.icon;
@@ -557,7 +557,7 @@ const ServiceLandingTemplate = ({
               </div>
             </section>
 
-            <section className={sectionClass}>
+            <section className={`${sectionClass} ozony-flow-ai`}>
               <div className="ozony-container-wide">
                 <div className="max-w-3xl">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -585,7 +585,7 @@ const ServiceLandingTemplate = ({
               </div>
             </section>
 
-            <section className="border-t border-white/5 py-16">
+            <section className="ozony-flow ozony-flow-about py-16">
               <div className="ozony-container-visual rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-12">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                   {effectiveMidCtaEyebrow}
@@ -619,7 +619,7 @@ const ServiceLandingTemplate = ({
               </div>
             </section>
 
-            <section className={sectionClass}>
+            <section className={`${sectionClass} ozony-flow-work`}>
               <div className="ozony-container-wide">
                 <div className="max-w-3xl">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -651,7 +651,7 @@ const ServiceLandingTemplate = ({
               </div>
             </section>
 
-            <section className={sectionClass}>
+            <section className={`${sectionClass} ozony-flow-credentials`}>
               <div className="ozony-container-wide grid gap-6 lg:grid-cols-[1fr_1fr] 2xl:gap-8">
                 <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur md:p-10">
                   <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -692,7 +692,7 @@ const ServiceLandingTemplate = ({
             </section>
 
             {relatedServicesToRender.length > 0 && (
-              <section className={sectionClass}>
+              <section className={`${sectionClass} ozony-flow-faq`}>
                 <div className="ozony-container-wide">
                   <div className="max-w-3xl">
                     <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
@@ -728,7 +728,7 @@ const ServiceLandingTemplate = ({
               </section>
             )}
 
-            <section className="border-t border-white/5 py-24">
+            <section className="ozony-flow ozony-flow-contact py-24">
               <div className="ozony-container-visual rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur md:p-14">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">
                   {t('ui.getStarted')}

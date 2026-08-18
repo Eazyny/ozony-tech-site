@@ -349,10 +349,10 @@ const PackagesPage = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen app-bg">
+      <div className="ozony-page-canvas min-h-screen">
         <Header />
 
-        <section className="pt-28 pb-2 md:pt-32">
+        <section className="bg-[#05080d] pt-28 pb-2 md:pt-32">
           <div className="ozony-container-wide">
             <Link
               to={homePath}
@@ -365,7 +365,7 @@ const PackagesPage = () => {
         </section>
 
         <main>
-          <section className="relative overflow-hidden py-14 md:py-20">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden py-14 md:py-20">
             <StarfieldBackground />
 
             <div className="ozony-container-wide relative">
@@ -426,7 +426,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="pb-20 pt-6">
+          <section className="ozony-flow ozony-flow-services pb-20 pt-6">
             <div className="ozony-container-wide">
               <div className="grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {packageTiers.map((tier, index) => (
@@ -474,7 +474,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-ai py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
@@ -537,7 +537,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="py-20">
+          <section className="ozony-flow ozony-flow-about py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
@@ -595,7 +595,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-work py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
@@ -637,7 +637,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="py-20">
+          <section className="ozony-flow ozony-flow-credentials py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
@@ -702,7 +702,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-faq py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
@@ -736,7 +736,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="py-20">
+          <section className="ozony-flow ozony-flow-contact py-20">
             <div className="ozony-container-wide">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-4xl font-bold text-white md:text-5xl">
@@ -774,7 +774,7 @@ const PackagesPage = () => {
             </div>
           </section>
 
-          <section className="pb-20">
+          <section className="ozony-flow ozony-flow-cta pb-20">
             <div className="ozony-container">
               <div className="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/90 to-slate-800/80 px-8 py-14 text-center shadow-lg shadow-blue-500/10">
                 <h2 className="text-3xl font-bold text-white md:text-5xl">

@@ -186,11 +186,11 @@ const PrivacyPolicy = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen app-bg text-white">
+      <div className="ozony-page-canvas min-h-screen text-white">
         <Header />
 
         <main>
-          <section className="relative overflow-hidden px-4 pb-20 pt-32 md:px-6 lg:px-8">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden px-4 pb-20 pt-32 md:px-6 lg:px-8">
             <StarfieldBackground />
 
             <div className="pointer-events-none absolute inset-0">
@@ -291,7 +291,7 @@ const PrivacyPolicy = () => {
 
           <section
             id="privacy-details"
-            className="border-t border-slate-700/50 bg-slate-800/30 px-4 py-20 md:px-6 lg:px-8"
+            className="ozony-flow ozony-flow-services px-4 py-20 md:px-6 lg:px-8"
           >
             <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[320px_minmax(0,1fr)]">
               <aside className="lg:sticky lg:top-24 lg:self-start">

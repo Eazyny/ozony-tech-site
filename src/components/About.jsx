@@ -46,15 +46,6 @@ const About = () => {
       id="about"
       className="ozony-flow ozony-flow-about relative overflow-hidden py-20 md:py-24"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-      >
-        <div className="absolute left-[-10rem] top-[-8rem] h-[420px] w-[420px] rounded-full bg-blue-500/[0.03] blur-[130px]" />
-
-        <div className="absolute bottom-[-12rem] right-[-8rem] h-[460px] w-[460px] rounded-full bg-cyan-400/[0.018] blur-[145px]" />
-      </div>
-
       <div className="ozony-container-wide relative z-10">
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <motion.div

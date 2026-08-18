@@ -485,11 +485,11 @@ const AILeadAgent = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen app-bg text-white">
+      <div className="ozony-page-canvas min-h-screen text-white">
         <Header />
 
         <main>
-          <section className="relative overflow-hidden">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden">
             <StarfieldBackground />
 
             <div className="pointer-events-none absolute inset-0">
@@ -589,7 +589,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-services py-20">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('problem.eyebrow')}
@@ -636,7 +636,7 @@ const AILeadAgent = () => {
 
           <section
             id="how-it-works"
-            className="border-t border-slate-700/50 py-20"
+            className="ozony-flow ozony-flow-ai py-20"
           >
             <div className="ozony-container-wide">
               <SectionIntro
@@ -705,7 +705,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-about py-20">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('capabilities.eyebrow')}
@@ -753,7 +753,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 py-20">
+          <section className="ozony-flow ozony-flow-work py-20">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('businesses.eyebrow')}
@@ -825,7 +825,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 py-20">
+          <section className="ozony-flow ozony-flow-credentials py-20">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('custom.eyebrow')}
@@ -906,7 +906,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 py-20">
+          <section className="ozony-flow ozony-flow-faq py-20">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('plans.eyebrow')}
@@ -961,7 +961,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 bg-slate-800/30 py-24">
+          <section className="ozony-flow ozony-flow-contact py-24">
             <div className="ozony-container-wide">
               <SectionIntro
                 eyebrow={t('faq.eyebrow')}
@@ -1034,7 +1034,7 @@ const AILeadAgent = () => {
             </div>
           </section>
 
-          <section className="border-t border-slate-700/50 py-24">
+          <section className="ozony-flow ozony-flow-cta py-24">
             <MotionReveal direction="up">
               <div className="ozony-container-visual rounded-[2rem] border border-blue-400/15 bg-gradient-to-br from-white/8 to-blue-500/10 p-8 text-center shadow-[0_0_50px_rgba(37,99,235,0.10)] backdrop-blur md:p-14">
                 <p className="text-sm uppercase tracking-[0.22em] text-blue-400/85">

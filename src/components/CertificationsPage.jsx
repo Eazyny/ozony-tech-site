@@ -198,11 +198,11 @@ const Credentials = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen app-bg">
+      <div className="ozony-page-canvas min-h-screen">
         <Header />
 
         <main>
-          <section className="px-4 pt-24 pb-2 md:pt-28">
+          <section className="bg-[#05080d] px-4 pt-24 pb-2 md:pt-28">
             <div className="container mx-auto max-w-7xl">
               <Link
                 to={homePath}
@@ -214,7 +214,7 @@ const Credentials = () => {
             </div>
           </section>
 
-          <section className="relative overflow-hidden px-4 py-14 md:py-20">
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden px-4 py-14 md:py-20">
             <StarfieldBackground />
 
             <div className="relative container mx-auto max-w-7xl">
@@ -250,7 +250,7 @@ const Credentials = () => {
             </div>
           </section>
 
-          <section className="px-4 pb-12">
+          <section className="ozony-flow ozony-flow-credentials px-4 pb-12">
             <div className="container mx-auto max-w-7xl">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -368,7 +368,7 @@ const Credentials = () => {
             </div>
           </section>
 
-          <section className="px-4 pb-20">
+          <section className="ozony-flow ozony-flow-work px-4 pb-20">
             <div className="container mx-auto max-w-7xl">
               <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>

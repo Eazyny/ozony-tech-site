@@ -30,7 +30,7 @@ const NotFound = () => {
         <meta name="robots" content="noindex,follow" />
       </Helmet>
 
-      <section className="relative min-h-screen overflow-hidden bg-[#010818]">
+      <section className="ozony-flow ozony-flow-hero relative min-h-screen overflow-hidden">
         <style>{`
           @keyframes sway {
             0% { transform: rotateZ(0deg); }

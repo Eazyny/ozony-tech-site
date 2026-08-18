@@ -330,10 +330,10 @@ const ContactPage = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-slate-950 text-white">
+      <div className="ozony-page-canvas min-h-screen text-white">
         <Header />
 
-        <main className="relative overflow-hidden bg-slate-950 text-white">
+        <main className="ozony-flow ozony-flow-contact relative overflow-hidden text-white">
           <ContactLightRaysBackground />
 
           <section className="ozony-container-wide relative z-10 pb-20 pt-32 sm:pt-36">
