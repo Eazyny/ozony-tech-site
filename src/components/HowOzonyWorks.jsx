@@ -13,7 +13,7 @@ const HowOzonyWorks = () => {
   ];
 
   return (
-    <section className="bg-slate-800/30 py-20">
+    <section className="ozony-flow ozony-flow-work py-20">
       <div className="ozony-container-wide">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
@@ -40,7 +40,7 @@ const HowOzonyWorks = () => {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/50 shadow-lg shadow-blue-500/10"
+          className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-slate-950/45 shadow-lg shadow-black/25"
         >
           <img
             src="/images/HowWeWork-1200.webp"
@@ -66,7 +66,7 @@ const HowOzonyWorks = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="rounded-xl border border-slate-700/50 bg-slate-900/50 p-6 backdrop-blur-sm"
+                className="rounded-xl border border-white/[0.07] bg-slate-950/42 p-6 backdrop-blur-sm"
               >
                 <div className="mb-4 inline-flex rounded-lg bg-blue-500/10 p-2">
                   <Icon className="h-5 w-5 text-blue-400" />

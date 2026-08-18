@@ -123,6 +123,167 @@
   }
 
 
+  /*
+   * Ozony seamless section-flow system v2
+   * -------------------------------------
+   * Every section returns to the EXACT same base color at its top and bottom.
+   * Each section gets its own color wash only through the middle of the section.
+   * This guarantees there can be no hard horizontal seam between sections.
+   */
+  .ozony-flow {
+    position: relative;
+    isolation: isolate;
+    background-color: #05080d;
+    overflow: hidden;
+  }
+
+  /*
+   * The local section tone fades in after the top edge and fades completely
+   * back out before the bottom edge. Adjacent sections therefore meet on the
+   * same #05080d canvas.
+   */
+  .ozony-flow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 8, 13, 0) 0%,
+        var(--ozony-flow-wash, rgba(5, 8, 13, 0)) 22%,
+        var(--ozony-flow-wash, rgba(5, 8, 13, 0)) 78%,
+        rgba(5, 8, 13, 0) 100%
+      );
+  }
+
+  /*
+   * Optional atmospheric light is also kept away from the section boundaries.
+   * No glow is allowed to touch the top or bottom edge.
+   */
+  .ozony-flow::after {
+    content: '';
+    position: absolute;
+    inset: 8% 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--ozony-flow-light, none);
+    opacity: 0.9;
+  }
+
+  .ozony-flow-hero {
+    --ozony-flow-wash: rgba(3, 10, 20, 0.52);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 76% 22%,
+        rgba(59, 130, 246, 0.055),
+        transparent 34%
+      );
+  }
+
+  .ozony-flow-services {
+    --ozony-flow-wash: rgba(9, 25, 45, 0.72);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 82% 22%,
+        rgba(59, 130, 246, 0.055),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at 14% 72%,
+        rgba(34, 211, 238, 0.022),
+        transparent 30%
+      );
+  }
+
+  .ozony-flow-ai {
+    --ozony-flow-wash: rgba(4, 12, 23, 0.58);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 50% 24%,
+        rgba(59, 130, 246, 0.04),
+        transparent 36%
+      );
+  }
+
+  .ozony-flow-about {
+    --ozony-flow-wash: rgba(10, 29, 53, 0.76);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 18% 30%,
+        rgba(59, 130, 246, 0.06),
+        transparent 36%
+      ),
+      radial-gradient(
+        circle at 84% 66%,
+        rgba(34, 211, 238, 0.018),
+        transparent 30%
+      );
+  }
+
+  .ozony-flow-work {
+    --ozony-flow-wash: rgba(5, 15, 27, 0.58);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 78% 68%,
+        rgba(34, 211, 238, 0.018),
+        transparent 30%
+      );
+  }
+
+  .ozony-flow-credentials {
+    --ozony-flow-wash: rgba(8, 25, 45, 0.68);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 84% 22%,
+        rgba(59, 130, 246, 0.045),
+        transparent 32%
+      );
+  }
+
+  .ozony-flow-faq {
+    --ozony-flow-wash: rgba(3, 9, 18, 0.44);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 20% 22%,
+        rgba(59, 130, 246, 0.028),
+        transparent 32%
+      );
+  }
+
+  .ozony-flow-contact {
+    --ozony-flow-wash: rgba(8, 27, 48, 0.74);
+    --ozony-flow-light:
+      radial-gradient(
+        circle at 82% 26%,
+        rgba(34, 211, 238, 0.028),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 18% 68%,
+        rgba(59, 130, 246, 0.045),
+        transparent 34%
+      );
+  }
+
+  .ozony-flow-cta {
+    --ozony-flow-wash: rgba(4, 13, 24, 0.55);
+  }
+
+  /*
+   * Footer starts on the same canvas color and only then settles into black.
+   */
+  .ozony-footer-canvas {
+    background:
+      linear-gradient(
+        180deg,
+        #05080d 0%,
+        #04070c 22%,
+        #03060b 55%,
+        #020408 100%
+      );
+  }
 
   /* Wide-screen container system for premium desktop / ultrawide layouts. */
   .ozony-container {

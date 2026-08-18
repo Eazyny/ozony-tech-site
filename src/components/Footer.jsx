@@ -105,7 +105,7 @@ const Footer = () => {
   const getLocalizedPath = (path) => localizePath(path, language);
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-900/50 px-4 py-14">
+    <footer className="ozony-footer-canvas border-t border-white/[0.045] px-4 py-14">
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col gap-10">
           <div className="grid gap-12 lg:grid-cols-[minmax(420px,1.15fr)_minmax(420px,520px)] lg:gap-x-16">
@@ -148,7 +148,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-800 bg-slate-950/40 text-gray-400 transition-all hover:border-slate-700 hover:text-white"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.025] text-gray-400 transition-all hover:border-slate-700 hover:text-white"
                     >
                       <Icon size={18} />
                     </a>
@@ -210,7 +210,7 @@ const Footer = () => {
                   <button
                     type="button"
                     onClick={() => navigate(getLocalizedPath('/contact'))}
-                    className="inline-flex w-fit items-center rounded-full border border-slate-800 bg-slate-950/40 px-4 py-2 text-sm text-gray-400 transition-all hover:border-slate-700 hover:text-white"
+                    className="inline-flex w-fit items-center rounded-full border border-white/[0.06] bg-white/[0.025] px-4 py-2 text-sm text-gray-400 transition-all hover:border-slate-700 hover:text-white"
                   >
                     {t('footer.getQuote')}
                   </button>
@@ -258,7 +258,7 @@ const Footer = () => {
                   }`}
                   {...(!servicePagesOpen ? { inert: '' } : {})}
                 >
-                  <div className="rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
+                  <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4">
                     <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
                       {servicePageLinks.map((link) => (
                         <Link

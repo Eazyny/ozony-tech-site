@@ -26,7 +26,7 @@ const Credentials = () => {
   };
 
   return (
-    <section id="credentials" className="py-20 px-4">
+    <section id="credentials" className="ozony-flow ozony-flow-credentials px-4 py-20">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const Credentials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/70 shadow-lg shadow-blue-500/10"
+          className="overflow-hidden rounded-2xl border border-white/[0.07] bg-slate-950/46 shadow-lg shadow-black/25"
         >
           <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
             {/* Featured cert visual */}

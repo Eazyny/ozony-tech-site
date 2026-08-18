@@ -210,7 +210,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-800/30">
+    <section id="contact" className="ozony-flow ozony-flow-contact py-20">
       <div className="ozony-container-wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -236,7 +236,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-6"
           >
-            <SpotlightCard className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-8 backdrop-blur-sm">
+            <SpotlightCard className="rounded-xl border border-white/[0.07] bg-slate-950/46 p-8 backdrop-blur-sm">
               <h3 className="mb-6 text-2xl font-bold text-white">
                 {t('contact.businessContact')}
               </h3>
@@ -287,7 +287,7 @@ const Contact = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-lg bg-slate-800/80 p-3 transition-all duration-200 hover:scale-110 hover:bg-blue-500/10"
+                        className="rounded-lg bg-white/[0.03] p-3 transition-all duration-200 hover:scale-110 hover:bg-blue-500/10"
                         aria-label={social.label}
                       >
                         <Icon className="h-5 w-5 text-gray-400 transition-colors hover:text-blue-400" />
@@ -298,7 +298,7 @@ const Contact = () => {
               </div>
             </SpotlightCard>
 
-            <SpotlightCard className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-6 backdrop-blur-sm">
+            <SpotlightCard className="rounded-xl border border-white/[0.07] bg-slate-950/46 p-6 backdrop-blur-sm">
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-white">
                   {t('contact.serviceArea.title')}
@@ -309,7 +309,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="relative h-[250px] overflow-hidden rounded-lg border border-slate-700/50 bg-slate-900/70 lg:h-[260px]">
+              <div className="relative h-[250px] overflow-hidden rounded-lg border border-white/[0.07] bg-slate-950/55 lg:h-[260px]">
                 <img
                   src="/service_area_map.png"
                   alt={t('contact.serviceArea.imageAlt')}
@@ -329,7 +329,7 @@ const Contact = () => {
             <SpotlightCard
               as="form"
               onSubmit={handleSubmit}
-              className="rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/80 p-8 backdrop-blur-sm"
+              className="rounded-xl border border-white/[0.07] bg-slate-950/46 p-8 backdrop-blur-sm"
             >
               <div className="space-y-6">
                 <div>
@@ -343,7 +343,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
@@ -358,7 +358,7 @@ const Contact = () => {
                     name="businessName"
                     value={formData.businessName}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('contact.form.businessNamePlaceholder')}
                   />
                 </div>
@@ -374,7 +374,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -389,7 +389,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('contact.form.phonePlaceholder')}
                   />
                 </div>
@@ -404,7 +404,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('contact.form.servicePlaceholder')}
                   />
                 </div>
@@ -420,7 +420,7 @@ const Contact = () => {
                     value={formData.urgency}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="" disabled>
                       {t('contact.form.urgencyPlaceholder')}
@@ -455,12 +455,12 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full resize-none rounded-lg border border-slate-700 bg-slate-900/50 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full resize-none rounded-lg border border-white/[0.08] bg-slate-950/55 px-4 py-3 text-white placeholder-gray-500 transition-all focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('contact.form.projectDetailsPlaceholder')}
                   />
                 </div>
 
-                <div className="rounded-lg border border-slate-700/70 bg-slate-900/40 p-4">
+                <div className="rounded-lg border border-white/[0.07] bg-white/[0.025] p-4">
                   <label htmlFor="consentToContact" className="flex cursor-pointer items-start gap-3">
                     <input
                       type="checkbox"

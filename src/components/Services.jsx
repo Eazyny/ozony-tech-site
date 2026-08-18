@@ -153,12 +153,12 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-slate-800/30 py-24"
+      className="ozony-flow ozony-flow-services relative overflow-hidden py-24"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
-        <div className="absolute left-10 bottom-16 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[110px]" />
-        <div className="absolute right-10 top-1/2 h-[260px] w-[260px] rounded-full bg-blue-400/10 blur-[100px]" />
+        <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-500/[0.035] blur-[120px]" />
+        <div className="absolute left-10 bottom-16 h-[320px] w-[320px] rounded-full bg-cyan-400/[0.022] blur-[110px]" />
+        <div className="absolute right-10 top-1/2 h-[260px] w-[260px] rounded-full bg-blue-400/[0.02] blur-[100px]" />
       </div>
 
       <div className="ozony-container-wide relative z-10">
@@ -191,7 +191,7 @@ const Services = () => {
                   scale: 1.035,
                   transition: { duration: 0.18, ease: smoothEase },
                 }}
-                className="rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-2 text-sm text-gray-300 backdrop-blur"
+                className="rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-sm text-gray-300 backdrop-blur"
               >
                 {t(`services.chips.${key}`)}
               </motion.span>
@@ -207,7 +207,7 @@ const Services = () => {
           <div className="group relative">
             <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-70 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
-            <SpotlightCard className="relative rounded-[1.75rem] border border-slate-700/60 bg-slate-900/50 p-2 shadow-lg shadow-blue-500/10 backdrop-blur-xl transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
+            <SpotlightCard className="relative rounded-[1.75rem] border border-white/[0.07] bg-slate-950/45 p-2 shadow-lg shadow-black/25 backdrop-blur-xl transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
               <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] bg-slate-950">
                 <img
                   src="/images/NetworkSetup-1200.webp"
@@ -251,7 +251,7 @@ const Services = () => {
                   }}
                   className="h-full"
                 >
-                  <SpotlightCard className="h-full rounded-3xl border border-slate-700/50 bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 hover:border-blue-500/50 hover:bg-slate-900/70">
+                  <SpotlightCard className="h-full rounded-3xl border border-white/[0.07] bg-slate-950/42 backdrop-blur-sm transition-colors duration-300 hover:border-blue-400/30 hover:bg-slate-950/56">
                     <Link
                       to={localizePath(group.href, language)}
                       className="group block h-full p-7 text-center"
@@ -284,7 +284,7 @@ const Services = () => {
                             stack.map((item) => (
                               <span
                                 key={item}
-                                className="rounded-full border border-slate-700/50 bg-slate-800/80 px-3 py-1 text-sm text-gray-300"
+                                className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-sm text-gray-300"
                               >
                                 {item}
                               </span>

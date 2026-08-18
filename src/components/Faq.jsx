@@ -21,14 +21,14 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq" className="px-4 py-20">
+    <section id="faq" className="ozony-flow ozony-flow-faq px-4 py-20">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/80 to-slate-800/70 shadow-lg shadow-blue-500/10"
+          className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-slate-950/46 shadow-lg shadow-black/25"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/15 via-slate-950/35 to-slate-950/88" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/55 via-slate-950/18 to-transparent" />
@@ -66,7 +66,7 @@ const Faq = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-900/45 backdrop-blur-sm"
+                    className="overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-sm"
                   >
                     <button
                       type="button"
@@ -78,7 +78,7 @@ const Faq = () => {
                         {t(`faq.items.${key}.question`)}
                       </span>
 
-                      <span className="shrink-0 rounded-full border border-slate-700/60 bg-slate-950/50 p-2">
+                      <span className="shrink-0 rounded-full border border-white/[0.07] bg-slate-950/55 p-2">
                         <ChevronDown
                           className={`h-5 w-5 text-blue-400 transition-transform duration-300 ${
                             isOpen ? 'rotate-180' : ''

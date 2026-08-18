@@ -33,7 +33,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
+    <section className="ozony-flow ozony-flow-hero relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
       <StarfieldBackground />
 
       <div className="ozony-container-wide relative">
@@ -122,10 +122,10 @@ const Hero = () => {
             className="relative w-full"
           >
             <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[460px] lg:ml-auto lg:max-w-[500px] xl:max-w-[560px] 2xl:max-w-[660px]">
-              <div className="absolute -inset-8 rounded-[2.75rem] bg-blue-500/10 blur-3xl" />
-              <div className="absolute inset-0 rounded-[2rem] border border-blue-500/20 bg-gradient-to-br from-blue-500/10 via-transparent to-slate-900/20" />
+              <div className="absolute -inset-8 rounded-[2.75rem] bg-blue-500/[0.05] blur-3xl" />
+              <div className="absolute inset-0 rounded-[2rem] border border-white/[0.07] bg-gradient-to-br from-white/[0.025] via-transparent to-slate-950/10" />
 
-              <SpotlightCard className="relative aspect-[5/4] rounded-[2rem] border border-slate-700/60 bg-slate-900/65 shadow-2xl shadow-blue-500/10 backdrop-blur-sm">
+              <SpotlightCard className="relative aspect-[5/4] rounded-[2rem] border border-white/[0.07] bg-slate-950/55 shadow-2xl shadow-black/30 backdrop-blur-sm">
                 <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-slate-950/25 via-transparent to-blue-500/5" />
 
                 <div className="relative z-0 h-full w-full">

@@ -13,18 +13,18 @@ const CallToAction = () => {
   };
 
   return (
-    <section className="py-20 px-4">
+    <section className="ozony-flow ozony-flow-cta px-4 py-20">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900/90 to-slate-800/80 px-8 py-14 text-center shadow-lg shadow-blue-500/10"
+          className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-slate-950/46 px-8 py-14 text-center shadow-lg shadow-black/25"
         >
           {/* Glow accents */}
-          <div className="pointer-events-none absolute -top-10 left-10 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-10 right-10 h-40 w-40 rounded-full bg-purple-500/10 blur-3xl" />
+          <div className="pointer-events-none absolute -top-10 left-10 h-40 w-40 rounded-full bg-blue-500/[0.03] blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-10 right-10 h-40 w-40 rounded-full bg-purple-500/[0.018] blur-3xl" />
 
           <motion.p
             initial={{ opacity: 0, y: 12 }}

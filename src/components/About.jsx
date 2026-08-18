@@ -44,15 +44,15 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden border-t border-slate-700/40 bg-slate-800/30 py-20 md:py-24"
+      className="ozony-flow ozony-flow-about relative overflow-hidden py-20 md:py-24"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
       >
-        <div className="absolute left-[-10rem] top-[-8rem] h-[420px] w-[420px] rounded-full bg-blue-500/[0.08] blur-[130px]" />
+        <div className="absolute left-[-10rem] top-[-8rem] h-[420px] w-[420px] rounded-full bg-blue-500/[0.03] blur-[130px]" />
 
-        <div className="absolute bottom-[-12rem] right-[-8rem] h-[460px] w-[460px] rounded-full bg-cyan-400/[0.055] blur-[145px]" />
+        <div className="absolute bottom-[-12rem] right-[-8rem] h-[460px] w-[460px] rounded-full bg-cyan-400/[0.018] blur-[145px]" />
       </div>
 
       <div className="ozony-container-wide relative z-10">
@@ -158,10 +158,10 @@ const About = () => {
           >
             <div
               aria-hidden="true"
-              className="absolute -inset-5 rounded-[2.4rem] bg-blue-500/[0.08] blur-3xl"
+              className="absolute -inset-5 rounded-[2.4rem] bg-blue-500/[0.03] blur-3xl"
             />
 
-            <SpotlightCard className="relative rounded-[2rem] border border-slate-700/50 bg-gradient-to-br from-slate-900/80 via-slate-900/65 to-slate-800/55 p-7 shadow-[0_24px_70px_rgba(2,6,23,0.32)] backdrop-blur-xl md:p-9">
+            <SpotlightCard className="relative rounded-[2rem] border border-white/[0.07] bg-slate-950/46 p-7 shadow-[0_24px_70px_rgba(2,6,23,0.32)] backdrop-blur-xl md:p-9">
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
