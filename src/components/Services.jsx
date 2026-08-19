@@ -217,12 +217,6 @@ const Services = () => {
               <p className="max-w-2xl text-lg leading-8 text-white/60">
                 {t('services.description')}
               </p>
-
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/38">
-                {isSpanish
-                  ? 'Cuatro áreas principales cubren la mayoría de las necesidades tecnológicas de una pequeña empresa. Los servicios especializados siguen disponibles cuando el problema requiere algo más específico.'
-                  : 'Four core areas cover most small-business technology needs. Specialized services remain available when the problem calls for something more specific.'}
-              </p>
             </div>
           </div>
         </MotionReveal>
