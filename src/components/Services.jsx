@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2, Network, Shield, Wrench } from 'lucide-react';
+import {
+  ArrowRight,
+  Headphones,
+  Network,
+  Shield,
+  Wifi,
+  Wrench,
+} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import SpotlightCard from '@/components/ui/spotlight-card';
+
 import {
   getLanguageFromPath,
   localizePath,
@@ -11,332 +18,358 @@ import {
 
 const smoothEase = [0.22, 1, 0.36, 1];
 
-const serviceGroups = [
+const featuredServices = [
   {
-    icon: Network,
     key: 'networking',
+    icon: Network,
     href: '/network-setup-nyc',
+    number: '01',
   },
   {
-    icon: Building2,
-    key: 'office',
-    href: '/it-support-nyc',
+    key: 'businessWifi',
+    icon: Wifi,
+    href: '/business-wifi-nyc',
+    number: '02',
   },
   {
-    icon: Shield,
     key: 'security',
+    icon: Shield,
     href: '/firewall-setup-nyc',
+    number: '03',
   },
   {
-    icon: Wrench,
     key: 'support',
+    icon: Wrench,
     href: '/it-support-nyc',
+    number: '04',
   },
 ];
 
-const serviceChipKeys = [
-  'networking',
-  'businessWifi',
-  'sharedAccess',
-  'security',
-  'troubleshooting',
+const supportingServices = [
+  {
+    key: 'managedIT',
+    icon: Headphones,
+    href: '/managed-it-services',
+  },
+  {
+    key: 'troubleshooting',
+    icon: Wrench,
+    href: '/network-troubleshooting-nyc',
+  },
+  {
+    key: 'itSolutions',
+    icon: Network,
+    href: '/it-solutions',
+  },
+  {
+    key: 'packages',
+    icon: Shield,
+    href: '/packages',
+  },
 ];
 
-const getRevealOffset = (direction) => {
-  const offsets = {
-    up: { x: 0, y: 34 },
-    down: { x: 0, y: -34 },
-    left: { x: 56, y: 0 },
-    right: { x: -56, y: 0 },
-    diagonalLeft: { x: 56, y: 28 },
-    diagonalRight: { x: -56, y: 28 },
-    none: { x: 0, y: 0 },
+const getFeaturedContent = (t, key) => {
+  if (key === 'businessWifi') {
+    return {
+      title: t('services.chips.businessWifi'),
+      description: t('services.groups.networking.description'),
+      takeaways: t('services.groups.networking.takeaways', {
+        returnObjects: true,
+      }),
+      linkLabel: t('services.groups.networking.linkLabel'),
+    };
+  }
+
+  return {
+    title: t(`services.groups.${key}.title`),
+    description: t(`services.groups.${key}.description`),
+    takeaways: t(`services.groups.${key}.takeaways`, {
+      returnObjects: true,
+    }),
+    linkLabel: t(`services.groups.${key}.linkLabel`),
+  };
+};
+
+const getSupportingContent = (language, key) => {
+  const isSpanish = language === 'es';
+
+  const content = {
+    managedIT: {
+      en: {
+        title: 'Managed IT Services',
+        description:
+          'Ongoing support, maintenance, and a more consistent path for handling business technology.',
+        label: 'Explore managed IT',
+      },
+      es: {
+        title: 'Servicios Administrados de TI',
+        description:
+          'Soporte continuo, mantenimiento y una forma más consistente de manejar la tecnología del negocio.',
+        label: 'Explorar TI administrada',
+      },
+    },
+
+    troubleshooting: {
+      en: {
+        title: 'Network Troubleshooting',
+        description:
+          'Focused help for unstable Wi-Fi, connectivity problems, device issues, and recurring network failures.',
+        label: 'Explore troubleshooting',
+      },
+      es: {
+        title: 'Diagnóstico de Redes',
+        description:
+          'Ayuda enfocada en Wi-Fi inestable, problemas de conectividad, dispositivos y fallas recurrentes de red.',
+        label: 'Explorar diagnóstico',
+      },
+    },
+
+    itSolutions: {
+      en: {
+        title: 'IT Solutions',
+        description:
+          'A broader path for businesses that need help combining networking, support, security, and technology planning.',
+        label: 'Explore IT solutions',
+      },
+      es: {
+        title: 'Soluciones de TI',
+        description:
+          'Una opción más amplia para negocios que necesitan combinar redes, soporte, seguridad y planificación tecnológica.',
+        label: 'Explorar soluciones de TI',
+      },
+    },
+
+    packages: {
+      en: {
+        title: 'Network Packages',
+        description:
+          'Structured starting points for businesses that want a clearer way to plan equipment, coverage, and network growth.',
+        label: 'View packages',
+      },
+      es: {
+        title: 'Paquetes de Red',
+        description:
+          'Opciones estructuradas para negocios que quieren planificar mejor equipos, cobertura y crecimiento de la red.',
+        label: 'Ver paquetes',
+      },
+    },
   };
 
-  return offsets[direction] || offsets.up;
+  return content[key]?.[isSpanish ? 'es' : 'en'];
 };
 
 const MotionReveal = ({
   children,
   className = '',
   delay = 0,
-  direction = 'up',
   amount = 0.2,
-}) => {
-  const offset = getRevealOffset(direction);
-
-  return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        x: offset.x,
-        y: offset.y,
-        scale: direction === 'none' ? 1 : 0.985,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-        y: 0,
-        scale: 1,
-      }}
-      viewport={{ once: true, amount }}
-      transition={{
-        duration: 0.72,
-        delay,
-        ease: smoothEase,
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const chipContainer = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const chipItem = {
-  hidden: {
-    opacity: 0,
-    y: 18,
-    scale: 0.96,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.5,
+}) => (
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 26,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{
+      once: true,
+      amount,
+    }}
+    transition={{
+      duration: 0.66,
+      delay,
       ease: smoothEase,
-    },
-  },
-};
-
-const cardContentContainer = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.055,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const cardContentItem = {
-  hidden: {
-    opacity: 0,
-    y: 14,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.48,
-      ease: smoothEase,
-    },
-  },
-};
+    }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
 
 const Services = () => {
   const location = useLocation();
   const { t } = useTranslation('home');
 
   const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
 
   return (
     <section
       id="services"
-      className="ozony-flow ozony-flow-services relative overflow-hidden py-24"
+      className="ozony-flow ozony-flow-services relative overflow-hidden py-20 md:py-24"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-20 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-blue-500/[0.035] blur-[120px]" />
-        <div className="absolute left-10 bottom-16 h-[320px] w-[320px] rounded-full bg-cyan-400/[0.022] blur-[110px]" />
-        <div className="absolute right-10 top-1/2 h-[260px] w-[260px] rounded-full bg-blue-400/[0.02] blur-[100px]" />
-      </div>
-
       <div className="ozony-container-wide relative z-10">
-        <MotionReveal className="mx-auto max-w-5xl text-center" direction="up">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
-            {t('services.eyebrow')}
-          </p>
+        <MotionReveal>
+          <div className="grid gap-8 border-b border-white/[0.08] pb-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
+                {t('services.eyebrow')}
+              </p>
 
-          <h2 className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            {t('services.title')}
-          </h2>
+              <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-tight text-white md:text-5xl xl:text-6xl">
+                {t('services.title')}
+              </h2>
+            </div>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-400 md:text-xl">
-            {t('services.description')}
-          </p>
+            <div className="lg:pb-1">
+              <p className="max-w-2xl text-lg leading-8 text-white/60">
+                {t('services.description')}
+              </p>
 
-          <motion.div
-            variants={chipContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="mt-8 flex flex-wrap justify-center gap-3"
-          >
-            {serviceChipKeys.map((key) => (
-              <motion.span
-                key={key}
-                variants={chipItem}
-                whileHover={{
-                  y: -3,
-                  scale: 1.035,
-                  transition: { duration: 0.18, ease: smoothEase },
-                }}
-                className="rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-sm text-gray-300 backdrop-blur"
-              >
-                {t(`services.chips.${key}`)}
-              </motion.span>
-            ))}
-          </motion.div>
-        </MotionReveal>
-
-        <MotionReveal
-          delay={0.08}
-          direction="left"
-          className="mt-14 mx-auto max-w-[1200px] 2xl:max-w-[1460px]"
-        >
-          <div className="group relative">
-            <div className="absolute -inset-5 rounded-[2.25rem] bg-blue-500/15 opacity-70 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
-
-            <SpotlightCard className="relative rounded-[1.75rem] border border-white/[0.07] bg-slate-950/45 p-2 shadow-lg shadow-black/25 backdrop-blur-xl transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-blue-500/20">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[1.35rem] bg-slate-950">
-                <img
-                  src="/images/NetworkSetup-1200.webp"
-                  srcSet="/images/NetworkSetup-800.webp 800w, /images/NetworkSetup-1200.webp 1200w, /images/NetworkSetup-1600.webp 1600w"
-                  sizes="(max-width: 768px) calc(100vw - 32px), (max-width: 1536px) calc(100vw - 64px), 1460px"
-                  width="1200"
-                  height="675"
-                  alt={t('services.imageAlt')}
-                  className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </SpotlightCard>
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/38">
+                {isSpanish
+                  ? 'Cuatro áreas principales cubren la mayoría de las necesidades tecnológicas de una pequeña empresa. Los servicios especializados siguen disponibles cuando el problema requiere algo más específico.'
+                  : 'Four core areas cover most small-business technology needs. Specialized services remain available when the problem calls for something more specific.'}
+              </p>
+            </div>
           </div>
         </MotionReveal>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 2xl:gap-7">
-          {serviceGroups.map((group, index) => {
-            const Icon = group.icon;
-            const direction =
-              index % 2 === 0 ? 'diagonalRight' : 'diagonalLeft';
-            const stack = t(`services.groups.${group.key}.stack`, {
-              returnObjects: true,
-            });
-            const takeaways = t(`services.groups.${group.key}.takeaways`, {
-              returnObjects: true,
-            });
+        <div className="grid md:grid-cols-2">
+          {featuredServices.map((service, index) => {
+            const Icon = service.icon;
+            const content = getFeaturedContent(t, service.key);
+
+            const takeaways = Array.isArray(content.takeaways)
+              ? content.takeaways.slice(0, 3)
+              : [];
+
+            const isLeftColumn = index % 2 === 0;
+            const isTopRow = index < 2;
 
             return (
               <MotionReveal
-                key={group.key}
-                direction={direction}
-                delay={index * 0.045}
-                amount={0.18}
+                key={service.key}
+                delay={index * 0.055}
+                amount={0.12}
+                className={[
+                  'border-b border-white/[0.08]',
+                  isLeftColumn
+                    ? 'md:border-r md:border-white/[0.08]'
+                    : '',
+                ].join(' ')}
               >
-                <motion.div
-                  whileHover={{
-                    y: -7,
-                    transition: { duration: 0.22, ease: smoothEase },
-                  }}
-                  className="h-full"
+                <Link
+                  to={localizePath(service.href, language)}
+                  className="group relative block h-full px-1 py-9 sm:px-6 md:px-8 md:py-10 xl:px-10 xl:py-11"
                 >
-                  <SpotlightCard className="h-full rounded-3xl border border-white/[0.07] bg-slate-950/42 backdrop-blur-sm transition-colors duration-300 hover:border-blue-400/30 hover:bg-slate-950/56">
-                    <Link
-                      to={localizePath(group.href, language)}
-                      className="group block h-full p-7 text-center"
-                    >
-                      <motion.div
-                        variants={cardContentContainer}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.35 }}
-                      >
-                        <motion.div
-                          variants={cardContentItem}
-                          className="mx-auto mb-5 inline-flex rounded-xl bg-blue-500/10 p-3"
-                        >
-                          <Icon className="h-7 w-7 text-blue-400" />
-                        </motion.div>
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-blue-500/[0.035] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
 
-                        <motion.h3
-                          variants={cardContentItem}
-                          className="text-2xl font-semibold leading-tight text-white"
-                        >
-                          {t(`services.groups.${group.key}.title`)}
-                        </motion.h3>
+                  <div className="relative">
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="flex items-center gap-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-blue-300/15 bg-blue-500/[0.08]">
+                          <Icon className="h-5 w-5 text-blue-300" />
+                        </div>
 
-                        <motion.div
-                          variants={cardContentItem}
-                          className="mt-5 flex flex-wrap justify-center gap-2"
-                        >
-                          {Array.isArray(stack) &&
-                            stack.map((item) => (
-                              <span
-                                key={item}
-                                className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-sm text-gray-300"
-                              >
-                                {item}
-                              </span>
-                            ))}
-                        </motion.div>
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-300/70">
+                          {service.number}
+                        </span>
+                      </div>
+                    </div>
 
-                        <motion.p
-                          variants={cardContentItem}
-                          className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400"
-                        >
-                          {t(`services.groups.${group.key}.description`)}
-                        </motion.p>
+                    <h3 className="mt-7 max-w-xl text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                      {content.title}
+                    </h3>
 
-                        <motion.div
-                          variants={cardContentItem}
-                          className="mt-6 border-t border-slate-700/50 pt-5"
-                        >
-                          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gray-300">
-                            {t('services.whatItCovers')}
-                          </p>
+                    <p className="mt-4 max-w-xl text-base leading-7 text-white/55">
+                      {content.description}
+                    </p>
 
-                          <ul className="mx-auto max-w-md space-y-2 text-sm text-gray-400">
-                            {Array.isArray(takeaways) &&
-                              takeaways.map((item) => (
-                                <li
-                                  key={item}
-                                  className="flex items-start justify-center gap-2 text-left"
-                                >
-                                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-400" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                          </ul>
-                        </motion.div>
+                    {takeaways.length > 0 && (
+                      <ul className="mt-6 grid gap-3">
+                        {takeaways.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-3 text-sm leading-6 text-white/45"
+                          >
+                            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-blue-300/80" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
-                        <motion.div
-                          variants={cardContentItem}
-                          className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-blue-400 transition-colors duration-200 group-hover:text-blue-300"
-                        >
-                          <span>
-                            {t(`services.groups.${group.key}.linkLabel`)}
-                          </span>
-                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                        </motion.div>
-                      </motion.div>
-                    </Link>
-                  </SpotlightCard>
-                </motion.div>
+                    <div className="mt-7">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-blue-300 transition-colors group-hover:text-blue-200">
+                        <span>{content.linkLabel}</span>
+
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </MotionReveal>
             );
           })}
         </div>
+
+        <MotionReveal delay={0.1} className="mt-12 md:mt-14">
+          <div>
+            <div className="grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/30">
+                  {isSpanish
+                    ? 'Servicios adicionales'
+                    : 'Additional services'}
+                </p>
+
+                <h3 className="mt-3 text-2xl font-semibold text-white md:text-3xl">
+                  {isSpanish
+                    ? 'Cuando necesitas algo más específico.'
+                    : 'When the problem needs something more specific.'}
+                </h3>
+              </div>
+
+              <p className="max-w-2xl text-sm leading-6 text-white/40 md:justify-self-end">
+                {isSpanish
+                  ? 'Servicios especializados que complementan las cuatro áreas principales sin competir por atención.'
+                  : 'Specialized service paths that complement the four core areas without competing for attention.'}
+              </p>
+            </div>
+
+            <div className="mt-7 divide-y divide-white/[0.07] border-y border-white/[0.07]">
+              {supportingServices.map((service) => {
+                const Icon = service.icon;
+                const content = getSupportingContent(
+                  language,
+                  service.key
+                );
+
+                return (
+                  <Link
+                    key={service.key}
+                    to={localizePath(service.href, language)}
+                    className="group grid gap-4 py-5 transition-colors md:grid-cols-[auto_0.8fr_1.4fr_auto] md:items-center md:gap-6"
+                  >
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] text-white/45 transition-colors group-hover:border-blue-300/30 group-hover:text-blue-300">
+                      <Icon className="h-4 w-4" />
+                    </div>
+
+                    <h4 className="text-base font-medium text-white/80 transition-colors group-hover:text-white">
+                      {content.title}
+                    </h4>
+
+                    <p className="max-w-2xl text-sm leading-6 text-white/40">
+                      {content.description}
+                    </p>
+
+                    <div className="inline-flex items-center gap-2 text-sm text-blue-300/70 transition-colors group-hover:text-blue-200">
+                      <span>{content.label}</span>
+
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </MotionReveal>
       </div>
     </section>
   );
