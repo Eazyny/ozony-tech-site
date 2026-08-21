@@ -56,9 +56,7 @@ const ContactLightRaysBackground = () => (
     className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     aria-hidden="true"
   >
-    <div className="absolute inset-0 bg-[linear-gradient(180deg,#020617_0%,#06111f_42%,#020617_100%)]" />
-
-    <div className="absolute inset-x-0 top-0 h-[740px] opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]">
+    <div className="absolute inset-x-0 top-0 h-[740px] opacity-60 [mask-image:linear-gradient(to_bottom,black_0%,black_58%,transparent_100%)]">
       <LightRays
         raysOrigin="top-center"
         raysColor="#ffffff"
@@ -76,10 +74,13 @@ const ContactLightRaysBackground = () => (
       />
     </div>
 
-    <div className="absolute left-1/2 top-[-8rem] h-[620px] w-[720px] -translate-x-1/2 rounded-full bg-blue-500/[0.14] blur-[170px]" />
-    <div className="absolute right-[-14rem] top-[16rem] h-[560px] w-[560px] rounded-full bg-cyan-400/[0.08] blur-[145px]" />
-    <div className="absolute left-[-14rem] bottom-[6rem] h-[520px] w-[520px] rounded-full bg-blue-500/[0.08] blur-[145px]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(96,165,250,0.12),transparent_32%),radial-gradient(circle_at_80%_28%,rgba(34,211,238,0.055),transparent_30%),linear-gradient(to_bottom,transparent_0%,rgba(2,6,23,0.72)_78%,#020617_100%)]" />
+    <div className="absolute left-1/2 top-[-8rem] h-[620px] w-[720px] -translate-x-1/2 rounded-full bg-blue-500/[0.10] blur-[170px]" />
+
+    <div className="absolute right-[-14rem] top-[16rem] h-[560px] w-[560px] rounded-full bg-cyan-400/[0.05] blur-[145px]" />
+
+    <div className="absolute left-[-14rem] bottom-[6rem] h-[520px] w-[520px] rounded-full bg-blue-500/[0.05] blur-[145px]" />
+
+    <div className="absolute inset-x-0 top-0 h-[680px] bg-[radial-gradient(circle_at_50%_0%,rgba(96,165,250,0.10),transparent_55%)]" />
   </div>
 );
 
@@ -626,7 +627,7 @@ const ContactPage = () => {
               </SpotlightCard>
 
               <SpotlightCard
-                spotlightColor="rgba(125, 211, 252, 0.20)"
+                spotlightColor="rgba(125, 211,252, 0.20)"
                 spotlightSize={560}
                 className="rounded-[2rem] border border-white/10 bg-white/[0.035] p-7 backdrop-blur transition-colors duration-300 hover:border-blue-300/30 hover:bg-white/[0.055]"
               >

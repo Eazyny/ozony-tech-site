@@ -535,7 +535,7 @@ const ServiceLandingTemplate = ({
             </div>
           </section>
 
-          <div className="bg-[#05080d]">
+          <div className="relative">
             <section className={`${sectionClass} ozony-flow-services`}>
               <div className="ozony-container-wide grid gap-6 lg:grid-cols-3 2xl:gap-8">
                 {effectiveOutcomes.map((item) => {
