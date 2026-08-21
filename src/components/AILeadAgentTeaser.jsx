@@ -126,7 +126,7 @@ const SecondaryCtaButton = ({ to, children }) => (
     asChild
     size="lg"
     variant="outline"
-    className="h-14 min-w-[220px] border-blue-400/30 bg-transparent px-7 text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-blue-500/10 md:h-16 md:px-9 md:text-lg"
+    className="h-14 min-w-[220px] border-blue-400/30 bg-transparent px-7 text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:text-blue-400"
   >
     <Link to={to}>
       <span className="inline-flex items-center justify-center">
