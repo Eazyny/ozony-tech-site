@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
+import TechnicalProof from '@/components/TechnicalProof';
 import AILeadAgentTeaser from '@/components/AILeadAgentTeaser';
 import HowOzonyWorks from '@/components/HowOzonyWorks';
 import About from '@/components/About';
@@ -256,6 +257,7 @@ const HomePage = () => {
         <main>
           <Hero />
           <Services />
+          <TechnicalProof />
           <AILeadAgentTeaser />
           <About />
           <HowOzonyWorks />

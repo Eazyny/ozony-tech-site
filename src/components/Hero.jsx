@@ -108,7 +108,7 @@ const Hero = () => {
               <Button
                 onClick={() => scrollToSection('#services')}
                 variant="outline"
-                className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:bg-blue-400/10"
+                className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:text-white"
               >
                 <DecodedText speed={12}>{t('hero.viewServices')}</DecodedText>
               </Button>
