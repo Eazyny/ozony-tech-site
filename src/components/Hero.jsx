@@ -19,6 +19,7 @@ const Hero = () => {
   const { t } = useTranslation('home');
 
   const language = getLanguageFromPath(location.pathname);
+  const isSpanish = language === 'es';
 
   const scrollToSection = (selector) => {
     const element = document.querySelector(selector);
@@ -64,23 +65,45 @@ const Hero = () => {
                     {t('hero.titleLineOne')}
                   </span>
 
+                  {/* Mobile */}
                   <span className="block text-white/95 sm:hidden">
                     {t('hero.titleLineTwoMobile')}
                   </span>
+
                   <span className="block text-white/95 sm:hidden">
                     {t('hero.titleLineThreeMobile')}
                   </span>
 
+                  {/* Tablet */}
                   <span className="hidden text-white/95 sm:block xl:hidden">
                     {t('hero.titleLineTwoTablet')}
                   </span>
+
                   <span className="hidden text-white/95 sm:block xl:hidden">
                     {t('hero.titleLineThreeTablet')}
                   </span>
 
-                  <span className="hidden text-white/95 xl:block 2xl:whitespace-nowrap">
-                    {t('hero.titleLineDesktop')}
-                  </span>
+                  {/* Desktop
+                      English keeps the original single-line treatment.
+                      Spanish uses the existing controlled two-line split
+                      so the longer translation cannot overflow into
+                      the visual column.
+                  */}
+                  {isSpanish ? (
+                    <>
+                      <span className="hidden text-white/95 xl:block">
+                        {t('hero.titleLineTwoTablet')}
+                      </span>
+
+                      <span className="hidden text-white/95 xl:block">
+                        {t('hero.titleLineThreeTablet')}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="hidden text-white/95 xl:block 2xl:whitespace-nowrap">
+                      {t('hero.titleLineDesktop')}
+                    </span>
+                  )}
                 </h1>
               </div>
 
@@ -101,7 +124,9 @@ const Hero = () => {
                   className="border-0 bg-blue-600 px-6 py-6 text-base text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700"
                 >
                   <Mail className="mr-2 h-5 w-5" />
-                  <DecodedText speed={12}>{t('hero.requestQuote')}</DecodedText>
+                  <DecodedText speed={12}>
+                    {t('hero.requestQuote')}
+                  </DecodedText>
                 </Button>
               </StarBorder>
 
@@ -110,7 +135,9 @@ const Hero = () => {
                 variant="outline"
                 className="border-blue-400 px-6 py-6 text-base text-blue-400 hover:text-white"
               >
-                <DecodedText speed={12}>{t('hero.viewServices')}</DecodedText>
+                <DecodedText speed={12}>
+                  {t('hero.viewServices')}
+                </DecodedText>
               </Button>
             </motion.div>
           </motion.div>
@@ -119,10 +146,11 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative w-full"
+            className="relative min-w-0 w-full"
           >
             <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[460px] lg:ml-auto lg:max-w-[500px] xl:max-w-[560px] 2xl:max-w-[660px]">
               <div className="absolute -inset-8 rounded-[2.75rem] bg-blue-500/[0.05] blur-3xl" />
+
               <div className="absolute inset-0 rounded-[2rem] border border-white/[0.07] bg-gradient-to-br from-white/[0.025] via-transparent to-slate-950/10" />
 
               <SpotlightCard className="relative aspect-[5/4] rounded-[2rem] border border-white/[0.07] bg-slate-950/55 shadow-2xl shadow-black/30 backdrop-blur-sm">
@@ -137,8 +165,15 @@ const Hero = () => {
                     playsInline
                     preload="metadata"
                   >
-                    <source src="/videos/it_services.webm" type="video/webm" />
-                    <source src="/videos/it_services.mp4" type="video/mp4" />
+                    <source
+                      src="/videos/it_services.webm"
+                      type="video/webm"
+                    />
+
+                    <source
+                      src="/videos/it_services.mp4"
+                      type="video/mp4"
+                    />
                   </video>
                 </div>
               </SpotlightCard>
