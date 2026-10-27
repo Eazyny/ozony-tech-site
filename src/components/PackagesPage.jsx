@@ -350,25 +350,23 @@ const PackagesPage = () => {
       </Helmet>
 
       <div className="ozony-page-canvas min-h-screen">
-        <Header />
-
-        <section className="bg-[#05080d] pt-28 pb-2 md:pt-32">
-          <div className="ozony-container-wide">
-            <Link
-              to={homePath}
-              className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {t('backToHome')}
-            </Link>
-          </div>
-        </section>
+        <Header blendAtTop />
 
         <main>
-          <section className="ozony-flow ozony-flow-hero relative overflow-hidden py-14 md:py-20">
-            <StarfieldBackground />
+          <section className="ozony-flow ozony-flow-hero relative overflow-hidden pb-14 pt-28 md:pb-20 md:pt-32">
+            <StarfieldBackground className="hero-starfield-fade" />
 
-            <div className="ozony-container-wide relative">
+            <div className="ozony-container-wide relative z-10">
+              <Link
+                to={homePath}
+                className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {t('backToHome')}
+              </Link>
+            </div>
+
+            <div className="ozony-container-wide relative z-10 mt-[4.5rem] md:mt-[5.5rem]">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
