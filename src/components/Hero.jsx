@@ -1,10 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { Suspense, useCallback, useRef, useState } from 'react';
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DecodedText from '@/components/ui/decode-text';
 import StarfieldBackground from '@/components/ui/starfield-background';
 import SpotlightCard from '@/components/ui/spotlight-card';
+
+// Split the WebGL engine into its own bundle so hero text can render first.
+const LaptopHeroScene = React.lazy(() => import('@/components/LaptopHeroScene'));
 import StarBorder from '@/components/ui/star-border';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -17,6 +20,22 @@ const Hero = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation('home');
+  const heroRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
+  const [laptopReady, setLaptopReady] = useState(false);
+  const markLaptopReady = useCallback(() => setLaptopReady(true), []);
+
+  // The closing finishes while the hero is still visible, not after it disappears.
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const rawCloseProgress = useTransform(scrollYProgress, [0.12, 0.78], [0, 1]);
+  const closeProgress = useSpring(rawCloseProgress, {
+    stiffness: 115,
+    damping: 28,
+    mass: 0.4,
+  });
 
   const language = getLanguageFromPath(location.pathname);
   const isSpanish = language === 'es';
@@ -34,7 +53,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="ozony-flow ozony-flow-hero relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
+    <section ref={heroRef} className="ozony-flow ozony-flow-hero relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:min-h-[780px] lg:flex lg:items-center 2xl:min-h-[860px]">
       <StarfieldBackground className="hero-starfield-fade" />
 
       <div className="ozony-container-wide relative">
@@ -156,25 +175,31 @@ const Hero = () => {
               <SpotlightCard className="relative aspect-[5/4] rounded-[2rem] border border-white/[0.07] bg-slate-950/55 shadow-2xl shadow-black/30 backdrop-blur-sm">
                 <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-slate-950/25 via-transparent to-blue-500/5" />
 
-                <div className="relative z-0 h-full w-full">
-                  <video
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
+                <div
+                  className="relative z-0 h-full w-full"
+                  role="img"
+                  aria-label={isSpanish
+                    ? 'Laptop Ozony Tech que se abre al entrar y se cierra al desplazarse'
+                    : 'Ozony Tech laptop that opens on arrival and closes as you scroll'}
+                >
+                  {/* Lightweight branded placeholder while the 6.8 MB model loads. */}
+                  <div
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${laptopReady ? 'opacity-0' : 'opacity-100'}`}
                   >
-                    <source
-                      src="/videos/it_services.webm"
-                      type="video/webm"
-                    />
+                    <div className="h-36 w-64 rounded-2xl border border-blue-400/10 bg-blue-500/[0.035] blur-3xl" />
+                    <span className="absolute text-xs font-semibold uppercase tracking-[0.28em] text-blue-200/60">
+                      Ozony Tech
+                    </span>
+                  </div>
 
-                    <source
-                      src="/videos/it_services.mp4"
-                      type="video/mp4"
+                  <Suspense fallback={null}>
+                    <LaptopHeroScene
+                      closeProgress={closeProgress}
+                      reducedMotion={Boolean(prefersReducedMotion)}
+                      onReady={markLaptopReady}
                     />
-                  </video>
+                  </Suspense>
                 </div>
               </SpotlightCard>
             </div>
